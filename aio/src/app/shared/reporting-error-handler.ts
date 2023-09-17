@@ -53,9 +53,9 @@ export class ReportingErrorHandler extends ErrorHandler {
     } else {
       if (typeof error === 'object') {
         try {
-          error = JSON.stringify(error);
+ error = JSON.stringify(error);
         } catch {
-          // Ignore the error and just let it be stringified.
+ // Ignore the error and just let it be stringified.
         }
       }
       this._analytics.reportError(`${error}`);

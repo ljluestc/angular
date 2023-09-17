@@ -1,18 +1,6 @@
-import {Component, NgModule} from '@angular/core';
-
-@Component({
-  selector: 'my-component',
-  template: `
-    <div *ngFor="let item of items">
-       <div #foo></div>
-        <span *ngIf="showing">
-          {{ foo }} - {{ item }}
-        </span>
-    </div>`
+import {Component, NgModule} from '@angular/core';    </div>`
 })
 export class MyComponent {
-}
-
-@NgModule({declarations: [MyComponent]})
+}@NgModule({declarations: [MyComponent]})
 export class MyModule {
 }

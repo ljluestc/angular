@@ -1,9 +1,6 @@
 // Archived: see only referencing guide, `template-expression-operators.md`.
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
-interface Item {
+import { CommonModule } from '@angular/common';interface Item {
   name: string;
   manufactureDate: Date;
   color?: string | null;

@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect factory",
-          "files": [
-            "component_factory.js"
-          ]
+ "failureMessage": "Incorrect factory",
+ "files": [
+   "component_factory.js"
+ ]
         }
       ]
     },
@@ -22,22 +22,22 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect factory definition",
-          "files": [
-            {
-              "expected": "injectable_factory_fac.js",
-              "generated": "injectable_factory.js"
-            }
-          ]
+ "failureMessage": "Incorrect factory definition",
+ "files": [
+   {
+     "expected": "injectable_factory_fac.js",
+     "generated": "injectable_factory.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect injectable definition",
-          "files": [
-            {
-              "expected": "injectable_factory_prov.js",
-              "generated": "injectable_factory.js"
-            }
-          ]
+ "failureMessage": "Incorrect injectable definition",
+ "files": [
+   {
+     "expected": "injectable_factory_prov.js",
+     "generated": "injectable_factory.js"
+   }
+ ]
         }
       ]
     },
@@ -48,22 +48,22 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect factory definition",
-          "files": [
-            {
-              "expected": "ctor_overload_fac.js",
-              "generated": "ctor_overload.js"
-            }
-          ]
+ "failureMessage": "Incorrect factory definition",
+ "files": [
+   {
+     "expected": "ctor_overload_fac.js",
+     "generated": "ctor_overload.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect injectable definition",
-          "files": [
-            {
-              "expected": "ctor_overload_prov.js",
-              "generated": "ctor_overload.js"
-            }
-          ]
+ "failureMessage": "Incorrect injectable definition",
+ "files": [
+   {
+     "expected": "ctor_overload_prov.js",
+     "generated": "ctor_overload.js"
+   }
+ ]
         }
       ]
     },
@@ -74,10 +74,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect injectable definition",
-          "files": [
-            "usefactory_without_deps.js"
-          ]
+ "failureMessage": "Incorrect injectable definition",
+ "files": [
+   "usefactory_without_deps.js"
+ ]
         }
       ]
     },
@@ -88,10 +88,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect injectable definition",
-          "files": [
-            "usefactory_with_deps.js"
-          ]
+ "failureMessage": "Incorrect injectable definition",
+ "files": [
+   "usefactory_with_deps.js"
+ ]
         }
       ]
     },
@@ -102,10 +102,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect factory definition",
-          "files": [
-            "useclass_without_deps.js"
-          ]
+ "failureMessage": "Incorrect factory definition",
+ "files": [
+   "useclass_without_deps.js"
+ ]
         }
       ]
     },
@@ -116,10 +116,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect factory definition",
-          "files": [
-            "useclass_with_deps.js"
-          ]
+ "failureMessage": "Incorrect factory definition",
+ "files": [
+   "useclass_with_deps.js"
+ ]
         }
       ]
     },
@@ -130,10 +130,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect factory definition",
-          "files": [
-            "useclass_forwardref.js"
-          ]
+ "failureMessage": "Incorrect factory definition",
+ "files": [
+   "useclass_forwardref.js"
+ ]
         }
       ]
     },
@@ -144,10 +144,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect factory definition",
-          "files": [
-            "providedin_forwardref.js"
-          ]
+ "failureMessage": "Incorrect factory definition",
+ "files": [
+   "providedin_forwardref.js"
+ ]
         }
       ]
     },
@@ -158,34 +158,34 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid pipe factory function",
-          "files": [
-            {
-              "expected": "pipe_and_injectable_pipe_last.js",
-              "generated": "pipe_and_injectable.js"
-            }
-          ],
-          "extraChecks": [
-            [
-              "verifyUniqueFactory",
-              "MyPipe"
-            ]
-          ]
+ "failureMessage": "Invalid pipe factory function",
+ "files": [
+   {
+     "expected": "pipe_and_injectable_pipe_last.js",
+     "generated": "pipe_and_injectable.js"
+   }
+ ],
+ "extraChecks": [
+   [
+     "verifyUniqueFactory",
+     "MyPipe"
+   ]
+ ]
         },
         {
-          "failureMessage": "Invalid pipe factory function",
-          "files": [
-            {
-              "expected": "pipe_and_injectable_pipe_first.js",
-              "generated": "pipe_and_injectable.js"
-            }
-          ],
-          "extraChecks": [
-            [
-              "verifyUniqueFactory",
-              "MyOtherPipe"
-            ]
-          ]
+ "failureMessage": "Invalid pipe factory function",
+ "files": [
+   {
+     "expected": "pipe_and_injectable_pipe_first.js",
+     "generated": "pipe_and_injectable.js"
+   }
+ ],
+ "extraChecks": [
+   [
+     "verifyUniqueFactory",
+     "MyOtherPipe"
+   ]
+ ]
         }
       ]
     }

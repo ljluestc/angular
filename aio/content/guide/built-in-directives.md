@@ -12,11 +12,11 @@ See the <live-example></live-example> for a working example containing the code 
 
 The different types of Angular directives are as follows:
 
-| Directive Types                                                                   | Details                                                                           |
+| Directive Types       | Details|
 | :-------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
-| [Components](guide/component-overview)                                            | Used with a template. This type of directive is the most common directive type.   |
+| [Components](guide/component-overview)     | Used with a template. This type of directive is the most common directive type.   |
 | [Attribute directives](guide/built-in-directives#built-in-attribute-directives)   | Change the appearance or behavior of an element, component, or another directive. |
-| [Structural directives](guide/built-in-directives#built-in-structural-directives) | Change the DOM layout by adding and removing DOM elements.                        |
+| [Structural directives](guide/built-in-directives#built-in-structural-directives) | Change the DOM layout by adding and removing DOM elements.|
 
 This guide covers built-in [attribute directives](guide/built-in-directives#built-in-attribute-directives) and [structural directives](guide/built-in-directives#built-in-structural-directives).
 
@@ -30,10 +30,10 @@ Many attribute directives are defined through modules such as the [`CommonModule
 
 The most common attribute directives are as follows:
 
-| Common directives                              | Details                                            |
+| Common directives| Details     |
 | :--------------------------------------------- | :------------------------------------------------- |
-| [`NgClass`](guide/built-in-directives#ngClass) | Adds and removes a set of CSS classes.             |
-| [`NgStyle`](guide/built-in-directives#ngstyle) | Adds and removes a set of HTML styles.             |
+| [`NgClass`](guide/built-in-directives#ngClass) | Adds and removes a set of CSS classes.    |
+| [`NgStyle`](guide/built-in-directives#ngstyle) | Adds and removes a set of HTML styles.    |
 | [`NgModel`](guide/built-in-directives#ngModel) | Adds two-way data binding to an HTML form element. |
 
 <div class="alert is-helpful">
@@ -172,11 +172,11 @@ They shape or reshape the DOM's structure, typically by adding, removing, and ma
 
 This section introduces the most common built-in structural directives:
 
-| Common built-in structural directives            | Details                                                          |
+| Common built-in structural directives   | Details    |
 | :----------------------------------------------- | :--------------------------------------------------------------- |
-| [`NgIf`](guide/built-in-directives#ngIf)         | Conditionally creates or disposes of subviews from the template. |
-| [`NgFor`](guide/built-in-directives#ngFor)       | Repeat a node for each item in a list.                           |
-| [`NgSwitch`](guide/built-in-directives#ngSwitch) | A set of directives that switch among alternative views.         |
+| [`NgIf`](guide/built-in-directives#ngIf)| Conditionally creates or disposes of subviews from the template. |
+| [`NgFor`](guide/built-in-directives#ngFor)       | Repeat a node for each item in a list.   |
+| [`NgSwitch`](guide/built-in-directives#ngSwitch) | A set of directives that switch among alternative views.|
 
 For more information, see [Structural Directives](guide/structural-directives).
 
@@ -350,11 +350,11 @@ Angular puts only the selected element into the DOM.
 
 `NgSwitch` is a set of three directives:
 
-| `NgSwitch` directives | Details                                                                                                                                                                |
+| `NgSwitch` directives | Details |
 | :-------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `NgSwitch`            | An attribute directive that changes the behavior of its companion directives.                                                                                          |
+| `NgSwitch`   | An attribute directive that changes the behavior of its companion directives.|
 | `NgSwitchCase`        | Structural directive that adds its element to the DOM when its bound value equals the switch value and removes its bound value when it doesn't equal the switch value. |
-| `NgSwitchDefault`     | Structural directive that adds its element to the DOM when there is no selected `NgSwitchCase`.                                                                        |
+| `NgSwitchDefault`     | Structural directive that adds its element to the DOM when there is no selected `NgSwitchCase`.   |
 
 1.  On an element, such as a `<div>`, add `[ngSwitch]` bound to an expression that returns the switch value, such as `feature`.
     Though the `feature` value in this example is a string, the switch value can be of any type.

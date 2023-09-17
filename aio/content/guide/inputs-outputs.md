@@ -126,10 +126,10 @@ The `EventEmitter` then relays the data to the parent component.
     The different parts of the preceding declaration are as follows:
 
     | Declaration parts            | Details |
-    |:---                          |:---     |
-    | `@Output()`                  | A decorator function marking the property as a way for data to go from the child to the parent. |
-    | `newItemEvent`               | The name of the `@Output()`.                                                                    |
-    | `EventEmitter<string>`       | The `@Output()`'s type.                                                                         |
+    |:---           |:---     |
+    | `@Output()`   | A decorator function marking the property as a way for data to go from the child to the parent. |
+    | `newItemEvent`| The name of the `@Output()`.        |
+    | `EventEmitter<string>`       | The `@Output()`'s type.             |
     | `new EventEmitter<string>()` | Tells Angular to create a new event emitter and that the data it emits is of type string.       |
 
     For more information on `EventEmitter`, see the [EventEmitter API documentation](api/core/EventEmitter).

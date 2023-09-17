@@ -1,5 +1,5 @@
 export function provideModule() {
-    return { ngModule: ForwardModule };
+return { ngModule: ForwardModule };
 }
 …
 class TestModule {}

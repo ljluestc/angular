@@ -73,10 +73,7 @@ In the **Edit** pane of your IDE, in `src/app/details/details.component.ts`:
     The template now includes an event handler `(submit)="submitApplication()"`. Angular uses parentheses syntax around the event name to define events in the template code. The code on the right hand side of the equals sign is the code that should be executed when this event is triggered. You can bind to browser events and custom events.
 
 1.  Confirm that the app builds without error.
-    Correct any errors before you continue to the next step.
-
-
-    <section class="lightbox">
+    Correct any errors before you continue to the next step.    <section class="lightbox">
     <img alt="details page with a form for applying to live at this location" src="generated/images/guide/faa/homes-app-lesson-12-step-3.png">
     </section>
 

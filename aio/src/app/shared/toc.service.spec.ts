@@ -201,31 +201,31 @@ describe('TocService', () => {
         <h1>Fun with TOC</h1>
 
         <h2 id="heading-one-special-id">Heading one</h2>
-          <p>h2 toc 0</p>
+ <p>h2 toc 0</p>
 
         <h2>H2 Two</h2>
-          <p>h2 toc 1</p>
+ <p>h2 toc 1</p>
 
         <h2>H2 <b>Three</b></h2>
-          <p>h2 toc 2</p>
-          <h3 id="h3-3a">H3 3a</h3> <p>h3 toc 3</p>
-          <h3 id="h3-3b">H3 3b</h3> <p>h3 toc 4</p>
+ <p>h2 toc 2</p>
+ <h3 id="h3-3a">H3 3a</h3> <p>h3 toc 3</p>
+ <h3 id="h3-3b">H3 3b</h3> <p>h3 toc 4</p>
 
-            <!-- h4 shouldn't be in TOC -->
-            <h4 id="h4-3b">H4 of h3-3b</h4> <p>an h4</p>
+   <!-- h4 shouldn't be in TOC -->
+   <h4 id="h4-3b">H4 of h3-3b</h4> <p>an h4</p>
 
         <h2><i>H2 4 <b>repeat</b></i></h2>
-          <p>h2 toc 5</p>
+ <p>h2 toc 5</p>
 
         <h2><b>H2 4 <i>repeat</i></b></h2>
-          <p>h2 toc 6</p>
+ <p>h2 toc 6</p>
 
         <h2 class="no-toc" id="skippy">Skippy</h2>
-          <p>Skip this header</p>
+ <p>Skip this header</p>
 
         <h2 id="h2-6">H2 6</h2>
-          <p>h2 toc 7</p>
-          <h3 id="h3-6a">H3 6a</h3> <p>h3 toc 8</p>
+ <p>h2 toc 7</p>
+ <h3 id="h3-6a">H3 6a</h3> <p>h3 toc 8</p>
       `, docId);
 
       headings = docEl.querySelectorAll('h1,h2,h3,h4') as NodeListOf<HTMLHeadingElement>;
@@ -302,14 +302,14 @@ describe('TocService', () => {
 
       callGenToc(`
         <h2 id="setup-to-develop-locally">
-          Setup to <a href="moo">develop</a> <i>locally</i>.
-          <a class="header-link" href="tutorial/tour-of-heroes/toh-pt1#setup-to-develop-locally" aria-hidden="true">
-            <span class="icon">icon-link</span>
-          </a>
-          <div class="github-links">
-            <a>GitHub</a>
-            <a>links</a>
-          </div>
+ Setup to <a href="moo">develop</a> <i>locally</i>.
+ <a class="header-link" href="tutorial/tour-of-heroes/toh-pt1#setup-to-develop-locally" aria-hidden="true">
+   <span class="icon">icon-link</span>
+ </a>
+ <div class="github-links">
+   <a>GitHub</a>
+   <a>links</a>
+ </div>
         </h2>
       `, docId);
 

@@ -115,14 +115,14 @@ To see this messaging example in action, try <live-example name="rx-library"></l
 
 RxJS provides many operators, but only a handful are used frequently.
 
-| Area           | Operators                                                                 |
-|:---            |:---                                                                       |
-| Creation       |  `from`, `fromEvent`, `of`                                                |
+| Area  | Operators     |
+|:---   |:---  |
+| Creation       |  `from`, `fromEvent`, `of`   |
 | Combination    | `combineLatest`, `concat`, `merge`, `startWith` , `withLatestFrom`, `zip` |
 | Filtering      | `debounceTime`, `distinctUntilChanged`, `filter`, `take`, `takeUntil`     |
-| Transformation | `bufferTime`, `concatMap`, `map`, `mergeMap`, `scan`, `switchMap`         |
-| Utility        | `startWith`, `tap`                                                        |
-| Multicasting   | `shareReplay`                                                             |
+| Transformation | `bufferTime`, `concatMap`, `map`, `mergeMap`, `scan`, `switchMap`|
+| Utility        | `startWith`, `tap`  |
+| Multicasting   | `shareReplay` |
 
 For a complete list of operators and usage samples, visit the [RxJS API Documentation](https://rxjs.dev/api).
 

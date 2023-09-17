@@ -1,25 +1,10 @@
-import {Component} from '@angular/core';
-
-@Component({
-  template: `
-    <div>
-      {{message}}
-      {#for item of items; track item}
-        {{item.name}}
-        {#for subitem of item.subItems; track $index}{{subitem}} from {{item.name}}{/for}
-      {/for}
-    </div>
-  `,
-})
+import {Component} from '@angular/core';})
 export class MyApp {
   message = 'hello';
   items = [
     {name: 'one', subItems: ['sub one', 'sub two', 'sub three']},
     {name: 'two', subItems: ['sub one', 'sub two', 'sub three']},
     {name: 'three', subItems: ['sub one', 'sub two', 'sub three']},
-  ];
-
-  // TODO(crisbeto): remove this once template type checking is fully implemented.
+  ];  // TODO(crisbeto): remove this once template type checking is fully implemented.
   item: any;
-  subitem: any;
-}
+  su

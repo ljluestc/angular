@@ -1,4 +1,4 @@
 let NoAotModule = class NoAotModule {};
 NoAotModule = __decorate([
-    NgModule({ jit: true })
+NgModule({ jit: true })
 ], NoAotModule);

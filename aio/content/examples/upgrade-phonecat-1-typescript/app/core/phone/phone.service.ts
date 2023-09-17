@@ -5,9 +5,9 @@ angular.
     ($resource: angular.resource.IResourceService) =>
       $resource('phones/:phoneId.json', {}, {
         query: {
-          method: 'GET',
-          params: {phoneId: 'phones'},
-          isArray: true
+ method: 'GET',
+ params: {phoneId: 'phones'},
+ isArray: true
         }
       })
   ]);

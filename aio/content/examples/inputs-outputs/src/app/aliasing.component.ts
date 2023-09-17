@@ -1,7 +1,7 @@
 /* eslint-disable @angular-eslint/no-input-rename,
-                  @angular-eslint/no-inputs-metadata-property,
-                  @angular-eslint/no-output-rename,
-                  @angular-eslint/no-outputs-metadata-property */
+@angular-eslint/no-inputs-metadata-property,
+@angular-eslint/no-output-rename,
+@angular-eslint/no-outputs-metadata-property */
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
@@ -23,10 +23,7 @@ export class AliasingComponent {
   outputEvent1: EventEmitter<string> = new EventEmitter<string>();
 
   @Input('wishListItem') input2 = ''; //  @Input(alias)
-  @Output('wishEvent') outputEvent2 = new EventEmitter<string>(); //  @Output(alias) propertyName = ...
-
-
-  saveIt() {
+  @Output('wishEvent') outputEvent2 = new EventEmitter<string>(); //  @Output(alias) propertyName = ...  saveIt() {
     console.warn('Child says: emitting outputEvent1 with', this.input1);
     this.outputEvent1.emit(this.input1);
   }

@@ -133,7 +133,7 @@ def docs_example(name, test = True, test_tags = [], test_exec_properties = {}, f
     native.filegroup(
         name = "files",
         srcs = native.glob(["**"], exclude = [
-            "**/node_modules/**",  # Node modules may exist from the legacy setup.
+   "**/node_modules/**",  # Node modules may exist from the legacy setup.
         ]),
     )
 
@@ -152,12 +152,12 @@ def docs_example(name, test = True, test_tags = [], test_exec_properties = {}, f
         # Prevent sorting so that boilerplate overwrites example sources
         # buildifier: do not sort
         srcs = [
-            ":files",
-            ":boilerplate",
+   ":files",
+   ":boilerplate",
         ],
         replace_prefixes = {
-            "boilerplate": "",
-            "aio/tools/examples/shared": "",
+   "boilerplate": "",
+   "aio/tools/examples/shared": "",
         },
         allow_overwrites = True,
     )
@@ -168,14 +168,14 @@ def docs_example(name, test = True, test_tags = [], test_exec_properties = {}, f
         # Generate stackblitz live example(s)
         outs = [file_name.replace(".json", ".html") for file_name in stackblitz_configs]
         npm_package_bin(
-            name = "stackblitz",
-            args = [
-                "$(execpath :%s)" % name,
-                "$(RULEDIR)",
-            ],
-            data = [":%s" % name],
-            outs = outs,
-            tool = "//aio/tools/stackblitz-builder:generate-stackblitz",
+   name = "stackblitz",
+   args = [
+       "$(execpath :%s)" % name,
+       "$(RULEDIR)",
+   ],
+   data = [":%s" % name],
+   outs = outs,
+   tool = "//aio/tools/stackblitz-builder:generate-stackblitz",
         )
 
     zip_configs = stackblitz_configs + native.glob(["zipper.json"])
@@ -184,14 +184,14 @@ def docs_example(name, test = True, test_tags = [], test_exec_properties = {}, f
         # Generate example zip(s)
         outs = [file_name.replace("stackblitz", name).replace("zipper", name).replace(".json", ".zip") for file_name in zip_configs]
         npm_package_bin(
-            name = "example-zip",
-            args = [
-                "$(execpath :%s)" % name,
-                "$(RULEDIR)",
-            ],
-            data = [":%s" % name],
-            outs = outs,
-            tool = "//aio/tools/example-zipper:generate-example-zip",
+   name = "example-zip",
+   args = [
+       "$(execpath :%s)" % name,
+       "$(RULEDIR)",
+   ],
+   data = [":%s" % name],
+   outs = outs,
+   tool = "//aio/tools/example-zipper:generate-example-zip",
         )
 
     if test:
@@ -204,38 +204,38 @@ def docs_example(name, test = True, test_tags = [], test_exec_properties = {}, f
         LOCAL_PACKAGE_ARGS = ["--localPackage=%s#$(rootpath %s)" % (dep, to_package_label(dep)) for dep in AIO_EXAMPLE_PACKAGES]
 
         nodejs_test(
-            name = "e2e",
-            data = [
-                ":%s" % name,
-                YARN_LABEL,
-                "@aio_npm//@angular/build-tooling/bazel/browsers/chromium",
-                "//aio/tools/examples:run-example-e2e",
-                "//aio/tools:windows-chromium-path",
-                # We install the whole node modules for runtime deps of e2e tests
-                "@{workspace}//:node_modules_files".format(workspace = EXAMPLE_DEPS_WORKSPACE_NAME),
-            ] + select({
-                "//aio:aio_local_deps": LOCAL_PACKAGE_DEPS,
-                "//conditions:default": [],
-            }),
-            args = [
-                "$(rootpath :%s)" % name,
-                "$(rootpath %s)" % YARN_LABEL,
-                EXAMPLE_DEPS_WORKSPACE_NAME,
-            ] + select({
-                "//aio:aio_local_deps": LOCAL_PACKAGE_ARGS,
-                "//conditions:default": [],
-            }),
-            entry_point = "//aio/tools/examples:run-example-e2e.mjs",
-            env = {
-                "CHROME_BIN": "$(CHROMIUM)",
-                "CHROMEDRIVER_BIN": "$(CHROMEDRIVER)",
-            },
-            toolchains = [
-                "@aio_npm//@angular/build-tooling/bazel/browsers/chromium:toolchain_alias",
-            ],
-            exec_properties = test_exec_properties,
-            flaky = flaky,
-            # RBE complains about superseeding the max inputs limit (70,000) due to the
-            # size of the input tree.
-            tags = ["no-remote-exec"] + test_tags,
+   name = "e2e",
+   data = [
+       ":%s" % name,
+       YARN_LABEL,
+       "@aio_npm//@angular/build-tooling/bazel/browsers/chromium",
+       "//aio/tools/examples:run-example-e2e",
+       "//aio/tools:windows-chromium-path",
+       # We install the whole node modules for runtime deps of e2e tests
+       "@{workspace}//:node_modules_files".format(workspace = EXAMPLE_DEPS_WORKSPACE_NAME),
+   ] + select({
+       "//aio:aio_local_deps": LOCAL_PACKAGE_DEPS,
+       "//conditions:default": [],
+   }),
+   args = [
+       "$(rootpath :%s)" % name,
+       "$(rootpath %s)" % YARN_LABEL,
+       EXAMPLE_DEPS_WORKSPACE_NAME,
+   ] + select({
+       "//aio:aio_local_deps": LOCAL_PACKAGE_ARGS,
+       "//conditions:default": [],
+   }),
+   entry_point = "//aio/tools/examples:run-example-e2e.mjs",
+   env = {
+       "CHROME_BIN": "$(CHROMIUM)",
+       "CHROMEDRIVER_BIN": "$(CHROMEDRIVER)",
+   },
+   toolchains = [
+       "@aio_npm//@angular/build-tooling/bazel/browsers/chromium:toolchain_alias",
+   ],
+   exec_properties = test_exec_properties,
+   flaky = flaky,
+   # RBE complains about superseeding the max inputs limit (70,000) due to the
+   # size of the input tree.
+   tags = ["no-remote-exec"] + test_tags,
         )

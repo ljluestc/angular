@@ -8,20 +8,20 @@ ParameterizedInjectable = __decorate([
 …
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ParameterizedInjectable, [{
-    type: Injectable
+type: Injectable
   }], function () {
-    return [{type: Service}, {
-      type: undefined, decorators: [{
-        type: Inject,
-        args: [TOKEN]
-      }]
-    }, {type: Service, decorators: []}, {
-      type: undefined, decorators: [{
-        type: Inject,
-        args: [TOKEN]
-      }, {
-        type: SkipSelf
-      }]
-    }];
+return [{type: Service}, {
+  type: undefined, decorators: [{
+type: Inject,
+args: [TOKEN]
+  }]
+}, {type: Service, decorators: []}, {
+  type: undefined, decorators: [{
+type: Inject,
+args: [TOKEN]
+  }, {
+type: SkipSelf
+  }]
+}];
   }, null);
 })();

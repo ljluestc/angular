@@ -4,11 +4,7 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-
-
-import * as animations from '@angular/animations';
+ */import * as animations from '@angular/animations';
 import * as animationsBrowser from '@angular/animations/browser';
 import * as animationsBrowserTesting from '@angular/animations/browser/testing';
 import * as common from '@angular/common';

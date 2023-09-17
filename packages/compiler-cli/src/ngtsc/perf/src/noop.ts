@@ -6,22 +6,3 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import {PerfPhase, PerfRecorder} from './api';
-
-class NoopPerfRecorder implements PerfRecorder {
-  eventCount(): void {}
-
-  memory(): void {}
-
-  phase(): PerfPhase {
-    return PerfPhase.Unaccounted;
-  }
-
-  inPhase<T>(phase: PerfPhase, fn: () => T): T {
-    return fn();
-  }
-
-  reset(): void {}
-}
-
-
-export const NOOP_PERF_RECORDER: PerfRecorder = new NoopPerfRecorder();

@@ -13,11 +13,11 @@
  */
 module.exports = function errorFileReader() {
   return {
-    name: 'errorFileReader',
-    defaultPattern: /\.md$/,
-    getDocs: function(fileInfo) {
-      // We return a single element array because content files only contain one document
-      return [{docType: 'error', content: fileInfo.content}];
-    }
+name: 'errorFileReader',
+defaultPattern: /\.md$/,
+getDocs: function(fileInfo) {
+  // We return a single element array because content files only contain one document
+  return [{docType: 'error', content: fileInfo.content}];
+}
   };
 };

@@ -24,18 +24,18 @@ function createPackage(guideName) {
   guideFile.replace(codeExampleMatcher, (_, path) => examples.push('examples/' + path));
 
   if (examples.length) {
-    console.log('The following example files are referenced in this guide:');
-    console.log(examples.map(example => ' - ' + example).join('\n'));
+console.log('The following example files are referenced in this guide:');
+console.log(examples.map(example => ' - ' + example).join('\n'));
   }
 
   return new Package('author-guide', [baseAuthoringPackage, contentPackage]).config(function(readFilesProcessor) {
-    readFilesProcessor.sourceFiles = [
-      {basePath: CONTENTS_PATH, include: guideFilePath, fileReader: 'contentFileReader'}, {
-        basePath: CONTENTS_PATH,
-        include: examples.map(example => resolve(CONTENTS_PATH, example)),
-        fileReader: 'exampleFileReader'
-      }
-    ];
+readFilesProcessor.sourceFiles = [
+  {basePath: CONTENTS_PATH, include: guideFilePath, fileReader: 'contentFileReader'}, {
+basePath: CONTENTS_PATH,
+include: examples.map(example => resolve(CONTENTS_PATH, example)),
+fileReader: 'exampleFileReader'
+  }
+];
   });
 }
 

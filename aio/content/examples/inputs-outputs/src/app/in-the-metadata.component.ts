@@ -12,10 +12,7 @@ import { Component, EventEmitter } from '@angular/core';
   inputs: ['clearanceItem'],
   outputs: ['buyEvent']
 })
-export class InTheMetadataComponent  {
-
-
-  buyEvent = new EventEmitter<string>();
+export class InTheMetadataComponent  {  buyEvent = new EventEmitter<string>();
   clearanceItem = '';
 
   buyIt() {

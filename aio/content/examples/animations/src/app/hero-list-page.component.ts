@@ -20,11 +20,11 @@ import { NgFor } from '@angular/common';
     trigger('pageAnimations', [
       transition(':enter', [
         query('.hero', [
-          style({opacity: 0, transform: 'translateY(-100px)'}),
-          stagger(30, [
-            animate('500ms cubic-bezier(0.35, 0, 0.25, 1)',
-            style({ opacity: 1, transform: 'none' }))
-          ])
+ style({opacity: 0, transform: 'translateY(-100px)'}),
+ stagger(30, [
+   animate('500ms cubic-bezier(0.35, 0, 0.25, 1)',
+   style({ opacity: 1, transform: 'none' }))
+ ])
         ])
       ])
     ]),
@@ -35,17 +35,17 @@ import { NgFor } from '@angular/common';
       transition(':enter, * => 0, * => -1', []),
       transition(':increment', [
         query(':enter', [
-          style({ opacity: 0, width: 0 }),
-          stagger(50, [
-            animate('300ms ease-out', style({ opacity: 1, width: '*' })),
-          ]),
+ style({ opacity: 0, width: 0 }),
+ stagger(50, [
+   animate('300ms ease-out', style({ opacity: 1, width: '*' })),
+ ]),
         ], { optional: true })
       ]),
       transition(':decrement', [
         query(':leave', [
-          stagger(50, [
-            animate('300ms ease-out', style({ opacity: 0, width: 0 })),
-          ]),
+ stagger(50, [
+   animate('300ms ease-out', style({ opacity: 0, width: 0 })),
+ ]),
         ])
       ]),
     ]),

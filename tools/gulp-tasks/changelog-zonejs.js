@@ -14,16 +14,16 @@ module.exports = (gulp) => () => {
   // we will remove the first 8 (zone.js-) chars to get the real version.
   const version = tag.replace(/^zone\.js-/, '');
   return gulp.src('packages/zone.js/CHANGELOG.md')
-      .pipe(conventionalChangelog(
-          {
-            preset: 'angular',
-          },
-          {linkCompare: true, previousTag: ptag, currentTag: tag, version: version}, {
-            // Ignore commits that have a different scope than `zone.js`.
-            extendedRegexp: true,
-            grep: '^[^(]+\\(zone\\.js\\)',
-            from: ptag,
-            to: 'HEAD',
-          }))
-      .pipe(gulp.dest('./packages/zone.js/'));
+  .pipe(conventionalChangelog(
+  {
+preset: 'angular',
+  },
+  {linkCompare: true, previousTag: ptag, currentTag: tag, version: version}, {
+// Ignore commits that have a different scope than `zone.js`.
+extendedRegexp: true,
+grep: '^[^(]+\\(zone\\.js\\)',
+from: ptag,
+to: 'HEAD',
+  }))
+  .pipe(gulp.dest('./packages/zone.js/'));
 };

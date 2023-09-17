@@ -143,11 +143,11 @@ Include [interpolations][AioGuideGlossaryInterpolation] in a [`$localize`][AioAp
 
 The following parameters provide context and additional information to reduce confusion for your translator.
 
-| Metadata parameter | Details                                                               |
-|:---                |:---                                                                   |
-| Custom ID          | Provide a custom identifier                                           |
-| Description        | Provide additional information or context                             |
-| Meaning            | Provide the meaning or intent of the text within the specific context |
+| Metadata parameter | Details|
+|:---       |:---    |
+| Custom ID | Provide a custom identifier       |
+| Description        | Provide additional information or context  |
+| Meaning   | Provide the meaning or intent of the text within the specific context |
 
 For additional information about custom IDs, see [Manage marked text with custom IDs][AioGuideI18nOptionalManageMarkedText].
 
@@ -240,9 +240,9 @@ An ICU expression includes a component property, an ICU clause, and the case sta
 The component property defines the variable
 An ICU clause defines the type of conditional text.
 
-| ICU clause                                                              | Details                                                             |
-|:---                                                                     |:---                                                                 |
-| [`plural`][AioGuideI18nCommonPrepareMarkPlurals]                        | Mark the use of plural numbers                                      |
+| ICU clause        | Details       |
+|:---      |:---  |
+| [`plural`][AioGuideI18nCommonPrepareMarkPlurals]      | Mark the use of plural numbers  |
 | [`select`][AioGuideI18nCommonPrepareMarkAlternatesAndNestedExpressions] | Mark choices for alternate text based on your defined string values |
 
 To simplify translation, use International Components for Unicode clauses \(ICU clauses\) with regular expressions.
@@ -279,14 +279,14 @@ pluralization_category { }
 
 The following pluralization categories are available for English and may change based on the locale.
 
-| Pluralization category | Details                    | Example                    |
-|:---                    |:---                        |:---                        |
-| `zero`                 | Quantity is zero           | `=0 { }` <br /> `zero { }` |
-| `one`                  | Quantity is 1              | `=1 { }` <br /> `one { }`  |
-| `two`                  | Quantity is 2              | `=2 { }` <br /> `two { }`  |
-| `few`                  | Quantity is 2 or more      | `few { }`                  |
-| `many`                 | Quantity is a large number | `many { }`                 |
-| `other`                | The default quantity       | `other { }`                |
+| Pluralization category | Details  | Example  |
+|:---  |:---      |:---      |
+| `zero`        | Quantity is zero  | `=0 { }` <br /> `zero { }` |
+| `one`| Quantity is 1     | `=1 { }` <br /> `one { }`  |
+| `two`| Quantity is 2     | `=2 { }` <br /> `two { }`  |
+| `few`| Quantity is 2 or more      | `few { }`|
+| `many`        | Quantity is a large number | `many { }`        |
+| `other`       | The default quantity       | `other { }`       |
 
 If none of the pluralization categories match, Angular uses `other` to match the standard fallback for a missing category.
 
@@ -357,12 +357,12 @@ The following code example shows how to use the `plural` clause to express the p
 
 Review the following details in the previous code example.
 
-| Parameters                        | Details|
-|:---                               |:---    |
-| `minutes`                         | The first parameter specifies the component property is `minutes` and determines the number of minutes.               |
-| `plural`                          | The second parameter specifies the ICU clause is `plural`.                                                            |
-| `=0 {just now}`                   | For zero minutes, the pluralization category is `=0`. The value is `just now`.                                        |
-| `=1 {one minute}`                 | For one minute, the pluralization category is `=1`. The value is `one minute`.                                        |
+| Parameters      | Details|
+|:---    |:---    |
+| `minutes`       | The first parameter specifies the component property is `minutes` and determines the number of minutes.      |
+| `plural`        | The second parameter specifies the ICU clause is `plural`.      |
+| `=0 {just now}` | For zero minutes, the pluralization category is `=0`. The value is `just now`.    |
+| `=1 {one minute}`        | For one minute, the pluralization category is `=1`. The value is `one minute`.    |
 | `other {{{minutes}} minutes ago}` | For any unmatched cardinality, the default pluralization category is `other`. The value is `{{minutes}} minutes ago`. |
 
 `{{minutes}}` is an [interpolation][AioGuideGlossaryInterpolation].
@@ -438,7 +438,7 @@ The following code example shows how to bind the `gender` property of the compon
 The `gender` property binds the outputs to each of following string values.
 
 | Value  | English value |
-|:---    |:---           |
+|:---    |:---  |
 | female | `female`      |
 | male   | `male`        |
 | other  | `other`       |

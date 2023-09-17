@@ -16,10 +16,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
 
 import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-
-
-@NgModule({
+import { isPlatformBrowser } from '@angular/common';@NgModule({
   imports: [
     BrowserModule,
     FormsModule,

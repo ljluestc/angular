@@ -130,12 +130,12 @@ The [workspace configuration][AioGuideWorkspaceConfig] file, `angular.json`, con
 Angular uses capitalization conventions to distinguish the names of various types, as described in the [naming guidelines section][AioGuideStyleguide0201] of the Style Guide.
 Here is a summary of the case types:
 
-|                                                                           | Details                                                                                                                                                                      | example             |
-|:---                                                                       |:---                                                                                                                                                                          |:---                 |
-| camelCase                                                                 | Symbols, properties, methods, pipe names, non-component directive selectors, constants. <br /> Standard or lower camel case uses lowercase on the first letter of the item.  | `selectedHero`      |
-| UpperCamelCase <br /> PascalCase                                          | Class names, including classes that define components, interfaces, NgModules, directives, and pipes. <br /> Upper camel case uses uppercase on the first letter of the item. | `HeroComponent` |
-| dash-case <br /> kebab-case                                               | Descriptive part of file names, component selectors.                                                                                                                         | `app-hero-list`     |
-| underscore_case <br /> snake_case                                         | Not typically used in Angular. <br /> Snake case uses words connected with underscores.                                                                                      | `convert_link_mode` |
+|| Details | example             |
+|:---           |:---     |:---  |
+| camelCase     | Symbols, properties, methods, pipe names, non-component directive selectors, constants. <br /> Standard or lower camel case uses lowercase on the first letter of the item.  | `selectedHero`      |
+| UpperCamelCase <br /> PascalCase            | Class names, including classes that define components, interfaces, NgModules, directives, and pipes. <br /> Upper camel case uses uppercase on the first letter of the item. | `HeroComponent` |
+| dash-case <br /> kebab-case  | Descriptive part of file names, component selectors. | `app-hero-list`     |
+| underscore_case <br /> snake_case           | Not typically used in Angular. <br /> Snake case uses words connected with underscores.           | `convert_link_mode` |
 | UPPER_UNDERSCORE_CASE <br /> UPPER_SNAKE_CASE <br /> SCREAMING_SNAKE_CASE | Traditional for constants. <br /> This case is acceptable, but camelCase is preferred. <br /> Upper snake case uses words in all capital letters connected with underscores. | `FIX_ME`            |
 
 ## change detection
@@ -472,16 +472,16 @@ For example, the `OnInit` interface has a hook method named `ngOnInit`.
 
 Angular runs these hook methods in the following order:
 
-|     | hook method             | Details                                                                                           |
-|:--- |:---                     |:---                                                                                               |
+|     | hook method             | Details |
+|:--- |:---      |:---     |
 | 1   | `ngOnChanges`           | When an [input][AioGuideGlossaryInput] or [output][AioGuideGlossaryOutput] binding value changes. |
-| 2   | `ngOnInit`              | After the first `ngOnChanges`.                                                                    |
-| 3   | `ngDoCheck`             | Developer's custom change detection.                                                              |
-| 4   | `ngAfterContentInit`    | After component content initialized.                                                              |
-| 5   | `ngAfterContentChecked` | After every check of component content.                                                           |
-| 6   | `ngAfterViewInit`       | After the views of a component are initialized.                                                   |
-| 7   | `ngAfterViewChecked`    | After every check of the views of a component.                                                    |
-| 8   | `ngOnDestroy`           | Just before the directive is destroyed.                                                           |
+| 2   | `ngOnInit`              | After the first `ngOnChanges`.        |
+| 3   | `ngDoCheck`             | Developer's custom change detection.  |
+| 4   | `ngAfterContentInit`    | After component content initialized.  |
+| 5   | `ngAfterContentChecked` | After every check of component content.              |
+| 6   | `ngAfterViewInit`       | After the views of a component are initialized.      |
+| 7   | `ngAfterViewChecked`    | After every check of the views of a component.       |
+| 8   | `ngOnDestroy`           | Just before the directive is destroyed.              |
 
 To learn more, see [Lifecycle Hooks][AioGuideLifecycleHooks].
 

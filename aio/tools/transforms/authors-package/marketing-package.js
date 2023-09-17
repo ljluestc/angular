@@ -12,32 +12,29 @@ const baseAuthoringPackage = require('./base-authoring-package');
 
 function createPackage() {
   return new Package('author-marketing', [baseAuthoringPackage, contentPackage])
-    .config(function(readFilesProcessor) {
-      readFilesProcessor.sourceFiles = [
-        {
-          basePath: CONTENTS_PATH + '/marketing',
-          include: CONTENTS_PATH + '/marketing/**/*.{html,md}',
-          fileReader: 'contentFileReader'
-        },
-        {
-          basePath: CONTENTS_PATH,
-          include: CONTENTS_PATH + '/*.md',
-          exclude: [CONTENTS_PATH + '/index.md'],
-          fileReader: 'contentFileReader'
-        },
-        {
-          basePath: CONTENTS_PATH,
-          include: CONTENTS_PATH + '/marketing/*.json',
-          fileReader: 'jsonFileReader'
-        },
-        {
-          basePath: CONTENTS_PATH,
-          include: CONTENTS_PATH + '/navigation.json',
-          fileReader: 'jsonFileReader'
-        },
-      ];
-    });
-}
-
-
-module.exports = { createPackage };
+.config(function(readFilesProcessor) {
+  readFilesProcessor.sourceFiles = [
+{
+  basePath: CONTENTS_PATH + '/marketing',
+  include: CONTENTS_PATH + '/marketing/**/*.{html,md}',
+  fileReader: 'contentFileReader'
+},
+{
+  basePath: CONTENTS_PATH,
+  include: CONTENTS_PATH + '/*.md',
+  exclude: [CONTENTS_PATH + '/index.md'],
+  fileReader: 'contentFileReader'
+},
+{
+  basePath: CONTENTS_PATH,
+  include: CONTENTS_PATH + '/marketing/*.json',
+  fileReader: 'jsonFileReader'
+},
+{
+  basePath: CONTENTS_PATH,
+  include: CONTENTS_PATH + '/navigation.json',
+  fileReader: 'jsonFileReader'
+},
+  ];
+});
+}module.exports = { createPackage };

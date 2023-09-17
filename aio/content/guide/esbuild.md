@@ -102,7 +102,7 @@ The build will generate a warning to notify you that there is a potential proble
 
     src/main.ts:2:12:
       2 │ console.log(moment().format());
-        ╵             ~~~~~~
+        ╵    ~~~~~~
 
 Consider changing "moment" to a default import instead:
 

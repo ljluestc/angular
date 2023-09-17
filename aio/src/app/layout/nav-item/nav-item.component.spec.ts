@@ -32,7 +32,7 @@ describe('NavItemComponent', () => {
 
       // Selected nodes is the selected node and its header ancestors
       selectedNodes = [
-        { title: 'a' },           // selected node: an item or a header
+        { title: 'a' },  // selected node: an item or a header
         { title: 'parent' },      // selected node's header parent
         { title: 'grandparent' }, // selected node's header grandparent
       ];
@@ -175,9 +175,9 @@ describe('NavItemComponent', () => {
       component.node = {
         title: 'x',
         children: [
-          { title: 'a' },
-          { title: 'b', hidden: true},
-          { title: 'c' }
+ { title: 'a' },
+ { title: 'b', hidden: true},
+ { title: 'c' }
         ]
       };
     });

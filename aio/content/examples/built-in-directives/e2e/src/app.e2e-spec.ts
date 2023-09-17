@@ -16,10 +16,7 @@ describe('Built-in Directives', () => {
     expect(await firstLabel.getText()).toEqual('Current item name: Teapot');
     await firstInput.sendKeys('abc');
     expect(await firstLabel.getText()).toEqual('Current item name: Teapotabc');
-  });
-
-
-  it('should modify sentence when modified checkbox checked', async () => {
+  });  it('should modify sentence when modified checkbox checked', async () => {
     const modifiedChkbxLabel = element.all(by.css('input[type="checkbox"]')).get(1);
     const modifiedSentence = element.all(by.css('div')).get(1);
 

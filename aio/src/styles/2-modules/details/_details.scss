@@ -61,7 +61,7 @@ details {
         display: initial;
 
         @at-root #{selector.replace(&, 'details', 'details[open]')} {
-          display: none;
+ display: none;
         }
       }
 
@@ -69,7 +69,7 @@ details {
         display: none;
 
         @at-root #{selector.replace(&, 'details', 'details[open]')} {
-          display: initial;
+ display: initial;
         }
       }
 
@@ -78,7 +78,7 @@ details {
         @include mixins.rotate(0deg);
 
         @at-root #{selector.replace(&, 'details', 'details[open]')} {
-          @include mixins.rotate(180deg);
+ @include mixins.rotate(180deg);
         }
       }
     }

@@ -5,10 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularJSComponent } from './angular-js/angular-js.component';
 import { HomeComponent } from './home/home.component';
-import { App404Component } from './app404/app404.component';
-
-
-@NgModule({
+import { App404Component } from './app404/app404.component';@NgModule({
   declarations: [
     AppComponent,
     AngularJSComponent,

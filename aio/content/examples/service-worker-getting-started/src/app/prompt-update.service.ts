@@ -17,10 +17,10 @@ export class PromptUpdateService {
     swUpdate.versionUpdates
         .pipe(filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'))
         .subscribe(evt => {
-          if (promptUser(evt)) {
-            // Reload the page to update to the latest version.
-            document.location.reload();
-          }
+ if (promptUser(evt)) {
+   // Reload the page to update to the latest version.
+   document.location.reload();
+ }
         });
     // #enddocregion sw-version-ready
     // #docregion sw-replicate-available
@@ -28,9 +28,9 @@ export class PromptUpdateService {
     const updatesAvailable = swUpdate.versionUpdates.pipe(
         filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'),
         map(evt => ({
-          type: 'UPDATE_AVAILABLE',
-          current: evt.currentVersion,
-          available: evt.latestVersion,
+ type: 'UPDATE_AVAILABLE',
+ current: evt.currentVersion,
+ available: evt.latestVersion,
         })));
     // #enddocregion sw-replicate-available
     // #docregion sw-version-ready

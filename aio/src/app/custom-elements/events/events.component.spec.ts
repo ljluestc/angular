@@ -48,10 +48,10 @@ describe('EventsComponent', () => {
       ]);
 
       expect(component.pastEvents.map(evt => evt.name)).toEqual(jasmine.arrayWithExactContents(
-          ['Past event 1', 'Past event 2', 'Past event 3']));
+ ['Past event 1', 'Past event 2', 'Past event 3']));
 
       expect(component.upcomingEvents.map(evt => evt.name)).toEqual(jasmine.arrayWithExactContents(
-          ['Upcoming event 1', 'Upcoming event 2', 'Upcoming event 3']));
+ ['Upcoming event 1', 'Upcoming event 2', 'Upcoming event 3']));
     });
 
     it('should order past events in reverse chronological order', () => {
@@ -63,7 +63,7 @@ describe('EventsComponent', () => {
       ]);
 
       expect(component.pastEvents.map(evt => evt.name)).toEqual(
-          ['Past event 4', 'Past event 3', 'Past event 2', 'Past event 1']);
+ ['Past event 4', 'Past event 3', 'Past event 2', 'Past event 1']);
     });
 
     it('should order upcoming events in chronological order', () => {
@@ -75,7 +75,7 @@ describe('EventsComponent', () => {
       ]);
 
       expect(component.upcomingEvents.map(evt => evt.name)).toEqual(
-          ['Upcoming event 1', 'Upcoming event 2', 'Upcoming event 3', 'Upcoming event 4']);
+ ['Upcoming event 1', 'Upcoming event 2', 'Upcoming event 3', 'Upcoming event 4']);
     });
 
     it('should treat ongoing events as upcoming', () => {
@@ -85,7 +85,7 @@ describe('EventsComponent', () => {
 
       expect(component.pastEvents).toEqual([]);
       expect(component.upcomingEvents.map(evt => evt.name)).toEqual(jasmine.arrayWithExactContents(
-          ['Ongoing event 1']));
+ ['Ongoing event 1']));
     });
   });
 

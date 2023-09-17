@@ -7,7 +7,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { RouterModule } from '@angular/router';
 
 import { HashLocationStrategy,
-         LocationStrategy } from '@angular/common';
+LocationStrategy } from '@angular/common';
 
 import { HeroData } from '../app/hero-data';
 import { AppComponent } from '../app/app.component';

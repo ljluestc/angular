@@ -49,10 +49,10 @@ Here's an example of basic metadata for `HeroListComponent`.
 This example shows some of the most useful `@Component` configuration options:
 
 | Configuration options | Details |
-|:---                   |:---     |
-| `selector`            | A CSS selector that tells Angular to create and insert an instance of this component wherever it finds the corresponding tag in template HTML. For example, if an application's HTML contains `<app-hero-list></app-hero-list>`, then Angular inserts an instance of the `HeroListComponent` view between those tags. |
-| `templateUrl`         | The module-relative address of this component's HTML template. Alternatively, you can provide the HTML template inline, as the value of the `template` property. This template defines the component's *host view*.                                                                                                  |
-| `providers`           | An array of [providers](guide/glossary#provider) for services that the component requires. In the example, this tells Angular how to provide the `HeroService` instance that the component's constructor uses to get the list of heroes to display.                                                                   |
+|:---    |:---     |
+| `selector`   | A CSS selector that tells Angular to create and insert an instance of this component wherever it finds the corresponding tag in template HTML. For example, if an application's HTML contains `<app-hero-list></app-hero-list>`, then Angular inserts an instance of the `HeroListComponent` view between those tags. |
+| `templateUrl`| The module-relative address of this component's HTML template. Alternatively, you can provide the HTML template inline, as the value of the `template` property. This template defines the component's *host view*.        |
+| `providers`  | An array of [providers](guide/glossary#provider) for services that the component requires. In the example, this tells Angular how to provide the `HeroService` instance that the component's constructor uses to get the list of heroes to display.       |
 
 ## Templates and views
 
@@ -119,11 +119,11 @@ This example from the `HeroListComponent` template uses three of these forms.
 
 <code-example header="src/app/hero-list.component.html (binding)" path="architecture/src/app/hero-list.component.1.html" region="binding"></code-example>
 
-| Data bindings                                                            | Details |
-|:---                                                                      |:---     |
-| `[hero]` [property binding](guide/property-binding)                      | Passes the value of `selectedHero` from the parent `HeroListComponent` to the `hero` property of the child `HeroDetailComponent`. |
-| `(click)` [event binding](guide/user-input#binding-to-user-input-events) | Calls the component's `selectHero` method when the user clicks a hero's name.                                                     |
-| `{{hero.name}}` [interpolation](guide/interpolation)                     | Displays the component's `hero.name` property value within the `<button>` element.                                                |
+| Data bindings| Details |
+|:--- |:---     |
+| `[hero]` [property binding](guide/property-binding)       | Passes the value of `selectedHero` from the parent `HeroListComponent` to the `hero` property of the child `HeroDetailComponent`. |
+| `(click)` [event binding](guide/user-input#binding-to-user-input-events) | Calls the component's `selectHero` method when the user clicks a hero's name.        |
+| `{{hero.name}}` [interpolation](guide/interpolation)      | Displays the component's `hero.name` property value within the `<button>` element.   |
 
 Two-way data binding \(used mainly in [template-driven forms](guide/forms)\) combines property and event binding in a single notation.
 Here's an example from the `HeroDetailComponent` template that uses two-way data binding with the `ngModel` directive.
@@ -210,8 +210,8 @@ The example template uses two built-in structural directives to add application 
 
 <code-example header="src/app/hero-list.component.html (structural)" path="architecture/src/app/hero-list.component.1.html" region="structural"></code-example>
 
-| Directives                                  | Details |
-|:---                                         |:---     |
+| Directives    | Details |
+|:---  |:---     |
 | [`*ngFor`](guide/built-in-directives#ngFor) | An *iterative*, which tells Angular to create one `<li>` per hero in the `heroes` list. |
 | [`*ngIf`](guide/built-in-directives#ngIf)   | A *conditional*, which includes the `HeroDetail` component only if a selected hero exists. |
 

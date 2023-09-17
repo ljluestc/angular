@@ -8,13 +8,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "todo_example_template.js",
-              "generated": "todo_example.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "todo_example_template.js",
+     "generated": "todo_example.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     }

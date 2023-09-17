@@ -6,7 +6,7 @@
 module.exports = function ignoreHttpInUrls() {
   const ignoredSchemes = ['http', 'https'];
   return (docs, words, index) => {
-    const httpInUrl = ignoredSchemes.includes(words[index]) && (words[index + 1] === '://');
-    return httpInUrl ? [] : docs;
+const httpInUrl = ignoredSchemes.includes(words[index]) && (words[index + 1] === '://');
+return httpInUrl ? [] : docs;
   };
 };

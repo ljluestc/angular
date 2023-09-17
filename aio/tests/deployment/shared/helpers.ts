@@ -9,10 +9,7 @@ import {get as httpsGet} from 'https';
 import {fileURLToPath} from 'url';
 
 import {processNavigationUrls} from '../../../../packages/service-worker/config/src/generator';
-import {FirebaseRedirectConfig, FirebaseRedirector} from '../../../tools/firebase-test-utils/FirebaseRedirector';
-
-
-const AIO_DIR = canonicalPath.resolve('aio');
+import {FirebaseRedirectConfig, FirebaseRedirector} from '../../../tools/firebase-test-utils/FirebaseRedirector';const AIO_DIR = canonicalPath.resolve('aio');
 const containingDir = canonicalPath.dirname(fileURLToPath(import.meta.url));
 
 export const PATH_TO_LEGACY_URLS = canonicalPath.resolve(containingDir, 'URLS_TO_REDIRECT.txt');
@@ -44,9 +41,9 @@ export function loadRedirects(): FirebaseRedirectConfig[] {
 
 export function loadLegacyUrls() {
   const urls = readFileSync(PATH_TO_LEGACY_URLS, 'utf8')
-                   .split('\n')
-                   .filter(line => line.trim() !== '')
-                   .map(line => line.split(/\s*-->\s*/));
+ .split('\n')
+ .filter(line => line.trim() !== '')
+ .map(line => line.split(/\s*-->\s*/));
   return urls;
 }
 
@@ -65,8 +62,8 @@ export async function loadRemoteSitemapUrls(host: string) {
     let responseText = '';
     get(urlToSiteMap,
         res => res.on('data', chunk => responseText += chunk)
-                   .on('end', () => resolve(responseText))
-                   .on('error', reject));
+ .on('end', () => resolve(responseText))
+ .on('error', reject));
   });
 
   return extractSitemapUrls(xml);

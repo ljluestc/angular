@@ -12,16 +12,16 @@
       },
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "inline_template_non_legacy_normalized.js",
-              "expected": "inline_template_non_legacy.js"
-            }
-          ],
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "files": [
+   {
+     "generated": "inline_template_non_legacy_normalized.js",
+     "expected": "inline_template_non_legacy.js"
+   }
+ ],
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -37,16 +37,16 @@
       },
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "inline_template_non_legacy_non_normalized.js",
-              "expected": "inline_template_non_legacy.js"
-            }
-          ],
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "files": [
+   {
+     "generated": "inline_template_non_legacy_non_normalized.js",
+     "expected": "inline_template_non_legacy.js"
+   }
+ ],
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -62,16 +62,16 @@
       },
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "external_template_non_legacy_normalized.js",
-              "expected": "external_template_non_legacy.js"
-            }
-          ],
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "files": [
+   {
+     "generated": "external_template_non_legacy_normalized.js",
+     "expected": "external_template_non_legacy.js"
+   }
+ ],
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -87,16 +87,16 @@
       },
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "external_template_non_legacy_non_normalized.js",
-              "expected": "external_template_non_legacy.js"
-            }
-          ],
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "files": [
+   {
+     "generated": "external_template_non_legacy_non_normalized.js",
+     "expected": "external_template_non_legacy.js"
+   }
+ ],
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -115,16 +115,16 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "inline_template_legacy_normalized.js",
-              "expected": "inline_template_legacy.js"
-            }
-          ],
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "files": [
+   {
+     "generated": "inline_template_legacy_normalized.js",
+     "expected": "inline_template_legacy.js"
+   }
+ ],
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -143,16 +143,16 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "inline_template_legacy_non_normalized.js",
-              "expected": "inline_template_legacy.js"
-            }
-          ],
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "files": [
+   {
+     "generated": "inline_template_legacy_non_normalized.js",
+     "expected": "inline_template_legacy.js"
+   }
+ ],
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -171,10 +171,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -193,10 +193,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true

@@ -47,11 +47,11 @@ export class DoCheckComponent implements DoCheck {
         const count = this.noChangeCount += 1;
         const noChangeMsg = `DoCheck called ${count}x when no change to hero or power`;
         if (count === 1) {
-          // add new "no change" message
-          this.changeLog.push(noChangeMsg);
+ // add new "no change" message
+ this.changeLog.push(noChangeMsg);
         } else {
-          // update last "no change" message
-          this.changeLog[this.changeLog.length - 1] = noChangeMsg;
+ // update last "no change" message
+ this.changeLog[this.changeLog.length - 1] = noChangeMsg;
         }
     }
 

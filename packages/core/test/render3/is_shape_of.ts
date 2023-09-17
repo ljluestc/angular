@@ -4,13 +4,9 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-import {TI18n, TIcu} from '@angular/core/src/render3/interfaces/i18n';
+ */import {TI18n, TIcu} from '@angular/core/src/render3/interfaces/i18n';
 import {TNode} from '@angular/core/src/render3/interfaces/node';
-import {TView} from '@angular/core/src/render3/interfaces/view';
-
-/**
+import {TView} from '@angular/core/src/render3/interfaces/view';/**
  * A type used to create a runtime representation of a shape of object which matches the declared
  * interface at compile time.
  *
@@ -45,9 +41,7 @@ import {TView} from '@angular/core/src/render3/interfaces/view';
  */
 export type ShapeOf<T> = {
   [P in keyof T]: true;
-};
-
-/**
+};/**
  * Determines if a particular object is of a given shape (duck-type version of `instanceof`.)
  *
  * ```
@@ -64,9 +58,7 @@ export function isShapeOf<T>(obj: any, shapeOf: ShapeOf<T>): obj is T {
     return Object.keys(shapeOf).every((key) => obj.hasOwnProperty(key));
   }
   return false;
-}
-
-/**
+}/**
  * Determines if `obj` matches the shape `TI18n`.
  * @param obj
  */
@@ -76,10 +68,7 @@ export function isTI18n(obj: any): obj is TI18n {
 const ShapeOfTI18n: ShapeOf<TI18n> = {
   create: true,
   update: true,
-};
-
-
-/**
+};/**
  * Determines if `obj` matches the shape `TIcu`.
  * @param obj
  */
@@ -94,10 +83,7 @@ const ShapeOfTIcu: ShapeOf<TIcu> = {
   create: true,
   remove: true,
   update: true
-};
-
-
-/**
+};/**
  * Determines if `obj` matches the shape `TView`.
  * @param obj
  */
@@ -136,10 +122,7 @@ const ShapeOfTView: ShapeOf<TView> = {
   consts: true,
   incompleteFirstPass: true,
   ssrId: true,
-};
-
-
-/**
+};/**
  * Determines if `obj` matches the shape `TI18n`.
  * @param obj
  */
@@ -180,23 +163,17 @@ const ShapeOfTNode: ShapeOf<TNode> = {
   residualClasses: true,
   classBindings: true,
   styleBindings: true,
-};
-
-/**
+};/**
  * Determines if `obj` is DOM `Node`.
  */
 export function isDOMNode(obj: any): obj is Node {
   return obj instanceof Node;
-}
-
-/**
+}/**
  * Determines if `obj` is DOM `Text`.
  */
 export function isDOMElement(obj: any): obj is Element {
   return obj instanceof Element;
-}
-
-/**
+}/**
  * Determines if `obj` is DOM `Text`.
  */
 export function isDOMText(obj: any): obj is Text {

@@ -85,10 +85,7 @@ function makeRequest(url: string, callback: (response: any) => void): void {
   };
   searchDataRequest.open('GET', url);
   searchDataRequest.send();
-}
-
-
-// Create the search index from the searchInfo which contains the information about each page to be
+}// Create the search index from the searchInfo which contains the information about each page to be
 // indexed
 function loadIndex({dictionary, pages}: EncodedPages): IndexLoader {
   const dictionaryArray = dictionary.split(' ');

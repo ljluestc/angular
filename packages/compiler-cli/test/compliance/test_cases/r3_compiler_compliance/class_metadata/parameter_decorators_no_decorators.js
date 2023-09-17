@@ -2,10 +2,10 @@ NoDecorators.ɵfac = …;
 NoDecorators.ɵprov = …;
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && $i0$.ɵsetClassMetadata(NoDecorators, [{
-    type: Injectable
+type: Injectable
   }], function () {
-    return [{
-      type: Service
-    }];
+return [{
+  type: Service
+}];
   }, null);
 })();

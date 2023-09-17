@@ -11,7 +11,7 @@ describe('phoneList', () => {
     beforeEach(inject(($componentController: any, _$httpBackend_: angular.IHttpBackendService) => {
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('phones/phones.json')
-                  .respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+.respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
 
       ctrl = $componentController('phoneList');
     }));

@@ -4,15 +4,9 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-/// <reference types="jasmine" />
-
-/**
+ *//// <reference types="jasmine" />/**
  * @module
  * @description
  * Entry point for all public APIs of this package.
  */
-export * from './src/testing';
-
-// This file only reexports content of the `src` folder. Keep it that way.
+export * from './src/testing';// This file only reexports content of the `src` folder. Keep it that way.

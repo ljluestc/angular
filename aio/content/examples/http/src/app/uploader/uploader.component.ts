@@ -22,8 +22,8 @@ export class UploaderComponent {
     if (file) {
       this.uploaderService.upload(file).subscribe(
         msg => {
-          input.value = '';
-          this.message = msg;
+ input.value = '';
+ this.message = msg;
         }
       );
     }

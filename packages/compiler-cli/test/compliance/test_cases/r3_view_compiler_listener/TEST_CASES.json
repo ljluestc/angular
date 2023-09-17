@@ -8,13 +8,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "element_listener_template.js",
-              "generated": "element_listener.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "element_listener_template.js",
+     "generated": "element_listener.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -25,13 +25,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "component_listener_template.js",
-              "generated": "component_listener.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "component_listener_template.js",
+     "generated": "component_listener.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -42,13 +42,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "shared_snapshot_listeners_template.js",
-              "generated": "shared_snapshot_listeners.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "shared_snapshot_listeners_template.js",
+     "generated": "shared_snapshot_listeners.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -59,22 +59,22 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "local_ref_before_listener_template.js",
-              "generated": "local_ref_before_listener.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "local_ref_before_listener_template.js",
+     "generated": "local_ref_before_listener.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         },
         {
-          "files": [
-            {
-              "expected": "local_ref_before_listener_factory.js",
-              "generated": "local_ref_before_listener.js"
-            }
-          ],
-          "failureMessage": "Incorrect factory"
+ "files": [
+   {
+     "expected": "local_ref_before_listener_factory.js",
+     "generated": "local_ref_before_listener.js"
+   }
+ ],
+ "failureMessage": "Incorrect factory"
         }
       ],
       "skipForTemplatePipeline": true
@@ -86,13 +86,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "same_element_chained_listeners_template.js",
-              "generated": "same_element_chained_listeners.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "same_element_chained_listeners_template.js",
+     "generated": "same_element_chained_listeners.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -103,13 +103,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "cross_element_chained_listeners_template.js",
-              "generated": "cross_element_chained_listeners.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "cross_element_chained_listeners_template.js",
+     "generated": "cross_element_chained_listeners.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -120,13 +120,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "template_chained_listeners_template.js",
-              "generated": "template_chained_listeners.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "template_chained_listeners_template.js",
+     "generated": "template_chained_listeners.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -138,13 +138,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "no_event_arg_listener_template.js",
-              "generated": "no_event_arg_listener.js"
-            }
-          ],
-          "failureMessage": "Incorrect event listener"
+ "files": [
+   {
+     "expected": "no_event_arg_listener_template.js",
+     "generated": "no_event_arg_listener.js"
+   }
+ ],
+ "failureMessage": "Incorrect event listener"
         }
       ]
     },
@@ -155,13 +155,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "no_event_arg_host_listener_host_bindings.js",
-              "generated": "no_event_arg_host_listener.js"
-            }
-          ],
-          "failureMessage": "Incorrect event listener"
+ "files": [
+   {
+     "expected": "no_event_arg_host_listener_host_bindings.js",
+     "generated": "no_event_arg_host_listener.js"
+   }
+ ],
+ "failureMessage": "Incorrect event listener"
         }
       ]
     },
@@ -172,13 +172,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "has_event_arg_host_listener_host_bindings.js",
-              "generated": "has_event_arg_host_listener.js"
-            }
-          ],
-          "failureMessage": "Incorrect event listener"
+ "files": [
+   {
+     "expected": "has_event_arg_host_listener_host_bindings.js",
+     "generated": "has_event_arg_host_listener.js"
+   }
+ ],
+ "failureMessage": "Incorrect event listener"
         }
       ]
     },
@@ -189,13 +189,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "event_arg_listener_implicit_meaning_template.js",
-              "generated": "event_arg_listener_implicit_meaning.js"
-            }
-          ],
-          "failureMessage": "Incorrect event listener"
+ "files": [
+   {
+     "expected": "event_arg_listener_implicit_meaning_template.js",
+     "generated": "event_arg_listener_implicit_meaning.js"
+   }
+ ],
+ "failureMessage": "Incorrect event listener"
         }
       ]
     },
@@ -206,12 +206,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "event_explicit_access_template.js",
-              "generated": "event_explicit_access.js"
-            }
-          ]
+ "files": [
+   {
+     "expected": "event_explicit_access_template.js",
+     "generated": "event_explicit_access.js"
+   }
+ ]
         }
       ]
     },
@@ -222,13 +222,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "event_in_property_binding_template.js",
-              "generated": "event_in_property_binding.js"
-            }
-          ],
-          "failureMessage": "Incorrect property binding"
+ "files": [
+   {
+     "expected": "event_in_property_binding_template.js",
+     "generated": "event_in_property_binding.js"
+   }
+ ],
+ "failureMessage": "Incorrect property binding"
         }
       ]
     },
@@ -239,13 +239,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "event_arg_host_listener_implicit_meaning_host_bindings.js",
-              "generated": "event_arg_host_listener_implicit_meaning.js"
-            }
-          ],
-          "failureMessage": "Incorrect event listener"
+ "files": [
+   {
+     "expected": "event_arg_host_listener_implicit_meaning_host_bindings.js",
+     "generated": "event_arg_host_listener_implicit_meaning.js"
+   }
+ ],
+ "failureMessage": "Incorrect event listener"
         }
       ]
     },
@@ -256,13 +256,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "event_host_explicit_access_host_bindings.js",
-              "generated": "event_host_explicit_access.js"
-            }
-          ],
-          "failureMessage": "Incorrect event listener"
+ "files": [
+   {
+     "expected": "event_host_explicit_access_host_bindings.js",
+     "generated": "event_host_explicit_access.js"
+   }
+ ],
+ "failureMessage": "Incorrect event listener"
         }
       ]
     },
@@ -273,13 +273,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "implicit_receiver_keyed_write_inside_template_template.js",
-              "generated": "implicit_receiver_keyed_write_inside_template.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "implicit_receiver_keyed_write_inside_template_template.js",
+     "generated": "implicit_receiver_keyed_write_inside_template.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -291,13 +291,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "embedded_view_listener_context_template.js",
-              "generated": "embedded_view_listener_context.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "embedded_view_listener_context_template.js",
+     "generated": "embedded_view_listener_context.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true

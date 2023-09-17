@@ -12,21 +12,21 @@ const baseAuthoringPackage = require('./base-authoring-package');
 
 function createPackage() {
   return new Package('author-errors', [baseAuthoringPackage, errorsPackage])
-    .config(function(readFilesProcessor) {
-      readFilesProcessor.sourceFiles = [
-        {
-          basePath: CONTENTS_PATH,
-          include: `${CONTENTS_PATH}/errors/index.md`,
-          fileReader: 'contentFileReader',
-        },
-        {
-          basePath: CONTENTS_PATH,
-          include: `${CONTENTS_PATH}/errors/**/*.md`,
-          exclude: `${CONTENTS_PATH}/errors/index.md`,
-          fileReader: 'errorFileReader',
-        },
-      ];
-    });
+.config(function(readFilesProcessor) {
+  readFilesProcessor.sourceFiles = [
+{
+  basePath: CONTENTS_PATH,
+  include: `${CONTENTS_PATH}/errors/index.md`,
+  fileReader: 'contentFileReader',
+},
+{
+  basePath: CONTENTS_PATH,
+  include: `${CONTENTS_PATH}/errors/**/*.md`,
+  exclude: `${CONTENTS_PATH}/errors/index.md`,
+  fileReader: 'errorFileReader',
+},
+  ];
+});
 }
 
 module.exports = {createPackage};

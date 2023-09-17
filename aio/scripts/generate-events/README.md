@@ -1,9 +1,6 @@
 # Generating data for `angular.io/events`
 
-This document and the contents of this directory contain information and source code related to generating data for the [angular.io Events page](https://angular.io/events).
-
-
-## Directory contents
+This document and the contents of this directory contain information and source code related to generating data for the [angular.io Events page](https://angular.io/events).## Directory contents
 
 The following list gives a brief description of the contents of this directory and their purpose.
 For more details see the following sections.
@@ -11,10 +8,7 @@ For more details see the following sections.
 - `apps-script-extension/`:
   The source code for the Apps Script extension that needs to be added to the Google Sheet spreadsheet.
 - `index.mjs`:
-  The script for retrieving the data from the Firebase database and generating the `events.json` file for angular.io.
-
-
-## Background
+  The script for retrieving the data from the Firebase database and generating the `events.json` file for angular.io.## Background
 
 The "Events" page on angular.io has two sections: One for upcoming events and one for past events.
 
@@ -29,25 +23,16 @@ This document describes the latest, revised process for generating the events da
 - Minimizing the manual overhead.
 - Avoiding data duplication.
 - Ensuring the freshness of the data on angular.io.
-- Minimizing changes to the current DevRel team workflow.
+- Minimizing changes to the current DevRel team workflow.## The current process
 
-
-## The current process
-
-This section describes the current setup and process for generating events data for angular.io.
-
-
-### Overview
+This section describes the current setup and process for generating events data for angular.io.### Overview
 
 In a nutshell, the setup can be summarized as follows:
 
 1. The DevRel team keeps information about events in a Google Sheets spreadsheet (in the appropriate format).
 2. An Apps Script extension on the spreadsheet periodically saves the relevant information (such as event names and dates) in a Firebase Realtime Database.
 3. There is a script which can query the database and generate `events.json` based on the latest data.
-4. A GitHub Actions periodically runs the script and creates a pull request if there are updates.
-
-
-#### Apps Script extension overview
+4. A GitHub Actions periodically runs the script and creates a pull request if there are updates.#### Apps Script extension overview
 
 In a nutshell, the Apps Script extension works as follows:
 
@@ -56,10 +41,7 @@ In a nutshell, the Apps Script extension works as follows:
 2. A [time-driven trigger](https://developers.google.com/apps-script/guides/triggers/installable#time-driven_triggers) is invoked periodically and checks to see if there are any sheets that have been edited since the last invocation.
   If so, it extracts the event data from each edited sheet and updates the Firebase database.
 
-Useful resource: https://stackoverflow.com/questions/53207906/how-to-integrate-firebase-into-google-apps-script-without-using-deprecated-dat#answer-53211786
-
-
-### How to set up
+Useful resource: https://stackoverflow.com/questions/53207906/how-to-integrate-firebase-into-google-apps-script-without-using-deprecated-dat#answer-53211786### How to set up
 
 1. Have a [Google Sheets](https://www.google.com/sheets/about/) spreadsheet for keeping event information.
   The spreadsheet must follow some format requirements in order for the script to be able to extract event information.
@@ -92,16 +74,10 @@ Useful resource: https://stackoverflow.com/questions/53207906/how-to-integrate-f
 
   _**NOTE:** For this project, there is a [GitHub Action](../../../.github/workflows/update-events.yml) that periodically runs the script and creates a pull request (if necessary)._
 
-8. Ensure that both [constants.gs](./apps-script-extension/constants.js) and [index.mjs](./index.mjs) point to the correct database URL.
-
-
-### How to update
+8. Ensure that both [constants.gs](./apps-script-extension/constants.js) and [index.mjs](./index.mjs) point to the correct database URL.### How to update
 
 Although the source code in [apps-script-extension/](./apps-script-extension/) and the actual code used in the spreadsheet are independent, it is advised for versioning purposes to keep the two in sync.
-Whenever a change is needed to be made to the Apps Script extension, the change should be applied in both places.
-
-
-### How to debug
+Whenever a change is needed to be made to the Apps Script extension, the change should be applied in both places.### How to debug
 
 If the process does not work as expected, i.e. changes are made to the spreadsheet but no pull request is created to update `event.json`, there are three places where one can look to find out at which point the process breaks:
 
@@ -133,10 +109,7 @@ If the process does not work as expected, i.e. changes are made to the spreadshe
 
   - You can also manually run the action, by clicking the `Run workflow` button.
 
-  _**NOTE:** For this project, you can see runs of the `Update AIO events` GitHub Action [here](https://github.com/angular/angular/actions/workflows/update-events.yml)._
-
-
-### Trade-offs/Alternatives considered
+  _**NOTE:** For this project, you can see runs of the `Update AIO events` GitHub Action [here](https://github.com/angular/angular/actions/workflows/update-events.yml)._### Trade-offs/Alternatives considered
 
 This section describes trade-offs made and alternative implementations/variations that were considered.
 

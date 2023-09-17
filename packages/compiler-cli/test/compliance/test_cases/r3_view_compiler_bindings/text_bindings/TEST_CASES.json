@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect interpolated text binding",
-          "files": [
-            "interpolation.js"
-          ]
+ "failureMessage": "Incorrect interpolated text binding",
+ "files": [
+   "interpolation.js"
+ ]
         }
       ]
     }

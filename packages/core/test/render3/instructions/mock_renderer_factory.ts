@@ -4,32 +4,22 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-import {RendererStyleFlags2, RendererType2} from '@angular/core';
+ */import {RendererStyleFlags2, RendererType2} from '@angular/core';
 import {Renderer, RendererFactory} from '@angular/core/src/render3/interfaces/renderer';
-import {RElement} from '@angular/core/src/render3/interfaces/renderer_dom';
-
-export class MockRendererFactory implements RendererFactory {
+import {RElement} from '@angular/core/src/render3/interfaces/renderer_dom';export class MockRendererFactory implements RendererFactory {
   wasCalled = false;
   createRenderer(hostElement: RElement|null, rendererType: RendererType2|null): Renderer {
     this.wasCalled = true;
     return new MockRenderer();
   }
-}
-
-class MockRenderer implements Renderer {
-  data = {};
-
-  destroyNode: ((node: any) => void)|null = null;
-
-  destroy(): void {}
+}class MockRenderer implements Renderer {
+  data = {};  destroyNode: ((node: any) => void)|null = null;  destroy(): void {}
   createComment(value: string): Comment {
     return document.createComment(value);
   }
   createElement(name: string, namespace?: string|null): RElement {
     return namespace ? document.createElementNS(namespace, name) as unknown as RElement :
-                       document.createElement(name);
+  document.createElement(name);
   }
   createText(value: string): Text {
     return document.createTextNode(value);
@@ -45,7 +35,7 @@ class MockRenderer implements Renderer {
   }
   selectRootElement(selectorOrNode: string|any): RElement {
     return typeof selectorOrNode === 'string' ? document.querySelector(selectorOrNode) :
-                                                selectorOrNode;
+   selectorOrNode;
   }
   parentNode(node: Node): RElement|null {
     return node.parentNode as RElement | null;
@@ -56,9 +46,9 @@ class MockRenderer implements Renderer {
   setAttribute(el: RElement, name: string, value: string, namespace?: string|null): void {
     // set all synthetic attributes as properties
     if (name[0] === '@') {
-      this.setProperty(el, name, value);
+this.setProperty(el, name, value);
     } else {
-      el.setAttribute(name, value);
+el.setAttribute(name, value);
     }
   }
   removeAttribute(el: RElement, name: string, namespace?: string|null): void {}
@@ -70,9 +60,9 @@ class MockRenderer implements Renderer {
   }
   setStyle(el: RElement, style: string, value: any, flags: RendererStyleFlags2): void {
     if (flags & (RendererStyleFlags2.DashCase | RendererStyleFlags2.Important)) {
-      el.style.setProperty(style, value, flags & RendererStyleFlags2.Important ? 'important' : '');
+el.style.setProperty(style, value, flags & RendererStyleFlags2.Important ? 'important' : '');
     } else {
-      el.style.setProperty(style, value);
+el.style.setProperty(style, value);
     }
   }
   removeStyle(el: RElement, style: string, flags?: RendererStyleFlags2): void {
@@ -83,9 +73,7 @@ class MockRenderer implements Renderer {
   }
   setValue(node: Text, value: string): void {
     node.textContent = value;
-  }
-
-  // TODO: Deprecate in favor of addEventListener/removeEventListener
+  }  // TODO: Deprecate in favor of addEventListener/removeEventListener
   listen(target: Node, eventName: string, callback: (event: any) => boolean | void): () => void {
     return () => {};
   }

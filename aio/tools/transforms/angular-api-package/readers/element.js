@@ -15,15 +15,15 @@
  */
 module.exports = function specialElementFileReader() {
   return {
-    name: 'specialElementFileReader',
-    defaultPattern: /\.md$/,
-    getDocs: function(fileInfo) {
-      // We return a single element array because element files only contain one document
-      return [{
-        docType: 'element',
-        name: `<${fileInfo.baseName}>`,
-        content: fileInfo.content,
-      }];
-    }
+name: 'specialElementFileReader',
+defaultPattern: /\.md$/,
+getDocs: function(fileInfo) {
+  // We return a single element array because element files only contain one document
+  return [{
+docType: 'element',
+name: `<${fileInfo.baseName}>`,
+content: fileInfo.content,
+  }];
+}
   };
 };

@@ -59,9 +59,9 @@ Specifies the compilation mode to use.
 The following modes are available:
 
 | Modes       | Details |
-|:---         |:---     |
+|:---|:---     |
 | `'full'`    | Generates fully AOT-compiled code according to the version of Angular that is currently being used. |
-| `'partial'` | Generates code in a stable, but intermediate form suitable for a published library.                 |
+| `'partial'` | Generates code in a stable, but intermediate form suitable for a published library.  |
 
 The default value is `'full'`.
 

@@ -14,12 +14,12 @@
  */
 module.exports = function packageContentFileReader() {
   return {
-    name: 'packageContentFileReader',
-    defaultPattern: /PACKAGE\.md$/,
-    getDocs: function(fileInfo) {
+name: 'packageContentFileReader',
+defaultPattern: /PACKAGE\.md$/,
+getDocs: function(fileInfo) {
 
-      // We return a single element array because content files only contain one document
-      return [{docType: 'package-content', content: fileInfo.content, startingLine: 1}];
-    }
+  // We return a single element array because content files only contain one document
+  return [{docType: 'package-content', content: fileInfo.content, startingLine: 1}];
+}
   };
 };

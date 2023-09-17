@@ -48,7 +48,7 @@ describe('scenarios', () => {
   it('should properly capture classes in TypeScript ES2015 class output', () => {
     const jsFileContent = fs.readFileSync(
         runfiles.resolve(
-            'angular/tools/symbol-extractor/symbol_extractor_spec/es2015_class_output.mjs'),
+   'angular/tools/symbol-extractor/symbol_extractor_spec/es2015_class_output.mjs'),
         'utf8');
     const jsonFileContent =
         fs.readFileSync(path.join(symbolExtractorSpecDir, 'es2015_class_output.json')).toString();

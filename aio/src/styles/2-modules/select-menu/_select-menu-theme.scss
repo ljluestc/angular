@@ -29,12 +29,12 @@
 
       li {
         &:hover, &.current {
-          background-color: if($is-dark-theme, constants.$darkgray, constants.$blue-grey-50);
-          color: f($is-dark-theme, constants.$blue-grey-400, constants.$blue-grey-500);
+ background-color: if($is-dark-theme, constants.$darkgray, constants.$blue-grey-50);
+ color: f($is-dark-theme, constants.$blue-grey-400, constants.$blue-grey-500);
         }
 
         &.selected {
-          background-color: if($is-dark-theme, constants.$darkgray, constants.$blue-grey-100);
+ background-color: if($is-dark-theme, constants.$darkgray, constants.$blue-grey-100);
         }
       }
     }

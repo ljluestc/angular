@@ -39,9 +39,6 @@ describe('logger service', () => {
       expect(errorHandler.handleError).toHaveBeenCalledWith(err);
     });
   });
-});
-
-
-class MockErrorHandler implements ErrorHandler {
+});class MockErrorHandler implements ErrorHandler {
   handleError = jasmine.createSpy('handleError');
 }

@@ -7,6 +7,6 @@ MyComponent.ɵcmp = /*@__PURE__*/ $r3$.ɵɵdefineComponent({
   },
   encapsulation: 2,
   data: {
-    animation: []
+animation: []
   }
 });

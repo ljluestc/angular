@@ -12,9 +12,9 @@ describe('typeahead', () => {
       addEventListener: jasmine
         .createSpy('addEvent')
         .and.callFake((eventName: string, cb: (e: unknown) => void) => {
-          if (eventName === 'input') {
-            triggertInputChange = cb;
-          }
+ if (eventName === 'input') {
+   triggertInputChange = cb;
+ }
         }),
       removeEventListener: jasmine.createSpy('removeEvent'),
     };
@@ -87,11 +87,11 @@ describe('typeahead', () => {
       spyOn(globalThis, 'clearInterval').and.callFake(id => mocked.clearTask(id as MockTask['id']));
       spyOn(globalThis, 'clearTimeout').and.callFake(id => mocked.clearTask(id as MockTask['id']));
       spyOn(globalThis, 'setInterval').and.callFake(
-          ((fn: () => unknown, delay: number, ...args: any[]) =>
-            mocked.createTask(fn, delay, true, ...args)) as typeof setInterval);
+ ((fn: () => unknown, delay: number, ...args: any[]) =>
+   mocked.createTask(fn, delay, true, ...args)) as typeof setInterval);
       spyOn(globalThis, 'setTimeout').and.callFake(
-          ((fn: () => unknown, delay: number, ...args: any[]) =>
-            mocked.createTask(fn, delay, false, ...args)) as typeof setTimeout);
+ ((fn: () => unknown, delay: number, ...args: any[]) =>
+   mocked.createTask(fn, delay, false, ...args)) as typeof setTimeout);
 
       spyOn(Date, 'now').and.callFake(() => mocked.now);
 
@@ -124,7 +124,7 @@ describe('typeahead', () => {
 
     private queueTask(task: MockTask): void {
       const firstLaterTaskIdx = this.tasks.findIndex(
-          otherTask => otherTask.nextTriggerTime > task.nextTriggerTime);
+ otherTask => otherTask.nextTriggerTime > task.nextTriggerTime);
       const newTaskIdx = (firstLaterTaskIdx === -1) ? this.tasks.length : firstLaterTaskIdx;
 
       this.tasks.splice(newTaskIdx, 0, task);
@@ -138,13 +138,13 @@ describe('typeahead', () => {
         this.now = task.nextTriggerTime;
 
         if (task.recurring) {
-          this.queueTask({...task, nextTriggerTime: this.now + task.delay});
+ this.queueTask({...task, nextTriggerTime: this.now + task.delay});
         }
 
         try {
-          task.fn();
+ task.fn();
         } catch (err) {
-          console.error(err);
+ console.error(err);
         }
       }
 

@@ -24,20 +24,20 @@ Components define areas of responsibility in the UI that let you reuse sets of U
 
 A component consists of three things:
 
-| Component Part            | Details |
-|:---                       |:---     |
-| A component class         | Handles data and functionality |
-| An HTML template          | Determines the UI              |
+| Component Part   | Details |
+|:---        |:---     |
+| A component class| Handles data and functionality |
+| An HTML template | Determines the UI     |
 | Component-specific styles | Define the look and feel       |
 
 This guide demonstrates building an application with the following components:
 
-| Components             | Details |
-|:---                    |:---     |
-| `<app-root>`           | The first component to load and the container for the other components |
-| `<app-top-bar>`        | The store name and checkout button                                     |
-| `<app-product-list>`   | The product list                                                       |
-| `<app-product-alerts>` | A component that contains the application's alerts                     |
+| Components    | Details |
+|:---     |:---     |
+| `<app-root>`  | The first component to load and the container for the other components |
+| `<app-top-bar>`        | The store name and checkout button       |
+| `<app-product-list>`   | The product list |
+| `<app-product-alerts>` | A component that contains the application's alerts      |
 
 <div class="lightbox">
 

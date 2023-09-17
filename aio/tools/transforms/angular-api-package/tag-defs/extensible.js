@@ -5,7 +5,7 @@
  */
 module.exports = function() {
   return {
-    name: 'extensible',
-    transforms: function() { return true; }
+name: 'extensible',
+transforms: function() { return true; }
   };
 };

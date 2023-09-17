@@ -95,10 +95,7 @@ describe('Attribute Utilities', () => {
 
     it('should return true for "False" because case-sensitive', () => {
       expect(boolFromValue('False')).toBe(true);
-    });
-
-
-    it('should return false by default as in undefined attr "x"', () => {
+    });    it('should return false by default as in undefined attr "x"', () => {
       expect(boolFromValue(undefined)).toBe(false);
     });
 

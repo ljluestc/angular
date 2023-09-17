@@ -8,13 +8,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "basic_any_cast_template.js",
-              "generated": "basic_any_cast.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "basic_any_cast_template.js",
+     "generated": "basic_any_cast.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -25,13 +25,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "this_any_access_template.js",
-              "generated": "this_any_access.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "this_any_access_template.js",
+     "generated": "this_any_access.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     }

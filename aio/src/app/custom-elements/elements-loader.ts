@@ -2,10 +2,7 @@ import { createNgModule, Inject, Injectable, NgModuleRef, Type } from '@angular/
 import { ELEMENT_MODULE_LOAD_CALLBACKS_TOKEN, WithCustomElementComponent } from './element-registry';
 import { from, Observable, of } from 'rxjs';
 import { createCustomElement } from '@angular/elements';
-import { LoadChildrenCallback } from '@angular/router';
-
-
-@Injectable()
+import { LoadChildrenCallback } from '@angular/router';@Injectable()
 export class ElementsLoader {
   /** Map of unregistered custom elements and their respective module paths to load. */
   private elementsToLoad: Map<string, LoadChildrenCallback>;
@@ -13,7 +10,7 @@ export class ElementsLoader {
   private elementsLoading = new Map<string, Promise<void>>();
 
   constructor(private moduleRef: NgModuleRef<any>,
-              @Inject(ELEMENT_MODULE_LOAD_CALLBACKS_TOKEN) elementModulePaths: Map<string, LoadChildrenCallback>) {
+     @Inject(ELEMENT_MODULE_LOAD_CALLBACKS_TOKEN) elementModulePaths: Map<string, LoadChildrenCallback>) {
     this.elementsToLoad = new Map(elementModulePaths);
   }
 
@@ -45,28 +42,28 @@ export class ElementsLoader {
       const modulePathLoader = this.elementsToLoad.get(selector) as LoadChildrenCallback;
       const loadedAndRegistered =
         (modulePathLoader() as Promise<Type<WithCustomElementComponent>>)
-          .then(elementModule => {
-            const elementModuleRef = createNgModule(elementModule, this.moduleRef.injector);
-            const injector = elementModuleRef.injector;
-            const CustomElementComponent = elementModuleRef.instance.customElementComponent;
-            const CustomElement = createCustomElement(CustomElementComponent, {injector});
+ .then(elementModule => {
+   const elementModuleRef = createNgModule(elementModule, this.moduleRef.injector);
+   const injector = elementModuleRef.injector;
+   const CustomElementComponent = elementModuleRef.instance.customElementComponent;
+   const CustomElement = createCustomElement(CustomElementComponent, {injector});
 
-            customElements.define(selector, CustomElement);
-            return customElements.whenDefined(selector);
-          })
-          .then(() => {
-            // The custom element has been successfully loaded and registered.
-            // Remove from `elementsLoading` and `elementsToLoad`.
-            this.elementsLoading.delete(selector);
-            this.elementsToLoad.delete(selector);
-          })
-          .catch(err => {
-            // The custom element has failed to load and register.
-            // Remove from `elementsLoading`.
-            // (Do not remove from `elementsToLoad` in case it was a temporary error.)
-            this.elementsLoading.delete(selector);
-            return Promise.reject(err);
-          });
+   customElements.define(selector, CustomElement);
+   return customElements.whenDefined(selector);
+ })
+ .then(() => {
+   // The custom element has been successfully loaded and registered.
+   // Remove from `elementsLoading` and `elementsToLoad`.
+   this.elementsLoading.delete(selector);
+   this.elementsToLoad.delete(selector);
+ })
+ .catch(err => {
+   // The custom element has failed to load and register.
+   // Remove from `elementsLoading`.
+   // (Do not remove from `elementsToLoad` in case it was a temporary error.)
+   this.elementsLoading.delete(selector);
+   return Promise.reject(err);
+ });
 
       this.elementsLoading.set(selector, loadedAndRegistered);
       return loadedAndRegistered;

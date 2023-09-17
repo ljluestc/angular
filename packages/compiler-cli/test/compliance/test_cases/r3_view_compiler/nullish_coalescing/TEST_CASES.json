@@ -6,13 +6,13 @@
       "inputFiles": ["nullish_coalescing_interpolation.ts"],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "nullish_coalescing_interpolation_template.js",
-              "generated": "nullish_coalescing_interpolation.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "nullish_coalescing_interpolation_template.js",
+     "generated": "nullish_coalescing_interpolation.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -21,13 +21,13 @@
       "inputFiles": ["nullish_coalescing_property.ts"],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "nullish_coalescing_property_template.js",
-              "generated": "nullish_coalescing_property.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "nullish_coalescing_property_template.js",
+     "generated": "nullish_coalescing_property.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -36,13 +36,13 @@
       "inputFiles": ["nullish_coalescing_host.ts"],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "nullish_coalescing_host_bindings.js",
-              "generated": "nullish_coalescing_host.js"
-            }
-          ],
-          "failureMessage": "Incorrect host bindings"
+ "files": [
+   {
+     "expected": "nullish_coalescing_host_bindings.js",
+     "generated": "nullish_coalescing_host.js"
+   }
+ ],
+ "failureMessage": "Incorrect host bindings"
         }
       ],
       "skipForTemplatePipeline": true

@@ -8,7 +8,7 @@ export const storageKey = 'aio-theme';
   selector: 'aio-theme-toggle',
   template: `
     <button mat-icon-button type="button" (click)="toggleTheme()"
-            [title]="getToggleLabel()" [attr.aria-label]="getToggleLabel()">
+   [title]="getToggleLabel()" [attr.aria-label]="getToggleLabel()">
       <mat-icon>
         {{ isDark ? 'light' : 'dark' }}_mode
       </mat-icon>

@@ -6,8 +6,8 @@
       "inputFiles": ["metadata.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["metadata.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["metadata.js"]
         }
       ]
     },
@@ -16,8 +16,8 @@
       "inputFiles": ["metadata_empty.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["metadata_empty.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["metadata_empty.js"]
         }
       ]
     },
@@ -26,8 +26,8 @@
       "inputFiles": ["animation_property_bindings.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["animation_property_bindings.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["animation_property_bindings.js"]
         }
       ]
     },
@@ -36,8 +36,8 @@
       "inputFiles": ["animation_listeners.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["animation_listeners.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["animation_listeners.js"]
         }
       ] 
     },
@@ -46,8 +46,8 @@
       "inputFiles": ["animation_host_bindings.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["animation_host_bindings.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["animation_host_bindings.js"]
         }
       ],
       "skipForTemplatePipeline": true

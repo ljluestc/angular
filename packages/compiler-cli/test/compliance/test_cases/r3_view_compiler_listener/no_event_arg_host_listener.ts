@@ -1,15 +1,2 @@
-import {Component, HostListener} from '@angular/core';
-
-@Component({
-  template: '',
-  host: {
-    '(mousedown)': 'mousedown()',
+import {Component, HostListener} from '@angular/core';  click() {
   }
-})
-export class MyComponent {
-  mousedown() {}
-
-  @HostListener('click')
-  click() {
-  }
-}

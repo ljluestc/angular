@@ -116,11 +116,11 @@ describe('NavigationService', () => {
     ];
     const sideNavNodes: NavigationNode[] = [
         { title: 'a', tooltip: 'tip', children: [
-          { url: 'b', title: 'b', tooltip: 'tip', children: [
-            { url: 'c', title: 'c', tooltip: 'tip' },
-            { url: 'd', title: 'd', tooltip: 'tip' }
-          ] },
-          { url: 'e', title: 'e', tooltip: 'tip' }
+ { url: 'b', title: 'b', tooltip: 'tip', children: [
+   { url: 'c', title: 'c', tooltip: 'tip' },
+   { url: 'd', title: 'd', tooltip: 'tip' }
+ ] },
+ { url: 'e', title: 'e', tooltip: 'tip' }
         ] },
         { url: 'f', title: 'f', tooltip: 'tip' }
       ];
@@ -141,34 +141,34 @@ describe('NavigationService', () => {
       locationService.go('b');
       expect(currentNodes).toEqual({
         SideNav: {
-          url: 'b',
-          view: 'SideNav',
-          nodes: [
-            sideNavNodes[0].children?.[0] as NavigationNode,
-            sideNavNodes[0]
-          ]
+ url: 'b',
+ view: 'SideNav',
+ nodes: [
+   sideNavNodes[0].children?.[0] as NavigationNode,
+   sideNavNodes[0]
+ ]
         }
       });
 
       locationService.go('d');
       expect(currentNodes).toEqual({
         SideNav: {
-          url: 'd',
-          view: 'SideNav',
-          nodes: [
-            sideNavNodes[0].children?.[0].children?.[1] as NavigationNode,
-            sideNavNodes[0].children?.[0] as NavigationNode,
-            sideNavNodes[0]
-          ]
+ url: 'd',
+ view: 'SideNav',
+ nodes: [
+   sideNavNodes[0].children?.[0].children?.[1] as NavigationNode,
+   sideNavNodes[0].children?.[0] as NavigationNode,
+   sideNavNodes[0]
+ ]
         }
       });
 
       locationService.go('f');
       expect(currentNodes).toEqual({
         SideNav: {
-          url: 'f',
-          view: 'SideNav',
-          nodes: [ sideNavNodes[1] ]
+ url: 'f',
+ view: 'SideNav',
+ nodes: [ sideNavNodes[1] ]
         }
       });
     });
@@ -177,9 +177,9 @@ describe('NavigationService', () => {
       locationService.go('features');
       expect(currentNodes).toEqual({
         TopBar: {
-          url: 'features',
-          view: 'TopBar',
-          nodes: [ topBarNodes[0] ]
+ url: 'features',
+ view: 'TopBar',
+ nodes: [ topBarNodes[0] ]
         }
       });
     });
@@ -188,9 +188,9 @@ describe('NavigationService', () => {
       locationService.go('g?search=moo#anchor-1');
       expect(currentNodes).toEqual({
         '': {
-          url: 'g',
-          view: '',
-          nodes: []
+ url: 'g',
+ view: '',
+ nodes: []
         }
       });
     });
@@ -198,13 +198,13 @@ describe('NavigationService', () => {
     it('should ignore trailing slashes, hashes, and search params on URLs in the navmap', () => {
       const cnode: CurrentNodes = {
         SideNav: {
-          url: 'c',
-          view: 'SideNav',
-          nodes: [
-            sideNavNodes[0].children?.[0].children?.[0] as NavigationNode,
-            sideNavNodes[0].children?.[0] as NavigationNode,
-            sideNavNodes[0]
-          ]
+ url: 'c',
+ view: 'SideNav',
+ nodes: [
+   sideNavNodes[0].children?.[0].children?.[0] as NavigationNode,
+   sideNavNodes[0].children?.[0] as NavigationNode,
+   sideNavNodes[0]
+ ]
         }
       };
 

@@ -23,5 +23,3 @@ import { HeroesComponent } from './heroes/heroes.component';
 })
 export class AppModule { }
 // #enddocregion
-
-

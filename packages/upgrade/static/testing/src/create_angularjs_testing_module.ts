@@ -4,16 +4,9 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-import {Injector} from '@angular/core';
+ */import {Injector} from '@angular/core';
 import {TestBed} from '@angular/core/testing';
-import {ɵangular1 as ng, ɵconstants} from '@angular/upgrade/static';
-
-import {UpgradeAppType} from '../../../src/common/src/util';
-
-
-/**
+import {ɵangular1 as ng, ɵconstants} from '@angular/upgrade/static';import {UpgradeAppType} from '../../../src/common/src/util';/**
  * A helper function to use when unit testing AngularJS services that depend upon downgraded Angular
  * services.
  *
@@ -82,18 +75,18 @@ import {UpgradeAppType} from '../../../src/common/src/util';
  */
 export function createAngularJSTestingModule(angularModules: any[]): string {
   return ng.module_('$$angularJSTestingModule', [])
-      .constant(ɵconstants.UPGRADE_APP_TYPE_KEY, UpgradeAppType.Static)
-      .factory(
-          ɵconstants.INJECTOR_KEY,
-          [
-            ɵconstants.$INJECTOR,
-            ($injector: ng.IInjectorService) => {
-              TestBed.configureTestingModule({
-                imports: angularModules,
-                providers: [{provide: ɵconstants.$INJECTOR, useValue: $injector}]
-              });
-              return TestBed.inject(Injector);
-            }
-          ])
-      .name;
+  .constant(ɵconstants.UPGRADE_APP_TYPE_KEY, UpgradeAppType.Static)
+  .factory(
+  ɵconstants.INJECTOR_KEY,
+  [
+ɵconstants.$INJECTOR,
+($injector: ng.IInjectorService) => {
+  TestBed.configureTestingModule({
+imports: angularModules,
+providers: [{provide: ɵconstants.$INJECTOR, useValue: $injector}]
+  });
+  return TestBed.inject(Injector);
+}
+  ])
+  .name;
 }

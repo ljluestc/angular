@@ -34,27 +34,27 @@ aio-search-results {
         padding: 0;
 
         li {
-          list-style: none;
+ list-style: none;
         }
 
         .search-result-item {
-          @include mixins.font-size(14);
-          @include mixins.line-height(24);
-          display: inline-block;
-          font-weight: normal;
-          padding: 0.6rem 0;
+ @include mixins.font-size(14);
+ @include mixins.line-height(24);
+ display: inline-block;
+ font-weight: normal;
+ padding: 0.6rem 0;
 
-          &a {
-            text-decoration: none;
-          }
+ &a {
+   text-decoration: none;
+ }
         }
 
         &.priority-pages {
-          padding: 0.5rem 0;
+ padding: 0.5rem 0;
 
-          .search-result-item {
-            font-weight: bold;
-          }
+ .search-result-item {
+   font-weight: bold;
+ }
         }
       }
     }

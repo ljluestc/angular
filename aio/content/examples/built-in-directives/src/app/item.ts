@@ -11,10 +11,7 @@ export class Item {
     new Item(2, 'Phone', 'slim' ),
     new Item(3, 'Television', 'vintage' ),
     new Item(4, 'Fishbowl')
-  ];
-
-
-  constructor(
+  ];  constructor(
     public id: number,
     public name?: string,
     public feature?: string,

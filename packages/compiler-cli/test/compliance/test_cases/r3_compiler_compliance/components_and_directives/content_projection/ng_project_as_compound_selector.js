@@ -10,11 +10,11 @@ MyApp.ɵcmp = /*@__PURE__*/ $r3$.ɵɵdefineComponent({
   vars: 0,
   consts: [["ngProjectAs", "[title],[header]", 5, ["", "title", ""]]],
   template: function MyApp_Template(rf, ctx) {
-      if (rf & 1) {
-          $r3$.ɵɵelementStart(0, "simple");
-          $r3$.ɵɵelement(1, "h1", 0);
-          $r3$.ɵɵelementEnd();
-      }
+  if (rf & 1) {
+  $r3$.ɵɵelementStart(0, "simple");
+  $r3$.ɵɵelement(1, "h1", 0);
+  $r3$.ɵɵelementEnd();
+  }
   },
   dependencies: [SimpleComponent],
   encapsulation: 2

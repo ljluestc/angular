@@ -1,3 +1,1 @@
-exports_files([
-    "bazel-karma-local-config.js",
-])
+exports_files(["bazel-karma-local-config.js",])

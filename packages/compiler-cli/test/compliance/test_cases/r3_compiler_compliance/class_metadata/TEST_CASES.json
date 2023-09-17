@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid class metadata",
-          "files": [
-            "class_decorators.js"
-          ]
+ "failureMessage": "Invalid class metadata",
+ "files": [
+   "class_decorators.js"
+ ]
         }
       ]
     },
@@ -22,10 +22,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid class metadata",
-          "files": [
-            "property_decorators.js"
-          ]
+ "failureMessage": "Invalid class metadata",
+ "files": [
+   "property_decorators.js"
+ ]
         }
       ]
     },
@@ -36,33 +36,33 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid class metadata",
-          "files": [
-            {
-              "expected": "parameter_decorators_custom.js",
-              "generated": "parameter_decorators.js"
-            },
-            {
-              "expected": "parameter_decorators_decorators.js",
-              "generated": "parameter_decorators.js"
-            },
-            {
-              "expected": "parameter_decorators_empty.js",
-              "generated": "parameter_decorators.js"
-            },
-            {
-              "expected": "parameter_decorators_no_ctor.js",
-              "generated": "parameter_decorators.js"
-            },
-            {
-              "expected": "parameter_decorators_no_decorators.js",
-              "generated": "parameter_decorators.js"
-            },
-            {
-              "expected": "parameter_decorators_derived.js",
-              "generated": "parameter_decorators.js"
-            }
-          ]
+ "failureMessage": "Invalid class metadata",
+ "files": [
+   {
+     "expected": "parameter_decorators_custom.js",
+     "generated": "parameter_decorators.js"
+   },
+   {
+     "expected": "parameter_decorators_decorators.js",
+     "generated": "parameter_decorators.js"
+   },
+   {
+     "expected": "parameter_decorators_empty.js",
+     "generated": "parameter_decorators.js"
+   },
+   {
+     "expected": "parameter_decorators_no_ctor.js",
+     "generated": "parameter_decorators.js"
+   },
+   {
+     "expected": "parameter_decorators_no_decorators.js",
+     "generated": "parameter_decorators.js"
+   },
+   {
+     "expected": "parameter_decorators_derived.js",
+     "generated": "parameter_decorators.js"
+   }
+ ]
         }
       ]
     }

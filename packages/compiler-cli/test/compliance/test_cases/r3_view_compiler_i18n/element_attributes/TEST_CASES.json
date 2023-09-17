@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -23,10 +23,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -38,10 +38,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -53,10 +53,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -68,10 +68,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -83,10 +83,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ]
     },
@@ -97,10 +97,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -112,10 +112,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -127,10 +127,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -142,10 +142,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -157,10 +157,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -172,10 +172,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -187,10 +187,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -202,10 +202,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -217,10 +217,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -235,10 +235,10 @@
       },
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true

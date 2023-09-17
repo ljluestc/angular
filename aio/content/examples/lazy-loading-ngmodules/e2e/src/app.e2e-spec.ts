@@ -1,8 +1,5 @@
 import { element, by } from 'protractor';
-import { AppPage } from './app.po';
-
-
-describe('providers App', () => {
+import { AppPage } from './app.po';describe('providers App', () => {
   let page: AppPage;
   const buttons = element.all(by.css('button'));
   const customersButton = buttons.get(0);

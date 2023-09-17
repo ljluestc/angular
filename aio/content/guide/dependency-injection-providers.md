@@ -118,10 +118,7 @@ Because there is no interface for Angular to find at runtime, the interface cann
 
 <code-example path="dependency-injection/src/app/providers.component.ts" region="providers-9-interface"></code-example>
 
-<code-example path="dependency-injection/src/app/providers.component.ts" region="provider-9-ctor-interface"></code-example>
-
-
-## What's next
+<code-example path="dependency-injection/src/app/providers.component.ts" region="provider-9-ctor-interface"></code-example>## What's next
 
 * [Dependency Injection in Action](guide/dependency-injection-in-action)
 

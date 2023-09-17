@@ -1,10 +1,7 @@
 <!-- Archived and no longer in the left nav. Still accessible to 3rd parties who linked to it. -->
 # Understanding template expressions
 
-This topic explores some aspects of Angular text interpolation.
-
-
-## Syntax
+This topic explores some aspects of Angular text interpolation.## Syntax
 
 Template expressions are similar to JavaScript.
 Many JavaScript expressions are legal template expressions, with the following exceptions.

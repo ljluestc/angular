@@ -90,7 +90,7 @@ export class HeroesComponent implements OnInit {
         // replace the hero in the heroes list with update from server
         const ix = hero ? this.heroes.findIndex(h => h.id === hero.id) : -1;
         if (ix > -1) {
-          this.heroes[ix] = hero;
+ this.heroes[ix] = hero;
         }
       });
       this.editHero = undefined;

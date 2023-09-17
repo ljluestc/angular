@@ -4,12 +4,8 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-import {assertInInjectionContext, computed, DestroyRef, inject, Injector, signal, Signal, untracked, WritableSignal, ɵRuntimeError, ɵRuntimeErrorCode} from '@angular/core';
-import {Observable, Subscribable} from 'rxjs';
-
-/**
+ */import {assertInInjectionContext, computed, DestroyRef, inject, Injector, signal, Signal, untracked, WritableSignal, ɵRuntimeError, ɵRuntimeErrorCode} from '@angular/core';
+import {Observable, Subscribable} from 'rxjs';/**
  * Options for `toSignal`.
  *
  * @publicApi
@@ -20,9 +16,7 @@ export interface ToSignalOptions<T> {
    *
    * This will be the value of the signal until the observable emits its first value.
    */
-  initialValue?: T;
-
-  /**
+  initialValue?: T;  /**
    * Whether to require that the observable emits synchronously when `toSignal` subscribes.
    *
    * If this is `true`, `toSignal` will assert that the observable produces a value immediately upon
@@ -30,17 +24,13 @@ export interface ToSignalOptions<T> {
    * signal type or provide an `initialValue`, at the cost of a runtime error if this requirement is
    * not met.
    */
-  requireSync?: boolean;
-
-  /**
+  requireSync?: boolean;  /**
    * `Injector` which will provide the `DestroyRef` used to clean up the Observable subscription.
    *
    * If this is not provided, a `DestroyRef` will be retrieved from the current [injection
    * context](/guide/dependency-injection-context), unless manual cleanup is requested.
    */
-  injector?: Injector;
-
-  /**
+  injector?: Injector;  /**
    * Whether the subscription should be automatically cleaned up (via `DestroyRef`) when
    * `toObservable`'s creation context is destroyed.
    *
@@ -48,9 +38,7 @@ export interface ToSignalOptions<T> {
    * until the `Observable` itself completes.
    */
   manualCleanup?: boolean;
-}
-
-/**
+}/**
  * Get the current value of an `Observable` as a reactive `Signal`.
  *
  * `toSignal` returns a `Signal` which provides synchronous reactive access to values produced
@@ -71,9 +59,7 @@ export interface ToSignalOptions<T> {
  * option can be specified instead, which disables the automatic subscription teardown. No injection
  * context is needed in this configuration as well.
  */
-export function toSignal<T>(source: Observable<T>|Subscribable<T>): Signal<T|undefined>;
-
-/**
+export function toSignal<T>(source: Observable<T>|Subscribable<T>): Signal<T|undefined>;/**
  * Get the current value of an `Observable` as a reactive `Signal`.
  *
  * `toSignal` returns a `Signal` which provides synchronous reactive access to values produced
@@ -99,10 +85,7 @@ export function toSignal<T>(source: Observable<T>|Subscribable<T>): Signal<T|und
  */
 export function toSignal<T>(
     source: Observable<T>|Subscribable<T>,
-    options?: ToSignalOptions<undefined>&{requireSync?: false}): Signal<T|undefined>;
-
-
-/**
+    options?: ToSignalOptions<undefined>&{requireSync?: false}): Signal<T|undefined>;/**
  * Get the current value of an `Observable` as a reactive `Signal`.
  *
  * `toSignal` returns a `Signal` which provides synchronous reactive access to values produced
@@ -128,9 +111,7 @@ export function toSignal<T>(
  */
 export function toSignal<T, U extends T|null|undefined>(
     source: Observable<T>|Subscribable<T>,
-    options: ToSignalOptions<U>&{initialValue: U, requireSync?: false}): Signal<T|U>;
-
-/**
+    options: ToSignalOptions<U>&{initialValue: U, requireSync?: false}): Signal<T|U>;/**
  * Get the current value of an `Observable` as a reactive `Signal`.
  *
  * `toSignal` returns a `Signal` which provides synchronous reactive access to values produced
@@ -162,9 +143,7 @@ export function toSignal<T, U = undefined>(
   const requiresCleanup = !options?.manualCleanup;
   requiresCleanup && !options?.injector && assertInInjectionContext(toSignal);
   const cleanupRef =
-      requiresCleanup ? options?.injector?.get(DestroyRef) ?? inject(DestroyRef) : null;
-
-  // Note: T is the Observable value type, and U is the initial value type. They don't have to be
+requiresCleanup ? options?.injector?.get(DestroyRef) ?? inject(DestroyRef) : null;  // Note: T is the Observable value type, and U is the initial value type. They don't have to be
   // the same - the returned signal gives values of type `T`.
   let state: WritableSignal<State<T|U>>;
   if (options?.requireSync) {
@@ -173,61 +152,43 @@ export function toSignal<T, U = undefined>(
   } else {
     // If an initial value was passed, use it. Otherwise, use `undefined` as the initial value.
     state = signal<State<T|U>>({kind: StateKind.Value, value: options?.initialValue as U});
-  }
-
-  const sub = source.subscribe({
+  }  const sub = source.subscribe({
     next: value => state.set({kind: StateKind.Value, value}),
     error: error => state.set({kind: StateKind.Error, error}),
     // Completion of the Observable is meaningless to the signal. Signals don't have a concept of
     // "complete".
-  });
-
-  if (ngDevMode && options?.requireSync && untracked(state).kind === StateKind.NoValue) {
+  });  if (ngDevMode && options?.requireSync && untracked(state).kind === StateKind.NoValue) {
     throw new ɵRuntimeError(
-        ɵRuntimeErrorCode.REQUIRE_SYNC_WITHOUT_SYNC_EMIT,
-        '`toSignal()` called with `requireSync` but `Observable` did not emit synchronously.');
-  }
-
-  // Unsubscribe when the current context is destroyed, if requested.
-  cleanupRef?.onDestroy(sub.unsubscribe.bind(sub));
-
-  // The actual returned signal is a `computed` of the `State` signal, which maps the various states
+  ɵRuntimeErrorCode.REQUIRE_SYNC_WITHOUT_SYNC_EMIT,
+  '`toSignal()` called with `requireSync` but `Observable` did not emit synchronously.');
+  }  // Unsubscribe when the current context is destroyed, if requested.
+  cleanupRef?.onDestroy(sub.unsubscribe.bind(sub));  // The actual returned signal is a `computed` of the `State` signal, which maps the various states
   // to either values or errors.
   return computed(() => {
     const current = state();
     switch (current.kind) {
-      case StateKind.Value:
-        return current.value;
-      case StateKind.Error:
-        throw current.error;
-      case StateKind.NoValue:
-        // This shouldn't really happen because the error is thrown on creation.
-        // TODO(alxhub): use a RuntimeError when we finalize the error semantics
-        throw new ɵRuntimeError(
-            ɵRuntimeErrorCode.REQUIRE_SYNC_WITHOUT_SYNC_EMIT,
-            '`toSignal()` called with `requireSync` but `Observable` did not emit synchronously.');
+case StateKind.Value:
+  return current.value;
+case StateKind.Error:
+  throw current.error;
+case StateKind.NoValue:
+  // This shouldn't really happen because the error is thrown on creation.
+  // TODO(alxhub): use a RuntimeError when we finalize the error semantics
+  throw new ɵRuntimeError(
+ ɵRuntimeErrorCode.REQUIRE_SYNC_WITHOUT_SYNC_EMIT,
+ '`toSignal()` called with `requireSync` but `Observable` did not emit synchronously.');
     }
   });
-}
-
-const enum StateKind {
+}const enum StateKind {
   NoValue,
   Value,
   Error,
-}
-
-interface NoValueState {
+}interface NoValueState {
   kind: StateKind.NoValue;
-}
-
-interface ValueState<T> {
+}interface ValueState<T> {
   kind: StateKind.Value;
   value: T;
-}
-
-interface ErrorState {
+}interface ErrorState {
   kind: StateKind.Error;
   error: unknown;
-}
-
-type State<T> = NoValueState|ValueState<T>|ErrorState;
+}type State<T> = NoValueState|ValueState<T>|ErrorState;

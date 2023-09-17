@@ -4,28 +4,16 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-import {Injector, NgModule, Type} from '@angular/core';
-import {ɵangular1 as angular, ɵconstants} from '@angular/upgrade/static';
-
-import {UpgradeAppType} from '../../../src/common/src/util';
-
-let $injector: angular.IInjectorService|null = null;
-let injector: Injector;
-
-export function $injectorFactory() {
+ */import {Injector, NgModule, Type} from '@angular/core';
+import {ɵangular1 as angular, ɵconstants} from '@angular/upgrade/static';import {UpgradeAppType} from '../../../src/common/src/util';let $injector: angular.IInjectorService|null = null;
+let injector: Injector;export function $injectorFactory() {
   return $injector;
-}
-
-@NgModule({providers: [{provide: ɵconstants.$INJECTOR, useFactory: $injectorFactory}]})
+}@NgModule({providers: [{provide: ɵconstants.$INJECTOR, useFactory: $injectorFactory}]})
 export class AngularTestingModule {
   constructor(i: Injector) {
-    injector = i;
+injector = i;
   }
-}
-
-/**
+}/**
  * A helper function to use when unit testing Angular services that depend upon upgraded AngularJS
  * services.
  *
@@ -91,10 +79,10 @@ export class AngularTestingModule {
  * @publicApi
  */
 export function createAngularTestingModule(
-    angularJSModules: string[], strictDi?: boolean): Type<any> {
+angularJSModules: string[], strictDi?: boolean): Type<any> {
   angular.module_('$$angularJSTestingModule', angularJSModules)
-      .constant(ɵconstants.UPGRADE_APP_TYPE_KEY, UpgradeAppType.Static)
-      .factory(ɵconstants.INJECTOR_KEY, () => injector);
+  .constant(ɵconstants.UPGRADE_APP_TYPE_KEY, UpgradeAppType.Static)
+  .factory(ɵconstants.INJECTOR_KEY, () => injector);
   $injector = angular.injector(['ng', '$$angularJSTestingModule'], strictDi);
   return AngularTestingModule;
 }

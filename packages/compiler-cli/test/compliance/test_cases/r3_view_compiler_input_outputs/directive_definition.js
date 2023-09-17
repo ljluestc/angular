@@ -1,12 +1,12 @@
 MyDirective.ɵdir = /*@__PURE__*/ $r3$.ɵɵdefineDirective({
   …
   inputs:{
-    directiveInput: "directiveInput",
-    originalDirectiveInput: ["renamedDirectiveInput", "originalDirectiveInput"]
+directiveInput: "directiveInput",
+originalDirectiveInput: ["renamedDirectiveInput", "originalDirectiveInput"]
   },
   outputs: {
-    directiveOutput: "directiveOutput",
-    originalDirectiveOutput: "renamedDirectiveOutput"
+directiveOutput: "directiveOutput",
+originalDirectiveOutput: "renamedDirectiveOutput"
   }
   …
 });

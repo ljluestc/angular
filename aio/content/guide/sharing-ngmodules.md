@@ -18,7 +18,7 @@ import { OrdersPipe } from './orders.pipe';
  imports:      [ CommonModule ],
  declarations: [ CustomerComponent, NewItemDirective, OrdersPipe ],
  exports:      [ CustomerComponent, NewItemDirective, OrdersPipe,
-                 CommonModule, FormsModule ]
+  CommonModule, FormsModule ]
 })
 export class SharedModule { }
 

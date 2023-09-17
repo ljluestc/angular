@@ -18,32 +18,32 @@ module.exports.translate = function(load){
   baseHref = baseHref.pathname;
 
   if (!baseHref.startsWith('/base/')) { // it is not karma
-    basePath = basePath.replace(baseHref, '');
+basePath = basePath.replace(baseHref, '');
   }
 
   load.source = load.source
-    .replace(templateUrlRegex, function(match, quote, url){
-      var resolvedUrl = url;
+.replace(templateUrlRegex, function(match, quote, url){
+  var resolvedUrl = url;
 
-      if (url.startsWith('.')) {
-        resolvedUrl = basePath + url.slice(1);
-      }
+  if (url.startsWith('.')) {
+resolvedUrl = basePath + url.slice(1);
+  }
 
-      return 'templateUrl: "' + resolvedUrl + '"';
-    })
-    .replace(stylesRegex, function(match, relativeUrls) {
-      var urls = [];
+  return 'templateUrl: "' + resolvedUrl + '"';
+})
+.replace(stylesRegex, function(match, relativeUrls) {
+  var urls = [];
 
-      while ((match = stringRegex.exec(relativeUrls)) !== null) {
-        if (match[2].startsWith('.')) {
-          urls.push('"' + basePath + match[2].slice(1) + '"');
-        } else {
-          urls.push('"' + match[2] + '"');
-        }
-      }
+  while ((match = stringRegex.exec(relativeUrls)) !== null) {
+if (match[2].startsWith('.')) {
+  urls.push('"' + basePath + match[2].slice(1) + '"');
+} else {
+  urls.push('"' + match[2] + '"');
+}
+  }
 
-      return "styleUrls: [" + urls.join(', ') + "]";
-    });
+  return "styleUrls: [" + urls.join(', ') + "]";
+});
 
   return load;
 };

@@ -23,7 +23,7 @@
   &:-ms-input-placeholder      { @content; }  // IE
   &::-ms-input-placeholder     { @content; }  // Edge
   &::-webkit-input-placeholder { @content; }  // QQ Browser
-  &::placeholder               { @content; }  // Chrome/Firefox/Safari
+  &::placeholder{ @content; }  // Chrome/Firefox/Safari
 }
 
 @mixin rotate($degrees) {
@@ -90,7 +90,7 @@
 ///   .foo {
 ///     @include docs-pages {
 ///       .bar {
-///         color: orange;
+///color: orange;
 ///       }
 ///     }
 ///   }
@@ -98,7 +98,7 @@
 ///   .baz {
 ///     @include docs-pages($nestParentSelector: true) {
 ///       .qux {
-///         color: orange;
+///color: orange;
 ///       }
 ///     }
 ///   }
@@ -143,7 +143,7 @@
 ///   .foo {
 ///     @include marketing-pages {
 ///       .bar {
-///         color: orange;
+///color: orange;
 ///       }
 ///     }
 ///   }
@@ -151,7 +151,7 @@
 ///   .baz {
 ///     @include marketing-pages($extraSelectors: ('.other-page'), $nestParentSelector: true) {
 ///       .qux {
-///         color: orange;
+///color: orange;
 ///       }
 ///     }
 ///   }

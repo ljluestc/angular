@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid component definition",
-          "files": [
-            "component.js"
-          ]
+ "failureMessage": "Invalid component definition",
+ "files": [
+   "component.js"
+ ]
         }
       ]
     },
@@ -22,10 +22,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid directive definition",
-          "files": [
-            "directive.js"
-          ]
+ "failureMessage": "Invalid directive definition",
+ "files": [
+   "directive.js"
+ ]
         }
       ]
     }

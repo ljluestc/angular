@@ -1,16 +1,4 @@
-import {Component, NgModule} from '@angular/core';
-
-@Component({
-  selector: 'my-component',
-  template: `
-    <ng-template let-obj>
-      <button (click)="obj.value = 1">Change</button>
-    </ng-template>
-  `
-})
-export class MyComponent {
-}
-
-@NgModule({declarations: [MyComponent]})
+import {Component, NgModule} from '@angular/core';export class MyComponent {
+}@NgModule({declarations: [MyComponent]})
 export class MyModule {
 }

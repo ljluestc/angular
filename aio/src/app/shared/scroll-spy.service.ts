@@ -3,10 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { fromEvent, Observable, ReplaySubject, Subject } from 'rxjs';
 import { auditTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
-import { ScrollService } from 'app/shared/scroll.service';
-
-
-export interface ScrollItem {
+import { ScrollService } from 'app/shared/scroll.service';export interface ScrollItem {
   element: Element;
   index: number;
 }
@@ -104,8 +101,8 @@ export class ScrollSpiedElementGroup {
     } else {
       this.spiedElements.some(spiedElem => {
         if (spiedElem.top <= scrollTop) {
-          activeItem = spiedElem;
-          return true;
+ activeItem = spiedElem;
+ return true;
         }
         return false;
       });

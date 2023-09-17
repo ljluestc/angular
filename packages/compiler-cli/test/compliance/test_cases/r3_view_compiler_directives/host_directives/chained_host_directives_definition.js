@@ -15,7 +15,7 @@ DirectiveC.ɵdir = /*@__PURE__*/ $r3$.ɵɵdefineDirective({
 MyComponent.ɵcmp = /*@__PURE__*/ $r3$.ɵɵdefineComponent({
   type: MyComponent,
   selectors: [
-    ["my-component"]
+["my-component"]
   ],
   features: [$r3$.ɵɵHostDirectivesFeature([DirectiveC])],
   decls: 0,

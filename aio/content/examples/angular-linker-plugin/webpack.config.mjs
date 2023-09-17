@@ -10,12 +10,12 @@ export default {
       {
         test: /\.m?js$/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            plugins: [linkerPlugin],
-            compact: false,
-            cacheDirectory: true,
-          }
+ loader: 'babel-loader',
+ options: {
+   plugins: [linkerPlugin],
+   compact: false,
+   cacheDirectory: true,
+ }
         }
       }
     ]

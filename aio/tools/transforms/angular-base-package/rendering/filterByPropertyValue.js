@@ -1,11 +1,11 @@
 module.exports = function filterBy() {
   return {
-    name: 'filterByPropertyValue',
-    process: function(list, property, value) {
-      if (!list) return list;
-      const values = Array.isArray(value) ? value : [value];
-      return list.filter(item => values.some(value => compare(item[property], value)));
-    }
+name: 'filterByPropertyValue',
+process: function(list, property, value) {
+  if (!list) return list;
+  const values = Array.isArray(value) ? value : [value];
+  return list.filter(item => values.some(value => compare(item[property], value)));
+}
   };
 };
 

@@ -22,10 +22,7 @@ import { Observable, interval, shareReplay, Subscription } from 'rxjs';
   </div>
   <ng-template #noMulti>
     <div><i>no multicast shareReplay subscribers</i></div>
-  </ng-template>
-
-
-  <div>
+  </ng-template>  <div>
     <button type="button" (click)="addUnicastSubscriber()">Add Unicast Subscriber</button>
     <button type="button" (click)="addShareReplaySubscriber()">Add Multicast Subscriber</button>
     <button type="button" (click)="unsubscribeAll()">Unsubscribe All</button>

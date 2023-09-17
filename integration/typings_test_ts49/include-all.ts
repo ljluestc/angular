@@ -4,11 +4,7 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-
-
-import * as animations from '@angular/animations';
+ */import * as animations from '@angular/animations';
 import * as animationsBrowser from '@angular/animations/browser';
 import * as animationsBrowserTesting from '@angular/animations/browser/testing';
 import * as common from '@angular/common';
@@ -36,17 +32,7 @@ import * as routerUpgrade from '@angular/router/upgrade';
 import * as serviceWorker from '@angular/service-worker';
 import * as upgrade from '@angular/upgrade';
 import * as upgradeStatic from '@angular/upgrade/static';
-import * as upgradeTesting from '@angular/upgrade/static/testing';
-
-export default {
-  animations,
-  animationsBrowser,
-  animationsBrowserTesting,
-  common,
-  commonTesting,
-  commonHttp,
-  commonHttpTesting,
-  compiler,
+import * as upgradeTesting from '@angular/upgrade/static/testing';  compiler,
   compilerTesting,
   core,
   coreTesting,

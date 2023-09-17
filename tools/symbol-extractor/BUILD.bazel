@@ -8,8 +8,8 @@ ts_library(
     srcs = glob(
         ["**/*.ts"],
         exclude = [
-            "**/*_spec.ts",
-            "**/*_spec",
+   "**/*_spec.ts",
+   "**/*_spec",
         ],
     ),
     deps = [

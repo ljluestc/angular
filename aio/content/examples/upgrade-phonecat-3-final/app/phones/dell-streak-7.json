@@ -14,8 +14,8 @@
     }, 
     "camera": {
         "features": [
-            "Flash", 
-            "Video"
+   "Flash", 
+   "Video"
         ], 
         "primary": "5.0 megapixels"
     }, 
@@ -51,9 +51,9 @@
     "name": "Dell Streak 7", 
     "sizeAndWeight": {
         "dimensions": [
-            "199.9 mm (w)", 
-            "119.8 mm (h)", 
-            "12.4 mm (d)"
+   "199.9 mm (w)", 
+   "119.8 mm (h)", 
+   "12.4 mm (d)"
         ], 
         "weight": "450.0 grams"
     }, 

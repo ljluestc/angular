@@ -1,14 +1,4 @@
-import {Component} from '@angular/core';
-
-@Component({
-  template: `
-    <div>
-      {{message}}
-      {#for item of items; track item; let outerCount = $count}
-        {{item.name}}
-        {#for subitem of item.subItems; track subitem}
-          Outer: {{outerCount}}
-          Inner: {{$count}}
+import {Component} from '@angular/core'; Inner: {{$count}}
         {/for}
       {/for}
     </div>
@@ -20,10 +10,6 @@ export class MyApp {
     {name: 'one', subItems: ['sub one', 'sub two', 'sub three']},
     {name: 'two', subItems: ['sub one', 'sub two', 'sub three']},
     {name: 'three', subItems: ['sub one', 'sub two', 'sub three']},
-  ];
-
-  // TODO(crisbeto): remove this once template type checking is fully implemented.
+  ];  // TODO(crisbeto): remove this once template type checking is fully implemented.
   item: any;
-  outerCount: any;
-  $count: any;
-}
+  ou}

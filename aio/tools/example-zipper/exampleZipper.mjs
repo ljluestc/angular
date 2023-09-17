@@ -33,7 +33,7 @@ export class ExampleZipper {
 
     const configFileNames = globbySync([gpathStackblitz, gpathZipper], {
       dot: true // Include subpaths that begin with '.' when using a wildcard inclusion.
-                // Needed to include the bazel .cache folder on Linux.
+ // Needed to include the bazel .cache folder on Linux.
     });
 
     return configFileNames;
@@ -170,7 +170,7 @@ export class ExampleZipper {
     let fileNames = globbySync(gpaths, {
       ignore: ['**/node_modules/**'],
       dot: true // Include subpaths that begin with '.' when using a wildcard inclusion.
-                // Needed to include the bazel .cache folder on Linux.
+ // Needed to include the bazel .cache folder on Linux.
     });
 
     let zip = this._createZipArchive(outputFileName);

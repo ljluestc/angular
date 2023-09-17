@@ -1,7 +1,7 @@
 MyComponent.ɵcmp = /*@__PURE__*/ $r3$.ɵɵdefineComponent({
   type: MyComponent,
   selectors: [
-    ["my-component"]
+["my-component"]
   ],
   features: [$r3$.ɵɵHostDirectivesFeature([DirectiveA, DirectiveB])],
   decls: 0,

@@ -13,10 +13,7 @@ import { NameParentComponent } from './name-parent.component';
 import { VersionChildComponent } from './version-child.component';
 import { VersionParentComponent } from './version-parent.component';
 import { VoterComponent } from './voter.component';
-import { VoteTakerComponent } from './votetaker.component';
-
-
-@NgModule({
+import { VoteTakerComponent } from './votetaker.component';@NgModule({
   imports: [
     BrowserModule,
   ],

@@ -110,26 +110,26 @@ describe('TocComponent', () => {
       describe('when fewer than `maxPrimary` TocItems', () => {
 
         beforeEach(() => {
-          tocService.tocList.next(
-            [ tocItem('Heading A'), tocItem('Heading B'), tocItem('Heading C'), tocItem('Heading D') ]
-          );
-          fixture.detectChanges();
-          page = setPage();
+ tocService.tocList.next(
+   [ tocItem('Heading A'), tocItem('Heading B'), tocItem('Heading C'), tocItem('Heading D') ]
+ );
+ fixture.detectChanges();
+ page = setPage();
         });
 
         it('should have four displayed items', () => {
-          expect(page.listItems.length).toEqual(4);
+ expect(page.listItems.length).toEqual(4);
         });
 
         it('should not have secondary items', () => {
-          expect(tocComponent.type).toEqual('EmbeddedSimple');
-          const aSecond = page.listItems.find(item => item.classes.secondary);
-          expect(aSecond).withContext('should not find a secondary').toBeFalsy();
+ expect(tocComponent.type).toEqual('EmbeddedSimple');
+ const aSecond = page.listItems.find(item => item.classes.secondary);
+ expect(aSecond).withContext('should not find a secondary').toBeFalsy();
         });
 
         it('should not display expando buttons', () => {
-          expect(page.tocHeadingButtonEmbedded).withContext('top expand/collapse button').toBeFalsy();
-          expect(page.tocMoreButton).withContext('bottom more button').toBeFalsy();
+ expect(page.tocHeadingButtonEmbedded).withContext('top expand/collapse button').toBeFalsy();
+ expect(page.tocMoreButton).withContext('bottom more button').toBeFalsy();
         });
       });
 
@@ -137,110 +137,110 @@ describe('TocComponent', () => {
         let scrollToTopSpy: jasmine.Spy;
 
         beforeEach(() => {
-          fixture.detectChanges();
-          page = setPage();
-          scrollToTopSpy = (TestBed.inject(ScrollService) as unknown as TestScrollService).scrollToTop;
+ fixture.detectChanges();
+ page = setPage();
+ scrollToTopSpy = (TestBed.inject(ScrollService) as unknown as TestScrollService).scrollToTop;
         });
 
         it('should have more than 4 displayed items', () => {
-          expect(page.listItems.length).toBeGreaterThan(4);
+ expect(page.listItems.length).toBeGreaterThan(4);
         });
 
         it('should not display the h1 item', () => {
-          expect(page.listItems.find(item => item.classes.h1)).withContext('should not find h1 item').toBeFalsy();
+ expect(page.listItems.find(item => item.classes.h1)).withContext('should not find h1 item').toBeFalsy();
         });
 
         it('should be in "collapsed" (not expanded) state at the start', () => {
-          expect(tocComponent.isCollapsed).toBeTruthy();
+ expect(tocComponent.isCollapsed).toBeTruthy();
         });
 
         it('should have "collapsed" class at the start', () => {
-          expect(tocComponentDe.children[0].classes.collapsed).toEqual(true);
+ expect(tocComponentDe.children[0].classes.collapsed).toEqual(true);
         });
 
         it('should display expando buttons', () => {
-          expect(page.tocHeadingButtonEmbedded).withContext('top expand/collapse button').toBeTruthy();
-          expect(page.tocMoreButton).withContext('bottom more button').toBeTruthy();
+ expect(page.tocHeadingButtonEmbedded).withContext('top expand/collapse button').toBeTruthy();
+ expect(page.tocMoreButton).withContext('bottom more button').toBeTruthy();
         });
 
         it('should have secondary items', () => {
-          expect(tocComponent.type).toEqual('EmbeddedExpandable');
+ expect(tocComponent.type).toEqual('EmbeddedExpandable');
         });
 
         // CSS will hide items with the secondary class when collapsed
         it('should have secondary item with a secondary class', () => {
-          const aSecondary = page.listItems.find(item => item.classes.secondary);
-          expect(aSecondary).withContext('should find a secondary').toBeTruthy();
+ const aSecondary = page.listItems.find(item => item.classes.secondary);
+ expect(aSecondary).withContext('should find a secondary').toBeTruthy();
         });
 
         describe('after click tocHeading button', () => {
 
-          beforeEach(() => {
-            page.tocHeadingButtonEmbedded.nativeElement.click();
-            fixture.detectChanges();
-          });
+ beforeEach(() => {
+   page.tocHeadingButtonEmbedded.nativeElement.click();
+   fixture.detectChanges();
+ });
 
-          it('should not be "collapsed"', () => {
-            expect(tocComponent.isCollapsed).toEqual(false);
-          });
+ it('should not be "collapsed"', () => {
+   expect(tocComponent.isCollapsed).toEqual(false);
+ });
 
-          it('should not have "collapsed" class', () => {
-            expect(tocComponentDe.children[0].classes.collapsed).toBeFalsy();
-          });
+ it('should not have "collapsed" class', () => {
+   expect(tocComponentDe.children[0].classes.collapsed).toBeFalsy();
+ });
 
-          it('should not scroll', () => {
-            expect(scrollToTopSpy).not.toHaveBeenCalled();
-          });
+ it('should not scroll', () => {
+   expect(scrollToTopSpy).not.toHaveBeenCalled();
+ });
 
-          it('should be "collapsed" after clicking again', () => {
-            page.tocHeadingButtonEmbedded.nativeElement.click();
-            fixture.detectChanges();
-            expect(tocComponent.isCollapsed).toEqual(true);
-          });
+ it('should be "collapsed" after clicking again', () => {
+   page.tocHeadingButtonEmbedded.nativeElement.click();
+   fixture.detectChanges();
+   expect(tocComponent.isCollapsed).toEqual(true);
+ });
 
-          it('should not scroll after clicking again', () => {
-            page.tocHeadingButtonEmbedded.nativeElement.click();
-            fixture.detectChanges();
-            expect(scrollToTopSpy).not.toHaveBeenCalled();
-          });
+ it('should not scroll after clicking again', () => {
+   page.tocHeadingButtonEmbedded.nativeElement.click();
+   fixture.detectChanges();
+   expect(scrollToTopSpy).not.toHaveBeenCalled();
+ });
         });
 
         describe('after click tocMore button', () => {
 
-          beforeEach(() => {
-            page.tocMoreButton.nativeElement.click();
-            fixture.detectChanges();
-          });
+ beforeEach(() => {
+   page.tocMoreButton.nativeElement.click();
+   fixture.detectChanges();
+ });
 
-          it('should not be "collapsed"', () => {
-            expect(tocComponent.isCollapsed).toEqual(false);
-          });
+ it('should not be "collapsed"', () => {
+   expect(tocComponent.isCollapsed).toEqual(false);
+ });
 
-          it('should not have "collapsed" class', () => {
-            expect(tocComponentDe.children[0].classes.collapsed).toBeFalsy();
-          });
+ it('should not have "collapsed" class', () => {
+   expect(tocComponentDe.children[0].classes.collapsed).toBeFalsy();
+ });
 
-          it('should not scroll', () => {
-            expect(scrollToTopSpy).not.toHaveBeenCalled();
-          });
+ it('should not scroll', () => {
+   expect(scrollToTopSpy).not.toHaveBeenCalled();
+ });
 
-          it('should be "collapsed" after clicking again', () => {
-            page.tocMoreButton.nativeElement.click();
-            fixture.detectChanges();
-            expect(tocComponent.isCollapsed).toEqual(true);
-          });
+ it('should be "collapsed" after clicking again', () => {
+   page.tocMoreButton.nativeElement.click();
+   fixture.detectChanges();
+   expect(tocComponent.isCollapsed).toEqual(true);
+ });
 
-          it('should be "collapsed" after clicking tocHeadingButton', () => {
-            page.tocMoreButton.nativeElement.click();
-            fixture.detectChanges();
-            expect(tocComponent.isCollapsed).toEqual(true);
-          });
+ it('should be "collapsed" after clicking tocHeadingButton', () => {
+   page.tocMoreButton.nativeElement.click();
+   fixture.detectChanges();
+   expect(tocComponent.isCollapsed).toEqual(true);
+ });
 
-          it('should scroll after clicking again', () => {
-            page.tocMoreButton.nativeElement.click();
-            fixture.detectChanges();
-            expect(scrollToTopSpy).toHaveBeenCalled();
-          });
+ it('should scroll after clicking again', () => {
+   page.tocMoreButton.nativeElement.click();
+   fixture.detectChanges();
+   expect(scrollToTopSpy).toHaveBeenCalled();
+ });
         });
       });
     });
@@ -339,7 +339,7 @@ describe('TocComponent', () => {
 
       it('should re-apply the `active` class when the list elements change', () => {
         const getActiveTextContent = () =>
-            page.listItems.find(By.css('.active'))?.nativeElement.textContent.trim();
+   page.listItems.find(By.css('.active'))?.nativeElement.textContent.trim();
 
         tocComponent.activeIndex = 1;
         fixture.detectChanges();
@@ -369,77 +369,77 @@ describe('TocComponent', () => {
         let parentScrollTop: number;
 
         beforeEach(() => {
-          const hostElem = fixture.nativeElement;
-          const firstItem = page.listItems[0].nativeElement;
+ const hostElem = fixture.nativeElement;
+ const firstItem = page.listItems[0].nativeElement;
 
-          Object.assign(hostElem.style, {
-            display: 'block',
-            maxHeight: `${hostElem.clientHeight - firstItem.clientHeight}px`,
-            overflow: 'auto',
-            position: 'relative',
-          });
-          Object.defineProperty(hostElem, 'scrollTop', {
-            get: () => parentScrollTop,
-            set: v => parentScrollTop = v,
-          });
+ Object.assign(hostElem.style, {
+   display: 'block',
+   maxHeight: `${hostElem.clientHeight - firstItem.clientHeight}px`,
+   overflow: 'auto',
+   position: 'relative',
+ });
+ Object.defineProperty(hostElem, 'scrollTop', {
+   get: () => parentScrollTop,
+   set: v => parentScrollTop = v,
+ });
 
-          parentScrollTop = 0;
+ parentScrollTop = 0;
         });
 
         it('when the `activeIndex` changes', () => {
-          tocService.setActiveIndex(0);
-          fixture.detectChanges();
+ tocService.setActiveIndex(0);
+ fixture.detectChanges();
 
-          expect(parentScrollTop).toBe(0);
+ expect(parentScrollTop).toBe(0);
 
-          tocService.setActiveIndex(1);
-          fixture.detectChanges();
+ tocService.setActiveIndex(1);
+ fixture.detectChanges();
 
-          expect(parentScrollTop).toBe(0);
+ expect(parentScrollTop).toBe(0);
 
-          tocService.setActiveIndex(page.listItems.length - 1);
-          fixture.detectChanges();
+ tocService.setActiveIndex(page.listItems.length - 1);
+ fixture.detectChanges();
 
-          expect(parentScrollTop).toBeGreaterThan(0);
+ expect(parentScrollTop).toBeGreaterThan(0);
         });
 
         it('when the `tocList` changes', () => {
-          const tocList = tocComponent.tocList;
+ const tocList = tocComponent.tocList;
 
-          tocComponent.tocList = [];
-          fixture.detectChanges();
+ tocComponent.tocList = [];
+ fixture.detectChanges();
 
-          expect(parentScrollTop).toBe(0);
+ expect(parentScrollTop).toBe(0);
 
-          tocService.setActiveIndex(tocList.length - 1);
-          fixture.detectChanges();
+ tocService.setActiveIndex(tocList.length - 1);
+ fixture.detectChanges();
 
-          expect(parentScrollTop).toBe(0);
+ expect(parentScrollTop).toBe(0);
 
-          tocComponent.tocList = tocList;
-          fixture.detectChanges();
+ tocComponent.tocList = tocList;
+ fixture.detectChanges();
 
-          expect(parentScrollTop).toBeGreaterThan(0);
+ expect(parentScrollTop).toBeGreaterThan(0);
         });
 
         it('not after it has been destroyed', () => {
-          const tocList = tocComponent.tocList;
-          tocComponent.ngOnDestroy();
+ const tocList = tocComponent.tocList;
+ tocComponent.ngOnDestroy();
 
-          tocService.setActiveIndex(page.listItems.length - 1);
-          fixture.detectChanges();
+ tocService.setActiveIndex(page.listItems.length - 1);
+ fixture.detectChanges();
 
-          expect(parentScrollTop).toBe(0);
+ expect(parentScrollTop).toBe(0);
 
-          tocComponent.tocList = [];
-          fixture.detectChanges();
+ tocComponent.tocList = [];
+ fixture.detectChanges();
 
-          expect(parentScrollTop).toBe(0);
+ expect(parentScrollTop).toBe(0);
 
-          tocComponent.tocList = tocList;
-          fixture.detectChanges();
+ tocComponent.tocList = tocList;
+ fixture.detectChanges();
 
-          expect(parentScrollTop).toBe(0);
+ expect(parentScrollTop).toBe(0);
         });
       });
     });
@@ -482,12 +482,12 @@ function tocItem(title: string, level = 'h2', href = '', content = title) {
 
 function getTestTocList() {
   return [
-    tocItem('Title',       'h1', 'fizz/buzz#title',                  'Title'),
+    tocItem('Title',       'h1', 'fizz/buzz#title',   'Title'),
     tocItem('Heading one', 'h2', 'fizz/buzz#heading-one-special-id', 'Heading one'),
-    tocItem('H2 Two',      'h2', 'fizz/buzz#h2-two',                 'H2 Two'),
-    tocItem('H2 Three',    'h2', 'fizz/buzz#h2-three',               'H2 <b>Three</b>'),
-    tocItem('H3 3a',       'h3', 'fizz/buzz#h3-3a',                  'H3 3a'),
-    tocItem('H3 3b',       'h3', 'fizz/buzz#h3-3b',                  'H3 3b'),
-    tocItem('H2 4',        'h2', 'fizz/buzz#h2-four',                '<i>H2 <b>four</b></i>'),
+    tocItem('H2 Two',      'h2', 'fizz/buzz#h2-two',  'H2 Two'),
+    tocItem('H2 Three',    'h2', 'fizz/buzz#h2-three','H2 <b>Three</b>'),
+    tocItem('H3 3a',       'h3', 'fizz/buzz#h3-3a',   'H3 3a'),
+    tocItem('H3 3b',       'h3', 'fizz/buzz#h3-3b',   'H3 3b'),
+    tocItem('H2 4',        'h2', 'fizz/buzz#h2-four', '<i>H2 <b>four</b></i>'),
   ];
 }

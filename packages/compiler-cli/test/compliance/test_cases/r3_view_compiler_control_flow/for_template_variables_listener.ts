@@ -1,24 +1,10 @@
-import {Component} from '@angular/core';
-
-@Component({
-  template: `
-    <div>
-      {{message}}
-      {#for item of items; track item; let ev = $even}
-        <div (click)="log($index, ev, $first, $count)"></div>
-      {/for}
-    </div>
-  `,
+import {Component} from '@angular/core';  `,
 })
 export class MyApp {
   message = 'hello';
   items = [];
-  log(..._: any[]) {}
-
-  // TODO(crisbeto): remove this once template type checking is fully implemented.
+  log(..._: any[]) {}  // TODO(crisbeto): remove this once template type checking is fully implemented.
   item: any;
-  ev: any;
-  $index: any;
-  $first: any;
+  ev: any;  $first: any;
   $count: any;
 }

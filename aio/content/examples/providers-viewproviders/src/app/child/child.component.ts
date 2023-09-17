@@ -24,10 +24,7 @@ export class ChildComponent {
   // viewProviders ensures that only the view gets to see this.
   // With the AnimalService in the viewProviders, the
   // InspectorComponent doesn't get to see it because the
-  // inspector is in the content.
-
-
-  // constructor( public flower: FlowerService, @Optional() @Host()  public animal?: AnimalService) { }
+  // inspector is in the content.  // constructor( public flower: FlowerService, @Optional() @Host()  public animal?: AnimalService) { }
 
 // Comment out the above constructor and alternately
 // uncomment the two following constructors to see the

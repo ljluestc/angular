@@ -21,7 +21,7 @@ index 9600076..8a0cace 100755
 @@ -420,7 +420,8 @@ def esbuild_macro(name, output_dir = False, splitting = False, **kwargs):
      _launcher = "_%s_esbuild_launcher" % name
      nodejs_binary(
-         name = _launcher,
+name = _launcher,
 -        entry_point = Label("//@bazel/esbuild:launcher.js"),
 +        entry_point = Label("//@bazel/esbuild:launcher.mjs"),
 +        linker_enabled = True,

@@ -9,8 +9,8 @@
  */
 module.exports = function() {
   return {
-    name: 'internal',
-    aliases: ['nodoc'],
-    transforms: function() { return true; }
+name: 'internal',
+aliases: ['nodoc'],
+transforms: function() { return true; }
   };
 };

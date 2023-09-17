@@ -4,13 +4,9 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-import {assertInInjectionContext, DestroyRef, inject} from '@angular/core';
+ */import {assertInInjectionContext, DestroyRef, inject} from '@angular/core';
 import {MonoTypeOperatorFunction, Observable} from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
-
-/**
+import {takeUntil} from 'rxjs/operators';/**
  * Operator which completes the Observable when the calling context (component, directive, service,
  * etc) is destroyed.
  *
@@ -24,14 +20,10 @@ export function takeUntilDestroyed<T>(destroyRef?: DestroyRef): MonoTypeOperator
   if (!destroyRef) {
     assertInInjectionContext(takeUntilDestroyed);
     destroyRef = inject(DestroyRef);
-  }
-
-  const destroyed$ = new Observable<void>(observer => {
+  }  const destroyed$ = new Observable<void>(observer => {
     const unregisterFn = destroyRef!.onDestroy(observer.next.bind(observer));
     return unregisterFn;
-  });
-
-  return <T>(source: Observable<T>) => {
+  });  return <T>(source: Observable<T>) => {
     return source.pipe(takeUntil(destroyed$));
   };
 }

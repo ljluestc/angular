@@ -6,10 +6,7 @@ import {
   skipDeployment,
   validateDeploymentsInfo,
 } from './index.mjs';
-import u from './utils.mjs';
-
-
-describe('deploy-to-firebase:', () => {
+import u from './utils.mjs';describe('deploy-to-firebase:', () => {
   // Pre-computed values to avoid unnecessary re-computations.
   let mostRecentMinorBranch;
   let latestCommits;
@@ -222,8 +219,8 @@ describe('deploy-to-firebase:', () => {
         name: 'skipped',
         type: 'skipped',
         reason:
-            'Skipping deploy because DUMMY_TEST_COMMIT is not the latest commit ' +
-            `(${latestCommits.main}).`,
+   'Skipping deploy because DUMMY_TEST_COMMIT is not the latest commit ' +
+   `(${latestCommits.main}).`,
       },
     ]);
   });
@@ -300,9 +297,9 @@ describe('deploy-to-firebase:', () => {
         deployedUrl: 'https://rc.angular.io/',
         preDeployActions: ['function:disableServiceWorker', 'function:redirectNonFilesToStable'],
         postDeployActions: [
-          'function:undoRedirectNonFilesToStable',
-          'function:undoDisableServiceWorker',
-          'function:testNoActiveRcDeployment',
+ 'function:undoRedirectNonFilesToStable',
+ 'function:undoDisableServiceWorker',
+ 'function:testNoActiveRcDeployment',
         ],
       },
     ]);
@@ -321,8 +318,8 @@ describe('deploy-to-firebase:', () => {
         name: 'skipped',
         type: 'skipped',
         reason:
-            'Skipping deploy because DUMMY_TEST_COMMIT is not the latest commit ' +
-            `(${latestCommits['4.3.x']}).`,
+   'Skipping deploy because DUMMY_TEST_COMMIT is not the latest commit ' +
+   `(${latestCommits['4.3.x']}).`,
       },
     ]);
   });
@@ -386,8 +383,8 @@ describe('deploy-to-firebase:', () => {
         name: 'skipped',
         type: 'skipped',
         reason:
-            'Skipping deploy because DUMMY_TEST_COMMIT is not the latest commit ' +
-            `(${latestCommits['2.4.x']}).`,
+   'Skipping deploy because DUMMY_TEST_COMMIT is not the latest commit ' +
+   `(${latestCommits['2.4.x']}).`,
       },
     ]);
   });
@@ -405,8 +402,8 @@ describe('deploy-to-firebase:', () => {
         name: 'skipped',
         type: 'skipped',
         reason:
-            'Skipping deploy of branch "2.1.x" to Firebase.\n' +
-            'There is a more recent branch with the same major version: "2.4.x"',
+   'Skipping deploy of branch "2.1.x" to Firebase.\n' +
+   'There is a more recent branch with the same major version: "2.4.x"',
       },
     ]);
   });
@@ -424,8 +421,8 @@ describe('deploy-to-firebase:', () => {
         name: 'skipped',
         type: 'skipped',
         reason:
-            'Skipping deploy of branch "2.1.x" to Firebase.\n' +
-            'There is a more recent branch with the same major version: "2.4.x"',
+   'Skipping deploy of branch "2.1.x" to Firebase.\n' +
+   'There is a more recent branch with the same major version: "2.4.x"',
       },
     ]);
   });
@@ -506,8 +503,8 @@ describe('deploy-to-firebase:', () => {
         name: 'skipped',
         type: 'skipped',
         reason:
-            'Skipping deploy because DUMMY_TEST_COMMIT is not the latest commit ' +
-            `(${latestCommits[mostRecentMinorBranch]}).`,
+   'Skipping deploy because DUMMY_TEST_COMMIT is not the latest commit ' +
+   `(${latestCommits[mostRecentMinorBranch]}).`,
       },
     ]);
   });
@@ -525,8 +522,8 @@ describe('deploy-to-firebase:', () => {
         name: 'skipped',
         type: 'skipped',
         reason:
-            'Skipping deploy of branch "2.1.x" to Firebase.\n' +
-            'There is a more recent branch with the same major version: "2.4.x"',
+   'Skipping deploy of branch "2.1.x" to Firebase.\n' +
+   'There is a more recent branch with the same major version: "2.4.x"',
       },
     ]);
   });
@@ -544,8 +541,8 @@ describe('deploy-to-firebase:', () => {
         name: 'skipped',
         type: 'skipped',
         reason:
-            'Skipping deploy of branch "4.3.x" to Firebase.\n' +
-            'There is a more recent branch with the same major version: "4.4.x"',
+   'Skipping deploy of branch "4.3.x" to Firebase.\n' +
+   'There is a more recent branch with the same major version: "4.4.x"',
       },
     ]);
   });
@@ -563,9 +560,9 @@ describe('deploy-to-firebase:', () => {
         name: 'skipped',
         type: 'skipped',
         reason:
-            'Skipping deploy of branch "4.4.x" to Firebase.\n' +
-            'This branch has an equal or higher major version than the stable branch ("2.4.x") ' +
-            'and is not the most recent minor branch.',
+   'Skipping deploy of branch "4.4.x" to Firebase.\n' +
+   'This branch has an equal or higher major version than the stable branch ("2.4.x") ' +
+   'and is not the most recent minor branch.',
       },
     ]);
   });
@@ -598,15 +595,15 @@ describe('deploy-to-firebase:', () => {
         '\n' +
         'Deployment 1 of 1: archive\n' +
         '--------------------------\n' +
-        'Git branch          : 4.4.x\n' +
-        `Git commit          : ${latestCommits['4.4.x']}\n` +
+        'Git branch : 4.4.x\n' +
+        `Git commit : ${latestCommits['4.4.x']}\n` +
         'Build/deploy mode   : archive\n' +
         'Firebase project    : angular-io\n' +
         'Firebase site       : v4-angular-io-site\n' +
         'Pre-deploy actions  : build, checkPayloadSize\n' +
         'Post-deploy actions : testPwaScore\n' +
         'Deployment URLs     : https://v4.angular.io/\n' +
-        '                      https://v4-angular-io-site.web.app/');
+        '       https://v4-angular-io-site.web.app/');
   });
 });
 
@@ -739,18 +736,18 @@ describe('validateDeploymentsInfo()', () => {
   it('should error if there are secondary targets with a different `deployEnv` than primary',
       () => {
         const targets = [
-          {...createTarget('target-1', 'primary'), deployEnv: 'deploy-env-1'},
-          {...createTarget('target-2', 'secondary'), deployEnv: 'deploy-env-1'},
-          {...createTarget('target-3', 'secondary'), deployEnv: 'deploy-env-2'},
-          {...createTarget('target-4', 'secondary'), deployEnv: 'deploy-env-1'},
-          {...createTarget('target-5', 'secondary'), deployEnv: 'deploy-env-2'},
-          {...createTarget('target-6', 'secondary'), deployEnv: 'deploy-env-3'},
+ {...createTarget('target-1', 'primary'), deployEnv: 'deploy-env-1'},
+ {...createTarget('target-2', 'secondary'), deployEnv: 'deploy-env-1'},
+ {...createTarget('target-3', 'secondary'), deployEnv: 'deploy-env-2'},
+ {...createTarget('target-4', 'secondary'), deployEnv: 'deploy-env-1'},
+ {...createTarget('target-5', 'secondary'), deployEnv: 'deploy-env-2'},
+ {...createTarget('target-6', 'secondary'), deployEnv: 'deploy-env-3'},
         ];
 
         expect(() => validateDeploymentsInfo(targets)).toThrowError(
-            'Expected all secondary deploy targets to match the primary target\'s `deployEnv` ' +
-            '(deploy-env-1), but 3 targets do not: target-3 (deployEnv: deploy-env-2), target-5 ' +
-            '(deployEnv: deploy-env-2), target-6 (deployEnv: deploy-env-3)');
+   'Expected all secondary deploy targets to match the primary target\'s `deployEnv` ' +
+   '(deploy-env-1), but 3 targets do not: target-3 (deployEnv: deploy-env-2), target-5 ' +
+   '(deployEnv: deploy-env-2), target-6 (deployEnv: deploy-env-3)');
       });
 
   it('should succeed with a valid skipped target', () => {

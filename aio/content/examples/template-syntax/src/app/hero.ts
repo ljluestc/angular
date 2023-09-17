@@ -14,10 +14,7 @@ export class Hero {
     new Hero(2, 'RubberMan', 'sad'),
     new Hero(3, 'Windstorm', 'confused'),
     new Hero(4, 'Magneta')
-  ];
-
-
-  constructor(
+  ];  constructor(
     public id = Hero.nextId++,
     public name?: string,
     public emotion?: string,

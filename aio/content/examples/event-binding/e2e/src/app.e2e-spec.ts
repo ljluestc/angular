@@ -9,10 +9,7 @@ describe('Event binding example', () => {
   const myClick = element.all(by.css('button')).get(2);
   const deleteButton = element.all(by.css('button')).get(3);
   const saveNoProp = element.all(by.css('button')).get(4);
-  const saveProp = element.all(by.css('button')).get(5);
-
-
-  it('should display Event Binding with Angular', async () => {
+  const saveProp = element.all(by.css('button')).get(5);  it('should display Event Binding with Angular', async () => {
     expect(await element(by.css('h1')).getText()).toEqual('Event Binding');
   });
 

@@ -1,27 +1,7 @@
-import {Component, Pipe} from '@angular/core';
-
-@Pipe({standalone: true, name: 'test'})
-export class TestPipe {
-  tranform(value: unknown) {
-    return value;
-  }
-}
-
-@Component({
-  template: `
-    <div>
-      {{message}}
-      {#switch value() | test}
-        {:case 0} case 0
-        {:case 1} case 1
-        {:default} default
-      {/switch}
+import {Component, Pipe} from '@angular/core';        {:case 0} case 0
+       {/switch}
     </div>
-  `,
-  standalone: true,
-  imports: [TestPipe]
+   imports: [TestPipe]
 })
-export class MyApp {
-  message = 'hello';
-  value = () => 1;
+e  value = () => 1;
 }

@@ -11,12 +11,12 @@ import { transitionAnimation } from './animations';
     trigger('openClose', [
       transition('open => closed', [
         useAnimation(transitionAnimation, {
-          params: {
-            height: 0,
-            opacity: 1,
-            backgroundColor: 'red',
-            time: '1s'
-          }
+ params: {
+   height: 0,
+   opacity: 1,
+   backgroundColor: 'red',
+   time: '1s'
+ }
         })
       ])
     ])

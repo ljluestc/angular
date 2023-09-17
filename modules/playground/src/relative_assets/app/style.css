@@ -1,12 +1,1 @@
-:host {
-  background:red;
-  padding:1em;
-  display:block;
-  font-size:20px;
-  color:white;
-}
-
-.inner-container {
-  width:432px;
-  font-weight:bold;
-}
+:host {  background:red;  padding:1em;  display:block;  font-size:20px;  color:white;}.inner-container {  width:432px;  font-weight:bold;}

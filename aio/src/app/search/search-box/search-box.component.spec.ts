@@ -36,7 +36,7 @@ describe('SearchBoxComponent', () => {
 
   describe('initialisation', () => {
     it('should get the current search query from the location service',
-          fakeAsync(inject([LocationService], (location: MockLocationService) => {
+ fakeAsync(inject([LocationService], (location: MockLocationService) => {
       location.search.and.returnValue({ search: 'initial search' });
       component.ngAfterViewInit();
       expect(location.search).toHaveBeenCalled();
@@ -46,7 +46,7 @@ describe('SearchBoxComponent', () => {
     })));
 
     it('should decode the search query from the location service (chrome search provider format)',
-          fakeAsync(inject([LocationService], (location: MockLocationService) => {
+ fakeAsync(inject([LocationService], (location: MockLocationService) => {
       location.search.and.returnValue({ search: 'initial+search' });
       component.ngAfterViewInit();
       expect(location.search).toHaveBeenCalled();

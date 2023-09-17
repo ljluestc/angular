@@ -13,28 +13,28 @@ var INLINE_LINK = /(\S+)(?:\s+([\s\S]+))?/;
  */
 module.exports = function linkInlineTagDef(getLinkInfo, createDocMessage, log) {
   return {
-    name: 'link',
-    failOnBadLink: true,
-    description:
-        'Process inline link tags (of the form {@link some/uri Some Title}), replacing them with HTML anchors',
-    handler(doc, tagName, tagDescription) {
+name: 'link',
+failOnBadLink: true,
+description:
+'Process inline link tags (of the form {@link some/uri Some Title}), replacing them with HTML anchors',
+handler(doc, tagName, tagDescription) {
 
-      // Parse out the uri and title
-      return tagDescription.replace(INLINE_LINK, (match, uri, title) => {
+  // Parse out the uri and title
+  return tagDescription.replace(INLINE_LINK, (match, uri, title) => {
 
-        var linkInfo = getLinkInfo(uri, title, doc);
+var linkInfo = getLinkInfo(uri, title, doc);
 
-        if (!linkInfo.valid) {
-          const message = createDocMessage(`Error in {@${tagName} ${tagDescription}} - ${linkInfo.error}`, doc);
-          if (this.failOnBadLink) {
-            throw new Error(message);
-          } else {
-            log.warn(message);
-          }
-        }
+if (!linkInfo.valid) {
+  const message = createDocMessage(`Error in {@${tagName} ${tagDescription}} - ${linkInfo.error}`, doc);
+  if (this.failOnBadLink) {
+throw new Error(message);
+  } else {
+log.warn(message);
+  }
+}
 
-        return '<a href=\'' + linkInfo.url + '\'>' + linkInfo.title + '</a>';
-      });
-    }
+return '<a href=\'' + linkInfo.url + '\'>' + linkInfo.title + '</a>';
+  });
+}
   };
 };

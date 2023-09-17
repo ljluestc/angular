@@ -27,16 +27,16 @@
 
       td {
         tr td:first-child {
-          @media (max-width: 480px) {
-            background-color: constants.$lightgray;
-          }
+ @media (max-width: 480px) {
+   background-color: constants.$lightgray;
+ }
         }
       }
 
       th {
         background: if($is-dark-theme, constants.$deepgray, rgba(constants.$lightgray, 0.2));
         &:not(:last-child) {
-          border-right: 1px solid if($is-dark-theme, constants.$darkgray, constants.$lightgray);
+ border-right: 1px solid if($is-dark-theme, constants.$darkgray, constants.$lightgray);
         }
       }
     }
@@ -44,7 +44,7 @@
     tbody > tr {
       &:last-child td {
         @media (max-width: 480px) {
-          border-bottom: 1px solid if($is-dark-theme, constants.$deepgray, constants.$lightgray);
+ border-bottom: 1px solid if($is-dark-theme, constants.$deepgray, constants.$lightgray);
         }
       }
     }

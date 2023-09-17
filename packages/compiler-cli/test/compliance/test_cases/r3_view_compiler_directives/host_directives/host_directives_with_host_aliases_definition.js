@@ -1,12 +1,12 @@
 MyComponent.ɵcmp = /*@__PURE__*/ $r3$.ɵɵdefineComponent({
   type: MyComponent,
   selectors: [
-    ["my-component"]
+["my-component"]
   ],
   features: [$r3$.ɵɵHostDirectivesFeature([{
-    directive: HostDir,
-    inputs: ["valueAlias", "valueAlias", "colorAlias", "customColorAlias"],
-    outputs: ["openedAlias", "openedAlias", "closedAlias", "customClosedAlias"]
+directive: HostDir,
+inputs: ["valueAlias", "valueAlias", "colorAlias", "customColorAlias"],
+outputs: ["openedAlias", "openedAlias", "closedAlias", "customClosedAlias"]
   }])],
   decls: 0,
   vars: 0,

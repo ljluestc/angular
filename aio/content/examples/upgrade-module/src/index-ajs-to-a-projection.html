@@ -18,7 +18,7 @@
     <script src="systemjs.config.1.js"></script>
     <script>
       System.import('app/ajs-to-a-projection/app.module')
-            .then(null, console.error.bind(console));
+   .then(null, console.error.bind(console));
     </script>
   </head>
 
@@ -27,8 +27,8 @@
       <!-- #docregion usecomponent -->
       <div ng-controller="MainController as mainCtrl">
         <hero-detail [hero]="mainCtrl.hero">
-          <!-- Everything here will get projected -->
-          <p>{{mainCtrl.hero.description}}</p>
+ <!-- Everything here will get projected -->
+ <p>{{mainCtrl.hero.description}}</p>
         </hero-detail>
       </div>
       <!-- #enddocregion usecomponent -->

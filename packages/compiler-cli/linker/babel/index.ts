@@ -6,6 +6,3 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import {defaultLinkerPlugin} from './src/babel_plugin';
-
-export {createEs2015LinkerPlugin} from './src/es2015_linker_plugin';
-export default defaultLinkerPlugin;

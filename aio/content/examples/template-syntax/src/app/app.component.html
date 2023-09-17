@@ -63,10 +63,7 @@
 <div class="context">
   {{title}}
   <span [hidden]="isUnchanged">changed</span>
-</div>
-
-
-<p>Template input variable expression context (let hero)</p>
+</div><p>Template input variable expression context (let hero)</p>
 <!-- template hides the following; plenty of examples later -->
 <ng-template>
   <div *ngFor="let hero of heroes">{{hero.name}}</div>
@@ -314,10 +311,7 @@ button</button>
 <!-- `myClick` is an event on the custom `ClickDirective` -->
 <div (myClick)="clickMessage=$event" clickable>click with myClick</div>
 {{clickMessage}}
-</div>
-
-
-<!-- binding to a nested component -->
+</div><!-- binding to a nested component -->
 <app-hero-detail (deleteRequest)="deleteHero($event)" [hero]="currentHero"></app-hero-detail>
 <br>
 
@@ -400,8 +394,8 @@ without NgModel
 <br><br>
 <div [ngClass]="currentClasses">
   This div should be {{ canSave ? "": "not"}} saveable,
-                  {{ isUnchanged ? "unchanged" : "modified" }} and,
-                  {{ isSpecial ? "": "not"}} special after clicking "Refresh".</div>
+{{ isUnchanged ? "unchanged" : "modified" }} and,
+{{ isSpecial ? "": "not"}} special after clicking "Refresh".</div>
 <br><br>
 
 <div [ngClass]="isSpecial ? 'special' : ''">This div is special</div>
@@ -433,8 +427,8 @@ without NgModel
 <br><br>
 <div [ngStyle]="currentStyles">
   This div should be {{ canSave ? "italic": "plain"}},
-                  {{ isUnchanged ? "normal weight" : "bold" }} and,
-                  {{ isSpecial ? "extra large": "normal size"}} after clicking "Refresh".</div>
+{{ isUnchanged ? "normal weight" : "bold" }} and,
+{{ isSpecial ? "extra large": "normal size"}} after clicking "Refresh".</div>
 
 <a class="to-toc" href="#toc">top</a>
 
@@ -561,7 +555,7 @@ without NgModel
   <app-sad-hero      *ngSwitchCase="'sad'"      [hero]="currentHero"></app-sad-hero>
   <app-confused-hero *ngSwitchCase="'confused'" [hero]="currentHero"></app-confused-hero>
   <div *ngSwitchCase="'confused'">Are you as confused as {{currentHero.name}}?</div>
-  <app-unknown-hero  *ngSwitchDefault           [hero]="currentHero"></app-unknown-hero>
+  <app-unknown-hero  *ngSwitchDefault  [hero]="currentHero"></app-unknown-hero>
 </div>
 
 <a class="to-toc" href="#toc">top</a>
@@ -636,10 +630,7 @@ without NgModel
 
 <div>
   The current hero's name is {{currentHero.name}}
-</div>
-
-
-<!--
+</div><!--
 The null hero's name is {{nullHero.name}}
 
 See console log:
@@ -656,10 +647,7 @@ The null hero's name is {{nullHero && nullHero.name}}
 <div>
   <!-- No hero, no problem! -->
   The null hero's name is {{nullHero?.name}}
-</div>
-
-
-<a class="to-toc" href="#toc">top</a>
+</div><a class="to-toc" href="#toc">top</a>
 
 <!-- non-null assertion operator -->
 <hr><h2 id="non-null-assertion-operator">Non-null assertion operator <em>!.</em></h2>

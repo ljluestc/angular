@@ -1,7 +1,1 @@
-load("//modules/playground/e2e_test:example_test.bzl", "example_test")
-
-example_test(
-    name = "hello_world",
-    srcs = glob(["**/*.ts"]),
-    server = "//modules/playground/src/hello_world:devserver",
-)
+load("//modules/playground/e2e_test:example_test.bzl", "example_test")example_test(name = "hello_world",srcs = glob(["**/*.ts"]),server = "//modules/playground/src/hello_world:devserver",)

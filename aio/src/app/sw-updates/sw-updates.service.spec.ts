@@ -7,10 +7,7 @@ import { LocationService } from 'app/shared/location.service';
 import { Logger } from 'app/shared/logger.service';
 import { MockLocationService } from 'testing/location.service';
 import { MockLogger } from 'testing/logger.service';
-import { SwUpdatesService } from './sw-updates.service';
-
-
-describe('SwUpdatesService', () => {
+import { SwUpdatesService } from './sw-updates.service';describe('SwUpdatesService', () => {
   let injector: Injector;
   let appRef: MockApplicationRef;
   let errorHandler: ErrorHandler;
@@ -49,10 +46,7 @@ describe('SwUpdatesService', () => {
     setup(isSwUpdateEnabled);
     specFn();
     tearDown();
-  };
-
-
-  it('should create', run(() => {
+  };  it('should create', run(() => {
     expect(service).toBeTruthy();
   }));
 
@@ -114,10 +108,7 @@ describe('SwUpdatesService', () => {
     it('should request a full page navigation when an update has been activated', fakeAsync(run(() => {
       swu.$$versionUpdatesSubj.next({latestVersion: {hash: 'foo'}, type: 'VERSION_READY'} as VersionReadyEvent);
       tick();
-      expect(location.fullPageNavigationNeeded).toHaveBeenCalledTimes(1);
-
-
-      swu.$$versionUpdatesSubj.next({latestVersion: {hash: 'foo'}, type: 'VERSION_READY'} as VersionReadyEvent);
+      expect(location.fullPageNavigationNeeded).toHaveBeenCalledTimes(1);      swu.$$versionUpdatesSubj.next({latestVersion: {hash: 'foo'}, type: 'VERSION_READY'} as VersionReadyEvent);
       tick();
       expect(location.fullPageNavigationNeeded).toHaveBeenCalledTimes(2);
     })));
@@ -138,7 +129,7 @@ describe('SwUpdatesService', () => {
       swu.$$unrecoverableSubj.next({reason: 'Something bad happened'});
       expect(errorHandler.handleError).toHaveBeenCalledBefore(location.reloadPage);
       expect(errorHandler.handleError)
-          .toHaveBeenCalledWith('Unrecoverable state: Something bad happened');
+ .toHaveBeenCalledWith('Unrecoverable state: Something bad happened');
 
       (errorHandler.handleError as jasmine.Spy).calls.reset();
       location.reloadPage.calls.reset();
@@ -146,7 +137,7 @@ describe('SwUpdatesService', () => {
       swu.$$unrecoverableSubj.next({reason: 'Something worse happened'});
       expect(errorHandler.handleError).toHaveBeenCalledBefore(location.reloadPage);
       expect(errorHandler.handleError)
-          .toHaveBeenCalledWith('Unrecoverable state: Something worse happened');
+ .toHaveBeenCalledWith('Unrecoverable state: Something worse happened');
 
     }));
 
@@ -160,7 +151,7 @@ describe('SwUpdatesService', () => {
         tick(checkInterval);
 
         swu.$$versionUpdatesSubj.next({
-          latestVersion: {hash: 'foo'}, currentVersion: {hash: 'bar'} , type: 'VERSION_READY'
+ latestVersion: {hash: 'foo'}, currentVersion: {hash: 'bar'} , type: 'VERSION_READY'
         });
 
         tick(checkInterval);
@@ -177,10 +168,10 @@ describe('SwUpdatesService', () => {
 
       it('should never request a full page navigation', runDeactivated(() => {
         swu.$$versionUpdatesSubj.next({
-          latestVersion: {hash: 'foo'}, currentVersion: {hash: 'bar'} , type: 'VERSION_READY'
+ latestVersion: {hash: 'foo'}, currentVersion: {hash: 'bar'} , type: 'VERSION_READY'
         });
         swu.$$versionUpdatesSubj.next({
-          latestVersion: {hash: 'baz'}, currentVersion: {hash: 'qux'} , type: 'VERSION_READY'
+ latestVersion: {hash: 'baz'}, currentVersion: {hash: 'qux'} , type: 'VERSION_READY'
         });
 
         expect(location.fullPageNavigationNeeded).not.toHaveBeenCalled();
@@ -217,7 +208,7 @@ describe('SwUpdatesService', () => {
         swu.checkForUpdate.calls.reset();
 
         swu.$$versionUpdatesSubj.next({
-          latestVersion: {hash: 'foo'}, currentVersion: {hash: 'baz'} , type: 'VERSION_READY'
+ latestVersion: {hash: 'foo'}, currentVersion: {hash: 'baz'} , type: 'VERSION_READY'
         });
 
         tick(checkInterval);
@@ -235,7 +226,7 @@ describe('SwUpdatesService', () => {
 
       it('should stop requesting full page navigations when updates are activated', fakeAsync(run(() => {
         swu.$$versionUpdatesSubj.next({
-          latestVersion: {hash: 'foo'}, currentVersion: {hash: 'bar'}, type: 'VERSION_READY'
+ latestVersion: {hash: 'foo'}, currentVersion: {hash: 'bar'}, type: 'VERSION_READY'
         });
         tick();
         expect(location.fullPageNavigationNeeded).toHaveBeenCalledTimes(1);
@@ -244,7 +235,7 @@ describe('SwUpdatesService', () => {
         location.fullPageNavigationNeeded.calls.reset();
 
         swu.$$versionUpdatesSubj.next({
-          latestVersion: {hash: 'baz'}, currentVersion: {hash: 'qux'}, type: 'VERSION_READY'
+ latestVersion: {hash: 'baz'}, currentVersion: {hash: 'qux'}, type: 'VERSION_READY'
         });
         expect(location.fullPageNavigationNeeded).not.toHaveBeenCalled();
       })));
@@ -265,36 +256,36 @@ describe('SwUpdatesService', () => {
 
       describe('and then enabled again', () => {
         it('should start scheduling new checks for updates again', fakeAsync(run(() => {
-          appRef.isStable.next(true);
-          service.disable();
-          service.enable();
-          swu.checkForUpdate.calls.reset();
+ appRef.isStable.next(true);
+ service.disable();
+ service.enable();
+ swu.checkForUpdate.calls.reset();
 
-          tick(checkInterval);
+ tick(checkInterval);
 
-          expect(swu.checkForUpdate).toHaveBeenCalled();
+ expect(swu.checkForUpdate).toHaveBeenCalled();
         })));
 
         it('should start scheduling new checks for updates (after activating an update) again', fakeAsync(run(() => {
-          appRef.isStable.next(true);
-          service.disable();
-          service.enable();
-          swu.checkForUpdate.calls.reset();
+ appRef.isStable.next(true);
+ service.disable();
+ service.enable();
+ swu.checkForUpdate.calls.reset();
 
-          tick(checkInterval);
+ tick(checkInterval);
 
-          expect(swu.checkForUpdate).toHaveBeenCalled();
+ expect(swu.checkForUpdate).toHaveBeenCalled();
         })));
 
         it('should start activating available updates again', fakeAsync(run(() => {
-          service.disable();
-          service.enable();
+ service.disable();
+ service.enable();
 
-          swu.$$versionUpdatesSubj.next({
-            latestVersion: {hash: 'foo'}, type: 'VERSION_READY'
-          } as VersionReadyEvent);
+ swu.$$versionUpdatesSubj.next({
+   latestVersion: {hash: 'foo'}, type: 'VERSION_READY'
+ } as VersionReadyEvent);
 
-          expect(swu.activateUpdate).toHaveBeenCalled();
+ expect(swu.activateUpdate).toHaveBeenCalled();
         })));
       });
     });
@@ -323,10 +314,10 @@ class MockSwUpdate {
   versionUpdates =this.$$versionUpdatesSubj.asObservable();
 
   activateUpdate = jasmine.createSpy('MockSwUpdate.activateUpdate')
-                          .and.callFake(() => Promise.resolve(true));
+  .and.callFake(() => Promise.resolve(true));
 
   checkForUpdate = jasmine.createSpy('MockSwUpdate.checkForUpdate')
-                          .and.callFake(() => Promise.resolve());
+  .and.callFake(() => Promise.resolve());
 
   constructor(public isEnabled: boolean) {}
 }

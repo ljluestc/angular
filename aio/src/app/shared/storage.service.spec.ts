@@ -15,8 +15,8 @@ import { WindowToken } from './window';
       providers: [
         STORAGE_PROVIDERS,
         {
-          provide: WindowToken,
-          useValue: Object.defineProperty({}, storagePropName, { get: getStorageSpy }),
+ provide: WindowToken,
+ useValue: Object.defineProperty({}, storagePropName, { get: getStorageSpy }),
         },
       ],
     });

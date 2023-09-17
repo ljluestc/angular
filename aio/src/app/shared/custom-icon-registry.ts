@@ -43,7 +43,7 @@ export class CustomIconRegistry extends MatIconRegistry {
   private cachedSvgElements: SvgIconMap = {[DEFAULT_NS]: {}};
 
   constructor(http: HttpClient, sanitizer: DomSanitizer, @Optional() @Inject(DOCUMENT) document: Document,
-              errorHandler: ErrorHandler, @Inject(SVG_ICONS) private svgIcons: SvgIconInfo[]) {
+     errorHandler: ErrorHandler, @Inject(SVG_ICONS) private svgIcons: SvgIconInfo[]) {
     super(http, sanitizer, document, errorHandler);
   }
 

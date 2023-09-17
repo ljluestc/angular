@@ -20,11 +20,4 @@ export class AppComponent {
   itemImageUrl = '../assets/potted-plant.svg';
 
   recommended = 'You might also like:';
-  itemImageUrl2 = '../assets/lamp.svg';
-
-
-
-  getVal(): number { return 2; }
-
-
-}
+  itemImageUrl2 = '../assets/lamp.svg';  getVal(): number { return 2; }}

@@ -239,19 +239,16 @@ async function runE2eTestsCLI(exampleName, appDir) {
 
   // `--no-webdriver-update` is needed to preserve the ChromeDriver version already installed.
   const testCommands = config.tests || [{
-                         cmd: NODE,
-                         args: [
-                           VENDORED_YARN,
-                           'e2e',
-                           '--configuration=production',
-                           '--protractor-config=e2e/protractor-bazel.conf.js',
-                           '--no-webdriver-update',
-                           '--port=0',
-                         ],
-                       }];
-
-
-  for (const {cmd, args} of testCommands) {
+          cmd: NODE,
+          args: [
+            VENDORED_YARN,
+            'e2e',
+            '--configuration=production',
+            '--protractor-config=e2e/protractor-bazel.conf.js',
+            '--no-webdriver-update',
+            '--port=0',
+          ],
+        }];  for (const {cmd, args} of testCommands) {
     await spawnExt(cmd, args, {cwd: appDir}, false).promise;
   }
 }

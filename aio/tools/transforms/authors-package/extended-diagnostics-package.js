@@ -12,21 +12,21 @@ const baseAuthoringPackage = require('./base-authoring-package');
 
 function createPackage() {
   return new Package('author-extended-diagnostics', [baseAuthoringPackage, extendedDiagnosticsPackage])
-    .config(function(readFilesProcessor) {
-      readFilesProcessor.sourceFiles = [
-        {
-          basePath: CONTENTS_PATH,
-          include: `${CONTENTS_PATH}/extended-diagnostics/index.md`,
-          fileReader: 'contentFileReader',
-        },
-        {
-          basePath: CONTENTS_PATH,
-          include: `${CONTENTS_PATH}/extended-diagnostics/**/*.md`,
-          exclude: `${CONTENTS_PATH}/extended-diagnostics/index.md`,
-          fileReader: 'extendedDiagnosticFileReader',
-        },
-      ];
-    });
+.config(function(readFilesProcessor) {
+  readFilesProcessor.sourceFiles = [
+{
+  basePath: CONTENTS_PATH,
+  include: `${CONTENTS_PATH}/extended-diagnostics/index.md`,
+  fileReader: 'contentFileReader',
+},
+{
+  basePath: CONTENTS_PATH,
+  include: `${CONTENTS_PATH}/extended-diagnostics/**/*.md`,
+  exclude: `${CONTENTS_PATH}/extended-diagnostics/index.md`,
+  fileReader: 'extendedDiagnosticFileReader',
+},
+  ];
+});
 }
 
 module.exports = {createPackage};

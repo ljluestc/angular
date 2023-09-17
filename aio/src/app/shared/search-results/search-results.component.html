@@ -10,18 +10,18 @@
       <h3 class="search-section-header">{{area.name}} ({{area.pages.length + area.priorityPages.length}})</h3>
       <ul class="priority-pages">
         <li class="search-page" *ngFor="let page of area.priorityPages">
-          <a class="search-result-item" href="{{ page.path }}" (click)="onResultSelected(page, $event)">
-            <span class="symbol {{page.type}}" *ngIf="area.name === 'api'"></span>
-            <span [class.deprecated-api-item]="page.deprecated">{{ page.title }}</span>
-          </a>
+ <a class="search-result-item" href="{{ page.path }}" (click)="onResultSelected(page, $event)">
+   <span class="symbol {{page.type}}" *ngIf="area.name === 'api'"></span>
+   <span [class.deprecated-api-item]="page.deprecated">{{ page.title }}</span>
+ </a>
         </li>
       </ul>
       <ul>
         <li class="search-page" *ngFor="let page of area.pages">
-          <a class="search-result-item" href="{{ page.path }}" (click)="onResultSelected(page, $event)">
-            <span class="symbol {{page.type}}" *ngIf="area.name === 'api'"></span>
-            <span [class.deprecated-api-item]="page.deprecated">{{ page.title }}</span>
-          </a>
+ <a class="search-result-item" href="{{ page.path }}" (click)="onResultSelected(page, $event)">
+   <span class="symbol {{page.type}}" *ngIf="area.name === 'api'"></span>
+   <span [class.deprecated-api-item]="page.deprecated">{{ page.title }}</span>
+ </a>
         </li>
       </ul>
     </div>
@@ -35,19 +35,19 @@
       </p>
       <ul class="priority-pages">
         <li class="search-page">
-          <a class="search-result-item" href="api">API reference</a>
+ <a class="search-result-item" href="api">API reference</a>
         </li>
         <li class="search-page">
-          <a class="search-result-item" href="resources">Resources</a>
+ <a class="search-result-item" href="resources">Resources</a>
         </li>
         <li class="search-page">
-          <a class="search-result-item" href="guide/glossary">Glossary</a>
+ <a class="search-result-item" href="guide/glossary">Glossary</a>
         </li>
         <li class="search-page">
-          <a class="search-result-item" href="guide/cheatsheet">Cheat-sheet</a>
+ <a class="search-result-item" href="guide/cheatsheet">Cheat-sheet</a>
         </li>
         <li class="search-page">
-          <a class="search-result-item" href="https://blog.angular.io/">Angular blog</a>
+ <a class="search-result-item" href="https://blog.angular.io/">Angular blog</a>
         </li>
       </ul>
     </div>
@@ -57,5 +57,3 @@
     <mat-icon svgIcon="close"></mat-icon>
   </button>
 </div>
-
-

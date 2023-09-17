@@ -38,14 +38,14 @@ Also, extend and customize Angular by creating your own builders, which you can 
 A builder resides in a "project" folder that is similar in structure to an Angular workspace, with global configuration files at the top level, and more specific configuration in a source folder with the code files that define the behavior.
 For example, your `myBuilder` folder could contain the following files.
 
-| Files                    | Purpose                                                                                                   |
-|:---                      | :---                                                                                                      |
-| `src/my-builder.ts`      | Main source file for the builder definition.                                                              |
-| `src/my-builder.spec.ts` | Source file for tests.                                                                                    |
-| `src/schema.json`        | Definition of builder input options.                                                                      |
-| `builders.json`          | Builders definition.                                                                                      |
-| `package.json`           | Dependencies. See [https://docs.npmjs.com/files/package.json](https://docs.npmjs.com/files/package.json). |
-| `tsconfig.json`          | [TypeScript configuration](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).              |
+| Files     | Purpose|
+|:---       | :---   |
+| `src/my-builder.ts`      | Main source file for the builder definition.  |
+| `src/my-builder.spec.ts` | Source file for tests.|
+| `src/schema.json`        | Definition of builder input options. |
+| `builders.json` | Builders definition.  |
+| `package.json`  | Dependencies. See [https://docs.npmjs.com/files/package.json](https://docs.npmjs.com/files/package.json). |
+| `tsconfig.json` | [TypeScript configuration](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).     |
 
 Publish the builder to `npm` \(see [Publishing your Library](guide/creating-libraries#publishing-your-library)\).
 If you publish it as `@example/my-builder`, install it using the following command.
@@ -206,22 +206,22 @@ By default, for example, the `build` command runs the builder `@angular-devkit/b
       "build": {
         "builder": "&commat;angular-devkit/build-angular:browser",
         "options": {
-          "outputPath": "dist/myApp",
-          "index": "src/index.html",
-          &hellip;
+ "outputPath": "dist/myApp",
+ "index": "src/index.html",
+ &hellip;
         },
         "configurations": {
-          "production": {
-            "fileReplacements": [
-              {
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
-              }
-            ],
-            "optimization": true,
-            "outputHashing": "all",
-            &hellip;
-          }
+ "production": {
+   "fileReplacements": [
+     {
+ "replace": "src/environments/environment.ts",
+ "with": "src/environments/environment.prod.ts"
+     }
+   ],
+   "optimization": true,
+   "outputHashing": "all",
+   &hellip;
+ }
         }
       },
       &hellip;
@@ -243,10 +243,10 @@ project:target[:configuration]
 
 </code-example>
 
-|               | Details |
-|:---           |:---     |
-| project       | The name of the Angular CLI project that the target is associated with.                                                 |
-| target        | A named builder configuration from the `architect` section of the `angular.json` file.                                  |
+|| Details |
+|:---  |:---     |
+| project       | The name of the Angular CLI project that the target is associated with.    |
+| target        | A named builder configuration from the `architect` section of the `angular.json` file.    |
 | configuration | \(optional\) The name of a specific configuration override for the given target, as defined in the `angular.json` file. |
 
 If your builder calls another builder, it might need to read a passed target string.
@@ -302,23 +302,23 @@ If you create a new project with `ng new builder-test`, the generated `angular.j
       "architect": {
         // &hellip;
         "build": {
-          "builder": "&commat;angular-devkit/build-angular:browser",
-          "options": {
-            // &hellip; more options&hellip;
-            "outputPath": "dist/builder-test",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json"
-          },
-          "configurations": {
-            "production": {
-              // &hellip; more options&hellip;
-              "optimization": true,
-              "aot": true,
-              "buildOptimizer": true
-            }
-          }
+ "builder": "&commat;angular-devkit/build-angular:browser",
+ "options": {
+   // &hellip; more options&hellip;
+   "outputPath": "dist/builder-test",
+   "index": "src/index.html",
+   "main": "src/main.ts",
+   "polyfills": "src/polyfills.ts",
+   "tsConfig": "src/tsconfig.app.json"
+ },
+ "configurations": {
+   "production": {
+     // &hellip; more options&hellip;
+     "optimization": true,
+     "aot": true,
+     "buildOptimizer": true
+   }
+ }
         }
       }
     }
@@ -349,34 +349,34 @@ You need to update the `angular.json` file to add a target for this builder to t
     "builder-test": {
       "architect": {
         "copy-package": {
-          "builder": "&commat;example/copy-file:copy",
-          "options": {
-            "source": "package.json",
-            "destination": "package-copy.json"
-          }
+ "builder": "&commat;example/copy-file:copy",
+ "options": {
+   "source": "package.json",
+   "destination": "package-copy.json"
+ }
         },
         "build": {
-          "builder": "&commat;angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/builder-test",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json"
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "aot": true,
-              "buildOptimizer": true
-            }
-          }
+ "builder": "&commat;angular-devkit/build-angular:browser",
+ "options": {
+   "outputPath": "dist/builder-test",
+   "index": "src/index.html",
+   "main": "src/main.ts",
+   "polyfills": "src/polyfills.ts",
+   "tsConfig": "src/tsconfig.app.json"
+ },
+ "configurations": {
+   "production": {
+     "fileReplacements": [
+ {
+   "replace": "src/environments/environment.ts",
+   "with": "src/environments/environment.prod.ts"
+ }
+     ],
+     "optimization": true,
+     "aot": true,
+     "buildOptimizer": true
+   }
+ }
         }
       }
     }
@@ -451,8 +451,8 @@ In general, if your builder is watching an external event, you should separate y
 
 | Phases     | Details |
 |:---        |:---     |
-| Running    | For example, webpack compiles. This ends when webpack finishes and your builder emits a `BuilderOutput` object.                                                                                                                                              |
-| Watching   | Between two runs, watch an external event stream. For example, webpack watches the file system for any changes. This ends when webpack restarts building, and `context.reportRunning()` is called. This goes back to step 1.                                 |
+| Running    | For example, webpack compiles. This ends when webpack finishes and your builder emits a `BuilderOutput` object.       |
+| Watching   | Between two runs, watch an external event stream. For example, webpack watches the file system for any changes. This ends when webpack restarts building, and `context.reportRunning()` is called. This goes back to step 1.   |
 | Completion | Either the task is fully completed \(for example, webpack was supposed to run a number of times\), or the builder run was stopped \(using `BuilderRun.stop()`\). Your teardown logic is executed, and Architect unsubscribes from your builder's Observable. |
 
 ## Summary

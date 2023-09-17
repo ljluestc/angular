@@ -86,9 +86,9 @@ export class NavigationService {
       map((response) => {
         const views = Object.assign({}, response);
         Object.keys(views).forEach((key) => {
-          if (key[0] === '_') {
-            delete views[key];
-          }
+ if (key[0] === '_') {
+   delete views[key];
+ }
         });
         return views as NavigationViews;
       })
@@ -115,7 +115,7 @@ export class NavigationService {
       map(({url, navMap}) => {
         const matchSpecialUrls = /^api/.exec(url);
         if (matchSpecialUrls) {
-          url = matchSpecialUrls[0];
+ url = matchSpecialUrls[0];
         }
         return navMap.get(url) || {'': {view: '', url, nodes: []}};
       })

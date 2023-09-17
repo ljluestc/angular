@@ -71,10 +71,7 @@ In this step, you will copy over the pre-written styles for the `HousingLocation
 
     <section class="lightbox">
     <img alt="browser frame of homes-app displaying logo, filter text input box and search button and the message 'housing-location works!" src="generated/images/guide/faa/homes-app-lesson-03-step-2.png">
-    </section>
-
-
-## Lesson review
+    </section>## Lesson review
 
 In this lesson, you created a new component for your app and added it to the app's layout.
 

@@ -16,10 +16,7 @@ You can detect unnecessary change detection calls using Angular DevTools. Often 
   <img alt="Angular DevTools profiler preview showing Zone pollution" src="generated/images/guide/change-detection/zone-pollution.png">
 </div>
 
-In the image above, there is a series of change detection calls triggered by event handlers associated with an element. That’s a common challenge when using third-party, non-native Angular components, which do not alter the default behavior of `NgZone`.
-
-
-## Run tasks outside `NgZone`
+In the image above, there is a series of change detection calls triggered by event handlers associated with an element. That’s a common challenge when using third-party, non-native Angular components, which do not alter the default behavior of `NgZone`.## Run tasks outside `NgZone`
 
 In such cases, you can instruct Angular to avoid calling change detection for tasks scheduled by a given piece of code using [NgZone](/guide/zone).
 

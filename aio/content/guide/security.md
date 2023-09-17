@@ -25,11 +25,11 @@ For more information about how Google handles security issues, see [Google's sec
 
 <header>Best practices</header>
 
-| Practices                                                           | Details |
-|:---                                                                 |:---     |
-| Keep current with the latest Angular library releases               | The Angular libraries get regular updates, and these updates might fix security defects discovered in previous versions. Check the Angular [change log](https://github.com/angular/angular/blob/main/CHANGELOG.md) for security-related updates. |
-| Don't alter your copy of Angular                                   | Private, customized versions of Angular tend to fall behind the current version and might not include important security fixes and enhancements. Instead, share your Angular improvements with the community and make a pull request.              |
-| Avoid Angular APIs marked in the documentation as "*Security Risk*" | For more information, see the [Trusting safe values](guide/security#bypass-security-apis) section of this page.                                                                                                                                    |
+| Practices     | Details |
+|:---     |:---     |
+| Keep current with the latest Angular library releases| The Angular libraries get regular updates, and these updates might fix security defects discovered in previous versions. Check the Angular [change log](https://github.com/angular/angular/blob/main/CHANGELOG.md) for security-related updates. |
+| Don't alter your copy of Angular     | Private, customized versions of Angular tend to fall behind the current version and might not include important security fixes and enhancements. Instead, share your Angular improvements with the community and make a pull request.     |
+| Avoid Angular APIs marked in the documentation as "*Security Risk*" | For more information, see the [Trusting safe values](guide/security#bypass-security-apis) section of this page.   |
 
 </div>
 
@@ -69,10 +69,10 @@ A value that's harmless in CSS is potentially dangerous in a URL.
 Angular defines the following security contexts:
 
 | Security contexts | Details |
-|:---               |:---     |
-| HTML              | Used when interpreting a value as HTML, for example, when binding to `innerHtml`. |
-| Style             | Used when binding CSS into the `style` property.                                  |
-| URL               | Used for URL properties, such as `<a href>`.                                      |
+|:---|:---     |
+| HTML     | Used when interpreting a value as HTML, for example, when binding to `innerHtml`. |
+| Style    | Used when binding CSS into the `style` property.    |
+| URL| Used for URL properties, such as `<a href>`.        |
 | Resource URL      | A URL that is loaded and executed as code, for example, in `<script src>`.        |
 
 Angular sanitizes untrusted values for HTML, styles, and URLs. Sanitizing resource URLs isn't possible because they contain arbitrary code.
@@ -200,8 +200,8 @@ If an attacker can predict future nonces, they can circumvent the protections of
 
 If you cannot generate nonces in your project, you can allow inline styles by adding `'unsafe-inline'` to the `style-src` section of the CSP header.
 
-| Sections                | Details |
-|:---                     |:---     |
+| Sections | Details |
+|:---      |:---     |
 | `default-src 'self';`   | Allows the page to load all its required resources from the same origin. |
 | `style-src 'self' 'nonce-randomNonceGoesHere';`     | Allows the page to load global styles from the same origin \(`'self'`\) and styles inserted by Angular with the `nonce-randomNonceGoesHere`. |
 | `script-src 'self' 'nonce-randomNonceGoesHere';`     | Allows the page to load JavaScript from the same origin \(`'self'`\) and scripts inserted by the Angular CLI with the `nonce-randomNonceGoesHere`. This is only required if you're using critical CSS inlining. |
@@ -231,12 +231,12 @@ See [caniuse.com/trusted-types](https://caniuse.com/trusted-types) for the curre
 
 To enforce Trusted Types for your application, you must configure your application's web server to emit HTTP headers with one of the following Angular policies:
 
-| Policies                | Detail |
-|:---                     |:---    |
-| `angular`               | This policy is used in security-reviewed code that is internal to Angular, and is required for Angular to function when Trusted Types are enforced. Any inline template values or content sanitized by Angular is treated as safe by this policy.                           |
-| `angular#unsafe-bypass` | This policy is used for applications that use any of the methods in Angular's [DomSanitizer](api/platform-browser/DomSanitizer) that bypass security, such as `bypassSecurityTrustHtml`. Any application that uses these methods must enable this policy.                   |
+| Policies | Detail |
+|:---      |:---    |
+| `angular`| This policy is used in security-reviewed code that is internal to Angular, and is required for Angular to function when Trusted Types are enforced. Any inline template values or content sanitized by Angular is treated as safe by this policy.   |
+| `angular#unsafe-bypass` | This policy is used for applications that use any of the methods in Angular's [DomSanitizer](api/platform-browser/DomSanitizer) that bypass security, such as `bypassSecurityTrustHtml`. Any application that uses these methods must enable this policy.    |
 | `angular#unsafe-jit`    | This policy is used by the [Just-In-Time (JIT) compiler](api/core/Compiler). You must enable this policy if your application interacts directly with the JIT compiler or is running in JIT mode using the [platform browser dynamic](api/platform-browser-dynamic/platformBrowserDynamic). |
-| `angular#bundler`       | This policy is used by the Angular CLI bundler when creating lazy chunk files.                    |
+| `angular#bundler`       | This policy is used by the Angular CLI bundler when creating lazy chunk files.     |
 
 You should configure the HTTP headers for Trusted Types in the following locations:
 

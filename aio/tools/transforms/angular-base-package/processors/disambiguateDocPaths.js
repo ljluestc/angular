@@ -20,16 +20,16 @@
  */
 module.exports = function disambiguateDocPathsProcessor() {
   return {
-    $runAfter: ['paths-computed'],
-    $runBefore: ['rendering-docs', 'createSitemap'],
-    $process(docs) {
-      for (const doc of docs) {
-        if (!doc.outputPath) {
-          continue;
-        }
-        doc.outputPath = encodeToLowercase(doc.outputPath);
-      }
-    }
+$runAfter: ['paths-computed'],
+$runBefore: ['rendering-docs', 'createSitemap'],
+$process(docs) {
+  for (const doc of docs) {
+if (!doc.outputPath) {
+  continue;
+}
+doc.outputPath = encodeToLowercase(doc.outputPath);
+  }
+}
   };
 };
 

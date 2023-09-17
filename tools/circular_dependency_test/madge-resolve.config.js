@@ -13,21 +13,21 @@
  */
 class BazelRunfileResolutionPlugin {
   apply(resolver) {
-    resolver.plugin('module', (request, callback) => {
-      try {
-        // Resolve the module through the `require.resolve` method which has been patched
-        // in the Bazel NodeJS loader to respect runfiles and module mappings. This allows
-        // Madge to handle module mappings specified in `ts_library` and `ng_module` targets.
-        const resolvedPath = require.resolve(request.request);
-        // Update the request to refer to the runfile resolved file path.
-        resolver.doResolve('resolve', {...request, request: resolvedPath}, null, callback, true);
-        return;
-      } catch {
-      }
-      // If the file could not be resolved through Bazel's runfile resolution, proceed
-      // with the default module resolvers.
-      callback();
-    });
+resolver.plugin('module', (request, callback) => {
+  try {
+// Resolve the module through the `require.resolve` method which has been patched
+// in the Bazel NodeJS loader to respect runfiles and module mappings. This allows
+// Madge to handle module mappings specified in `ts_library` and `ng_module` targets.
+const resolvedPath = require.resolve(request.request);
+// Update the request to refer to the runfile resolved file path.
+resolver.doResolve('resolve', {...request, request: resolvedPath}, null, callback, true);
+return;
+  } catch {
+  }
+  // If the file could not be resolved through Bazel's runfile resolution, proceed
+  // with the default module resolvers.
+  callback();
+});
   }
 }
 

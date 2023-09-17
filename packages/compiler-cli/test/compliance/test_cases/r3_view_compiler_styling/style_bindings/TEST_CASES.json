@@ -6,8 +6,8 @@
       "inputFiles": ["style_binding.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["style_binding.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["style_binding.js"]
         }
       ]
     },
@@ -16,8 +16,8 @@
       "inputFiles": ["binding_slots.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["binding_slots.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["binding_slots.js"]
         }
       ]
     },
@@ -26,8 +26,8 @@
       "inputFiles": ["binding_slots_interpolations.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["binding_slots_interpolations.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["binding_slots_interpolations.js"]
         }
       ]
     },
@@ -36,8 +36,8 @@
       "inputFiles": ["style_ordering.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["style_ordering.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["style_ordering.js"]
         }
       ]
     },
@@ -46,8 +46,8 @@
       "inputFiles": ["style_binding_suffixed.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["style_binding_suffixed.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["style_binding_suffixed.js"]
         }
       ]
     },
@@ -56,8 +56,8 @@
       "inputFiles": ["empty_style_bindings.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["empty_style_bindings.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["empty_style_bindings.js"]
         }
       ]
     }

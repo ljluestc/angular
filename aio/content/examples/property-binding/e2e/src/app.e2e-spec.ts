@@ -1,7 +1,4 @@
-import { browser, element, by } from 'protractor';
-
-
-describe('Property binding e2e tests', () => {
+import { browser, element, by } from 'protractor';describe('Property binding e2e tests', () => {
 
   beforeEach(() => browser.get(''));
 

@@ -7,13 +7,7 @@
  */
 import {Tree} from '@angular-devkit/schematics';
 import {dirname, relative, resolve} from 'path';
-import ts from 'typescript';
-
-import {parseTsconfigFile} from './parse_tsconfig';
-
-type FakeReadFileFn = (fileName: string) => string|undefined;
-
-/**
+import ts from 'typescript';import {parseTsconfigFile} from './parse_tsconfig';type FakeReadFileFn = (fileName: string) => string|undefined;/**
  * Creates a TypeScript program instance for a TypeScript project within
  * the virtual file system tree.
  * @param tree Virtual file system tree that contains the source files.
@@ -27,11 +21,9 @@ export function createMigrationProgram(
     tree: Tree, tsconfigPath: string, basePath: string, fakeFileRead?: FakeReadFileFn,
     additionalFiles?: string[]) {
   const {rootNames, options, host} =
-      createProgramOptions(tree, tsconfigPath, basePath, fakeFileRead, additionalFiles);
+createProgramOptions(tree, tsconfigPath, basePath, fakeFileRead, additionalFiles);
   return ts.createProgram(rootNames, options, host);
-}
-
-/**
+}/**
  * Creates the options necessary to instantiate a TypeScript program.
  * @param tree Virtual file system tree that contains the source files.
  * @param tsconfigPath Virtual file system path that resolves to the TypeScript project.
@@ -52,39 +44,27 @@ export function createProgramOptions(
   const options = optionOverrides ? {...parsed.options, ...optionOverrides} : parsed.options;
   const host = createMigrationCompilerHost(tree, options, basePath, fakeFileRead);
   return {rootNames: parsed.fileNames.concat(additionalFiles || []), options, host};
-}
-
-function createMigrationCompilerHost(
+}function createMigrationCompilerHost(
     tree: Tree, options: ts.CompilerOptions, basePath: string,
     fakeRead?: FakeReadFileFn): ts.CompilerHost {
   const host = ts.createCompilerHost(options, true);
-  const defaultReadFile = host.readFile;
-
-  // We need to overwrite the host "readFile" method, as we want the TypeScript
+  const defaultReadFile = host.readFile;  // We need to overwrite the host "readFile" method, as we want the TypeScript
   // program to be based on the file contents in the virtual file tree. Otherwise
   // if we run multiple migrations we might have intersecting changes and
   // source files.
   host.readFile = fileName => {
     const treeRelativePath = relative(basePath, fileName);
-    let result: string|undefined = fakeRead?.(treeRelativePath);
-
-    if (typeof result !== 'string') {
-      // If the relative path resolved to somewhere outside of the tree, fall back to
-      // TypeScript's default file reading function since the `tree` will throw an error.
-      result = treeRelativePath.startsWith('..') ? defaultReadFile.call(host, fileName) :
-                                                   tree.read(treeRelativePath)?.toString();
-    }
-
-    // Strip BOM as otherwise TSC methods (Ex: getWidth) will return an offset,
+    let result: string|undefined = fakeRead?.(treeRelativePath);    if (typeof result !== 'string') {
+// If the relative path resolved to somewhere outside of the tree, fall back to
+// TypeScript's default file reading function since the `tree` will throw an error.
+result = treeRelativePath.startsWith('..') ? defaultReadFile.call(host, fileName) :
+tree.read(treeRelativePath)?.toString();
+    }    // Strip BOM as otherwise TSC methods (Ex: getWidth) will return an offset,
     // which breaks the CLI UpdateRecorder.
     // See: https://github.com/angular/angular/pull/30719
     return typeof result === 'string' ? result.replace(/^\uFEFF/, '') : undefined;
-  };
-
-  return host;
-}
-
-/**
+  };  return host;
+}/**
  * Checks whether a file can be migrate by our automated migrations.
  * @param basePath Absolute path to the project.
  * @param sourceFile File being checked.
@@ -94,11 +74,9 @@ export function canMigrateFile(
     basePath: string, sourceFile: ts.SourceFile, program: ts.Program): boolean {
   // We shouldn't migrate .d.ts files, files from an external library or type checking files.
   if (sourceFile.fileName.endsWith('.ngtypecheck.ts') || sourceFile.isDeclarationFile ||
-      program.isSourceFileFromExternalLibrary(sourceFile)) {
+program.isSourceFileFromExternalLibrary(sourceFile)) {
     return false;
-  }
-
-  // Our migrations are set up to create a `Program` from the project's tsconfig and to migrate all
+  }  // Our migrations are set up to create a `Program` from the project's tsconfig and to migrate all
   // the files within the program. This can include files that are outside of the Angular CLI
   // project. We can't migrate files outside of the project, because our file system interactions
   // go through the CLI's `Tree` which assumes that all files are within the project. See:

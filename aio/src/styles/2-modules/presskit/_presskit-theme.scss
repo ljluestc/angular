@@ -14,15 +14,15 @@
 
       .presskit-icon-group {
         .presskit-icon-item {
-          .presskit-image-container {
-            .transparent-img {
-              background-color: constants.$white;
+ .presskit-image-container {
+   .transparent-img {
+     background-color: constants.$white;
 
-              &-inverse {
-                background-color: if($is-dark-theme, mat.get-color-from-palette($background, background), constants.$deepgray);
-              }
-            }
-          }
+     &-inverse {
+ background-color: if($is-dark-theme, mat.get-color-from-palette($background, background), constants.$deepgray);
+     }
+   }
+ }
         }
       }
     }

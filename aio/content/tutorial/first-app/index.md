@@ -45,10 +45,7 @@ From a **Terminal** window:
 
 ## Step 2 - Install the correct version of `node.js` for Angular
 
-If you do not have a version of `node.js` installed, please follow the [directions for installation on nodejs.org](https://nodejs.org/en/download/)
-
-
-## Step 3 - Install the latest version of Angular
+If you do not have a version of `node.js` installed, please follow the [directions for installation on nodejs.org](https://nodejs.org/en/download/)## Step 3 - Install the latest version of Angular
 
 With `node.js` and `npm` installed, the next step is to install the [Angular CLI](/cli) which provides tooling for effective Angular development.
 

@@ -9,6 +9,6 @@ import { HighlightDirective } from './highlight.directive';
   imports:      [ CommonModule ],
   declarations: [ AwesomePipe, HighlightDirective ],
   exports:      [ AwesomePipe, HighlightDirective,
-                  CommonModule, FormsModule ]
+CommonModule, FormsModule ]
 })
 export class SharedModule { }

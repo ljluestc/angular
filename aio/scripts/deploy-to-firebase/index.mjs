@@ -14,21 +14,21 @@
  *   - [Angular Development Phases](https://docs.google.com/document/d/197kVillDwx-RZtSVOBtPb4BBIAw0E9RT3q3v6DZkykU)
  *
  * |--------------------|-------------------------------------------------------------------|
- * | TABLE:             |                      Is there an active RC?                       |
+ * | TABLE:    |       Is there an active RC?        |
  * | Where should we    |---------------------------------|---------------------------------|
- * | deploy to/as?      |               NO                |               YES               |
+ * | deploy to/as?      |NO |YES|
  * |-----------|--------|---------------------------------|---------------------------------|
- * |           | LTS    | archive                         | archive                         |
- * |           |--------|---------------------------------|---------------------------------|
- * |           | PATCH  | stable                          | stable                          |
+ * |  | LTS    | archive | archive |
+ * |  |--------|---------------------------------|---------------------------------|
+ * |  | PATCH  | stable  | stable  |
  * | What      |        | redirectVersionDomainToStable   | redirectVersionDomainToStable   |
- * | branch    |        | redirectRcToStable              |                                 |
+ * | branch    |        | redirectRcToStable     |   |
  * | are we    |--------|---------------------------------|---------------------------------|
- * | deploying | RC     | -                               | rc                              |
- * | from?     |        |                                 | redirectVersionDomainToRc(*)    |
- * |           |--------|---------------------------------|---------------------------------|
- * |           | MAIN   | next                            | next                            |
- * |           |        | redirectVersionDomainToNext(**) | redirectVersionDomainToNext(**) |
+ * | deploying | RC     | - | rc|
+ * | from?     |        |   | redirectVersionDomainToRc(*)    |
+ * |  |--------|---------------------------------|---------------------------------|
+ * |  | MAIN   | next    | next    |
+ * |  |        | redirectVersionDomainToNext(**) | redirectVersionDomainToNext(**) |
  * |-----------|--------|---------------------------------|---------------------------------|
  *
  * (*):  Only if `v<RC>` > `v<STABLE>`.
@@ -55,10 +55,7 @@ import post from './post-deploy-actions.mjs';
 import pre from './pre-deploy-actions.mjs';
 import u from './utils.mjs';
 
-sh.set('-e');
-
-
-// Constants
+sh.set('-e');// Constants
 const inBazelTest = !!process.env.TEST_SRCDIR;
 const DIRNAME = !inBazelTest
   ? u.getDirname(import.meta.url)
@@ -98,15 +95,15 @@ if (isMain) {
       console.log(deploymentInfo.reason);
     } else {
       console.log(
-          `Git branch          : ${inputVars.currentBranch}\n` +
-          `Git commit          : ${inputVars.currentCommit}\n` +
-          `Build/deploy mode   : ${deploymentInfo.deployEnv}\n` +
-          `Firebase project    : ${deploymentInfo.projectId}\n` +
-          `Firebase site       : ${deploymentInfo.siteId}\n` +
-          `Pre-deploy actions  : ${serializeActions(deploymentInfo.preDeployActions)}\n` +
-          `Post-deploy actions : ${serializeActions(deploymentInfo.postDeployActions)}\n` +
-          `Deployment URLs     : ${deploymentInfo.deployedUrl}\n` +
-          `                      https://${deploymentInfo.siteId}.web.app/`);
+ `Git branch : ${inputVars.currentBranch}\n` +
+ `Git commit : ${inputVars.currentCommit}\n` +
+ `Build/deploy mode   : ${deploymentInfo.deployEnv}\n` +
+ `Firebase project    : ${deploymentInfo.projectId}\n` +
+ `Firebase site       : ${deploymentInfo.siteId}\n` +
+ `Pre-deploy actions  : ${serializeActions(deploymentInfo.preDeployActions)}\n` +
+ `Post-deploy actions : ${serializeActions(deploymentInfo.postDeployActions)}\n` +
+ `Deployment URLs     : ${deploymentInfo.deployedUrl}\n` +
+ `       https://${deploymentInfo.siteId}.web.app/`);
 
       if (!isDryRun) {
         deploy({...inputVars, ...deploymentInfo});
@@ -133,7 +130,7 @@ function computeDeploymentsInfo(
   if (currentCommit !== latestCommit) {
     return [
       skipDeployment(
-          `Skipping deploy because ${currentCommit} is not the latest commit (${latestCommit}).`),
+ `Skipping deploy because ${currentCommit} is not the latest commit (${latestCommit}).`),
     ];
   }
 
@@ -326,9 +323,9 @@ function computeDeploymentsInfo(
   if (currentBranch !== mostRecentMinorBranchForMajor) {
     return [
       skipDeployment(
-          `Skipping deploy of branch "${currentBranch}" to Firebase.\n` +
-          'There is a more recent branch with the same major version: ' +
-          `"${mostRecentMinorBranchForMajor}"`),
+ `Skipping deploy of branch "${currentBranch}" to Firebase.\n` +
+ 'There is a more recent branch with the same major version: ' +
+ `"${mostRecentMinorBranchForMajor}"`),
     ];
   }
 
@@ -336,9 +333,9 @@ function computeDeploymentsInfo(
   if (currentBranchMajorVersion >= stableBranchMajorVersion) {
     return [
       skipDeployment(
-          `Skipping deploy of branch "${currentBranch}" to Firebase.\n` +
-          'This branch has an equal or higher major version than the stable branch ' +
-          `("${stableBranch}") and is not the most recent minor branch.`),
+ `Skipping deploy of branch "${currentBranch}" to Firebase.\n` +
+ 'This branch has an equal or higher major version than the stable branch ' +
+ `("${stableBranch}") and is not the most recent minor branch.`),
     ];
   }
 
@@ -437,8 +434,8 @@ function validateDeploymentsInfo(deploymentsList) {
 
     if (missingProperties.length > 0) {
       throw new Error(
-          `Expected deploy target '${target.name || '<no name>'}' to have all required ` +
-          `properties, but it is missing '${missingProperties.join('\', \'')}'.`);
+ `Expected deploy target '${target.name || '<no name>'}' to have all required ` +
+ `properties, but it is missing '${missingProperties.join('\', \'')}'.`);
     }
   }
 
@@ -447,8 +444,8 @@ function validateDeploymentsInfo(deploymentsList) {
     // ...check that exactly one target has been specified.
     if (deploymentsList.length > 1) {
       throw new Error(
-          `Expected a single skipped deploy target, but found ${deploymentsList.length} targets ` +
-          `in total: ${listDeployTargetNames(deploymentsList)}`);
+ `Expected a single skipped deploy target, but found ${deploymentsList.length} targets ` +
+ `in total: ${listDeployTargetNames(deploymentsList)}`);
     }
 
     // There is only one skipped deploy target and it is valid (i.e. has all required properties).

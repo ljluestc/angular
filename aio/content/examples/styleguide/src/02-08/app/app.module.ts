@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { InputHighlightDirective,
-         ValidateDirective } from './shared';
+ValidateDirective } from './shared';
 
 @NgModule({
   imports: [

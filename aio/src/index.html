@@ -54,7 +54,7 @@
       if (i.trustedTypes) {
         // Specify path as a TrustedScriptURL when Trusted Types are available
         g = i.trustedTypes.createPolicy('aio#analytics', {
-          createScriptURL: function (s) { return s; }
+ createScriptURL: function (s) { return s; }
         }).createScriptURL(g);
       }
       i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {

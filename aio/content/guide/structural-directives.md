@@ -67,10 +67,7 @@ For more information, see the [NgFor API](api/common/NgFor "API: NgFor") and [Ng
 
   For more information, see the [ng-template API](api/core/ng-template) documentation.
 
-</div>
-
-
-<a id="one-per-element"></a>
+</div><a id="one-per-element"></a>
 ## One structural directive per element
 
 It's a quite common use-case to repeat a block of HTML but only when a particular condition is true. An intuitive way to do that is to put both an `*ngFor` and an `*ngIf` on the same element. However, since both `*ngFor` and `*ngIf` are structural directives, this would be treated as an error by the compiler. You may apply only one _structural_ directive to an element.
@@ -83,10 +80,7 @@ Which should go first, the `NgIf` or the `NgFor`? Can the `NgIf` cancel the effe
 If so (and it seems like it should be so), how should Angular generalize the ability to cancel for other structural directives?
 
 There are no easy answers to these questions. Prohibiting multiple structural directives makes them moot.
-There's an easy solution for this use case: put the `*ngIf` on a container element that wraps the `*ngFor` element. One or both elements can be an `<ng-container>` so that no extra DOM elements are generated.
-
-
-<a id="unless"></a>
+There's an easy solution for this use case: put the `*ngIf` on a container element that wraps the `*ngFor` element. One or both elements can be an `<ng-container>` so that no extra DOM elements are generated.<a id="unless"></a>
 ## Creating a structural directive
 
 This section guides you through creating an `UnlessDirective` and how to set `condition` values.
@@ -182,33 +176,33 @@ The following tables describe each portion of the structural directive grammar:
 </code-tabs>
 
 | Keyword      | Details |
-|:---          |:---     |
-| `prefix`     | HTML attribute key                                 |
-| `key`        | HTML attribute key                                 |
-| `local`      | Local variable name used in the template           |
+|:--- |:---     |
+| `prefix`     | HTML attribute key   |
+| `key`        | HTML attribute key   |
+| `local`      | Local variable name used in the template  |
 | `export`     | Value exported by the directive under a given name |
-| `expression` | Standard Angular expression                        |
+| `expression` | Standard Angular expression|
 
 ### How Angular translates shorthand
 
 Angular translates structural directive shorthand into the normal binding syntax as follows:
 
-| Shorthand                       | Translation |
-|:---                             |:---         |
-| `prefix` and naked `expression` | <code-example format="typescript" hideCopy language="typescript"> [prefix]="expression" </code-example>                                                                                                                       |
-| `keyExp`                        | <code-example format="typescript" hideCopy language="typescript"> [prefixKey] "expression" (let-prefixKey="export") </code-example> <div class="alert is-helpful"> **NOTE**: <br /> The `prefix` is added to the `key` </div> |
-| `let`                           | <code-example format="typescript" hideCopy language="typescript"> let-local="export" </code-example>                                                                                                                          |
+| Shorthand        | Translation |
+|:---     |:---|
+| `prefix` and naked `expression` | <code-example format="typescript" hideCopy language="typescript"> [prefix]="expression" </code-example>     |
+| `keyExp`| <code-example format="typescript" hideCopy language="typescript"> [prefixKey] "expression" (let-prefixKey="export") </code-example> <div class="alert is-helpful"> **NOTE**: <br /> The `prefix` is added to the `key` </div> |
+| `let`   | <code-example format="typescript" hideCopy language="typescript"> let-local="export" </code-example>  |
 
 ### Shorthand examples
 
 The following table provides shorthand examples:
 
-| Shorthand                                                                                                                                                                                                     | How Angular interprets the syntax |
-|:---                                                                                                                                                                                                           |:---                               |
-| <code-example format="typescript" hideCopy language="typescript"> &ast;ngFor="let item of [1,2,3]" </code-example>                                                                                            | <code-example format="html" hideCopy language="html"> &lt;ng-template ngFor &NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let-item &NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [ngForOf]="[1,2,3]"&gt; </code-example>                                                                                                                                                                                                                                                                                                                  |
+| Shorthand  | How Angular interprets the syntax |
+|:---        |:--- |
+| <code-example format="typescript" hideCopy language="typescript"> &ast;ngFor="let item of [1,2,3]" </code-example>  | <code-example format="html" hideCopy language="html"> &lt;ng-template ngFor &NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let-item &NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [ngForOf]="[1,2,3]"&gt; </code-example>      |
 | <code-example format="typescript" hideCopy language="typescript"> &ast;ngFor="let item of [1,2,3] as items; &NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; trackBy: myTrack; index as i" </code-example> | <code-example format="html" hideCopy language="html"> &lt;ng-template ngFor &NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let-item &NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [ngForOf]="[1,2,3]" &NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let-items="ngForOf" &NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [ngForTrackBy]="myTrack" &NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let-i="index"&gt; </code-example> |
-| <code-example format="typescript" hideCopy language="typescript"> &ast;ngIf="exp" </code-example>                                                                                                             | <code-example format="html" hideCopy language="html"> &lt;ng-template [ngIf]="exp"&gt; </code-example>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| <code-example format="typescript" hideCopy language="typescript"> &ast;ngIf="exp as value" </code-example>                                                                                                    | <code-example format="html" hideCopy language="html"> &lt;ng-template [ngIf]="exp" &NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let-value="ngIf"&gt; </code-example>                                                                                                                                                                                                                                                                                                                                                                                                         |
+| <code-example format="typescript" hideCopy language="typescript"> &ast;ngIf="exp" </code-example>    | <code-example format="html" hideCopy language="html"> &lt;ng-template [ngIf]="exp"&gt; </code-example>   |
+| <code-example format="typescript" hideCopy language="typescript"> &ast;ngIf="exp as value" </code-example> | <code-example format="html" hideCopy language="html"> &lt;ng-template [ngIf]="exp" &NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let-value="ngIf"&gt; </code-example>   |
 
 <a id="directive-type-checks"></a>
 

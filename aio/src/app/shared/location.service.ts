@@ -82,13 +82,13 @@ export class LocationService {
     const q = path.indexOf('?');
     if (q > -1) {
       try {
-          const params = path.slice(q + 1).split('&');
-          params.forEach(p => {
-            const pair = p.split('=');
-            if (pair[0]) {
-              search[decodeURIComponent(pair[0])] = pair[1] && decodeURIComponent(pair[1]);
-            }
-          });
+ const params = path.slice(q + 1).split('&');
+ params.forEach(p => {
+   const pair = p.split('=');
+   if (pair[0]) {
+     search[decodeURIComponent(pair[0])] = pair[1] && decodeURIComponent(pair[1]);
+   }
+ });
       } catch (e) { /* don't care */ }
     }
     return search;
@@ -155,7 +155,7 @@ export class LocationService {
 
     // don't navigate if external link or has extension
     if ( (!isInPageAnchor && anchor.href !== this.urlParser.href) ||
-         !/\/[^/.]*$/.test(pathname) ) {
+!/\/[^/.]*$/.test(pathname) ) {
       return true;
     }
 

@@ -23,25 +23,25 @@ You can organize your other NgModules any way you want.
 
 This topic provides some guidelines for the following general categories of NgModules:
 
-| Category            | Details |
-|:---                 |:---     |
-| [Domain](#domain)   | Is organized around a feature, business domain, or user experience.                                                                         |
+| Category   | Details |
+|:---        |:---     |
+| [Domain](#domain)   | Is organized around a feature, business domain, or user experience. |
 | [Routed](#routed)   | Is the top component of the NgModule. Acts as the destination of a [router](guide/glossary#router "Definition of router") navigation route. |
-| [Routing](#routing) | Provides the routing configuration for another NgModule.                                                                                    |
-| [Service](#service) | Provides utility services such as data access and messaging.                                                                                |
-| [Widget](#widget)   | Makes a component, directive, or pipe available to other NgModules.                                                                         |
-| [Shared](#shared)   | Makes a set of components, directives, and pipes available to other NgModules.                                                              |
+| [Routing](#routing) | Provides the routing configuration for another NgModule.   |
+| [Service](#service) | Provides utility services such as data access and messaging.        |
+| [Widget](#widget)   | Makes a component, directive, or pipe available to other NgModules. |
+| [Shared](#shared)   | Makes a set of components, directives, and pipes available to other NgModules.        |
 
 The following table summarizes the key characteristics of each category.
 
 | NgModule | Declarations | Providers      | Exports       | Imported by |
-|:---      |:---          |:---            |:---           |:---         |
-| Domain   | Yes          | Rare           | Top component | Another domain, `AppModule`    |
-| Routed   | Yes          | Rare           | No            | None                           |
-| Routing  | No           | Yes \(Guards\) | RouterModule  | Another domain \(for routing\) |
-| Service  | No           | Yes            | No            | `AppModule`                    |
-| Widget   | Yes          | Rare           | Yes           | Another domain                 |
-| Shared   | Yes          | No             | Yes           | Another domain                 |
+|:---      |:--- |:---   |:---  |:---|
+| Domain   | Yes | Rare  | Top component | Another domain, `AppModule`    |
+| Routed   | Yes | Rare  | No   | None|
+| Routing  | No  | Yes \(Guards\) | RouterModule  | Another domain \(for routing\) |
+| Service  | No  | Yes   | No   | `AppModule`  |
+| Widget   | Yes | Rare  | Yes  | Another domain        |
+| Shared   | Yes | No    | Yes  | Another domain        |
 
 <a id="domain"></a>
 

@@ -22,27 +22,21 @@ const packageMap = {
   router: ['router/index.ts', 'router/testing/index.ts', 'router/upgrade/index.ts'],
   'service-worker': ['service-worker/index.ts'],
   upgrade: ['upgrade/index.ts', 'upgrade/static/index.ts', 'upgrade/static/testing/index.ts']
-};
-
-
-function createPackage(packageName) {
+};function createPackage(packageName) {
 
   return new Package('author-api', [baseAuthoringPackage, apiPackage])
-      .config(function(readTypeScriptModules) {
-        readTypeScriptModules.sourceFiles = packageMap[packageName];
-      })
-      .config(function(readFilesProcessor) {
-        readFilesProcessor.sourceFiles = [
-          {
-            basePath: API_SOURCE_PATH,
-            include: `${API_SOURCE_PATH}/examples/${packageName}/**/*`,
-            fileReader: 'exampleFileReader'
-          }
-        ];
-      });
-}
-
-
-module.exports = {
+  .config(function(readTypeScriptModules) {
+readTypeScriptModules.sourceFiles = packageMap[packageName];
+  })
+  .config(function(readFilesProcessor) {
+readFilesProcessor.sourceFiles = [
+  {
+basePath: API_SOURCE_PATH,
+include: `${API_SOURCE_PATH}/examples/${packageName}/**/*`,
+fileReader: 'exampleFileReader'
+  }
+];
+  });
+}module.exports = {
   createPackage
 };

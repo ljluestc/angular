@@ -1,7 +1,7 @@
 /* eslint-disable @angular-eslint/directive-class-suffix,
-                  @angular-eslint/directive-selector,
-                  @angular-eslint/no-output-rename,
-                  @angular-eslint/no-outputs-metadata-property */
+@angular-eslint/directive-selector,
+@angular-eslint/no-output-rename,
+@angular-eslint/no-outputs-metadata-property */
 import { Directive, ElementRef, EventEmitter, Output } from '@angular/core';
 
 @Directive({

@@ -10,5 +10,3 @@ export class HeroComponent {
   @Output() savedTheDay = new EventEmitter<boolean>();
 }
 // #enddocregion example
-
-

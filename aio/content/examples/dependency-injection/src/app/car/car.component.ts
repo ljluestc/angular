@@ -6,13 +6,10 @@ import { Car as CarNoDi } from './car-no-di';
 import { CarFactory } from './car-factory';
 
 import { testCar,
-         simpleCar,
-         superCar } from './car-creations';
+simpleCar,
+superCar } from './car-creations';
 
-import { useInjector } from './car-injector';
-
-
-@Component({
+import { useInjector } from './car-injector';@Component({
   standalone: true,
   selector: 'app-car',
   template: `

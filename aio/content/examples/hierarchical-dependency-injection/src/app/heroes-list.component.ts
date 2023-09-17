@@ -15,7 +15,7 @@ import { AsyncPipe, NgFor } from '@angular/common';
       <h3>Hero Tax Returns</h3>
       <ul>
         <li *ngFor="let hero of heroes | async">
-          <button type="button" (click)="showTaxReturn(hero)">{{hero.name}}</button>
+ <button type="button" (click)="showTaxReturn(hero)">{{hero.name}}</button>
         </li>
       </ul>
       <app-hero-tax-return

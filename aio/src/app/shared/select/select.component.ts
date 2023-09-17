@@ -90,7 +90,7 @@ export class SelectComponent implements OnInit {
     switch(event.key) {
       case 'ArrowDown':
         runOrOpenOptions(() =>
-          this.currentOptionIdx = Math.min(this.currentOptionIdx + 1, (this.options?.length ?? 0) - 1)
+ this.currentOptionIdx = Math.min(this.currentOptionIdx + 1, (this.options?.length ?? 0) - 1)
         );
         break;
       case 'ArrowUp':
@@ -101,7 +101,7 @@ export class SelectComponent implements OnInit {
         break;
       case 'Tab':
         if(this.showOptions) {
-          this.select(this.currentOptionIdx);
+ this.select(this.currentOptionIdx);
         }
         break;
       case 'Enter':

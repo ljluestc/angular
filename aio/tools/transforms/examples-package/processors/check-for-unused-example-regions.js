@@ -13,26 +13,26 @@
  */
 module.exports = function checkForUnusedExampleRegions(exampleMap) {
   return {
-    $runAfter: ['renderExamples'],
-    $runBefore: ['writing-files'],
-    $process() {
-      const unusedExampleRegions = [];
-      for (const exampleFolder of Object.values(exampleMap)) {
-        for (const exampleFile of Object.values(exampleFolder)) {
-          for (const [regionName, region] of Object.entries(exampleFile.regions)) {
-            if (regionName === '' || region.usedInDoc) continue;
-            unusedExampleRegions.push(region);
-          }
-        }
-      }
+$runAfter: ['renderExamples'],
+$runBefore: ['writing-files'],
+$process() {
+  const unusedExampleRegions = [];
+  for (const exampleFolder of Object.values(exampleMap)) {
+for (const exampleFile of Object.values(exampleFolder)) {
+  for (const [regionName, region] of Object.entries(exampleFile.regions)) {
+if (regionName === '' || region.usedInDoc) continue;
+unusedExampleRegions.push(region);
+  }
+}
+  }
 
-      if (unusedExampleRegions.length > 0) {
-        const message = (unusedExampleRegions.length === 1 ?
-                             'There is 1 unused example region:\n' :
-                             `There are ${unusedExampleRegions.length} unused example regions:\n`) +
-            unusedExampleRegions.map(region => ` - ${region.id}`).join('\n');
-        throw new Error(message);
-      }
-    },
+  if (unusedExampleRegions.length > 0) {
+const message = (unusedExampleRegions.length === 1 ?
+ 'There is 1 unused example region:\n' :
+ `There are ${unusedExampleRegions.length} unused example regions:\n`) +
+unusedExampleRegions.map(region => ` - ${region.id}`).join('\n');
+throw new Error(message);
+  }
+},
   };
 };

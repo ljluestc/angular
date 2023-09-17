@@ -178,29 +178,29 @@ The following table has some common words detected by this type of message and s
 <!-- vale Angular.WriteGood_TooWordy = NO -->
 
 | `Too-wordy` word     | Simpler replacement |
-|:--                   |:--                  |
-| `accelerate`         | `speed up`            |
-| `accomplish`         | `perform` or `finish` |
-| `acquire`            | `get`                 |
-| `additional`         | `more`                |
-| `adjustment`         | `change`              |
-| `advantageous`       | `beneficial`          |
-| `consequently`       | `as a result`         |
-| `designate`          | `assign`              |
-| `equivalent`         | `the same`            |
-| `exclusively`        | `only`                |
-| `for the most part`  | `generally`           |
-| `have a tendency to` | `tend to`             |
-| `in addition`        | `furthermore`         |
-| `modify`             | `change` or `update`  |
-| `monitor`            | `observe`             |
-| `necessitate`        | `require`             |
-| `one particular`     | `one`                 |
-| `point in time`      | `moment`              |
-| `portion`            | `part`                |
-| `similar to`         | `like`                |
-| `validate`           | `verify`              |
-| `whether or not`     | `whether`             |
+|:--    |:--   |
+| `accelerate`| `speed up`   |
+| `accomplish`| `perform` or `finish` |
+| `acquire`   | `get`  |
+| `additional`| `more` |
+| `adjustment`| `change`     |
+| `advantageous`       | `beneficial` |
+| `consequently`       | `as a result`|
+| `designate` | `assign`     |
+| `equivalent`| `the same`   |
+| `exclusively`        | `only` |
+| `for the most part`  | `generally`  |
+| `have a tendency to` | `tend to`    |
+| `in addition`        | `furthermore`|
+| `modify`    | `change` or `update`  |
+| `monitor`   | `observe`    |
+| `necessitate`        | `require`    |
+| `one particular`     | `one`  |
+| `point in time`      | `moment`     |
+| `portion`   | `part` |
+| `similar to`| `like` |
+| `validate`  | `verify`     |
+| `whether or not`     | `whether`    |
 
 <!-- vale Angular.WriteGood_TooWordy = YES -->
 

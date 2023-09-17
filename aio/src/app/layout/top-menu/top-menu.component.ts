@@ -7,9 +7,9 @@ import { CurrentNode, NavigationNode } from 'app/navigation/navigation.service';
     <nav aria-label="primary">
       <ul>
         <li *ngFor="let node of nodes" [class.selected]="node.url === currentUrl">
-          <a class="nav-link" [href]="node.url" [title]="node.tooltip">
-            <span class="nav-link-inner">{{ node.title }}</span>
-          </a>
+ <a class="nav-link" [href]="node.url" [title]="node.tooltip">
+   <span class="nav-link-inner">{{ node.title }}</span>
+ </a>
         </li>
       </ul>
     </nav>`

@@ -6,9 +6,9 @@ HostBindingComp.ɵcmp = /*@__PURE__*/ $r3$.ɵɵdefineComponent({
   selectors: [["host-binding-comp"]],
   hostVars: 3,
   hostBindings: function HostBindingComp_HostBindings(rf, ctx) {
-    if (rf & 2) {
-      $r3$.ɵɵhostProperty("id", $r3$.ɵɵpureFunction1(1, $ff$, ctx.id));
-    }
+if (rf & 2) {
+  $r3$.ɵɵhostProperty("id", $r3$.ɵɵpureFunction1(1, $ff$, ctx.id));
+}
   },
   decls: 0,
   vars: 0,

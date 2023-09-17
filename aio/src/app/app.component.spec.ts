@@ -71,10 +71,7 @@ describe('AppComponent', () => {
     tocService = de.injector.get<TocService>(TocService);
 
     return waitForDoc && awaitDocRendered();
-  }
-
-
-  describe('with proper DocViewer', () => {
+  }  describe('with proper DocViewer', () => {
     const originalReducedMotion = AppComponent.reducedMotion;
 
     beforeEach(async () => {
@@ -200,46 +197,46 @@ describe('AppComponent', () => {
         beforeEach(() => resizeTo(dockSideNavWidth + 1));  // wide view
 
         it('should open when navigating to a guide page (guide/pipes)', () => {
-          navigateTo('guide/pipes');
-          expect(sidenav.opened).toBe(true);
+ navigateTo('guide/pipes');
+ expect(sidenav.opened).toBe(true);
         });
 
         it('should open when navigating to an api page', () => {
-          navigateTo('api/a/b/c/d');
-          expect(sidenav.opened).toBe(true);
+ navigateTo('api/a/b/c/d');
+ expect(sidenav.opened).toBe(true);
         });
 
         it('should be closed when navigating to a marketing page (features)', () => {
-          navigateTo('features');
-          expect(sidenav.opened).toBe(false);
+ navigateTo('features');
+ expect(sidenav.opened).toBe(false);
         });
 
         describe('when manually closed', () => {
 
-          beforeEach(() => {
-            navigateTo('guide/pipes');
-            toggleSidenav();
-          });
+ beforeEach(() => {
+   navigateTo('guide/pipes');
+   toggleSidenav();
+ });
 
-          it('should be closed', () => {
-            expect(sidenav.opened).toBe(false);
-          });
+ it('should be closed', () => {
+   expect(sidenav.opened).toBe(false);
+ });
 
-          it('should stay closed when navigating from one guide page to another', () => {
-            navigateTo('guide/bags');
-            expect(sidenav.opened).toBe(false);
-          });
+ it('should stay closed when navigating from one guide page to another', () => {
+   navigateTo('guide/bags');
+   expect(sidenav.opened).toBe(false);
+ });
 
-          it('should stay closed when navigating from a guide page to api page', () => {
-            navigateTo('api');
-            expect(sidenav.opened).toBe(false);
-          });
+ it('should stay closed when navigating from a guide page to api page', () => {
+   navigateTo('api');
+   expect(sidenav.opened).toBe(false);
+ });
 
-          it('should reopen when navigating to market page and back to guide page', () => {
-            navigateTo('features');
-            navigateTo('guide/bags');
-            expect(sidenav.opened).toBe(true);
-          });
+ it('should reopen when navigating to market page and back to guide page', () => {
+   navigateTo('features');
+   navigateTo('guide/bags');
+   expect(sidenav.opened).toBe(true);
+ });
         });
       });
 
@@ -247,52 +244,52 @@ describe('AppComponent', () => {
         beforeEach(() => resizeTo(dockSideNavWidth - 1)); // narrow view
 
         it('should be closed when navigating to a guide page (guide/pipes)', () => {
-          navigateTo('guide/pipes');
-          expect(sidenav.opened).toBe(false);
+ navigateTo('guide/pipes');
+ expect(sidenav.opened).toBe(false);
         });
 
         it('should be closed when navigating to an api page', () => {
-          navigateTo('api/a/b/c/d');
-          expect(sidenav.opened).toBe(false);
+ navigateTo('api/a/b/c/d');
+ expect(sidenav.opened).toBe(false);
         });
 
         it('should be closed when navigating to a marketing page (features)', () => {
-          navigateTo('features');
-          expect(sidenav.opened).toBe(false);
+ navigateTo('features');
+ expect(sidenav.opened).toBe(false);
         });
 
         describe('when manually opened', () => {
 
-          beforeEach(() => {
-            navigateTo('guide/pipes');
-            toggleSidenav();
-          });
+ beforeEach(() => {
+   navigateTo('guide/pipes');
+   toggleSidenav();
+ });
 
-          it('should be open', () => {
-            expect(sidenav.opened).toBe(true);
-          });
+ it('should be open', () => {
+   expect(sidenav.opened).toBe(true);
+ });
 
-          it('should close when clicking in gray content area overlay', () => {
-            const sidenavBackdrop = fixture.debugElement.query(By.css('.mat-drawer-backdrop')).nativeElement;
-            sidenavBackdrop.click();
-            fixture.detectChanges();
-            expect(sidenav.opened).toBe(false);
-          });
+ it('should close when clicking in gray content area overlay', () => {
+   const sidenavBackdrop = fixture.debugElement.query(By.css('.mat-drawer-backdrop')).nativeElement;
+   sidenavBackdrop.click();
+   fixture.detectChanges();
+   expect(sidenav.opened).toBe(false);
+ });
 
-          it('should close when navigating to another guide page', () => {
-            navigateTo('guide/bags');
-            expect(sidenav.opened).toBe(false);
-          });
+ it('should close when navigating to another guide page', () => {
+   navigateTo('guide/bags');
+   expect(sidenav.opened).toBe(false);
+ });
 
-          it('should close when navigating to api page', () => {
-            navigateTo('api');
-            expect(sidenav.opened).toBe(false);
-          });
+ it('should close when navigating to api page', () => {
+   navigateTo('api');
+   expect(sidenav.opened).toBe(false);
+ });
 
-          it('should close again when navigating to market page', () => {
-            navigateTo('features');
-            expect(sidenav.opened).toBe(false);
-          });
+ it('should close again when navigating to market page', () => {
+   navigateTo('features');
+   expect(sidenav.opened).toBe(false);
+ });
 
         });
       });
@@ -302,55 +299,55 @@ describe('AppComponent', () => {
         const nonSidenavDocs = ['features', 'about'];
 
         sidenavDocs.forEach(doc => {
-          it(`should open when on a sidenav doc (${doc})`, () => {
-            resizeTo(dockSideNavWidth - 1);
+ it(`should open when on a sidenav doc (${doc})`, () => {
+   resizeTo(dockSideNavWidth - 1);
 
-            navigateTo(doc);
-            expect(sidenav.opened).toBe(false);
+   navigateTo(doc);
+   expect(sidenav.opened).toBe(false);
 
-            resizeTo(dockSideNavWidth + 1);
-            expect(sidenav.opened).toBe(true);
-          });
+   resizeTo(dockSideNavWidth + 1);
+   expect(sidenav.opened).toBe(true);
+ });
         });
 
         nonSidenavDocs.forEach(doc => {
-          it(`should remain closed when on a non-sidenav doc (${doc})`, () => {
-            resizeTo(dockSideNavWidth - 1);
+ it(`should remain closed when on a non-sidenav doc (${doc})`, () => {
+   resizeTo(dockSideNavWidth - 1);
 
-            navigateTo(doc);
-            expect(sidenav.opened).toBe(false);
+   navigateTo(doc);
+   expect(sidenav.opened).toBe(false);
 
-            resizeTo(dockSideNavWidth + 1);
-            expect(sidenav.opened).toBe(false);
-          });
+   resizeTo(dockSideNavWidth + 1);
+   expect(sidenav.opened).toBe(false);
+ });
         });
 
         describe('when manually opened', () => {
-          sidenavDocs.forEach(doc => {
-            it(`should remain opened when on a sidenav doc (${doc})`, () => {
-              resizeTo(dockSideNavWidth - 1);
+ sidenavDocs.forEach(doc => {
+   it(`should remain opened when on a sidenav doc (${doc})`, () => {
+     resizeTo(dockSideNavWidth - 1);
 
-              navigateTo(doc);
-              toggleSidenav();
-              expect(sidenav.opened).toBe(true);
+     navigateTo(doc);
+     toggleSidenav();
+     expect(sidenav.opened).toBe(true);
 
-              resizeTo(dockSideNavWidth + 1);
-              expect(sidenav.opened).toBe(true);
-            });
-          });
+     resizeTo(dockSideNavWidth + 1);
+     expect(sidenav.opened).toBe(true);
+   });
+ });
 
-          nonSidenavDocs.forEach(doc => {
-            it(`should close when on a non-sidenav doc (${doc})`, () => {
-              resizeTo(dockSideNavWidth - 1);
+ nonSidenavDocs.forEach(doc => {
+   it(`should close when on a non-sidenav doc (${doc})`, () => {
+     resizeTo(dockSideNavWidth - 1);
 
-              navigateTo(doc);
-              toggleSidenav();
-              expect(sidenav.opened).toBe(true);
+     navigateTo(doc);
+     toggleSidenav();
+     expect(sidenav.opened).toBe(true);
 
-              resizeTo(showTopMenuWidth + 1);
-              expect(sidenav.opened).toBe(false);
-            });
-          });
+     resizeTo(showTopMenuWidth + 1);
+     expect(sidenav.opened).toBe(false);
+   });
+ });
         });
       });
 
@@ -359,23 +356,23 @@ describe('AppComponent', () => {
         const nonSidenavDocs = ['features', 'about'];
 
         sidenavDocs.forEach(doc => {
-          it(`should close when on a sidenav doc (${doc})`, () => {
-            navigateTo(doc);
-            expect(sidenav.opened).toBe(true);
+ it(`should close when on a sidenav doc (${doc})`, () => {
+   navigateTo(doc);
+   expect(sidenav.opened).toBe(true);
 
-            resizeTo(dockSideNavWidth - 1);
-            expect(sidenav.opened).toBe(false);
-          });
+   resizeTo(dockSideNavWidth - 1);
+   expect(sidenav.opened).toBe(false);
+ });
         });
 
         nonSidenavDocs.forEach(doc => {
-          it(`should remain closed when on a non-sidenav doc (${doc})`, () => {
-            navigateTo(doc);
-            expect(sidenav.opened).toBe(false);
+ it(`should remain closed when on a non-sidenav doc (${doc})`, () => {
+   navigateTo(doc);
+   expect(sidenav.opened).toBe(false);
 
-            resizeTo(dockSideNavWidth - 1);
-            expect(sidenav.opened).toBe(false);
-          });
+   resizeTo(dockSideNavWidth - 1);
+   expect(sidenav.opened).toBe(false);
+ });
         });
       });
     });
@@ -389,7 +386,7 @@ describe('AppComponent', () => {
 
       function getAllVersionUrls() {
         return (component.docVersions?.[0].children ?? []).map(
-          item => item?.url
+ item => item?.url
         ) as string[];
       }
 
@@ -407,19 +404,19 @@ describe('AppComponent', () => {
         const allVersionUrls = getAllVersionUrls();
         expect(allVersionUrls.length).toBeGreaterThan(0);
         allVersionUrls.forEach(versionUrl =>
-          expect(versionUrl).toMatch(/^https:\/\/.*\/a\/b$/)
+ expect(versionUrl).toMatch(/^https:\/\/.*\/a\/b$/)
         );
       });
 
       it('should update the urls on page changes', async () => {
         function testUrlsOnRoute(route: string) {
-          locationService.urlSubject.next(route);
-          const allVersionUrls = getAllVersionUrls();
-          expect(allVersionUrls.length).toBeGreaterThan(0);
-          const escapedRoute = route.replace('?', '\\?');
-          allVersionUrls.forEach(versionUrl =>
-            expect(versionUrl).toMatch(new RegExp(`^https://.*/${escapedRoute}`))
-          );
+ locationService.urlSubject.next(route);
+ const allVersionUrls = getAllVersionUrls();
+ expect(allVersionUrls.length).toBeGreaterThan(0);
+ const escapedRoute = route.replace('?', '\\?');
+ allVersionUrls.forEach(versionUrl =>
+   expect(versionUrl).toMatch(new RegExp(`^https://.*/${escapedRoute}`))
+ );
         }
 
         await setupVersionsNavForTesting();
@@ -549,7 +546,7 @@ describe('AppComponent', () => {
 
     describe('click intercepting', () => {
       it('should intercept clicks on anchors and call `location.handleAnchorClick()`',
-              inject([LocationService], (location: LocationService) => {
+     inject([LocationService], (location: LocationService) => {
 
         const el = fixture.nativeElement as Element;
         el.innerHTML = '<a href="some/local/url">click me</a>';
@@ -559,7 +556,7 @@ describe('AppComponent', () => {
       }));
 
       it('should intercept clicks on elements deep within an anchor tag',
-              inject([LocationService], (location: LocationService) => {
+     inject([LocationService], (location: LocationService) => {
 
         const el = fixture.nativeElement as Element;
         el.innerHTML = '<a href="some/local/url"><div><img></div></a>';
@@ -570,7 +567,7 @@ describe('AppComponent', () => {
       }));
 
       it('should ignore clicks on elements without an anchor ancestor',
-              inject([LocationService], (location: LocationService) => {
+     inject([LocationService], (location: LocationService) => {
 
         const el = fixture.nativeElement as Element;
         el.innerHTML = '<div><p><div><img></div></p></div>';
@@ -586,10 +583,10 @@ describe('AppComponent', () => {
         deltaY: number
       ) => {
         const evt = {
-          deltaY,
-          currentTarget,
-          defaultPrevented: false,
-          preventDefault() { this.defaultPrevented = true; }
+ deltaY,
+ currentTarget,
+ defaultPrevented: false,
+ preventDefault() { this.defaultPrevented = true; }
         } as any as WheelEvent;
 
         component.restrainScrolling(evt);
@@ -723,129 +720,129 @@ describe('AppComponent', () => {
     describe('search', () => {
       describe('initialization', () => {
         it('should initialize the search worker', inject([SearchService], (searchService: SearchService) => {
-          expect(searchService.initWorker).toHaveBeenCalled();
+ expect(searchService.initWorker).toHaveBeenCalled();
         }));
       });
 
       describe('click handling', () => {
         it('should intercept clicks not on the search elements and hide the search results', () => {
-          component.showSearchResults = true;
-          fixture.detectChanges();
-          // docViewer is a commonly-clicked, non-search element
-          docViewer.click();
-          expect(component.showSearchResults).toBe(false);
+ component.showSearchResults = true;
+ fixture.detectChanges();
+ // docViewer is a commonly-clicked, non-search element
+ docViewer.click();
+ expect(component.showSearchResults).toBe(false);
         });
 
         it('should clear "only" the search query param from the URL', () => {
-          // Mock out the current state of the URL query params
-          locationService.search.and.returnValue({ a: 'some-A', b: 'some-B', search: 'some-C'});
-          // the clearing only happens when some results are actually being shown
-          component.showSearchResults = true;
-          // docViewer is a commonly-clicked, non-search element
-          docViewer.click();
-          // Check that the query params were updated correctly
-          expect(locationService.setSearch).toHaveBeenCalledWith('', { a: 'some-A', b: 'some-B', search: undefined });
+ // Mock out the current state of the URL query params
+ locationService.search.and.returnValue({ a: 'some-A', b: 'some-B', search: 'some-C'});
+ // the clearing only happens when some results are actually being shown
+ component.showSearchResults = true;
+ // docViewer is a commonly-clicked, non-search element
+ docViewer.click();
+ // Check that the query params were updated correctly
+ expect(locationService.setSearch).toHaveBeenCalledWith('', { a: 'some-A', b: 'some-B', search: undefined });
         });
 
         it('should not intercept clicks on the searchResults', () => {
-          component.showSearchResults = true;
-          fixture.detectChanges();
+ component.showSearchResults = true;
+ fixture.detectChanges();
 
-          const searchResults = fixture.debugElement.query(By.directive(SearchResultsComponent));
-          searchResults.nativeElement.click();
-          fixture.detectChanges();
+ const searchResults = fixture.debugElement.query(By.directive(SearchResultsComponent));
+ searchResults.nativeElement.click();
+ fixture.detectChanges();
 
-          expect(component.showSearchResults).toBe(true);
+ expect(component.showSearchResults).toBe(true);
         });
 
         it('should not intercept clicks on the searchBox', () => {
-          component.showSearchResults = true;
-          fixture.detectChanges();
+ component.showSearchResults = true;
+ fixture.detectChanges();
 
-          const searchBox = fixture.debugElement.query(By.directive(SearchBoxComponent));
-          searchBox.nativeElement.click();
-          fixture.detectChanges();
+ const searchBox = fixture.debugElement.query(By.directive(SearchBoxComponent));
+ searchBox.nativeElement.click();
+ fixture.detectChanges();
 
-          expect(component.showSearchResults).toBe(true);
+ expect(component.showSearchResults).toBe(true);
         });
 
         it('should not call `locationService.setSearch` when searchResults are not shown', () => {
-          docViewer.click();
-          expect(locationService.setSearch).not.toHaveBeenCalled();
+ docViewer.click();
+ expect(locationService.setSearch).not.toHaveBeenCalled();
         });
       });
 
       describe('keyup handling', () => {
         it('should grab focus when the / key is pressed', () => {
-          const searchBox: SearchBoxComponent = fixture.debugElement.query(
-            By.directive(SearchBoxComponent)
-          ).componentInstance;
-          spyOn(searchBox, 'focus');
-          window.document.dispatchEvent(new KeyboardEvent('keyup', { key: '/' }));
-          fixture.detectChanges();
-          expect(searchBox.focus).toHaveBeenCalled();
+ const searchBox: SearchBoxComponent = fixture.debugElement.query(
+   By.directive(SearchBoxComponent)
+ ).componentInstance;
+ spyOn(searchBox, 'focus');
+ window.document.dispatchEvent(new KeyboardEvent('keyup', { key: '/' }));
+ fixture.detectChanges();
+ expect(searchBox.focus).toHaveBeenCalled();
         });
 
         // eslint-disable-next-line max-len
         it('should set focus back to the search box when the search results are displayed and the escape key is pressed', () => {
-          const searchBox: SearchBoxComponent = fixture.debugElement.query(
-            By.directive(SearchBoxComponent)
-          ).componentInstance;
-          spyOn(searchBox, 'focus');
-          component.showSearchResults = true;
-          window.document.dispatchEvent(new KeyboardEvent('keyup', { key: 'Escape' }));
-          fixture.detectChanges();
-          expect(searchBox.focus).toHaveBeenCalled();
+ const searchBox: SearchBoxComponent = fixture.debugElement.query(
+   By.directive(SearchBoxComponent)
+ ).componentInstance;
+ spyOn(searchBox, 'focus');
+ component.showSearchResults = true;
+ window.document.dispatchEvent(new KeyboardEvent('keyup', { key: 'Escape' }));
+ fixture.detectChanges();
+ expect(searchBox.focus).toHaveBeenCalled();
         });
       });
 
       describe('showing search results', () => {
         it('should not display search results when query is empty', () => {
-          const searchService = TestBed.inject(SearchService) as Partial<SearchService> as MockSearchService;
-          searchService.searchResults.next({ query: '', results: [] });
-          fixture.detectChanges();
-          expect(component.showSearchResults).toBe(false);
+ const searchService = TestBed.inject(SearchService) as Partial<SearchService> as MockSearchService;
+ searchService.searchResults.next({ query: '', results: [] });
+ fixture.detectChanges();
+ expect(component.showSearchResults).toBe(false);
         });
 
         it('should hide the results when a search result is selected', () => {
-          const searchService = TestBed.inject(SearchService) as Partial<SearchService> as MockSearchService;
+ const searchService = TestBed.inject(SearchService) as Partial<SearchService> as MockSearchService;
 
-          const results = [
-            {
-              path: 'news',
-              title: 'News',
-              type: 'marketing',
-              keywords: '',
-              titleWords: '',
-              deprecated: false,
-              topics: '',
-            },
-          ];
+ const results = [
+   {
+     path: 'news',
+     title: 'News',
+     type: 'marketing',
+     keywords: '',
+     titleWords: '',
+     deprecated: false,
+     topics: '',
+   },
+ ];
 
-          searchService.searchResults.next({ query: 'something', results });
-          component.showSearchResults = true;
-          fixture.detectChanges();
+ searchService.searchResults.next({ query: 'something', results });
+ component.showSearchResults = true;
+ fixture.detectChanges();
 
-          const searchResultsComponent = fixture.debugElement.query(By.directive(SearchResultsComponent));
-          searchResultsComponent.triggerEventHandler('resultSelected', {});
-          fixture.detectChanges();
-          expect(component.showSearchResults).toBe(false);
+ const searchResultsComponent = fixture.debugElement.query(By.directive(SearchResultsComponent));
+ searchResultsComponent.triggerEventHandler('resultSelected', {});
+ fixture.detectChanges();
+ expect(component.showSearchResults).toBe(false);
         });
 
         it('should re-run the search when the search box regains focus and there are no results being shown', () => {
-          const searchService = TestBed.inject(SearchService) as Partial<SearchService> as MockSearchService;
-          component.showSearchResults = false;
-          const searchBox = fixture.debugElement.query(By.directive(SearchBoxComponent));
-          searchBox.triggerEventHandler('onFocus', 'some query');
-          expect(searchService.search).toHaveBeenCalledWith('some query');
+ const searchService = TestBed.inject(SearchService) as Partial<SearchService> as MockSearchService;
+ component.showSearchResults = false;
+ const searchBox = fixture.debugElement.query(By.directive(SearchBoxComponent));
+ searchBox.triggerEventHandler('onFocus', 'some query');
+ expect(searchService.search).toHaveBeenCalledWith('some query');
         });
 
         it('should not re-run the search when the search box regains focus and there are results being shown', () => {
-          const searchService = TestBed.inject(SearchService) as Partial<SearchService> as MockSearchService;
-          component.showSearchResults = true;
-          const searchBox = fixture.debugElement.query(By.directive(SearchBoxComponent));
-          searchBox.triggerEventHandler('onFocus', 'some query');
-          expect(searchService.search).not.toHaveBeenCalled();
+ const searchService = TestBed.inject(SearchService) as Partial<SearchService> as MockSearchService;
+ component.showSearchResults = true;
+ const searchBox = fixture.debugElement.query(By.directive(SearchBoxComponent));
+ searchBox.triggerEventHandler('onFocus', 'some query');
+ expect(searchService.search).not.toHaveBeenCalled();
         });
       });
     });
@@ -853,12 +850,12 @@ describe('AppComponent', () => {
     describe('SW updates', () => {
       it('should be enabled when the component is initialized',
         inject([SwUpdatesService], (swUpdates: TestSwUpdatesService) => {
-          swUpdates.disable();
-          expect(swUpdates.isEnabled).toBeFalse();
+ swUpdates.disable();
+ expect(swUpdates.isEnabled).toBeFalse();
 
-          const fixture2 = TestBed.createComponent(AppComponent);
-          fixture2.detectChanges();
-          expect(swUpdates.isEnabled).toBeTrue();
+ const fixture2 = TestBed.createComponent(AppComponent);
+ fixture2.detectChanges();
+ expect(swUpdates.isEnabled).toBeTrue();
         })
       );
     });
@@ -874,33 +871,33 @@ describe('AppComponent', () => {
       Object.keys(redirectionPerMode).forEach(mode => {
         const doRedirect = redirectionPerMode[mode];
         const description =
-            `should ${doRedirect ? '' : 'not '}redirect to 'docs' if deployment mode is '${mode}' ` +
-            'and at a marketing page';
+   `should ${doRedirect ? '' : 'not '}redirect to 'docs' if deployment mode is '${mode}' ` +
+   'and at a marketing page';
         const verifyNoRedirection = () => expect(TestBed.inject(LocationService).replace).not.toHaveBeenCalled();
         const verifyRedirection = () => expect(TestBed.inject(LocationService).replace).toHaveBeenCalledWith('docs');
         const verifyPossibleRedirection = doRedirect ? verifyRedirection : verifyNoRedirection;
 
         it(description, () => {
-          createTestingModule('', mode);
+ createTestingModule('', mode);
 
-          const navService = TestBed.inject(NavigationService);
-          const testCurrentNodes = navService.currentNodes = new Subject<CurrentNodes>();
+ const navService = TestBed.inject(NavigationService);
+ const testCurrentNodes = navService.currentNodes = new Subject<CurrentNodes>();
 
-          initializeTest(false);
+ initializeTest(false);
 
-          testCurrentNodes.next({SideNav: {url: 'foo', view: 'SideNav', nodes: []}});
-          verifyNoRedirection();
+ testCurrentNodes.next({SideNav: {url: 'foo', view: 'SideNav', nodes: []}});
+ verifyNoRedirection();
 
-          testCurrentNodes.next({NoSideNav: {url: 'bar', view: 'SideNav', nodes: []}});
-          verifyPossibleRedirection();
+ testCurrentNodes.next({NoSideNav: {url: 'bar', view: 'SideNav', nodes: []}});
+ verifyPossibleRedirection();
 
-          locationService.replace.calls.reset();
-          testCurrentNodes.next({});
-          verifyPossibleRedirection();
+ locationService.replace.calls.reset();
+ testCurrentNodes.next({});
+ verifyPossibleRedirection();
 
-          locationService.replace.calls.reset();
-          testCurrentNodes.next({SideNav: {url: 'baz', view: 'SideNav', nodes: []}});
-          verifyNoRedirection();
+ locationService.replace.calls.reset();
+ testCurrentNodes.next({SideNav: {url: 'baz', view: 'SideNav', nodes: []}});
+ verifyNoRedirection();
         });
       });
     });
@@ -910,7 +907,7 @@ describe('AppComponent', () => {
     const getDocViewer = () => fixture.debugElement.query(By.css('aio-doc-viewer'));
     const triggerDocViewerEvent =
         (evt: 'docReady' | 'docRemoved' | 'docInserted' | 'docRendered') =>
-          getDocViewer().triggerEventHandler(evt, undefined);
+ getDocViewer().triggerEventHandler(evt, undefined);
 
     beforeEach(() => {
       createTestingModule('a/b');
@@ -1185,13 +1182,13 @@ describe('AppComponent', () => {
         checkHostClass('sidenav', 'open');
 
         async function waitForSidenavOpenedChange() {
-          const promise = new Promise(resolve => sidenav.openedChange.pipe(first()).subscribe(resolve));
+ const promise = new Promise(resolve => sidenav.openedChange.pipe(first()).subscribe(resolve));
 
-          await Promise.resolve();  // Wait for `MatSidenav.openedChange.emit()` to be called.
-          jasmine.clock().tick(0);  // Notify `MatSidenav.openedChange` observers.
-                                    // (It is an async `EventEmitter`, thus uses `setTimeout()`.)
+ await Promise.resolve();  // Wait for `MatSidenav.openedChange.emit()` to be called.
+ jasmine.clock().tick(0);  // Notify `MatSidenav.openedChange` observers.
+      // (It is an async `EventEmitter`, thus uses `setTimeout()`.)
 
-          await promise;
+ await promise;
         }
       });
 
@@ -1208,7 +1205,7 @@ describe('AppComponent', () => {
         const classes: string = host.properties.className;
         const classArray = classes.split(' ').filter(c => c.indexOf(`${type}-`) === 0);
         expect(classArray.length).withContext(`"${classes}" should have only one class matching ${type}-*`)
-            .toBeLessThanOrEqual(1);
+   .toBeLessThanOrEqual(1);
         expect(classArray).withContext(`"${classes}" should contain ${type}-${value}`).toEqual([`${type}-${value}`]);
       }
     });
@@ -1318,7 +1315,7 @@ describe('AppComponent', () => {
         locationService.urlSubject.next('c/d');   // The URL changes.
         locationService.urlSubject.next('e/f');   // The URL changes again before `onDocReady()`.
 
-        tick(SHOW_DELAY - 1);               // `onDocReady()` is triggered (for the last doc),
+        tick(SHOW_DELAY - 1);// `onDocReady()` is triggered (for the last doc),
         triggerDocViewerEvent('docReady');  // before the progress bar is shown.
 
         tick(1);
@@ -1407,16 +1404,16 @@ class TestHttpClient {
         title: 'Core',
         tooltip: 'Learn the core capabilities of Angular',
         children: [
-          {
-            url: 'guide/pipes',
-            title: 'Pipes',
-            tooltip: 'Pipes transform displayed values within a template.',
-          },
-          {
-            url: 'guide/bags',
-            title: 'Bags',
-            tooltip: 'Pack your bags for a code adventure.',
-          },
+ {
+   url: 'guide/pipes',
+   title: 'Pipes',
+   tooltip: 'Pipes transform displayed values within a template.',
+ },
+ {
+   url: 'guide/bags',
+   title: 'Bags',
+   tooltip: 'Pack your bags for a code adventure.',
+ },
         ],
       },
       {

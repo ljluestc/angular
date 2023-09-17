@@ -8,10 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 // #docregion directive-import
 import { ItemDirective } from './item.directive';
-// #enddocregion directive-import
-
-
-// @NgModule decorator with its metadata
+// #enddocregion directive-import// @NgModule decorator with its metadata
 @NgModule({
 // #docregion declarations
   declarations: [

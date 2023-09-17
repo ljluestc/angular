@@ -14,22 +14,22 @@
  */
 module.exports = function matchUpDirectiveDecorators() {
   return {
-    $runAfter: ['ids-computed', 'paths-computed'],
-    $runBefore: ['rendering-docs'],
-    $process: function(docs) {
-      docs.forEach(function(doc) {
-        if (doc.docType === 'directive') {
+$runAfter: ['ids-computed', 'paths-computed'],
+$runBefore: ['rendering-docs'],
+$process: function(docs) {
+  docs.forEach(function(doc) {
+if (doc.docType === 'directive') {
 
-          doc.selector = stripQuotes(doc.directiveOptions.selector);
-          doc.selectorArray = doc.selector ? doc.selector.split(',') : [];
-          doc.exportAs = stripQuotes(doc.directiveOptions.exportAs);
-          doc.exportAsArray = doc.exportAs ? doc.exportAs.split(',') : [];
+  doc.selector = stripQuotes(doc.directiveOptions.selector);
+  doc.selectorArray = doc.selector ? doc.selector.split(',') : [];
+  doc.exportAs = stripQuotes(doc.directiveOptions.exportAs);
+  doc.exportAsArray = doc.exportAs ? doc.exportAs.split(',') : [];
 
-          attachBindingInfo(doc.directiveOptions.inputs, doc.members, 'Input');
-          attachBindingInfo(doc.directiveOptions.outputs, doc.members, 'Output');
-        }
-      });
-    }
+  attachBindingInfo(doc.directiveOptions.inputs, doc.members, 'Input');
+  attachBindingInfo(doc.directiveOptions.outputs, doc.members, 'Output');
+}
+  });
+}
   };
 };
 
@@ -37,29 +37,29 @@ function attachBindingInfo(directiveBindings, members, bindingType) {
   const bindings = {};
 
   if (members) {
-    // Parse the bindings from the directive decorator
-    if (directiveBindings) {
-      directiveBindings.forEach(function(binding) {
-        const bindingInfo = parseBinding(bindingType, binding);
-        bindings[bindingInfo.propertyName] = bindingInfo;
-      });
-    }
+// Parse the bindings from the directive decorator
+if (directiveBindings) {
+  directiveBindings.forEach(function(binding) {
+const bindingInfo = parseBinding(bindingType, binding);
+bindings[bindingInfo.propertyName] = bindingInfo;
+  });
+}
 
-    members.forEach(function(member) {
-      if (member.decorators) {
-        // Search for members with binding decorators
-        member.decorators.forEach(function(decorator) {
-          if (decorator.name === bindingType) {
-            bindings[member.name] = createBindingInfo(bindingType, member.name, decorator.arguments[0] || member.name);
-          }
-        });
-      }
-      // Attach binding info to the member
-      // Note: this may have come from the `@Directive` decorator or from a property decorator such as `@Input`.
-      if (bindings[member.name]) {
-        member.boundTo = bindings[member.name];
-      }
-    });
+members.forEach(function(member) {
+  if (member.decorators) {
+// Search for members with binding decorators
+member.decorators.forEach(function(decorator) {
+  if (decorator.name === bindingType) {
+bindings[member.name] = createBindingInfo(bindingType, member.name, decorator.arguments[0] || member.name);
+  }
+});
+  }
+  // Attach binding info to the member
+  // Note: this may have come from the `@Directive` decorator or from a property decorator such as `@Input`.
+  if (bindings[member.name]) {
+member.boundTo = bindings[member.name];
+  }
+});
   }
 }
 
@@ -77,8 +77,8 @@ function parseBinding(bindingType, option) {
 
 function createBindingInfo(bindingType, propertyName, bindingName) {
   return {
-    type: bindingType,
-    propertyName: stripQuotes(propertyName),
-    bindingName: stripQuotes(bindingName)
+type: bindingType,
+propertyName: stripQuotes(propertyName),
+bindingName: stripQuotes(bindingName)
   };
 }

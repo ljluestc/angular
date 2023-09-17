@@ -2,10 +2,7 @@ import { Component } from '@angular/core';
 import { FlowerService } from './flower.service';
 import { AnimalService } from './animal.service';
 import { ChildComponent } from './child/child.component';
-import { InspectorComponent } from './inspector/inspector.component';
-
-
-@Component({
+import { InspectorComponent } from './inspector/inspector.component';@Component({
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',

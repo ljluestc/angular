@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Customer,
-         CustomersService } from './customers.service';
+CustomersService } from './customers.service';
 
 @Component({
   template: `

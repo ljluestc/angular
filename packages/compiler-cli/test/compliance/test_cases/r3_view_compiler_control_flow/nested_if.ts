@@ -1,19 +1,9 @@
-import {Component} from '@angular/core';
-
-@Component({
-  template: `
-    <div>
-      {{message}}
-      {#if val === 0}
-        zero
-        {:else if val === 1} one
-        {:else if val === 2}
-          {#if innerVal === 0}
-            inner zero
-            {:else if innerVal === 1} inner one
-            {:else if innerVal === 2} inner two
-            {:else} inner three
-          {/if}
+import {Component} from '@angular/core'; {#if innerVal === 0}
+   inner zero
+   {:else if innerVal === 1} inner one
+   {:else if innerVal === 2} inner two
+   {:else} inner three
+ {/if}
         {:else} inner three
       {/if}
     </div>

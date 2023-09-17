@@ -143,10 +143,7 @@ import { routes } from './app.routes';
 providers: [provideRouter(routes)]
 ```
 
-For `NgModule` based applications, put the `provideRouter` in the `providers` list of the `AppModule`, or whichever module is passed to `bootstrapModule` in the application.
-
-
-## Update your component with `router-outlet`
+For `NgModule` based applications, put the `provideRouter` in the `providers` list of the `AppModule`, or whichever module is passed to `bootstrapModule` in the application.## Update your component with `router-outlet`
 
 At this point, you have defined two routes for your application.
 However, your application still has both the `crisis-list` and `heroes-list` components hard-coded in your `app.component.html` template.
@@ -247,8 +244,8 @@ In this step of the tutorial, you add a route that redirects the user to display
     In addition, it replaces the `component` property with two new ones:
 
     | Properties   | Details |
-    |:---          |:---     |
-    | `redirectTo` | This property instructs Angular to redirect from an empty path to the `heroes-list` path.                                                                                                                                                                                                         |
+    |:--- |:---     |
+    | `redirectTo` | This property instructs Angular to redirect from an empty path to the `heroes-list` path.      |
     | `pathMatch`  | This property instructs Angular on how much of the URL to match. For this tutorial, you should set this property to `full`. This strategy is recommended when you have an empty string for a path. For more information about this property, see the [Route API documentation](api/router/Route). |
 
 Now when you open your application, it displays the `heroes-list` component by default.

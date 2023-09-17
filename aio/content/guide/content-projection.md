@@ -13,10 +13,10 @@ For example, you could have a `Card` component that accepts content provided by 
 
 The following sections describe common implementations of content projection in Angular, including:
 
-| Content projection                             | Details |
-|:---                                            |:---     |
-| [Single-slot content projection](#single-slot) | With this type of content projection, a component accepts content from a single source.                  |
-| [Multi-slot content projection](#multi-slot)   | In this scenario, a component accepts content from multiple sources.                                     |
+| Content projection     | Details |
+|:---     |:---     |
+| [Single-slot content projection](#single-slot) | With this type of content projection, a component accepts content from a single source.   |
+| [Multi-slot content projection](#multi-slot)   | In this scenario, a component accepts content from multiple sources.       |
 | [Conditional content projection](#conditional) | Components that use conditional content projection render content only when specific conditions are met. |
 
 <a id="single-slot"></a>

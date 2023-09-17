@@ -192,8 +192,8 @@ export class AppComponent implements OnInit {
       );
       this.docVersions = [
         {
-          title: 'Docs Versions',
-          children : allDocsVersionNodes
+ title: 'Docs Versions',
+ children : allDocsVersionNodes
         }
       ];
     });
@@ -290,15 +290,15 @@ export class AppComponent implements OnInit {
       const insideToolbar = this.toolbar.nativeElement.contains(eventTarget);
       if (!insideFocusLoop) {
         if (!insideToolbar) {
-          // the user is focusing forward at the last search result element,
-          // loop it back to the search input
-          this.focusSearchBox();
+ // the user is focusing forward at the last search result element,
+ // loop it back to the search input
+ this.focusSearchBox();
         } else {
-          // the user is focusing backward from the search input,
-          // loop it back to the results' close button
-          const closeBtn: HTMLButtonElement =
-            this.searchResultsView.nativeElement.querySelector('button.close-button');
-          closeBtn.focus();
+ // the user is focusing backward from the search input,
+ // loop it back to the results' close button
+ const closeBtn: HTMLButtonElement =
+   this.searchResultsView.nativeElement.querySelector('button.close-button');
+ closeBtn.focus();
         }
       }
     }
@@ -408,9 +408,9 @@ export class AppComponent implements OnInit {
 
       if (headerEl && footerEl) {
         this.tocMaxHeightOffset =
-            headerEl.clientHeight +
-            footerEl.clientHeight +
-            24; //  fudge margin
+   headerEl.clientHeight +
+   footerEl.clientHeight +
+   24; //  fudge margin
       }
     }
 
@@ -434,10 +434,7 @@ export class AppComponent implements OnInit {
         evt.preventDefault();
       }
     }
-  }
-
-
-  // Search related methods and handlers
+  }  // Search related methods and handlers
 
   hideSearchResults() {
     this.showSearchResults = false;

@@ -62,8 +62,8 @@ describe('ContributorService', () => {
     it('should support including a contributor in multiple groups', () => {
       const contributor = testData.gkalpak;
       const matchedGroups = contribs
-          .filter(group => group.contributors.includes(contributor))
-          .map(group => group.name);
+ .filter(group => group.contributors.includes(contributor))
+ .map(group => group.name);
 
       expect(matchedGroups).toEqual(['Collaborators', 'GDE']);
     });

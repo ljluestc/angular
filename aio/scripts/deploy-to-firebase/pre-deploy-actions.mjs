@@ -1,9 +1,6 @@
 import fs from 'fs';
 import sh from 'shelljs';
-import u from './utils.mjs';
-
-
-// Constants
+import u from './utils.mjs';// Constants
 const BAZEL_DIST_DIR = '../dist/bin/aio/build';
 const DIST_DIR = 'dist';
 const FIREBASE_JSON_PATH = 'firebase.json';

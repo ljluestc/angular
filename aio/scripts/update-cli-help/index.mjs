@@ -125,10 +125,10 @@ function httpGet(url, options = {}) {
       let data = '';
       res
         .on('data', (chunk) => {
-          data += chunk;
+ data += chunk;
         })
         .on('end', () => {
-          resolve(data);
+ resolve(data);
         });
     }).on('error', (e) => {
       reject(e);

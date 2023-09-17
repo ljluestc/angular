@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid component definition",
-          "files": [
-            "forward_referenced_directive.js"
-          ]
+ "failureMessage": "Invalid component definition",
+ "files": [
+   "forward_referenced_directive.js"
+ ]
         }
       ]
     },
@@ -22,10 +22,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid component definition",
-          "files": [
-            "forward_referenced_pipe.js"
-          ]
+ "failureMessage": "Invalid component definition",
+ "files": [
+   "forward_referenced_pipe.js"
+ ]
         }
       ]
     },
@@ -36,10 +36,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect SomeDirective.ɵdir",
-          "files": [
-            "export_as.js"
-          ]
+ "failureMessage": "Incorrect SomeDirective.ɵdir",
+ "files": [
+   "export_as.js"
+ ]
         }
       ]
     },
@@ -50,10 +50,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid directive definition",
-          "files": [
-            "no_selector.js"
-          ]
+ "failureMessage": "Invalid directive definition",
+ "files": [
+   "no_selector.js"
+ ]
         }
       ]
     },
@@ -64,10 +64,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid component definition",
-          "files": [
-            "constant_object_literals.js"
-          ]
+ "failureMessage": "Invalid component definition",
+ "files": [
+   "constant_object_literals.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -79,10 +79,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid component definition",
-          "files": [
-            "constant_array_literals.js"
-          ]
+ "failureMessage": "Invalid component definition",
+ "files": [
+   "constant_array_literals.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -94,10 +94,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid component definition",
-          "files": [
-            "object_literals_null_vs_empty.js"
-          ]
+ "failureMessage": "Invalid component definition",
+ "files": [
+   "object_literals_null_vs_empty.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -109,10 +109,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid component definition",
-          "files": [
-            "array_literals_null_vs_empty.js"
-          ]
+ "failureMessage": "Invalid component definition",
+ "files": [
+   "array_literals_null_vs_empty.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -124,10 +124,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid component definition",
-          "files": [
-            "object_literals_null_vs_function.js"
-          ]
+ "failureMessage": "Invalid component definition",
+ "files": [
+   "object_literals_null_vs_function.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -145,10 +145,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect setClassMetadata call",
-          "files": [
-            "custom_decorator_es5.js"
-          ]
+ "failureMessage": "Incorrect setClassMetadata call",
+ "files": [
+   "custom_decorator_es5.js"
+ ]
         }
       ]
     },
@@ -159,10 +159,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "ng_template_empty_binding.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "ng_template_empty_binding.js"
+ ]
         }
       ]
     },
@@ -192,18 +192,18 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid list of directives",
-          "files": [
-            "library_exports.js"
-          ]
+ "failureMessage": "Invalid list of directives",
+ "files": [
+   "library_exports.js"
+ ]
         }
       ],
       "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-          "external_library": [
-            "./external_library"
-          ]
+ "external_library": [
+   "./external_library"
+ ]
         }
       }
     }

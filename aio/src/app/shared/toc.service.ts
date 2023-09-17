@@ -4,10 +4,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ReplaySubject } from 'rxjs';
 import { ScrollSpyInfo, ScrollSpyService } from 'app/shared/scroll-spy.service';
 import { unwrapHtml } from 'safevalues';
-import { fromInnerHTML } from './security';
-
-
-export interface TocItem {
+import { fromInnerHTML } from './security';export interface TocItem {
   content: SafeHtml;
   href: string;
   isSecondary?: boolean;

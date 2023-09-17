@@ -9,27 +9,27 @@
 module.exports = async function () {
   const targetUrl = process.env.TARGET_URL;
   if (!targetUrl) {
-    throw new Error('No target URL via `TARGET_URL` environment variable set.');
+throw new Error('No target URL via `TARGET_URL` environment variable set.');
   }
 
   protractor.browser.baseUrl = targetUrl;
 
   const {loadLegacyUrls, loadRemoteSitemapUrls} = await import('../shared/helpers.mjs');
   const [sitemapUrls, legacyUrls] = await Promise.all([
-    loadRemoteSitemapUrls(browser.baseUrl),
-    loadLegacyUrls(),
+loadRemoteSitemapUrls(browser.baseUrl),
+loadLegacyUrls(),
   ]);
 
   console.info('Determined testing URLs', {sitemapUrls, legacyUrls});
 
   if (sitemapUrls.length <= 100) {
-    throw new Error(`Too few sitemap URLs. (Expected: >100 | Found: ${sitemapUrls.length})`);
+throw new Error(`Too few sitemap URLs. (Expected: >100 | Found: ${sitemapUrls.length})`);
   } else if (legacyUrls.length <= 100) {
-    throw new Error(`Too few legacy URLs. (Expected: >100 | Found: ${legacyUrls.length})`);
+throw new Error(`Too few legacy URLs. (Expected: >100 | Found: ${legacyUrls.length})`);
   }
 
   protractor.browser.params = {
-    sitemapUrls: sitemapUrls,
-    legacyUrls: legacyUrls,
+sitemapUrls: sitemapUrls,
+legacyUrls: legacyUrls,
   };
 };

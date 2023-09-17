@@ -61,9 +61,9 @@ bootstrapApplication(AppComponent, {
       // Remove it when a real server is ready to receive requests.
       HttpClientInMemoryWebApiModule.forRoot(
         InMemoryDataService, {
-          dataEncapsulation: false,
-          passThruUnknownUrl: true,
-          put204: false // return entity after PUT/update
+ dataEncapsulation: false,
+ passThruUnknownUrl: true,
+ put204: false // return entity after PUT/update
         }
       )
     ),

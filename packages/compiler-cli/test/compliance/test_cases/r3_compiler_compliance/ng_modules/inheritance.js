@@ -10,19 +10,5 @@ BaseModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ providers: [Service] })
 }], function () { return [{ type: Service }]; }, null); })();
 …
 export class BasicModule extends BaseModule {
-}
-
-BasicModule.ɵfac = /*@__PURE__*/ function () {
-  let ɵBasicModule_BaseFactory;
-  return function BasicModule_Factory(t) {
-    return (ɵBasicModule_BaseFactory || (ɵBasicModule_BaseFactory = i0.ɵɵgetInheritedFactory(BasicModule)))(t || BasicModule);
-  };
-}();
-
-BasicModule.ɵmod = /*@__PURE__*/ i0.ɵɵdefineNgModule({ type: BasicModule });
-BasicModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({});
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(BasicModule, [{
-  type: NgModule,
-  args: [{}]
-}], null, null); })();
+}}], null, null); })();
 …

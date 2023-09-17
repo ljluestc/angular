@@ -4,10 +4,7 @@ import { concat, from, interval, Subject } from 'rxjs';
 import { filter, first, switchMap, takeUntil, tap } from 'rxjs/operators';
 
 import { LocationService } from 'app/shared/location.service';
-import { Logger } from 'app/shared/logger.service';
-
-
-/**
+import { Logger } from 'app/shared/logger.service';/**
  * SwUpdatesService
  *
  * @description
@@ -37,35 +34,35 @@ export class SwUpdatesService implements OnDestroy {
     const appIsStable = this.appRef.isStable.pipe(first(v => v));
     concat(appIsStable, interval(this.checkInterval))
         .pipe(
-            tap(() => this.log('Checking for update...')),
-            takeUntil(this.onDisable),
+   tap(() => this.log('Checking for update...')),
+   takeUntil(this.onDisable),
         )
         .subscribe(() => this.swu.checkForUpdate());
 
     // Activate available updates.
     this.swu.versionUpdates
         .pipe(
-            filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'),
-            tap(evt => this.log(`Update available: ${JSON.stringify(evt)}`)),
-            takeUntil(this.onDisable),
-            switchMap(() => from(this.swu.activateUpdate()))
+   filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'),
+   tap(evt => this.log(`Update available: ${JSON.stringify(evt)}`)),
+   takeUntil(this.onDisable),
+   switchMap(() => from(this.swu.activateUpdate()))
         )
         .subscribe((isActivated) => {
-          if(isActivated) {
-            this.log('Update activated');
-            this.location.fullPageNavigationNeeded();
-          }
+ if(isActivated) {
+   this.log('Update activated');
+   this.location.fullPageNavigationNeeded();
+ }
         });
 
     // Request an immediate page reload once an unrecoverable state has been detected.
     this.swu.unrecoverable
         .pipe(
-            tap(evt => {
-              const errorMsg = `Unrecoverable state: ${evt.reason}`;
-              this.errorHandler.handleError(errorMsg);
-              this.log(`${errorMsg}\nReloading...`);
-            }),
-            takeUntil(this.onDisable),
+   tap(evt => {
+     const errorMsg = `Unrecoverable state: ${evt.reason}`;
+     this.errorHandler.handleError(errorMsg);
+     this.log(`${errorMsg}\nReloading...`);
+   }),
+   takeUntil(this.onDisable),
         )
         .subscribe(() => this.location.reloadPage());
   }

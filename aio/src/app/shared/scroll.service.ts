@@ -69,14 +69,14 @@ export class ScrollService implements OnDestroy {
         // The type is `hashchange` when the fragment identifier of the URL has changed. It allows
         // us to go to position just before a click on an anchor.
         if (event.type === 'hashchange') {
-          this.scrollToPosition();
+ this.scrollToPosition();
         } else {
-          // Navigating with the forward/back button, we have to remove the position from the
-          // session storage in order to avoid a race-condition.
-          this.removeStoredScrollInfo();
-          // The `popstate` event is always triggered by a browser action such as clicking the
-          // forward/back button. It can be followed by a `hashchange` event.
-          this.poppedStateScrollPosition = event.state ? event.state.scrollPosition : null;
+ // Navigating with the forward/back button, we have to remove the position from the
+ // session storage in order to avoid a race-condition.
+ this.removeStoredScrollInfo();
+ // The `popstate` event is always triggered by a browser action such as clicking the
+ // forward/back button. It can be followed by a `hashchange` event.
+ this.poppedStateScrollPosition = event.state ? event.state.scrollPosition : null;
         }
       });
 
@@ -133,11 +133,11 @@ export class ScrollService implements OnDestroy {
         // - Clicking on a link.
         // (If the location contains a hash, we have to wait for async layout.)
         if (this.isLocationWithHash()) {
-          // Delay scrolling by the specified amount to allow time for async layout to complete.
-          setTimeout(() => this.scroll(), delay);
+ // Delay scrolling by the specified amount to allow time for async layout to complete.
+ setTimeout(() => this.scroll(), delay);
         } else {
-          // If the location doesn't contain a hash, we scroll to the top of the page.
-          this.scrollToTop();
+ // If the location doesn't contain a hash, we scroll to the top of the page.
+ this.scrollToTop();
         }
       }
     }
@@ -162,7 +162,7 @@ export class ScrollService implements OnDestroy {
         // If we are very close to the top (<20px), then scroll all the way up.
         // (This can happen if `element` is at the top of the page, but has a small top-margin.)
         if (window.scrollY < 20) {
-          window.scrollBy(0, -window.scrollY);
+ window.scrollBy(0, -window.scrollY);
         }
       }
     }
@@ -191,7 +191,7 @@ export class ScrollService implements OnDestroy {
     if (this.supportManualScrollRestoration) {
       const currentScrollPosition = this.viewportScroller.getScrollPosition();
       this.location.replaceState(
-          this.location.path(true), undefined, {scrollPosition: currentScrollPosition});
+ this.location.path(true), undefined, {scrollPosition: currentScrollPosition});
       this.storage.setItem('scrollPosition', currentScrollPosition.join(','));
     }
   }

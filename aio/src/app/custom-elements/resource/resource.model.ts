@@ -15,8 +15,8 @@ export interface SubCategory {
 export interface Resource {
   category: string;    // "Education"
   subCategory: string; // "Books"
-  id: string;          // "-KLI8vJ0ZkvWhqPembZ7"
+  id: string; // "-KLI8vJ0ZkvWhqPembZ7"
   desc: string;        // "This books shows all the steps necessary for the development of SPA"
   title: string;       // "Practical Angular 2",
-  url: string;         // "https://leanpub.com/practical-angular-2"
+  url: string;// "https://leanpub.com/practical-angular-2"
 }

@@ -4,1155 +4,747 @@
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-    }
-    value() {
-        return 1;
-    }
+constructor() {
+this.message = 'hello';
+}
+value() {
+return 1;
+}
 }
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
 MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#switch value()}
-        {:case 0} case 0
-        {:case 1} case 1
-        {:case 2} case 2
-        {:default} default
-      {/switch}
-    </div>
+<div>
+  {{message}}
+  {#switch value()}
+{:case 0} case 0
+{:case 1} case 1
+{:case 2} case 2
+{:default} default
+  {/switch}
+</div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#switch value()}
-        {:case 0} case 0
-        {:case 1} case 1
-        {:case 2} case 2
-        {:default} default
-      {/switch}
-    </div>
+type: Component,
+args: [{
+template: `
+<div>
+  {{message}}
+  {#switch value()}
+{:case 0} case 0
+{:case 1} case 1
+{:case 2} case 2
+{:default} default
+  {/switch}
+</div>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: basic_switch.d.ts
- ****************************************************************************************************/
-import * as i0 from "@angular/core";
-export declare class MyApp {
-    message: string;
-    value(): number;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
+}]
+}] });static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
  * PARTIAL FILE: switch_without_default.js
- ****************************************************************************************************/
-import { Component } from '@angular/core';
-import * as i0 from "@angular/core";
+ import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.value = () => 1;
-    }
+cthis.value = () => 1;
 }
-MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#switch value()}
-        {:case 0} case 0
-        {:case 1} case 1
-        {:case 2} case 2
-      {/switch}
-    </div>
+}MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
+<div>
+ {:case 0} case 0
+{:case 1} case 1
+{:case 2} case 2
+  {/switch}
+</div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#switch value()}
-        {:case 0} case 0
-        {:case 1} case 1
-        {:case 2} case 2
-      {/switch}
-    </div>
+type: Component,
+args: [{
+template: `
+<div>
+  {{message}}
+  {#switch value()}
+{:case 0} case 0
+{:case 1} case 1
+{:case 2} case 2
+  {/switch}
+</div>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
+}]
+}] });/****************************************************************************************************
  * PARTIAL FILE: switch_without_default.d.ts
  ****************************************************************************************************/
 import * as i0 from "@angular/core";
-export declare class MyApp {
-    message: string;
-    value: () => number;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
- * PARTIAL FILE: nested_switch.js
- ****************************************************************************************************/
-import { Component } from '@angular/core';
+exportvalue: () => number;
+static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
+ * PARimport { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.value = () => 1;
-        this.nestedValue = () => 2;
-    }
-}
+cthis.value = () => 1;
+this.n}
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
 MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#switch value()}
-        {:case 0} case 0
-        {:case 1}
-          {#switch nestedValue()}
-            {:case 0} nested case 0
-            {:case 1} nested case 1
-            {:case 2} nested case 2
-          {/switch}
-        {:case 2} case 2
-      {/switch}
-    </div>
+<  {#switch value()}
+{:case  {#switch nestedValue()}
+{:case 0} nested case 0
+{:case 1} nested case 1
+{{:case 2} case 2
+  {/switch}
+</div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#switch value()}
-        {:case 0} case 0
-        {:case 1}
-          {#switch nestedValue()}
-            {:case 0} nested case 0
-            {:case 1} nested case 1
-            {:case 2} nested case 2
-          {/switch}
-        {:case 2} case 2
-      {/switch}
-    </div>
+type: Component,
+a<div>
+  {{message}}
+  {#switch value()}
+{:case 0} case 0
+{:case 1}
+  {#switch nestedValue()}
+{:case 0} nested case 0
+{:case 1} nested case 1
+{:case 2} nested case 2
+  {/switch}
+{:case 2} case 2
+  {/switch}
+</div>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
+}]
+}] });/****************************************************************************************************
  * PARTIAL FILE: nested_switch.d.ts
  ****************************************************************************************************/
 import * as i0 from "@angular/core";
 export declare class MyApp {
-    message: string;
-    value: () => number;
-    nestedValue: () => number;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
+message: string;
+value: () => number;
+nestedValue: () => number;
+static}/****************************************************************************************************
  * PARTIAL FILE: switch_with_pipe.js
  ****************************************************************************************************/
 import { Component, Pipe } from '@angular/core';
 import * as i0 from "@angular/core";
 export class TestPipe {
-    tranform(value) {
-        return value;
-    }
-}
-TestPipe.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: TestPipe, deps: [], target: i0.ɵɵFactoryTarget.Pipe });
-TestPipe.ɵpipe = i0.ɵɵngDeclarePipe({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: TestPipe, isStandalone: true, name: "test" });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: TestPipe, decorators: [{
-            type: Pipe,
-            args: [{ standalone: true, name: 'test' }]
-        }] });
+tranform(value) {
+return value;
+}Ti0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: TestPipe, decorators: [{
+type: Pipe,
+args: [{ standalone: true, name: 'test' }]
+}] });
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.value = () => 1;
-    }
-}
-MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, isStandalone: true, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#switch value() | test}
-        {:case 0} case 0
-        {:case 1} case 1
-        {:default} default
-      {/switch}
-    </div>
-  `, isInline: true, dependencies: [{ kind: "pipe", type: TestPipe, name: "test" }] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#switch value() | test}
-        {:case 0} case 0
-        {:case 1} case 1
-        {:default} default
-      {/switch}
-    </div>
+constructor() {
+this.message = 'hello';
+this.value = () => 1;
+}M<div>
+  {{message}}
+  {#switch value() | test}
+{:case 0} case 0
+{:case 1} case 1
+{:default} default
+  {/switch}
+</div>
+  `, ittemplate: `
+<div>
+  {{message}}
+  {#switch value() | test}
+{:case 0} case 0
+{:case 1} case 1
+{:default} default
+  {/switch}
+</div>
   `,
-                    standalone: true,
-                    imports: [TestPipe]
-                }]
-        }] });
-
-/****************************************************************************************************
+s}]
+}] });/****************************************************************************************************
  * PARTIAL FILE: switch_with_pipe.d.ts
  ****************************************************************************************************/
 import * as i0 from "@angular/core";
 export declare class TestPipe {
-    tranform(value: unknown): unknown;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TestPipe, never>;
-    static ɵpipe: i0.ɵɵPipeDeclaration<TestPipe, "test", true>;
+tranform(value: unknown): unknown;
+static ɵfac: i0.ɵɵFactoryDeclaration<TestPipe, never>;
+static ɵpipe: i0.ɵɵPipeDeclaration<TestPipe, "test", true>;
 }
 export declare class MyApp {
-    message: string;
-    value: () => number;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, true, never>;
-}
-
-/****************************************************************************************************
+message: string;
+value: () => number;
+static}/****************************************************************************************************
  * PARTIAL FILE: basic_if.js
  ****************************************************************************************************/
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.value = () => 1;
-    }
+constructor() {
+this.message = 'hello';
+this.value = () => 1;
+}
 }
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#if value()}hello{/if}
-    </div>
+MyApp. </div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#if value()}hello{/if}
-    </div>
+type: Component,
+args: [{
+template: `
+<div>
+  {{message}}
+  {#if value()}hello{/if}
+</div>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: basic_if.d.ts
- ****************************************************************************************************/
-import * as i0 from "@angular/core";
-export declare class MyApp {
-    message: string;
-    value: () => number;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
+}]
+}] }); export declare class MyApp {
+message: string;
+value: () => number;
+static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
  * PARTIAL FILE: basic_if_else.js
  ****************************************************************************************************/
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.value = () => 1;
-    }
-}
-MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#if value()}hello{:else}goodbye{/if}
-    </div>
+constructor() {
+this.mM<div>
+  {{message}}
+  {#if value()}hello{:else}goodbye{/if}
+</div>
   `, isInline: true });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#if value()}hello{:else}goodbye{/if}
-    </div>
+iargs: [{
+template: `
+<div>
+  {{message}}
+  {#if value()}hello{:else}goodbye{/if}
+</div>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: basic_if_else.d.ts
+}] * PARTIAL FILE: basic_if_else.d.ts
  ****************************************************************************************************/
-import * as i0 from "@angular/core";
-export declare class MyApp {
-    message: string;
-    value: () => number;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
- * PARTIAL FILE: basic_if_else_if.js
- ****************************************************************************************************/
-import { Component } from '@angular/core';
+imessage: string;
+value: () => number;
+static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
+ import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.value = () => 1;
-        this.otherValue = () => 2;
-    }
-}
-MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#if value() === 1}
-        one
-        {:else if otherValue() === 2} two
-        {:else if message} three
-        {:else} four
-      {/if}
-    </div>
-  `, isInline: true });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#if value() === 1}
-        one
-        {:else if otherValue() === 2} two
-        {:else if message} three
-        {:else} four
-      {/if}
-    </div>
-  `,
-                }]
-        }] });
-
-/****************************************************************************************************
+constructor() {
+this.message = 'hello';
+this.value = () => 1;
+this.otherValue = () => 2;
+}<div>
+  {{message}}
+  {#if value() === 1}
+one
+{:else if otherValue() === 2} two
+{:else if message} three
+{:else} four
+  {/if}
+<i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
+ttemplate: `
+<div>
+  {{message}}
+  {#if value() === 1}
+one
+{:else if otherValue() === 2} two
+{:else if message} three
+{:else}]
+}] });/****************************************************************************************************
  * PARTIAL FILE: basic_if_else_if.d.ts
  ****************************************************************************************************/
 import * as i0 from "@angular/core";
 export declare class MyApp {
-    message: string;
-    value: () => number;
-    otherValue: () => number;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
- * PARTIAL FILE: nested_if.js
- ****************************************************************************************************/
+message: string;
+value: () => number;
+ostatic ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+} ****************************************************************************************************/
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.val = 1;
-        this.innerVal = 2;
-    }
-}
-MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
+constructor() {
+this.message = 'hello';
+this.val = 1;
+this.innerVal = 2;
+}MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
 MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#if val === 0}
-        zero
-        {:else if val === 1} one
-        {:else if val === 2}
-          {#if innerVal === 0}
-            inner zero
-            {:else if innerVal === 1} inner one
-            {:else if innerVal === 2} inner two
-            {:else} inner three
-          {/if}
-        {:else} inner three
-      {/if}
-    </div>
+<div>  {#if val === 0}
+zero
+{:else if val === 1} one
+{:else if val === 2}
+  {#if innerVal === 0}
+inner zero
+{:else if innerVal === 1} inner one
+{  {/if}
+{</div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#if val === 0}
-        zero
-        {:else if val === 1} one
-        {:else if val === 2}
-          {#if innerVal === 0}
-            inner zero
-            {:else if innerVal === 1} inner one
-            {:else if innerVal === 2} inner two
-            {:else} inner three
-          {/if}
-        {:else} inner three
-      {/if}
-    </div>
+type: Component,
+args: [{
+template: `
+<div>
+  {{message}}
+  {#if val === 0}
+zero
+{:else  {#if innerVal === 0}
+inner zero
+{:else{:else} inner three
+  {/if}
+{:else} inner three
+  {/if}
+</div>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: nested_if.d.ts
- ****************************************************************************************************/
-import * as i0 from "@angular/core";
-export declare class MyApp {
-    message: string;
-    val: number;
-    innerVal: number;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
+}]
+} ****************************************************************************************************/
+imessage: string;
+val: number;
+innerVal: number;
+static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
  * PARTIAL FILE: if_with_pipe.js
  ****************************************************************************************************/
 import { Component, Pipe } from '@angular/core';
 import * as i0 from "@angular/core";
 export class TestPipe {
-    tranform(value) {
-        return value;
-    }
+tranform(value) {
+return value;
 }
-TestPipe.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: TestPipe, deps: [], target: i0.ɵɵFactoryTarget.Pipe });
-TestPipe.ɵpipe = i0.ɵɵngDeclarePipe({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: TestPipe, isStandalone: true, name: "test" });
+}TestPipe.ɵpipe = i0.ɵɵngDeclarePipe({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: TestPipe, isStandalone: true, name: "test" });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: TestPipe, decorators: [{
-            type: Pipe,
-            args: [{ standalone: true, name: 'test' }]
-        }] });
+type: Pipe,
+args: [{ standalone: true, name: 'test' }]
+}] });
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.val = 1;
-    }
+constructor() {
+this.m}
 }
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#if (val | test) === 1}
-        one
-        {:else if (val | test) === 2} two
-        {:else} three
-      {/if}
-    </div>
-  `, isInline: true });
+M  {{message}}
+  {#if (val | test) === 1}
+one
+{:else if (val | test) === 2} two
+{:else} three
+   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#if (val | test) === 1}
-        one
-        {:else if (val | test) === 2} two
-        {:else} three
-      {/if}
-    </div>
+type: Component,
+args: [{
+template: `
+<div>
+  {{message}}
+  {#if (val | test) === 1}
+one
+{:else  {/if}
+</div>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
+}]
+}] });/****************************************************************************************************
  * PARTIAL FILE: if_with_pipe.d.ts
  ****************************************************************************************************/
-import * as i0 from "@angular/core";
-export declare class TestPipe {
-    tranform(value: unknown): unknown;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TestPipe, never>;
-    static ɵpipe: i0.ɵɵPipeDeclaration<TestPipe, "test", true>;
-}
-export declare class MyApp {
-    message: string;
-    val: number;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
- * PARTIAL FILE: if_with_alias.js
- ****************************************************************************************************/
-import { Component } from '@angular/core';
+importtranform(value: unknown): unknown;
+static ɵfac: i0.ɵɵFactoryDeclaration<TestPipe, never>;
+static ɵpipe: i0.ɵɵPipeDeclaration<TestPipe, "test", true>;
+}message: string;
+val: number;
+static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
+ import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.value = () => 1;
-    }
+constructor() {
+this.message = 'hello';
+this.value = () => 1;
+}
 }
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
 MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#if value(); as alias}{{value()}} as {{alias}}{/if}
-    </div>
+<div>
+  {{message}}
+  {#if value(); as alias}{{value()}} as {{alias}}{/if}
+</div>
   `, isInline: true });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#if value(); as alias}{{value()}} as {{alias}}{/if}
-    </div>
+i0.ɵɵnargs: [{
+template: `
+<div>
+  {{me</div>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
+}]
+}] });/****************************************************************************************************
  * PARTIAL FILE: if_with_alias.d.ts
  ****************************************************************************************************/
 import * as i0 from "@angular/core";
 export declare class MyApp {
-    message: string;
-    value: () => number;
-    alias: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
- * PARTIAL FILE: if_nested_alias.js
+message: string;
+vstatic ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+s * PARTIAL FILE: if_nested_alias.js
  ****************************************************************************************************/
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.value = () => 1;
-    }
+constructor() {
+this.value = () => 1;
+}
 }
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
 MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    {#if value(); as root}
-      Root: {{value()}}/{{root}}
-      {#if value(); as inner}
-        Inner: {{value()}}/{{root}}/{{inner}}
-        {#if value(); as innermost}
-          Innermost: {{value()}}/{{root}}/{{inner}}/{{innermost}}
-        {/if}
-      {/if}
-    {/if}
-  `, isInline: true });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    {#if value(); as root}
-      Root: {{value()}}/{{root}}
-      {#if value(); as inner}
-        Inner: {{value()}}/{{root}}/{{inner}}
-        {#if value(); as innermost}
-          Innermost: {{value()}}/{{root}}/{{inner}}/{{innermost}}
-        {/if}
-      {/if}
-    {/if}
-  `,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: if_nested_alias.d.ts
- ****************************************************************************************************/
-import * as i0 from "@angular/core";
-export declare class MyApp {
-    value: () => number;
-    root: any;
-    inner: any;
-    innermost: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
+{#if value(); as root}
+  Root: {{value()}}/{{root}}
+  {#if value(); as inner}
+Inner: {{value()}}/{{root}}/{{inner}}
+{#if v{/if}
+  {/if}
+{/if}
+  `, itype: Component,
+args: [{
+template: `
+{#if v  {#if value(); as inner}
+Inner: {{value()}}/{{root}}/{{inner}}
+{#if value(); as innermost}
+  Innermost: {{value()}}/{{root}}/{{inner}}/{{innermost}}
+{/if}
+  {/if}
+{}]
+}export declare class MyApp {
+value: () => number;
+root: any;
+inner: any;
+innermost: any;
+static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
  * PARTIAL FILE: if_nested_alias_listeners.js
  ****************************************************************************************************/
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.value = () => 1;
-    }
-    log(..._) { }
-}
+constructor() {
+this.value = () => 1;
+}}
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
 MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    {#if value(); as root}
-      <button (click)="log(value(), root)"></button>
-
-      {#if value(); as inner}
-        <button (click)="log(value(), root, inner)"></button>
-
-        {#if value(); as innermost}
-          <button (click)="log(value(), root, inner, innermost)"></button>
-        {/if}
-      {/if}
-    {/if}
-  `, isInline: true });
+{#if value(); as root}
+  <button (click)="log(value(), root)"></button>  {#if value(); as inner}
+<button (click)="log(value(), root, inner)"></button>{#if value(); as innermost}
+  <button (click)="log(value(), root, inner, innermost)"></button>
+{/if}
+  {/if  `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    {#if value(); as root}
-      <button (click)="log(value(), root)"></button>
-
-      {#if value(); as inner}
-        <button (click)="log(value(), root, inner)"></button>
-
-        {#if value(); as innermost}
-          <button (click)="log(value(), root, inner, innermost)"></button>
-        {/if}
-      {/if}
-    {/if}
-  `,
-                }]
-        }] });
-
-/****************************************************************************************************
+type: Component,
+args: [{
+template: `
+{#if value(); as root}
+   <button (click)="log(value(), root, inner, innermost)"></button>
+{/if}{/if}
+ }] });/****************************************************************************************************
  * PARTIAL FILE: if_nested_alias_listeners.d.ts
  ****************************************************************************************************/
 import * as i0 from "@angular/core";
 export declare class MyApp {
-    value: () => number;
-    log(..._: any[]): void;
-    root: any;
-    inner: any;
-    innermost: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
+value: () => number;
+log(..._: any[]): void;
+root: any;
+istatic ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
  * PARTIAL FILE: basic_for.js
  ****************************************************************************************************/
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.items = [{ name: 'one' }, { name: 'two' }, { name: 'three' }];
-    }
+constrthis.items = [{ name: 'one' }, { name: 'two' }, { name: 'three' }];
+}
 }
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#for item of items; track item}{{item.name}}{/for}
-    </div>
-  `, isInline: true });
+MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersio  {{message}}
+  {#for item of items; track item}{{item.name}}{/for}  `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#for item of items; track item}{{item.name}}{/for}
-    </div>
+type: Component,
+args: <div>
+  {{message}}
+  {#for item of items; track item}{{item.name}}{/for}
+</div>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: basic_for.d.ts
- ****************************************************************************************************/
-import * as i0 from "@angular/core";
-export declare class MyApp {
-    message: string;
-    items: {
-        name: string;
-    }[];
-    item: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
- * PARTIAL FILE: for_with_empty.js
- ****************************************************************************************************/
+}]
+}items: {
+name: item: any;
+s}/**** ****************************************************************************************************/
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.items = [{ name: 'one' }, { name: 'two' }, { name: 'three' }];
-    }
+constructor() {
+this.message = 'hello';
+this.items = [{ name: 'one' }, { name: 'two' }, { name: 'three' }];
 }
-MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#for item of items; track item}
-        {{item.name}}
-        {:empty} No items!
-      {/for}
-    </div>
+}MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
+<div>
+ {{item.name}}
+{:empty} No items!
+  {/for}
+</div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#for item of items; track item}
-        {{item.name}}
-        {:empty} No items!
-      {/for}
-    </div>
-  `,
-                }]
-        }] });
-
-/****************************************************************************************************
+type: Component,
+args: [{
+template: `
+<div>
+  {{message}}
+  {#for item of items; track item}
+{{item.name}}  {/for}
+</div>}]
+}] });/****************************************************************************************************
  * PARTIAL FILE: for_with_empty.d.ts
- ****************************************************************************************************/
-import * as i0 from "@angular/core";
-export declare class MyApp {
-    message: string;
-    items: {
-        name: string;
-    }[];
-    item: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
- * PARTIAL FILE: for_track_by_index.js
- ****************************************************************************************************/
-import { Component } from '@angular/core';
-import * as i0 from "@angular/core";
-export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.items = [{ name: 'one' }, { name: 'two' }, { name: 'three' }];
-    }
-}
-MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#for item of items; track $index}{{item.name}}{/for}
-    </div>
+ *****export declare class MyApp {
+message: string;
+items: {
+name: string;
+}[];
+item: any;
+static}/**************************************** ****************************************************************************************************/
+import { Component } from '@angular/core';export class MyApp {
+constructor() {
+this.m}
+}M  {{m</div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#for item of items; track $index}{{item.name}}{/for}
-    </div>
-  `,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: for_track_by_index.d.ts
- ****************************************************************************************************/
+type: Component,
+args: [{
+template: `
+<div>
+  {{message}}
+   `,
+}]
+} ****************************************************************************************************/
 import * as i0 from "@angular/core";
 export declare class MyApp {
-    message: string;
-    items: {
-        name: string;
-    }[];
-    item: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
+message: string;
+items: {
+name: string;
+}[];
+item: any;
+static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
  * PARTIAL FILE: for_track_by_field.js
- ****************************************************************************************************/
-import { Component } from '@angular/core';
-import * as i0 from "@angular/core";
-export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.items = [{ name: 'one' }, { name: 'two' }, { name: 'three' }];
-    }
-}
+ ***********************************************import * as i0 from "@angular/core";
+export class MyApp {this.message = 'hello';
+this.i}
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
 MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#for item of items; track item.name[0].toUpperCase()}{{item.name}}{/for}
-    </div>
+<div>
+  {{message}}
+  {#for item of items; track item.name[0].toUpperCase()}{{item.name}}{/for}
+</div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#for item of items; track item.name[0].toUpperCase()}{{item.name}}{/for}
-    </div>
-  `,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: for_track_by_field.d.ts
+type: Component,
+args: <  {#for item of items; track item.name[0]  `,
+}] * PARTIAL FILE: for_track_by_field.d.ts
  ****************************************************************************************************/
-import * as i0 from "@angular/core";
-export declare class MyApp {
-    message: string;
-    items: {
-        name: string;
-    }[];
-    item: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
+importmessage: string;
+items: {
+name: string;
+}stati}/****************************************************************************************************
  * PARTIAL FILE: nested_for.js
  ****************************************************************************************************/
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.items = [
-            { name: 'one', subItems: ['sub one', 'sub two', 'sub three'] },
-            { name: 'two', subItems: ['sub one', 'sub two', 'sub three'] },
-            { name: 'three', subItems: ['sub one', 'sub two', 'sub three'] },
-        ];
-    }
-}
-MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#for item of items; track item}
-        {{item.name}}
-        {#for subitem of item.subItems; track $index}{{subitem}} from {{item.name}}{/for}
-      {/for}
-    </div>
+constructor() {
+this.message = 'hello';
+t{ name: 'two', subItems: ['sub one', 'sub two', 'sub three'] },
+{ name: 'three', subItems: ['sub one', 'sub two', 'sub three'] },
+]MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
+<div>
+  {{message}}
+  {#for item of items; track item}
+{{item.name}}
+{#for subitem of item.subItems; track $index}{{subitem}} from {{item.name}}{/for}
+  {/for}
+</div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#for item of items; track item}
-        {{item.name}}
-        {#for subitem of item.subItems; track $index}{{subitem}} from {{item.name}}{/for}
-      {/for}
-    </div>
-  `,
-                }]
-        }] });
-
-/****************************************************************************************************
+ttemplate: `
+<div>
+  {{message}}{{item.name}}
+{#for subitem of item.subItems; track $index}{{subite</div>
+  `,}] });/****************************************************************************************************
  * PARTIAL FILE: nested_for.d.ts
  ****************************************************************************************************/
 import * as i0 from "@angular/core";
 export declare class MyApp {
-    message: string;
-    items: {
-        name: string;
-        subItems: string[];
-    }[];
-    item: any;
-    subitem: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+message: string;
+items: {
+name: string;
+subItems: string[];
+}[];
+item: s}/*************************************** ****************************************************************************************************/
+import { Component } from '@angular/core';this.message = 'hello';
+this.items = [];
 }
-
-/****************************************************************************************************
- * PARTIAL FILE: for_template_variables.js
- ****************************************************************************************************/
-import { Component } from '@angular/core';
-import * as i0 from "@angular/core";
-export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.items = [];
-    }
 }
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
 MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#for item of items; track item}
-        Index: {{$index}}
-        First: {{$first}}
-        Last: {{$last}}
-        Even: {{$even}}
-        Odd: {{$odd}}
-        Count: {{$count}}
-      {/for}
-    </div>
+<div>
+ IndexLOdd: {{$odd}}
+Count: {{$count}}
+  {/for}
+</div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#for item of items; track item}
-        Index: {{$index}}
-        First: {{$first}}
-        Last: {{$last}}
-        Even: {{$even}}
-        Odd: {{$odd}}
-        Count: {{$count}}
-      {/for}
-    </div>
+type: Component,
+args: [{
+template: `
+<div>
+  {{message}}
+  {#for item of items; track item}
+IOdd: {{$odd}}
+Count: {{$count}}
+  {/for}
+</div>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
+}]
+}] });/****************************************************************************************************
  * PARTIAL FILE: for_template_variables.d.ts
  ****************************************************************************************************/
 import * as i0 from "@angular/core";
-export declare class MyApp {
-    message: string;
-    items: never[];
-    item: any;
-    $index: any;
-    $first: any;
-    $last: any;
-    $even: any;
-    $odd: any;
-    $count: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
- * PARTIAL FILE: for_aliased_template_variables.js
- ****************************************************************************************************/
+eitems: never[];
+item: any;
+$index: any;
+$first: any;
+$last: any;
+$even: any;
+$odd: any;
+$count: any;
+static}/**** ****************************************************************************************************/
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.items = [];
-    }
+constructor() {
+this.message = 'hello';
+this.items = [];
+}
 }
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#for item of items; track item; let idx = $index, f = $first; let l = $last, ev = $even, o = $odd; let co = $count}
-        Index: {{idx}}
-        First: {{f}}
-        Last: {{l}}
-        Even: {{ev}}
-        Odd: {{o}}
-        Count: {{co}}
-      {/for}
-    </div>
-  `, isInline: true });
+MyApp. ILast: {{l}}
+Even: {{ev}}
+Odd: {{o}}
+Count: {{co}}
+  {/fo  `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#for item of items; track item; let idx = $index, f = $first; let l = $last, ev = $even, o = $odd; let co = $count}
-        Index: {{idx}}
-        First: {{f}}
-        Last: {{l}}
-        Even: {{ev}}
-        Odd: {{o}}
-        Count: {{co}}
-      {/for}
-    </div>
+type: Component,
+args: [{
+template: `
+<div>
+  {{message}}
+  {#for item of items; track item; let idx = $index, f = $first; let l = $last, ev = $even, o = $odd; let co = $count}
+ILast: {{l}}
+Even: {{ev}}
+O  {/for}
+</div>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
+}]
+}] });/****************************************************************************************************
  * PARTIAL FILE: for_aliased_template_variables.d.ts
  ****************************************************************************************************/
 import * as i0 from "@angular/core";
 export declare class MyApp {
-    message: string;
-    items: never[];
-    idx: any;
-    f: any;
-    l: any;
-    ev: any;
-    o: any;
-    co: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
+message: string;
+items: never[];
+idx: any;
+f: anyev: any;
+o: any;
+co: any;
+static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
  * PARTIAL FILE: nested_for_template_variables.js
  ****************************************************************************************************/
-import { Component } from '@angular/core';
-import * as i0 from "@angular/core";
-export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.items = [
-            { name: 'one', subItems: ['sub one', 'sub two', 'sub three'] },
-            { name: 'two', subItems: ['sub one', 'sub two', 'sub three'] },
-            { name: 'three', subItems: ['sub one', 'sub two', 'sub three'] },
-        ];
-    }
+importexport class MyApp {
+constructor() {
+this.message = 'hello';
+this.items = [
+{{ name: 'three', subItems: ['sub one', 'sub two', 'sub three'] },
+];
+}
 }
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
 MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#for item of items; track item; let outerCount = $count}
-        {{item.name}}
-        {#for subitem of item.subItems; track subitem}
-          Outer: {{outerCount}}
-          Inner: {{$count}}
-        {/for}
-      {/for}
-    </div>
+<div>
+  {{message}}
+  {#fo{  Inn  {/for}
+</div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#for item of items; track item; let outerCount = $count}
-        {{item.name}}
-        {#for subitem of item.subItems; track subitem}
-          Outer: {{outerCount}}
-          Inner: {{$count}}
-        {/for}
-      {/for}
-    </div>
+type: Component,
+args: [{
+template: `
+<div>
+  {{message}}
+  {#for item of items; track item; let outerCount = $count}
+{{item.name}}
+{#for subitem of item.subItems; track subitem}
+ {</div>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: nested_for_template_variables.d.ts
- ****************************************************************************************************/
-import * as i0 from "@angular/core";
+}]
+}] });/****************************************************************************************************
+ * PARimport * as i0 from "@angular/core";
 export declare class MyApp {
-    message: string;
-    items: {
-        name: string;
-        subItems: string[];
-    }[];
-    item: any;
-    outerCount: any;
-    $count: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
- * PARTIAL FILE: for_template_variables_listener.js
- ****************************************************************************************************/
+message: string;
+items: {
+name: string;
+subItems: string[];
+}[];
+item: any;
+outerCount: any;
+$count: any;
+static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+} ****************************************************************************************************/
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.items = [];
-    }
-    log(..._) { }
+constrthis.items = [];
+}
+log(..._) { }
 }
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
 MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#for item of items; track item; let ev = $even}
-        <div (click)="log($index, ev, $first, $count)"></div>
-      {/for}
-    </div>
+<div>
+  {{message}}
+  {#fo  {/for}
+</div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#for item of items; track item; let ev = $even}
-        <div (click)="log($index, ev, $first, $count)"></div>
-      {/for}
-    </div>
+type: Component,
+a<div>
+  {{message}}
+  {#for item of items; track item; let ev = $even}
+<div (</div>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: for_template_variables_listener.d.ts
- ****************************************************************************************************/
-import * as i0 from "@angular/core";
+}]
+}] });/****************************************************************************************************
+ import * as i0 from "@angular/core";
 export declare class MyApp {
-    message: string;
-    items: never[];
-    log(..._: any[]): void;
-    item: any;
-    ev: any;
-    $index: any;
-    $first: any;
-    $count: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
- * PARTIAL FILE: for_variables_expression.js
- ****************************************************************************************************/
+message: string;
+items: never[];
+log(..._: any[]): void;
+item: any;
+ev: any;
+$index: any;
+$first: any;
+$count: any;
+s}/*** ****************************************************************************************************/
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.items = [];
-    }
+constructor() {
+this.items = [];
+}
 }
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
 MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `{#for item of items; track item}{{$odd + ''}}{/for}`, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `{#for item of items; track item}{{$odd + ''}}{/for}`,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: for_variables_expression.d.ts
+type: Component,
+args: [{
+template: `{#for item of items; track item}{{$odd + ''}}{/for}`,
+} * PARTIAL FILE: for_variables_expression.d.ts
  ****************************************************************************************************/
 import * as i0 from "@angular/core";
-export declare class MyApp {
-    items: never[];
-    item: any;
-    $odd: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
+exportitem: any;
+$odd: static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
  * PARTIAL FILE: for_data_slots.js
  ****************************************************************************************************/
 import { Component } from '@angular/core';
@@ -1160,314 +752,193 @@ import * as i0 from "@angular/core";
 // We verify the data slots by defining templates before/after
 // and checking that the indexes are sequential.
 export class MyApp {
-    constructor() {
-        this.items = ['one', 'two', 'three'];
-    }
+constructor() {
+this.items = ['one', 'two', 'three'];
 }
-MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <ng-template/>
-    {#for item of items; track item}{{item}}{:empty}Empty{/for}
-    <ng-template/>
+}{#for item of items; track item}{{item}}{:empty}Empty{/for}
+<ng-template/>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <ng-template/>
-    {#for item of items; track item}{{item}}{:empty}Empty{/for}
-    <ng-template/>
+type: template: `
+<ng-template/>
+{#for item of items; track item}{{item}}{:empty}Empty{/for}
+<ng-template/>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
+}]
+}] });/****************************************************************************************************
  * PARTIAL FILE: for_data_slots.d.ts
  ****************************************************************************************************/
 import * as i0 from "@angular/core";
 export declare class MyApp {
-    items: string[];
-    item: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
- * PARTIAL FILE: for_template_variables_scope.js
- ****************************************************************************************************/
+items: string[];
+item: any;
+static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+} ****************************************************************************************************/
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
-export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.items = [];
-    }
+exportthis.message = 'hello';
+this.items = [];
 }
-MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    {{$index}} {{$count}} {{$first}} {{$last}}
-
-    {#for item of items; track item}
-      {{$index}} {{$count}} {{$first}} {{$last}}
-    {/for}
-
-    {{$index}} {{$count}} {{$first}} {{$last}}
+}MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
+{{$index}} {{$count}} {{$first}} {{$last}}{#for item of items; track item}
+  {{$index}} {{$count}} {{$first}} {{$last}}
+{/for}{{$index}} {{$count}} {{$first}} {{$last}}
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    {{$index}} {{$count}} {{$first}} {{$last}}
-
-    {#for item of items; track item}
-      {{$index}} {{$count}} {{$first}} {{$last}}
-    {/for}
-
-    {{$index}} {{$count}} {{$first}} {{$last}}
+type: Component,
+args: [{
+template: `
+{{$index}} {{$count}} {{$first}} {{$last}}{#for item of items; track item}
+  {{$index}} {{$count}} {{$first}} {{$last}}
+{/for}{{$index}} {{$count}} {{$first}} {{$last}}
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: for_template_variables_scope.d.ts
- ****************************************************************************************************/
-import * as i0 from "@angular/core";
-export declare class MyApp {
-    message: string;
-    items: never[];
-    $index: any;
-    $count: any;
-    $first: any;
-    $last: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
+} impomessage: string;
+items: never[];
+$index: any;
+$count: any;
+$first: any;
+$last: any;
+static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
  * PARTIAL FILE: for_template_track_method_root.js
  ****************************************************************************************************/
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.items = [{ name: 'one' }, { name: 'two' }, { name: 'three' }];
-    }
-    trackFn(_index, item) {
-        return item;
-    }
+ctrackFn(_index, item) {
+return item;
 }
-MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      {#for item of items; track trackFn($index, item)}{/for}
-    </div>
-  `, isInline: true });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      {#for item of items; track trackFn($index, item)}{/for}
-    </div>
+}MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
+<div>
+  {{message}}
+  {#for item of items; track trackFn($index, item)}{/for}
+<i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
+type: Component,
+args: [{
+template: `
+<div>
+  {{message}}
+  {#for item of items; track trackFn($index, item)}{/for}
+</div>
   `,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: for_template_track_method_root.d.ts
- ****************************************************************************************************/
-import * as i0 from "@angular/core";
+}]
+}] });/****************************************************************************************************
+ import * as i0 from "@angular/core";
 export declare class MyApp {
-    message: string;
-    items: {
-        name: string;
-    }[];
-    trackFn(_index: number, item: any): any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
+message: string;
+items: {
+name: string;
+}[];
+trackFstatic ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
  * PARTIAL FILE: for_template_track_method_nested.js
  ****************************************************************************************************/
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
-export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.items = [{ name: 'one' }, { name: 'two' }, { name: 'three' }];
-    }
-    trackFn(_index, item) {
-        return item;
-    }
+exportthis.message = 'hello';
+this.items = [{ name: 'one' }, { name: 'two' }, { name: 'three' }];
+}
+trackFn(_index, item) {
+return item;
+}
 }
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
 MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    <div>
-      {{message}}
-      <ng-template>
-        {#for item of items; track trackFn($index, item)}{/for}
-      </ng-template>
-    </div>
+<  </ng-template>
+</div>
   `, isInline: true });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    <div>
-      {{message}}
-      <ng-template>
-        {#for item of items; track trackFn($index, item)}{/for}
-      </ng-template>
-    </div>
-  `,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: for_template_track_method_nested.d.ts
- ****************************************************************************************************/
+i0.ɵɵnargs: [{
+template: `
+<div>
+  {{me{#for item of items; track trackFn($index, item)}{/for}
+  </ng-template>  `,
+}]
+}] }); ****************************************************************************************************/
 import * as i0 from "@angular/core";
 export declare class MyApp {
-    message: string;
-    items: {
-        name: string;
-    }[];
-    trackFn(_index: number, item: any): any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
- * PARTIAL FILE: for_pure_track_reuse.js
- ****************************************************************************************************/
+message: string;
+items: {
+name: string;
+}[];static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/**** ****************************************************************************************************/
 import { Component } from '@angular/core';
-import * as i0 from "@angular/core";
-export class MyApp {
-    constructor() {
-        this.items = [{ name: 'one' }, { name: 'two' }, { name: 'three' }];
-        this.otherItems = [{ name: 'four' }, { name: 'five' }, { name: 'six' }];
-    }
-}
+it}
 MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
 MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    {#for item of items; track item.name[0].toUpperCase()}{{item.name}}{/for}
-    {#for otherItem of otherItems; track otherItem.name[0].toUpperCase()}{{otherItem.name}}{/for}
+{#for item of items; track item.name[0].toUpperCase()}{{item.name}}{/for}
+{#for otherItem of otherItems; track otherItem.name[0].toUpperCase()}{{otherItem.name}}{/for}
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    {#for item of items; track item.name[0].toUpperCase()}{{item.name}}{/for}
-    {#for otherItem of otherItems; track otherItem.name[0].toUpperCase()}{{otherItem.name}}{/for}
-  `,
-                }]
-        }] });
-
-/****************************************************************************************************
+type: Component,
+args: [{
+template: `
+{  `,
+}]
+}] });/****************************************************************************************************
  * PARTIAL FILE: for_pure_track_reuse.d.ts
  ****************************************************************************************************/
 import * as i0 from "@angular/core";
 export declare class MyApp {
-    items: {
-        name: string;
-    }[];
-    otherItems: {
-        name: string;
-    }[];
-    item: any;
-    otherItem: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
-}
-
-/****************************************************************************************************
+items:}[];
+otherItems: {
+name: string;
+}[];
+item: static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
  * PARTIAL FILE: for_impure_track_reuse.js
- ****************************************************************************************************/
-import { Component } from '@angular/core';
-import * as i0 from "@angular/core";
+ import * as i0 from "@angular/core";
 export class MyApp {
-    constructor() {
-        this.message = 'hello';
-        this.items = [{ name: 'one' }, { name: 'two' }, { name: 'three' }];
-        this.otherItems = [{ name: 'four' }, { name: 'five' }, { name: 'six' }];
-    }
-    trackFn(item, message) {
-        return message + item.name;
-    }
+constructor() {
+this.message = 'hello';
+this.items = [{ name: 'one' }, { name: 'two' }, { name: 'three' }];
+this.otherItems = [{ name: 'four' }, { name: 'five' }, { name: 'six' }];
 }
-MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    {#for item of items; track trackFn(item, message)}{{item.name}}{/for}
-    {#for otherItem of otherItems; track trackFn(otherItem, message)}{{otherItem.name}}{/for}
-  `, isInline: true });
+trackFn(item, message) {
+return message + item.name;
+}
+}MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
+{  `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    {#for item of items; track trackFn(item, message)}{{item.name}}{/for}
-    {#for otherItem of otherItems; track trackFn(otherItem, message)}{{otherItem.name}}{/for}
-  `,
-                }]
-        }] });
-
-/****************************************************************************************************
- * PARTIAL FILE: for_impure_track_reuse.d.ts
- ****************************************************************************************************/
+type: Component,
+args: [{
+template: `
+{#for item of items; track trackFn(item, message)}{{item.name}}{/for}
+{#for }]
+} ****************************************************************************************************/
 import * as i0 from "@angular/core";
 export declare class MyApp {
-    message: string;
-    items: {
-        name: string;
-    }[];
-    otherItems: {
-        name: string;
-    }[];
-    trackFn(item: any, message: string): string;
-    item: any;
-    otherItem: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+message: string;
+items: {
+name: otherItems: {
+name: string;
+}[];
+trackFn(item: any, message: string): string;
+item: any;
+otherItem: any;
+static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+}/****************************************************************************************************
+ export class MyApp {
+constructor() {
+this.items = [];
 }
-
-/****************************************************************************************************
- * PARTIAL FILE: for_track_literals.js
- ****************************************************************************************************/
-import { Component } from '@angular/core';
-import * as i0 from "@angular/core";
-export class MyApp {
-    constructor() {
-        this.items = [];
-    }
-    trackFn(obj, arr) {
-        return null;
-    }
+trackFn(obj, arr) {
+return null;
 }
-MyApp.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MyApp.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "0.0.0-PLACEHOLDER", type: MyApp, selector: "ng-component", ngImport: i0, template: `
-    {#for item of items; track trackFn({foo: item, bar: item}, [item, item])}{{item.name}}{/for}
-  `, isInline: true });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "0.0.0-PLACEHOLDER", ngImport: i0, type: MyApp, decorators: [{
-            type: Component,
-            args: [{
-                    template: `
-    {#for item of items; track trackFn({foo: item, bar: item}, [item, item])}{{item.name}}{/for}
-  `,
-                }]
-        }] });
-
-/****************************************************************************************************
+}
+MyApp.{#for item of items; track trackFn({foo: item, bar: item}, [item, item])}{{item.name}}{/for}
+  `, isInline: true });type: Component,
+args: [{
+templa}] });/****************************************************************************************************
  * PARTIAL FILE: for_track_literals.d.ts
  ****************************************************************************************************/
 import * as i0 from "@angular/core";
 export declare class MyApp {
-    items: never[];
-    trackFn(obj: any, arr: any[]): null;
-    item: any;
-    static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
+items: never[];
+trackFn(obj: any, arr: any[]): null;static ɵfac: i0.ɵɵFactoryDeclaration<MyApp, never>;
+static ɵcmp: i0.ɵɵComponentDeclaration<MyApp, "ng-component", never, {}, {}, never, never, false, never>;
 }
-

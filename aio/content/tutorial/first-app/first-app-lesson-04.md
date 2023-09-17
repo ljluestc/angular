@@ -99,10 +99,7 @@ If you are having any trouble with this lesson, you can review the completed cod
 
 ## Next steps
 
-* [Lesson 5 - Add an input parameter to the component](tutorial/first-app/first-app-lesson-05)
-
-
-## More information
+* [Lesson 5 - Add an input parameter to the component](tutorial/first-app/first-app-lesson-05)## More information
 
 For more information about the topics covered in this lesson, visit:
 

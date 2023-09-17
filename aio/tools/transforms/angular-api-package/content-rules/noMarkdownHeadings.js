@@ -22,23 +22,20 @@ module.exports = function createrNoMarkdownHeadingRule() {
   const args = Array.prototype.slice.apply(arguments);
   const disallowedHeadings = args.map(arg => `#{${arg}}`);
   if (!disallowedHeadings.length) {
-    disallowedHeadings.push('#{1,}');
+disallowedHeadings.push('#{1,}');
   }
   const regex = new RegExp(`^ {0,3}(${disallowedHeadings.join('|')}) +.*$`, 'mg');
   return (doc, prop, value) => {
-    let match, matches = [];
-    while(match = regex.exec(value)) { // eslint-disable-line no-cond-assign
-      matches.push(match[0]);
-    }
-    if (matches.length) {
-      const list = listify(matches.map(match => `"${match}"`));
-      return `Invalid headings found in "${prop}" property: ${list}.`;
-    }
+let match, matches = [];
+while(match = regex.exec(value)) { // eslint-disable-line no-cond-assign
+  matches.push(match[0]);
+}
+if (matches.length) {
+  const list = listify(matches.map(match => `"${match}"`));
+  return `Invalid headings found in "${prop}" property: ${list}.`;
+}
   };
-};
-
-
-/**
+};/**
  * Convert an array of strings in to a human list - e.g separated by commas and the word `and`.
  * @param {string[]} values The strings to convert to a list
  */

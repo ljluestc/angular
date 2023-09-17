@@ -39,75 +39,75 @@ module.exports = function autoLinkCode(getDocFromAlias) {
   return autoLinkCodeImpl;
 
   function autoLinkCodeImpl() {
-    return (ast, file) => {
-      visit(ast, 'element', (node, ancestors) => {
-        if (!isValidCodeElement(node, ancestors)) {
-          return;
-        }
+return (ast, file) => {
+  visit(ast, 'element', (node, ancestors) => {
+if (!isValidCodeElement(node, ancestors)) {
+  return;
+}
 
-        visit(node, 'text', (node, ancestors) => {
-          const isInLink = isInsideLink(ancestors);
-          if (isInLink) {
-            return;
-          }
+visit(node, 'text', (node, ancestors) => {
+  const isInLink = isInsideLink(ancestors);
+  if (isInLink) {
+return;
+  }
 
-          const parent = ancestors[ancestors.length - 1];
-          const index = parent.children.indexOf(node);
+  const parent = ancestors[ancestors.length - 1];
+  const index = parent.children.indexOf(node);
 
-          // Can we convert the whole text node into a doc link?
-          const docs = getFilteredDocsFromAlias([node.value], 0);
-          if (foundValidDoc(docs, node.value, file)) {
-            parent.children.splice(index, 1, createLinkNode(docs[0], node.value));
-          } else {
-            // Parse the text for words that we can convert to links
-            const nodes = getNodes(node, file);
-            // Replace the text node with the links and leftover text nodes
-            Array.prototype.splice.apply(parent.children, [index, 1].concat(nodes));
-            // Do not visit this node's children or the newly added nodes
-            return [visit.SKIP, index + nodes.length];
-          }
-        });
-      });
-    };
+  // Can we convert the whole text node into a doc link?
+  const docs = getFilteredDocsFromAlias([node.value], 0);
+  if (foundValidDoc(docs, node.value, file)) {
+parent.children.splice(index, 1, createLinkNode(docs[0], node.value));
+  } else {
+// Parse the text for words that we can convert to links
+const nodes = getNodes(node, file);
+// Replace the text node with the links and leftover text nodes
+Array.prototype.splice.apply(parent.children, [index, 1].concat(nodes));
+// Do not visit this node's children or the newly added nodes
+return [visit.SKIP, index + nodes.length];
+  }
+});
+  });
+};
   }
 
   function isValidCodeElement(node, ancestors) {
-    // Only interested in code elements that:
-    // * do not have `no-auto-link` class
-    // * do not have an ignored language
-    // * are not inside links
-    const isCodeElement = autoLinkCodeImpl.codeElements.some(elementType => is(node, elementType));
-    const hasNoAutoLink =
-        node.properties.className && node.properties.className.includes('no-auto-link');
-    const isLanguageSupported =
-        !autoLinkCodeImpl.ignoredLanguages.includes(node.properties.language);
-    const isInLink = isInsideLink(ancestors);
-    return isCodeElement && !hasNoAutoLink && isLanguageSupported && !isInLink;
+// Only interested in code elements that:
+// * do not have `no-auto-link` class
+// * do not have an ignored language
+// * are not inside links
+const isCodeElement = autoLinkCodeImpl.codeElements.some(elementType => is(node, elementType));
+const hasNoAutoLink =
+node.properties.className && node.properties.className.includes('no-auto-link');
+const isLanguageSupported =
+!autoLinkCodeImpl.ignoredLanguages.includes(node.properties.language);
+const isInLink = isInsideLink(ancestors);
+return isCodeElement && !hasNoAutoLink && isLanguageSupported && !isInLink;
   }
 
   function isInsideLink(ancestors) {
-    return ancestors.some(ancestor => is(ancestor, 'a'));
+return ancestors.some(ancestor => is(ancestor, 'a'));
   }
 
   function getFilteredDocsFromAlias(words, index) {
-    // Remove docs that fail the custom filter tests.
-    return autoLinkCodeImpl.customFilters.reduce(
-        (docs, filter) => filter(docs, words, index), getDocFromAlias(words[index]));
+// Remove docs that fail the custom filter tests.
+return autoLinkCodeImpl.customFilters.reduce(
+(docs, filter) => filter(docs, words, index), getDocFromAlias(words[index]));
   }
 
   function getNodes(node, file) {
-    return textContent(node)
-        .split(/([A-Za-z0-9_.-]+)/)
-        .filter(word => word.length)
-        .map((word, index, words) => {
-          const filteredDocs = getFilteredDocsFromAlias(words, index);
+return textContent(node)
+.split(/([A-Za-z0-9_.-]+)/)
+.filter(word => word.length)
+.map((word, index, words) => {
+  const filteredDocs = getFilteredDocsFromAlias(words, index);
 
-          return foundValidDoc(filteredDocs, word, file) ?
-              // Create a link wrapping the text node.
-              createLinkNode(filteredDocs[0], word) :
-              // this is just text so push a new text node
-              {type: 'text', value: word};
-        });
+  return foundValidDoc(filteredDocs, word, file) ?
+  // Create a link wrapping the text node.
+  createLinkNode(filteredDocs[0], word) :
+  // this is just text so push a new text node
+  {type: 'text', value: word};
+});
   }
 
   /**
@@ -120,40 +120,40 @@ module.exports = function autoLinkCode(getDocFromAlias) {
    * @param {string} keyword The keyword the doc applies to
    */
   function foundValidDoc(docs, keyword, file) {
-    if (docs.length !== 1) {
-      return false;
-    }
+if (docs.length !== 1) {
+  return false;
+}
 
-    var doc = docs[0];
+var doc = docs[0];
 
-    const isInvalidDoc =
-        doc.internal || doc.privateExport || (doc.docType === 'member' && !keyword.includes('.'));
-    if (isInvalidDoc) {
-      return false;
-    }
+const isInvalidDoc =
+doc.internal || doc.privateExport || (doc.docType === 'member' && !keyword.includes('.'));
+if (isInvalidDoc) {
+  return false;
+}
 
-    if (!doc.path) {
-      var message = `
-      autoLinkCode: Doc path is empty for "${doc.id}" - link will not be generated for "${keyword}".
-      Please make sure if the doc should be public. If not, it should probably not be referenced in the docs.`;
+if (!doc.path) {
+  var message = `
+  autoLinkCode: Doc path is empty for "${doc.id}" - link will not be generated for "${keyword}".
+  Please make sure if the doc should be public. If not, it should probably not be referenced in the docs.`;
 
-      if (autoLinkCodeImpl.failOnMissingDocPath) {
-        file.fail(message);
-      } else {
-        file.message(message);
-      }
-      return false;
-    }
+  if (autoLinkCodeImpl.failOnMissingDocPath) {
+file.fail(message);
+  } else {
+file.message(message);
+  }
+  return false;
+}
 
-    return !doc.internal && autoLinkCodeImpl.docTypes.includes(doc.docType);
+return !doc.internal && autoLinkCodeImpl.docTypes.includes(doc.docType);
   }
 
   function createLinkNode(doc, text) {
-    return {
-      type: 'element',
-      tagName: 'a',
-      properties: {href: doc.path, class: 'code-anchor'},
-      children: [{type: 'text', value: text}]
-    };
+return {
+  type: 'element',
+  tagName: 'a',
+  properties: {href: doc.path, class: 'code-anchor'},
+  children: [{type: 'text', value: text}]
+};
   }
 };

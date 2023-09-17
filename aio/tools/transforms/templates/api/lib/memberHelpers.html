@@ -212,10 +212,7 @@
   {%- endfor %}
 </section>
 {%- endif %}
-{%- endmacro -%}
-
-
-{%- macro renderProperties(properties, containerClass, propertyClass, headingText, headings, headingLevel = 2) -%}
+{%- endmacro -%}{%- macro renderProperties(properties, containerClass, propertyClass, headingText, headings, headingLevel = 2) -%}
 {%- set nonInternalProperties = properties | filterByPropertyValue('internal', undefined) -%}
 {%- if nonInternalProperties.length %}
 <section class="{$ containerClass $}">

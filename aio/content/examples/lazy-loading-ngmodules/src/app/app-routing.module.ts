@@ -1,9 +1,6 @@
 // #docplaster
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-
-// #docregion const-routes, routes-customers, routes-customers-orders
+import { Routes, RouterModule } from '@angular/router';// #docregion const-routes, routes-customers, routes-customers-orders
 const routes: Routes = [
   {
     path: 'customers',

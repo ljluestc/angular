@@ -60,9 +60,9 @@ In the preceding `deleteHero(hero)`, the `hero` is the template input variable, 
 
 ## Statement best practices
 
-| Practices               | Details |
-|:---                     |:---     |
-| Conciseness             | Use method calls or basic property assignments to keep template statements minimal.                                                                                                                                                                                                         |
+| Practices| Details |
+|:---      |:---     |
+| Conciseness    | Use method calls or basic property assignments to keep template statements minimal.      |
 | Work within the context | The context of a template statement can be the component class instance or the template. Because of this, template statements cannot refer to anything in the global namespace such as `window` or `document`. For example, template statements can't call `console.log()` or `Math.max()`. |
 
 <!-- links -->

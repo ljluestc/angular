@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect handling of local refs for host element",
-          "files": [
-            "local_ref_on_host.js"
-          ]
+ "failureMessage": "Incorrect handling of local refs for host element",
+ "files": [
+   "local_ref_on_host.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -23,10 +23,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect handling of local refs for nested elements",
-          "files": [
-            "local_ref_on_nested.js"
-          ]
+ "failureMessage": "Incorrect handling of local refs for nested elements",
+ "files": [
+   "local_ref_on_nested.js"
+ ]
         }
       ]
     },
@@ -37,10 +37,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect handling of property bindings and listeners",
-          "files": [
-            "property_bindings_and_listeners.js"
-          ]
+ "failureMessage": "Incorrect handling of property bindings and listeners",
+ "files": [
+   "property_bindings_and_listeners.js"
+ ]
         }
       ]
     },
@@ -51,10 +51,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect handling of elements with no children",
-          "files": [
-            "no_child_elements.js"
-          ]
+ "failureMessage": "Incorrect handling of elements with no children",
+ "files": [
+   "no_child_elements.js"
+ ]
         }
       ]
     }

@@ -11,10 +11,7 @@
 {% else %}
   {$ memberHelpers.renderOverloadInfo(doc, 'function-overload', doc) $}
 {% endif %}
-{% endblock %}
-
-
-{% block details %}
+{% endblock %}{% block details %}
 {% include "includes/description.html" %}
 {% if doc.overloads.length >= 3 %}
 <section class="overloads">

@@ -4,9 +4,9 @@
  */
 module.exports = function markedNunjucksFilter(renderMarkdown) {
   return {
-    name: 'marked',
-    process: function(str, headingMappings) {
-      return str && renderMarkdown(str, headingMappings);
-    }
+name: 'marked',
+process: function(str, headingMappings) {
+  return str && renderMarkdown(str, headingMappings);
+}
   };
 };

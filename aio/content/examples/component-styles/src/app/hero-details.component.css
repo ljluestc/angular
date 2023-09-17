@@ -1,10 +1,7 @@
 /* #docregion import */
 /* The AOT compiler needs the `./` to show that this is local */
 @import './hero-details-box.css';
-/* #enddocregion import */
-
-
-/* #docregion host */
+/* #enddocregion import *//* #docregion host */
 :host {
   font-style: italic;
 }

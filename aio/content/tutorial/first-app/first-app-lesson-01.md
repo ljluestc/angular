@@ -56,10 +56,10 @@ In the **Explorer** pane of your IDE:
         1.  `favicon.ico` is the app's icon, just as you would find in any web site.
     1.  In the file explorer, find the Angular app's component files (`/app`).
         1.  `app.component.ts` is the source file that describes the `app-root` component.
-            This is the top-level Angular component in the app. A component is the basic building block of an Angular application.
-            The component description includes the component's code, HTML template, and styles, which can be described in this file, or in separate files.
+   This is the top-level Angular component in the app. A component is the basic building block of an Angular application.
+   The component description includes the component's code, HTML template, and styles, which can be described in this file, or in separate files.
 
-            In this app, the styles are in a separate file while the component's code and HTML template are in this file.
+   In this app, the styles are in a separate file while the component's code and HTML template are in this file.
         1.  `app.component.css` is the style sheet for this component.
         1.  New components are added to this directory.
     1.  In the file explorer, find the image directory (`/assets`) that contains images used by the app.

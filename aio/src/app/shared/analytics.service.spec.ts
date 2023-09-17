@@ -120,7 +120,7 @@ describe('AnalyticsService', () => {
 
       expect(service.reportError).toHaveBeenCalledTimes(1);
       expect(service.reportError).toHaveBeenCalledWith(
-          jasmine.stringContaining('Test Error\n'), true);
+ jasmine.stringContaining('Test Error\n'), true);
     });
 
     it('should report errors to analytics by dispatching `gtag` and `ga` events', () => {
@@ -134,16 +134,16 @@ describe('AnalyticsService', () => {
       expect(legacyGaSpy).toHaveBeenCalledTimes(1);
       expect(legacyGaSpy).toHaveBeenCalledWith('send', 'exception',
         jasmine.objectContaining({
-          exDescription: jasmine.stringContaining('Test Error\n'),
-          exFatal: true
+ exDescription: jasmine.stringContaining('Test Error\n'),
+ exFatal: true
         })
       );
 
       expect(gtagSpy).toHaveBeenCalledTimes(1);
       expect(gtagSpy).toHaveBeenCalledWith('event', 'exception',
         jasmine.objectContaining({
-          description: jasmine.stringContaining('Test Error\n'),
-          fatal: true
+ description: jasmine.stringContaining('Test Error\n'),
+ fatal: true
         })
       );
     });

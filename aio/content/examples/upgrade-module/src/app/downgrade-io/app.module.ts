@@ -27,7 +27,4 @@ export class AppModule implements DoBootstrap {
 
 angular.module('heroApp', [])
   .controller('MainController', MainController)
-  .directive('heroDetail', downgradeComponent({component: HeroDetailComponent}) as angular.IDirectiveFactory);
-
-
-platformBrowserDynamic().bootstrapModule(AppModule);
+  .directive('heroDetail', downgradeComponent({component: HeroDetailComponent}) as angular.IDirectiveFactory);platformBrowserDynamic().bootstrapModule(AppModule);

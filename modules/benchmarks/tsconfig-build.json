@@ -1,6 +1,1 @@
-{
-  "compilerOptions": {
-    "lib": ["dom", "es2015"],
-    "types": []
-  }
-}
+{  "compilerOptions": {"lib": ["dom", "es2015"],"types": []  }}

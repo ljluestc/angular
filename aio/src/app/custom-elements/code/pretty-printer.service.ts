@@ -27,13 +27,13 @@ export class PrettyPrinter {
       // Import it; ad a side-effect it will add `prettyPrintOne` on `window`.
       import('assets/js/prettify.js' as any)
         .then(
-          () => (window as any).prettyPrintOne,
-          err => {
-            const msg = `Cannot get prettify.js from server: ${err.message}`;
-            this.logger.error(new Error(msg));
-            // return a pretty print fn that always fails.
-            return () => { throw new Error(msg); };
-          });
+ () => (window as any).prettyPrintOne,
+ err => {
+   const msg = `Cannot get prettify.js from server: ${err.message}`;
+   this.logger.error(new Error(msg));
+   // return a pretty print fn that always fails.
+   return () => { throw new Error(msg); };
+ });
   }
 
   /**
@@ -51,12 +51,12 @@ export class PrettyPrinter {
     return this.prettyPrintOne.pipe(
       map(ppo => {
         try {
-          return htmlSafeByReview(
-              ppo(code, language, linenums), 'prettify.js modifies already trusted HTML inline');
+ return htmlSafeByReview(
+     ppo(code, language, linenums), 'prettify.js modifies already trusted HTML inline');
         } catch (err) {
-          const msg = `Could not format code that begins '${code.toString().slice(0, 50)}...'.`;
-          console.error(msg, err);
-          throw new Error(msg);
+ const msg = `Could not format code that begins '${code.toString().slice(0, 50)}...'.`;
+ console.error(msg, err);
+ throw new Error(msg);
         }
       }),
       first(),  // complete immediately

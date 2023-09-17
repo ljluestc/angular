@@ -207,68 +207,68 @@ export class SaucelabsDaemon {
     // Once the tunnel is established we can launch browsers
     await Promise.all(
         this._browsers.map(async (browser, id) => {
-          const browserId = getUniqueId(browser);
-          const launched: RemoteBrowser = {
-            state: 'launching',
-            driver: null,
-            sessionUrl: null,
-            id: browserId,
-          };
-          const browserDescription = `${this._buildName} - ${browser.browserName} - #${id + 1}`;
+ const browserId = getUniqueId(browser);
+ const launched: RemoteBrowser = {
+   state: 'launching',
+   driver: null,
+   sessionUrl: null,
+   id: browserId,
+ };
+ const browserDescription = `${this._buildName} - ${browser.browserName} - #${id + 1}`;
 
-          const capabilities: any = {
-            'browserName': browser.browserName,
-            'sauce:options': {...this._baseCapabilities, ...browser},
-          };
+ const capabilities: any = {
+   'browserName': browser.browserName,
+   'sauce:options': {...this._baseCapabilities, ...browser},
+ };
 
-          // Set `sauce:options` to provide a build name for the remote browser instances.
-          // This helps with debugging. Also ensures the W3C protocol is used.
-          // See. https://wiki.saucelabs.com/display/DOCS/Test+Configuration+Options
-          capabilities['sauce:options']['name'] = browserDescription;
-          capabilities['sauce:options']['build'] = browserDescription;
+ // Set `sauce:options` to provide a build name for the remote browser instances.
+ // This helps with debugging. Also ensures the W3C protocol is used.
+ // See. https://wiki.saucelabs.com/display/DOCS/Test+Configuration+Options
+ capabilities['sauce:options']['name'] = browserDescription;
+ capabilities['sauce:options']['build'] = browserDescription;
 
-          console.debug(
-              `Capabilities for ${browser.browserName}:`, JSON.stringify(capabilities, null, 2));
-          console.debug(`  > Browser-ID: `, browserId);
-          console.debug(`  > Browser-Description: `, browserDescription);
+ console.debug(
+     `Capabilities for ${browser.browserName}:`, JSON.stringify(capabilities, null, 2));
+ console.debug(`  > Browser-ID: `, browserId);
+ console.debug(`  > Browser-Description: `, browserDescription);
 
-          // Keep track of the launched browser. We do this before it even completed the
-          // launch as we can then handle scheduled tests when the browser is still launching.
-          this._activeBrowsers.push(launched);
+ // Keep track of the launched browser. We do this before it even completed the
+ // launch as we can then handle scheduled tests when the browser is still launching.
+ this._activeBrowsers.push(launched);
 
-          // See the following link for public API of the selenium server.
-          // https://wiki.saucelabs.com/display/DOCS/Instant+Selenium+Node.js+Tests
-          const driver = await new Builder()
-                             .withCapabilities(capabilities)
-                             .usingServer(
-                                 `http://${this._username}:${
-                                     this._accessKey}@ondemand.saucelabs.com:80/wd/hub`,
-                                 )
-                             .build();
+ // See the following link for public API of the selenium server.
+ // https://wiki.saucelabs.com/display/DOCS/Instant+Selenium+Node.js+Tests
+ const driver = await new Builder()
+  .withCapabilities(capabilities)
+  .usingServer(
+      `http://${this._username}:${
+ this._accessKey}@ondemand.saucelabs.com:80/wd/hub`,
+      )
+  .build();
 
-          // Only wait 30 seconds to load a test page.
-          await driver.manage().setTimeouts({pageLoad: 30000});
+ // Only wait 30 seconds to load a test page.
+ await driver.manage().setTimeouts({pageLoad: 30000});
 
-          const sessionId = (await driver.getSession()).getId();
+ const sessionId = (await driver.getSession()).getId();
 
-          // Mark the browser as available after launch completion.
-          launched.state = 'free';
-          launched.driver = driver;
-          launched.sessionUrl = `https://saucelabs.com/tests/${sessionId}`;
+ // Mark the browser as available after launch completion.
+ launched.state = 'free';
+ launched.driver = driver;
+ launched.sessionUrl = `https://saucelabs.com/tests/${sessionId}`;
 
-          console.info(
-              chalk.yellow(
-                  `Started browser ${browser.browserName} on Saucelabs: ${launched.sessionUrl}`,
-                  ),
-          );
+ console.info(
+     chalk.yellow(
+`Started browser ${browser.browserName} on Saucelabs: ${launched.sessionUrl}`,
+),
+ );
 
-          // If a test has been scheduled before the browser completed launching, run
-          // it now given that the browser is ready now.
-          if (this._pendingTests.has(launched)) {
-            const test = this._pendingTests.get(launched)!;
-            this._pendingTests.delete(launched);
-            this._startBrowserTest(launched, test);
-          }
+ // If a test has been scheduled before the browser completed launching, run
+ // it now given that the browser is ready now.
+ if (this._pendingTests.has(launched)) {
+   const test = this._pendingTests.get(launched)!;
+   this._pendingTests.delete(launched);
+   this._startBrowserTest(launched, test);
+ }
         }),
     );
   }

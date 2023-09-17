@@ -31,7 +31,7 @@ For more information about the XML Localization Interchange File Format \(XLIFF,
 Use the following [`extract-i18n`][AioCliExtractI18n] command options to change the source language file location, format, and file name.
 
 | Command option  | Details |
-|:---             |:---     |
+|:---    |:---     |
 | `--format`      | Set the format of the output file    |
 | `--out-file`     | Set the name of the output file      |
 | `--output-path` | Set the path of the output directory |
@@ -50,13 +50,13 @@ The following example specifies the output path as an option.
 
 The `extract-i18n` command creates files in the following translation formats.
 
-| Translation format | Details                                                                                                          | File extension |
-|:---                |:---                                                                                                              |:---            |
-| ARB                | [Application Resource Bundle][GithubGoogleAppResourceBundleWikiApplicationresourcebundlespecification]           | `.arb`            |
-| JSON               | [JavaScript Object Notation][JsonMain]                                                                           | `.json`           |
-| XLIFF 1.2          | [XML Localization Interchange File Format, version 1.2][OasisOpenDocsXliffXliffCoreXliffCoreHtml]                | `.xlf`            |
-| XLIFF 2            | [XML Localization Interchange File Format, version 2][OasisOpenDocsXliffXliffCoreV20Cos01XliffCoreV20Cose01Html] | `.xlf`            |
-| XMB                | [XML Message Bundle][UnicodeCldrDevelopmentDevelopmentProcessDesignProposalsXmb]                                 | `.xmb` \(`.xtb`\) |
+| Translation format | Details | File extension |
+|:--- |:---     |:---   |
+| ARB | [Application Resource Bundle][GithubGoogleAppResourceBundleWikiApplicationresourcebundlespecification]  | `.arb`   |
+| JSON| [JavaScript Object Notation][JsonMain]| `.json`  |
+| XLIFF 1.2 | [XML Localization Interchange File Format, version 1.2][OasisOpenDocsXliffXliffCoreXliffCoreHtml] | `.xlf`   |
+| XLIFF 2   | [XML Localization Interchange File Format, version 2][OasisOpenDocsXliffXliffCoreV20Cos01XliffCoreV20Cose01Html] | `.xlf`   |
+| XMB | [XML Message Bundle][UnicodeCldrDevelopmentDevelopmentProcessDesignProposalsXmb]   | `.xmb` \(`.xtb`\) |
 
 Specify the translation format explicitly with the `--format` command option.
 

@@ -9,7 +9,7 @@
 
       summary {
         .actions {
-          color: constants.$blue;
+ color: constants.$blue;
         }
       }
     }
@@ -19,15 +19,15 @@
       &.option-table,
       &.list-table {
         .with-github-links {
-          .github-links {
-            a {
-              color: constants.$mediumgray;
+ .github-links {
+   a {
+     color: constants.$mediumgray;
 
-              .material-icons:hover {
-                color: constants.$blue;
-              }
-            }
-          }
+     .material-icons:hover {
+ color: constants.$blue;
+     }
+   }
+ }
         }
       }
 

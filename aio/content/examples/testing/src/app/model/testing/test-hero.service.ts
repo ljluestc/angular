@@ -54,7 +54,7 @@ export class TestHeroService extends HeroService {
     return (this.lastResult = this.getHero(hero.id).pipe(
       map((h) => {
         if (h) {
-          return Object.assign(h, hero);
+ return Object.assign(h, hero);
         }
         throw new Error(`Hero ${hero.id} not found`);
       }),

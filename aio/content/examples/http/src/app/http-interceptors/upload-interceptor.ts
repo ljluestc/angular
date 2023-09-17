@@ -37,24 +37,24 @@ function createUploadEvents(delay: number) {
       // because e2e test won't complete. A zone thing?
       // Use setTimeout and tail recursion instead.
         setTimeout(() => {
-          loaded += chunkSize;
+ loaded += chunkSize;
 
-          if (loaded >= total) {
-            const doneResponse = new HttpResponse({
-              status: 201, // OK but no body;
-            });
-            observer.next(doneResponse);
-            observer.complete();
-            return;
-          }
+ if (loaded >= total) {
+   const doneResponse = new HttpResponse({
+     status: 201, // OK but no body;
+   });
+   observer.next(doneResponse);
+   observer.complete();
+   return;
+ }
 
-          const progressEvent: HttpProgressEvent = {
-            type: HttpEventType.UploadProgress,
-            loaded,
-            total
-          };
-          observer.next(progressEvent);
-          uploadLoop(loaded);
+ const progressEvent: HttpProgressEvent = {
+   type: HttpEventType.UploadProgress,
+   loaded,
+   total
+ };
+ observer.next(progressEvent);
+ uploadLoop(loaded);
         }, delay);
     }
   });

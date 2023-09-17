@@ -1,6 +1,1 @@
-{
-  "compilerOptions": {
-    "lib": ["es2015"],
-    "types": ["node", "jasminewd2"]
-  }
-}
+{  "compilerOptions": {    "lib": ["es2015"],    "types": ["node", "jasminewd2"]  }}

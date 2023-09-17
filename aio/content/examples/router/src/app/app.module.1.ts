@@ -22,7 +22,7 @@ const appRoutes: Routes = [
   {path: '', redirectTo: '/heroes', pathMatch: 'full'},
   // #docregion wildcard
   {path: '**', component: PageNotFoundComponent}  // #enddocregion wildcard
-                                                  // #docregion first-config
+     // #docregion first-config
 ];
 
 @NgModule({

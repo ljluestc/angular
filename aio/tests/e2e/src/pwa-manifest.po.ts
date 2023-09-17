@@ -1,10 +1,7 @@
 import { get as httpGet } from 'http';
 import { get as httpsGet } from 'https';
 import { browser } from 'protractor';
-import { SitePage } from './app.po';
-
-
-export type Json = null | boolean | number | string | Json[] | { [key: string]: Json };
+import { SitePage } from './app.po';export type Json = null | boolean | number | string | Json[] | { [key: string]: Json };
 
 /**
  * The shape of a PWA manifest.
@@ -37,10 +34,7 @@ export type PwaImageResource = Json & {
   sizes?: string;
   type?: string;
   purpose?: string;
-};
-
-
-export class PwaManifestPage extends SitePage {
+};export class PwaManifestPage extends SitePage {
   /** The base URL with the trailing `/` stripped off (if any). */
   baseUrl = browser.baseUrl.replace(/\/$/, '');
 
@@ -57,9 +51,9 @@ export class PwaManifestPage extends SitePage {
       this.pwaManifestText = await new Promise<string>((resolve, reject) => {
         let responseText = '';
         get(this.pwaManifestUrl, res => res
-            .on('data', chunk => responseText += chunk)
-            .on('end', () => resolve(responseText))
-            .on('error', reject));
+   .on('data', chunk => responseText += chunk)
+   .on('end', () => resolve(responseText))
+   .on('error', reject));
       });
     }
 

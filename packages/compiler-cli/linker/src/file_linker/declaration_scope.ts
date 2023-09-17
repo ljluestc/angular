@@ -4,19 +4,7 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-/**
- * This interface represents the lexical scope of a partial declaration in the source code.
- *
- * For example, if you had the following code:
- *
- * ```
- * function foo() {
- *   function bar () {
- *     ɵɵngDeclareDirective({...});
- *   }
- * }
+ */ * }
  * ```
  *
  * The `DeclarationScope` of the `ɵɵngDeclareDirective()` call is the body of the `bar()` function.

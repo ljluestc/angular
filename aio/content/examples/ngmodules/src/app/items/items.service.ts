@@ -32,5 +32,3 @@ export class ItemService implements OnDestroy {
     return item$.pipe(delay(FETCH_LATENCY));
   }
 }
-
-

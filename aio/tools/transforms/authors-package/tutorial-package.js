@@ -24,20 +24,17 @@ function createPackage(tutorialName) {
   tutorialFile.replace(codeExampleMatcher, (_, path) => examples.push('examples/' + path));
 
   if (examples.length) {
-    console.log('The following example files are referenced in this tutorial:');
-    console.log(examples.map(example => ' - ' + example).join('\n'));
+console.log('The following example files are referenced in this tutorial:');
+console.log(examples.map(example => ' - ' + example).join('\n'));
   }
 
   return new Package('author-tutorial', [baseAuthoringPackage, contentPackage]).config(function(readFilesProcessor) {
-    readFilesProcessor.sourceFiles = [
-      {basePath: CONTENTS_PATH, include: tutorialFilePath, fileReader: 'contentFileReader'}, {
-        basePath: CONTENTS_PATH,
-        include: examples.map(example => resolve(CONTENTS_PATH, example)),
-        fileReader: 'exampleFileReader'
-      }
-    ];
+readFilesProcessor.sourceFiles = [
+  {basePath: CONTENTS_PATH, include: tutorialFilePath, fileReader: 'contentFileReader'}, {
+basePath: CONTENTS_PATH,
+include: examples.map(example => resolve(CONTENTS_PATH, example)),
+fileReader: 'exampleFileReader'
+  }
+];
   });
-}
-
-
-module.exports = {createPackage};
+}module.exports = {createPackage};

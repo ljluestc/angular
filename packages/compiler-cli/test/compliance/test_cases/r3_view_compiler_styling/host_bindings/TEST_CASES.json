@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "static_and_dynamic.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "static_and_dynamic.js"
+ ]
         }
       ]
     },
@@ -22,10 +22,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "multiple_dynamic.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "multiple_dynamic.js"
+ ]
         }
       ]
     },
@@ -37,22 +37,22 @@
       "skipForTemplatePipeline": true,
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            {
-              "expected": "important_template.js",
-              "generated": "important.js"
-            }
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   {
+     "expected": "important_template.js",
+     "generated": "important.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect host",
-          "files": [
-            {
-              "expected": "important_host.js",
-              "generated": "important.js"
-            }
-          ]
+ "failureMessage": "Incorrect host",
+ "files": [
+   {
+     "expected": "important_host.js",
+     "generated": "important.js"
+   }
+ ]
         }
       ]
     },
@@ -63,10 +63,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "class_interpolation.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "class_interpolation.js"
+ ]
         }
       ]
     },
@@ -77,10 +77,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "style_interpolation.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "style_interpolation.js"
+ ]
         }
       ]
     },
@@ -91,10 +91,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "multiple_directives.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "multiple_directives.js"
+ ]
         }
       ]
     }

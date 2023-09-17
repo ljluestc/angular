@@ -9,5 +9,3 @@ import { Hero } from '../shared/hero.model';
 export class HeroComponent {
   @Input() hero!: Hero;
 }
-
-

@@ -84,12 +84,12 @@ For example, the hypothetical "Hello World" schematic might have the following s
 {
     "properties": {
         "name": {
-            "type": "string",
-            "minLength": 1,
-            "default": "world"
+   "type": "string",
+   "minLength": 1,
+   "default": "world"
         },
         "useColor": {
-            "type": "boolean"
+   "type": "boolean"
         }
     }
 }
@@ -115,14 +115,14 @@ The schema with both prompts would be as follows.
 {
     "properties": {
         "name": {
-            "type": "string",
-            "minLength": 1,
-            "default": "world",
-            "x-prompt": "What is your name?"
+   "type": "string",
+   "minLength": 1,
+   "default": "world",
+   "x-prompt": "What is your name?"
         },
         "useColor": {
-            "type": "boolean",
-            "x-prompt": "Would you like the response in color?"
+   "type": "boolean",
+   "x-prompt": "Would you like the response in color?"
         }
     }
 }
@@ -141,17 +141,17 @@ In this case, "yes" corresponds to `true` and "no" corresponds to `false`.
 There are three supported input types.
 
 | Input type   | Details |
-|:---          |:----    |
+|:--- |:----    |
 | confirmation | A yes or no question; ideal for Boolean options.   |
 | input        | Textual input; ideal for string or number options. |
-| list         | A predefined set of allowed values.                |
+| list| A predefined set of allowed values. |
 
 In the short form, the type is inferred from the property's type and constraints.
 
 | Property schema |	Prompt type |
-|:---             |:---         |
+|:---    |:---|
 | "type": "boolean"  | confirmation \("yes"=`true`, "no"=`false`\)  |
-| "type": "string"   | input                                        |
+| "type": "string"   | input |
 | "type": "number"   | input \(only valid numbers accepted\)        |
 | "type": "integer"  | input \(only valid numbers accepted\)        |
 | "enum": [&hellip;] | list \(enum members become list selections\) |
@@ -188,7 +188,7 @@ In this form, the `x-prompt` field value is a JSON object with subfields that cu
 | Field   | Data value |
 |:---     |:---        |
 | type    | `confirmation`, `input`, or `list` \(selected automatically in short form\) |
-| message | string \(required\)                                                         |
+| message | string \(required\)   |
 | items   | string and/or label/value object pair \(only valid with type `list`\)       |
 
 The following example of the long form is from the JSON schema for the schematic that the CLI uses to [generate applications](https://github.com/angular/angular-cli/blob/ba8a6ea59983bb52a6f1e66d105c5a77517f062e/packages/schematics/angular/application/schema.json#L56).
@@ -212,9 +212,9 @@ By using the long form, the schematic can provide more explicit formatting of th
     "type": "list",
     "items": [
       { "value": "css",  "label": "CSS" },
-      { "value": "scss", "label": "SCSS   [ https://sass-lang.com/documentation/syntax#scss                ]" },
+      { "value": "scss", "label": "SCSS   [ https://sass-lang.com/documentation/syntax#scss ]" },
       { "value": "sass", "label": "Sass   [ https://sass-lang.com/documentation/syntax#the-indented-syntax ]" },
-      { "value": "less", "label": "Less   [ https://lesscss.org/                                            ]" }
+      { "value": "less", "label": "Less   [ https://lesscss.org/     ]" }
     ]
   },
 },
@@ -233,28 +233,28 @@ The following JSON schema is a complete description of the long-form syntax for 
     "oneOf": [
         { "type": "string" },
         {
-            "type": "object",
-            "properties": {
-                "type": { "type": "string" },
-                "message": { "type": "string" },
-                "items": {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            { "type": "string" },
-                            {
-                                "type": "object",
-                                "properties": {
-                                    "label": { "type": "string" },
-                                    "value": { }
-                                },
-                                "required": [ "value" ]
-                            }
-                        ]
-                    }
-                }
-            },
-            "required": [ "message" ]
+   "type": "object",
+   "properties": {
+ "type": { "type": "string" },
+ "message": { "type": "string" },
+ "items": {
+     "type": "array",
+     "items": {
+"oneOf": [
+    { "type": "string" },
+    {
+  "type": "object",
+  "properties": {
+      "label": { "type": "string" },
+      "value": { }
+  },
+  "required": [ "value" ]
+    }
+]
+     }
+ }
+   },
+   "required": [ "message" ]
         }
     ]
 }
@@ -393,12 +393,12 @@ In the example, you invoke the schematic's defined functionality by calling the 
 
 Each named schematic in the collection has the following main parts.
 
-| Parts          | Details |
-|:---            |:---     |
+| Parts | Details |
+|:---   |:---     |
 | `index.ts`     | Code that defines the transformation logic for a named schematic.  |
-| `schema.json`  | Schematic variable definition.                                     |
-| `schema.d.ts`  | Schematic variables.                                               |
-| `files/`       | Optional component/template files to replicate.                    |
+| `schema.json`  | Schematic variable definition.       |
+| `schema.d.ts`  | Schematic variables.  |
+| `files/`       | Optional component/template files to replicate.     |
 
 It is possible for a schematic to provide all of its logic in the `index.ts` file, without additional templates.
 You can create dynamic schematics for Angular, however, by providing components and templates in the `files` folder, like those in standalone Angular projects.

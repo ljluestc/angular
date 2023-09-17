@@ -98,7 +98,7 @@ describe('HeroesService (with mocks)', () => {
     it('should return expected heroes (called once)', () => {
       heroService.getHeroes().subscribe({
         next: (heroes) =>
-          expect(heroes).withContext('should return expected heroes').toEqual(expectedHeroes),
+ expect(heroes).withContext('should return expected heroes').toEqual(expectedHeroes),
         error: fail,
       });
 
@@ -113,7 +113,7 @@ describe('HeroesService (with mocks)', () => {
     it('should be OK returning no heroes', () => {
       heroService.getHeroes().subscribe({
         next: (heroes) =>
-          expect(heroes.length).withContext('should have empty heroes array').toEqual(0),
+ expect(heroes.length).withContext('should have empty heroes array').toEqual(0),
         error: fail,
       });
 
@@ -139,7 +139,7 @@ describe('HeroesService (with mocks)', () => {
       heroService.getHeroes().subscribe();
       heroService.getHeroes().subscribe({
         next: (heroes) =>
-          expect(heroes).withContext('should return expected heroes').toEqual(expectedHeroes),
+ expect(heroes).withContext('should return expected heroes').toEqual(expectedHeroes),
         error: fail,
       });
 
@@ -202,8 +202,8 @@ describe('HeroesService (with mocks)', () => {
       heroService.updateHero(updateHero).subscribe({
         next: (heroes) => fail('expected to fail'),
         error: (error) => {
-          expect(error).toBe(errorEvent);
-          done();
+ expect(error).toBe(errorEvent);
+ done();
         },
       });
 

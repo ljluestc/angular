@@ -23,21 +23,21 @@ This guide assumes that you have a basic understanding of the following.
 Reactive forms and template-driven forms process and manage form data differently.
 Each approach offers different advantages.
 
-| Forms                 | Details |
-|:---                   |:---     |
-| Reactive forms        | Provide direct, explicit access to the underlying form's object model. Compared to template-driven forms, they are more robust: they're more scalable, reusable, and testable. If forms are a key part of your application, or you're already using reactive patterns for building your application, use reactive forms.                                                                                             |
+| Forms        | Details |
+|:--- |:---     |
+| Reactive forms        | Provide direct, explicit access to the underlying form's object model. Compared to template-driven forms, they are more robust: they're more scalable, reusable, and testable. If forms are a key part of your application, or you're already using reactive patterns for building your application, use reactive forms.   |
 | Template-driven forms | Rely on directives in the template to create and manipulate the underlying object model. They are useful for adding a simple form to an app, such as an email list signup form. They're straightforward to add to an app, but they don't scale as well as reactive forms. If you have very basic form requirements and logic that can be managed solely in the template, template-driven forms could be a good fit. |
 
 ### Key differences
 
 The following table summarizes the key differences between reactive and template-driven forms.
 
-|                                             | Reactive                             | Template-driven |
-|:---                                         |:---                                  |:---             |
-| [Setup of form model](#setup)               | Explicit, created in component class | Implicit, created by directives |
-| [Data model](#mutability-of-the-data-model) | Structured and immutable             | Unstructured and mutable        |
-| [Data flow](#data-flow-in-forms)            | Synchronous                          | Asynchronous                    |
-| [Form validation](#validation)              | Functions                            | Directives                      |
+|| Reactive  | Template-driven |
+|:---     |:---       |:---    |
+| [Setup of form model](#setup)      | Explicit, created in component class | Implicit, created by directives |
+| [Data model](#mutability-of-the-data-model) | Structured and immutable    | Unstructured and mutable        |
+| [Data flow](#data-flow-in-forms)   | Synchronous        | Asynchronous  |
+| [Form validation](#validation)     | Functions | Directives    |
 
 ### Scalability
 
@@ -64,11 +64,11 @@ The two approaches share underlying building blocks, but differ in how you creat
 
 Both reactive and template-driven forms are built on the following base classes.
 
-| Base classes           | Details |
-|:---                    |:---     |
-| `FormControl`          | Tracks the value and validation status of an individual form control.               |
-| `FormGroup`            | Tracks the same values and status for a collection of form controls.                |
-| `FormArray`            | Tracks the same values and status for an array of form controls.                    |
+| Base classes  | Details |
+|:---  |:---     |
+| `FormControl` | Tracks the value and validation status of an individual form control.      |
+| `FormGroup`   | Tracks the same values and status for a collection of form controls.       |
+| `FormArray`   | Tracks the same values and status for an array of form controls.  |
 | `ControlValueAccessor` | Creates a bridge between Angular `FormControl` instances and built-in DOM elements. |
 
 <a id="setup-the-form-model"></a>
@@ -208,10 +208,10 @@ The model-to-view diagram shows how data flows from model to view when the `favo
 
 The change-tracking method plays a role in the efficiency of your application.
 
-| Forms                 | Details |
-|:---                   |:---     |
+| Forms        | Details |
+|:--- |:---     |
 | Reactive forms        | Keep the data model pure by providing it as an immutable data structure. Each time a change is triggered on the data model, the `FormControl` instance returns a new data model rather than updating the existing data model. This gives you the ability to track unique changes to the data model through the control's observable. Change detection is more efficient because it only needs to update on unique changes. Because data updates follow reactive patterns, you can integrate with observable operators to transform data. |
-| Template-driven forms | Rely on mutability with two-way data binding to update the data model in the component as changes are made in the template. Because there are no unique changes to track on the data model when using two-way data binding, change detection is less efficient at determining when updates are required.                                                                                                                                                                                                                                 |
+| Template-driven forms | Rely on mutability with two-way data binding to update the data model in the component as changes are made in the template. Because there are no unique changes to track on the data model when using two-way data binding, change detection is less efficient at determining when updates are required.|
 
 The difference is demonstrated in the previous examples that use the favorite-color input element.
 
@@ -225,9 +225,9 @@ The difference is demonstrated in the previous examples that use the favorite-co
 Validation is an integral part of managing any set of forms.
 Whether you're checking for required fields or querying an external API for an existing username, Angular provides a set of built-in validators as well as the ability to create custom validators.
 
-| Forms                 | Details |
-|:---                   |:---     |
-| Reactive forms        | Define custom validators as **functions** that receive a control to validate                                 |
+| Forms        | Details |
+|:--- |:---     |
+| Reactive forms        | Define custom validators as **functions** that receive a control to validate      |
 | Template-driven forms | Tied to template **directives**, and must provide custom validator directives that wrap validation functions |
 
 For more information, see [Form Validation](guide/form-validation).

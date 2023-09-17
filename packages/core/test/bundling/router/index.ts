@@ -4,14 +4,10 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-import {APP_BASE_HREF} from '@angular/common';
+ */import {APP_BASE_HREF} from '@angular/common';
 import {Component, OnInit} from '@angular/core';
 import {bootstrapApplication} from '@angular/platform-browser';
-import {ActivatedRoute, provideRouter, Router, RouterLink, RouterLinkActive, RouterOutlet, Routes} from '@angular/router';
-
-@Component({
+import {ActivatedRoute, provideRouter, Router, RouterLink, RouterLinkActive, RouterOutlet, Routes} from '@angular/router';@Component({
   selector: 'app-list',
   template: `
   <ul>
@@ -24,9 +20,7 @@ import {ActivatedRoute, provideRouter, Router, RouterLink, RouterLinkActive, Rou
   imports: [RouterLink, RouterLinkActive],
 })
 class ListComponent {
-}
-
-@Component({
+}@Component({
   selector: 'app-item',
   template: `
   Item {{id}}
@@ -35,34 +29,24 @@ class ListComponent {
 })
 class ItemComponent implements OnInit {
   id = -1;
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
-
-  ngOnInit() {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}  ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramsMap => {
-      this.id = +paramsMap.get('id')!;
+this.id = +paramsMap.get('id')!;
     });
-  }
-
-  viewList() {
+  }  viewList() {
     this.router.navigate(['/list']);
   }
-}
-
-@Component({
+}@Component({
   selector: 'app-root',
   template: `<router-outlet></router-outlet>`,
   standalone: true,
   imports: [RouterOutlet],
 })
 class RootComponent {
-}
-
-const ROUTES: Routes = [
+}const ROUTES: Routes = [
   {path: '', redirectTo: '/list', pathMatch: 'full'}, {path: 'list', component: ListComponent},
   {path: 'item/:id', component: ItemComponent}
-];
-
-(window as any).waitForApp = bootstrapApplication(RootComponent, {
+];(window as any).waitForApp = bootstrapApplication(RootComponent, {
   providers: [
     provideRouter(ROUTES),
     {provide: APP_BASE_HREF, useValue: ''},

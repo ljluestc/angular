@@ -58,10 +58,7 @@ export class ConfigService {
         catchError(this.handleError)
       );
   }
-  // #enddocregion getConfig_3
-
-
-  getConfig_untyped_response() {
+  // #enddocregion getConfig_3  getConfig_untyped_response() {
   // #docregion untyped_response
     return this.http.get(this.configUrl);
     // #enddocregion untyped_response

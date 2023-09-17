@@ -8,49 +8,49 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid pipe definition",
-          "files": [
-            {
-              "expected": "pipes_my_pipe_def.js",
-              "generated": "pipes.js"
-            }
-          ]
+ "failureMessage": "Invalid pipe definition",
+ "files": [
+   {
+     "expected": "pipes_my_pipe_def.js",
+     "generated": "pipes.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Invalid pipe factory function",
-          "files": [
-            {
-              "expected": "pipes_my_pipe_fac.js",
-              "generated": "pipes.js"
-            }
-          ]
+ "failureMessage": "Invalid pipe factory function",
+ "files": [
+   {
+     "expected": "pipes_my_pipe_fac.js",
+     "generated": "pipes.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Invalid pure pipe definition",
-          "files": [
-            {
-              "expected": "pipes_my_pure_pipe_def.js",
-              "generated": "pipes.js"
-            }
-          ]
+ "failureMessage": "Invalid pure pipe definition",
+ "files": [
+   {
+     "expected": "pipes_my_pure_pipe_def.js",
+     "generated": "pipes.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Invalid pure pipe factory function",
-          "files": [
-            {
-              "expected": "pipes_my_pure_pipe_fac.js",
-              "generated": "pipes.js"
-            }
-          ]
+ "failureMessage": "Invalid pure pipe factory function",
+ "files": [
+   {
+     "expected": "pipes_my_pure_pipe_fac.js",
+     "generated": "pipes.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Invalid MyApp definition",
-          "files": [
-            {
-              "expected": "pipes_my_app_def.js",
-              "generated": "pipes.js"
-            }
-          ]
+ "failureMessage": "Invalid MyApp definition",
+ "files": [
+   {
+     "expected": "pipes_my_app_def.js",
+     "generated": "pipes.js"
+   }
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -62,10 +62,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid MyApp definition",
-          "files": [
-            "pipe_invocation.js"
-          ]
+ "failureMessage": "Invalid MyApp definition",
+ "files": [
+   "pipe_invocation.js"
+ ]
         }
       ]
     },
@@ -76,40 +76,40 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid pipe definition",
-          "files": [
-            {
-              "expected": "pipe_di_change_detector_ref_my_pipe_def.js",
-              "generated": "pipe_di_change_detector_ref.js"
-            }
-          ]
+ "failureMessage": "Invalid pipe definition",
+ "files": [
+   {
+     "expected": "pipe_di_change_detector_ref_my_pipe_def.js",
+     "generated": "pipe_di_change_detector_ref.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Invalid pipe factory function",
-          "files": [
-            {
-              "expected": "pipe_di_change_detector_ref_my_pipe_fac.js",
-              "generated": "pipe_di_change_detector_ref.js"
-            }
-          ]
+ "failureMessage": "Invalid pipe factory function",
+ "files": [
+   {
+     "expected": "pipe_di_change_detector_ref_my_pipe_fac.js",
+     "generated": "pipe_di_change_detector_ref.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Invalid alternate pipe definition",
-          "files": [
-            {
-              "expected": "pipe_di_change_detector_ref_my_other_pipe_def.js",
-              "generated": "pipe_di_change_detector_ref.js"
-            }
-          ]
+ "failureMessage": "Invalid alternate pipe definition",
+ "files": [
+   {
+     "expected": "pipe_di_change_detector_ref_my_other_pipe_def.js",
+     "generated": "pipe_di_change_detector_ref.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Invalid alternate pipe factory function",
-          "files": [
-            {
-              "expected": "pipe_di_change_detector_ref_my_other_pipe_fac.js",
-              "generated": "pipe_di_change_detector_ref.js"
-            }
-          ]
+ "failureMessage": "Invalid alternate pipe factory function",
+ "files": [
+   {
+     "expected": "pipe_di_change_detector_ref_my_other_pipe_fac.js",
+     "generated": "pipe_di_change_detector_ref.js"
+   }
+ ]
         }
       ]
     }

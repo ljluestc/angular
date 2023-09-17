@@ -6,15 +6,15 @@
  */
 module.exports = function processSeeTags(createDocMessage) {
   return {
-    $runAfter: ['tags-extracted'],
-    $runBefore: [],
-    $process(docs) {
-      docs.forEach((doc) => {
-        const backtick = doc.see?.find((see) => see.startsWith('`'));
-        if (backtick) {
-          throw new Error(createDocMessage(`@ "Use @link to create a link for ${backtick}`, doc));
-        }
-      });
-    },
+$runAfter: ['tags-extracted'],
+$runBefore: [],
+$process(docs) {
+  docs.forEach((doc) => {
+const backtick = doc.see?.find((see) => see.startsWith('`'));
+if (backtick) {
+  throw new Error(createDocMessage(`@ "Use @link to create a link for ${backtick}`, doc));
+}
+  });
+},
   };
 };

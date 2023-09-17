@@ -135,11 +135,11 @@ Angular provides three categories of data binding according to the direction of 
 *   From view to source
 *   In a two-way sequence of view to source to view
 
-| Type                                                                     | Syntax                                                                       | Category |
-|:---                                                                      |:---                                                                          |:---      |
+| Type| Syntax  | Category |
+|:--- |:---     |:---      |
 | Interpolation <br /> Property <br /> Attribute <br /> Class <br /> Style | <code-example> {{expression}} &NewLine;[target]="expression" </code-example> | One-way from data source to view target |
-| Event                                                                    | <code-example> (target)="statement" </code-example>                          | One-way from view target to data source |
-| Two-way                                                                  | <code-example> [(target)]="expression" </code-example>                       | Two-way                                 |
+| Event        | <code-example> (target)="statement" </code-example>  | One-way from view target to data source |
+| Two-way      | <code-example> [(target)]="expression" </code-example>        | Two-way   |
 
 Binding types other than interpolation have a target name to the left of the equal sign.
 The target of a binding is a property or event, which you surround with square bracket \(`[ ]`\) characters, parenthesis \(`( )`\) characters, or both \(`[( )]`\) characters.
@@ -159,14 +159,14 @@ The target of a data binding can be a property, an event, or an attribute name.
 Every public member of a source directive is automatically available for binding in a template expression or statement.
 The following table summarizes the targets for the different binding types.
 
-| Type      | Target                                                               | Examples |
-|:---       |:---                                                                  |:---      |
+| Type      | Target   | Examples |
+|:---       |:---      |:---      |
 | Property  | Element property <br /> Component property <br /> Directive property | `alt`, `src`, `hero`, and `ngClass` in the following: <code-example path="template-syntax/src/app/app.component.html" region="property-binding-syntax-1"></code-example> <!-- For more information, see [Property Binding](guide/property-binding). --> |
-| Event     | Element event <br /> Component event <br /> Directive event           | `click`, `deleteRequest`, and `myClick` in the following: <code-example path="template-syntax/src/app/app.component.html" region="event-binding-syntax-1"></code-example>                                                                               |
-| Two-way   | Event and property                                                   | <code-example path="template-syntax/src/app/app.component.html" region="2-way-binding-syntax-1"></code-example>                                                                                                                                         |
-| Attribute | Attribute \(the exception\)                                          | <code-example path="template-syntax/src/app/app.component.html" region="attribute-binding-syntax-1"></code-example>                                                                                                                                     |
-| Class     | `class` property                                                     | <code-example path="template-syntax/src/app/app.component.html" region="class-binding-syntax-1"></code-example>                                                                                                                                         |
-| Style     | `style` property                                                     | <code-example path="template-syntax/src/app/app.component.html" region="style-binding-syntax-1"></code-example>                                                                                                                                         |
+| Event     | Element event <br /> Component event <br /> Directive event  | `click`, `deleteRequest`, and `myClick` in the following: <code-example path="template-syntax/src/app/app.component.html" region="event-binding-syntax-1"></code-example>    |
+| Two-way   | Event and property      | <code-example path="template-syntax/src/app/app.component.html" region="2-way-binding-syntax-1"></code-example>  |
+| Attribute | Attribute \(the exception\)   | <code-example path="template-syntax/src/app/app.component.html" region="attribute-binding-syntax-1"></code-example>    |
+| Class     | `class` property        | <code-example path="template-syntax/src/app/app.component.html" region="class-binding-syntax-1"></code-example>  |
+| Style     | `style` property        | <code-example path="template-syntax/src/app/app.component.html" region="style-binding-syntax-1"></code-example>  |
 
 <!-- links -->
 

@@ -14,8 +14,8 @@
     }, 
     "camera": {
         "features": [
-            "Flash", 
-            "Video"
+   "Flash", 
+   "Video"
         ], 
         "primary": "5.0 megapixels"
     }, 
@@ -52,9 +52,9 @@
     "name": "Motorola XOOM\u2122 with Wi-Fi", 
     "sizeAndWeight": {
         "dimensions": [
-            "249.1 mm (w)", 
-            "167.8 mm (h)", 
-            "12.9 mm (d)"
+   "249.1 mm (w)", 
+   "167.8 mm (h)", 
+   "12.9 mm (d)"
         ], 
         "weight": "708.0 grams"
     }, 

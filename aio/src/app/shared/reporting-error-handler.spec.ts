@@ -66,8 +66,8 @@ describe('ReportingErrorHandler service', () => {
         const expected = `Error: [v${VERSION.full}] ${originalMessage}`;
         const actual = error.stack.split('\n', 1)[0];
         expect(actual.startsWith(expected))
-            .withContext(`Expected '${actual}' to start with '${expected}'.`)
-            .toBeTrue();
+   .withContext(`Expected '${actual}' to start with '${expected}'.`)
+   .toBeTrue();
       }
     });
 
@@ -75,7 +75,7 @@ describe('ReportingErrorHandler service', () => {
       const error = new Error('this is an error message');
       handler.handleError(error);
       expect(reportErrorSpy).toHaveBeenCalledWith(
-          jasmine.stringContaining('this is an error message\n'));
+ jasmine.stringContaining('this is an error message\n'));
     });
 
     it('should send a non-error object to analytics', () => {

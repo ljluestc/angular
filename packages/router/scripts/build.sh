@@ -1,4 +1,1 @@
-#!/usr/bin/env bash
-
-set -e -o pipefail
-../../../node_modules/.bin/tsc -w
+#!/usr/bin/env bashset -e -o pipefail../../../node_modules/.bin/tsc -w

@@ -7,10 +7,7 @@ import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
 import { CrisisDetailComponent } from './crisis-detail/crisis-detail.component';
 
 import { canDeactivateGuard } from '../can-deactivate.guard';
-import { crisisDetailResolver} from './crisis-detail-resolver';
-
-
-const crisisCenterRoutes: Routes = [
+import { crisisDetailResolver} from './crisis-detail-resolver';const crisisCenterRoutes: Routes = [
   {
     path: 'crisis-center',
     component: CrisisCenterComponent,
@@ -19,18 +16,18 @@ const crisisCenterRoutes: Routes = [
         path: '',
         component: CrisisListComponent,
         children: [
-          {
-            path: ':id',
-            component: CrisisDetailComponent,
-            canDeactivate: [canDeactivateGuard],
-            resolve: {
-              crisis: crisisDetailResolver
-            }
-          },
-          {
-            path: '',
-            component: CrisisCenterHomeComponent
-          }
+ {
+   path: ':id',
+   component: CrisisDetailComponent,
+   canDeactivate: [canDeactivateGuard],
+   resolve: {
+     crisis: crisisDetailResolver
+   }
+ },
+ {
+   path: '',
+   component: CrisisCenterHomeComponent
+ }
         ]
       }
     ]

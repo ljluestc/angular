@@ -104,9 +104,9 @@ Without the `static` flag, the compiler decided when each query would be resolve
 All `@ViewChild`/`@ContentChild` queries were categorized into one of two buckets at compile time: "static" or "dynamic".
 This classification determined when query results would become available to users.
 
-| Queries         | Details |
-|:---             |:---     |
-| Static queries  | The result could be determined statically because the result didn't depend on runtime values like bindings. Results from queries classified as static were available before change detection ran for that view \(accessible in `ngOnInit`\).                                                                             |
+| Queries| Details |
+|:---    |:---     |
+| Static queries  | The result could be determined statically because the result didn't depend on runtime values like bindings. Results from queries classified as static were available before change detection ran for that view \(accessible in `ngOnInit`\).  |
 | Dynamic queries | the result could not be determined statically because the result depended on runtime values \(bindings\). Results from queries classified as dynamic were not available until after change detection ran for that view \(accessible in `ngAfterContentInit` for content queries or `ngAfterViewInit` for view queries\). |
 
 For example, let's say we have a component, `Comp`.

@@ -9,10 +9,7 @@ import { htmlEscape } from 'safevalues';
 import { MockLocationService } from 'testing/location.service';
 import { MockLogger } from 'testing/logger.service';
 import { DocumentService, DocumentContents,
-         FETCHING_ERROR_ID, FILE_NOT_FOUND_ID } from './document.service';
-
-
-const CONTENT_URL_PREFIX = 'generated/docs/';
+FETCHING_ERROR_ID, FILE_NOT_FOUND_ID } from './document.service';const CONTENT_URL_PREFIX = 'generated/docs/';
 
 describe('DocumentService', () => {
 
@@ -143,8 +140,8 @@ describe('DocumentService', () => {
       ]);
       expect(logger.output.error[0][0].message)
         .toEqual(
-          'Error fetching document \'initial/doc\': ' +
-          '(Http failure response for generated/docs/initial/doc.json: 500 Server Error)'
+ 'Error fetching document \'initial/doc\': ' +
+ '(Http failure response for generated/docs/initial/doc.json: 500 Server Error)'
         );
 
       locationService.go('new/doc');

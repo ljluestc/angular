@@ -25,8 +25,8 @@ export class MissionControlComponent {
   astronauts = ['Lovell', 'Swigert', 'Haise'];
   history: string[] = [];
   missions = ['Fly to the moon!',
-              'Fly to mars!',
-              'Fly to Vegas!'];
+     'Fly to mars!',
+     'Fly to Vegas!'];
   nextMission = 0;
 
   constructor(private missionService: MissionService) {

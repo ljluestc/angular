@@ -41,10 +41,7 @@ Currently, the following project types are supported:
 
 There are also the following special folders:
 - `common`: Contains files used in many examples.
-  (See the [next section](#example-config) for info on how to exclude common files in certain examples.)
-
-
-<a name="example-config"></a>
+  (See the [next section](#example-config) for info on how to exclude common files in certain examples.)<a name="example-config"></a>
 ### The `example-config.json`
 
 Each example is identified by an `example-config.json` configuration file in its root folder.
@@ -92,10 +89,7 @@ The file is expected to contain a JSON object with zero or more of the following
   ]
   ```
 
-An empty `example-config.json` file is equivalent with `{"projectType": "cli"}`.
-
-
-<a name="symlinked-node_modules"></a>
+An empty `example-config.json` file is equivalent with `{"projectType": "cli"}`.<a name="symlinked-node_modules"></a>
 ### A `node_modules/` to share
 
 With all the boilerplate files in place, the only missing piece is the installed packages.
@@ -116,10 +110,7 @@ These apps will be tested with the following command (and an optional `outputFil
 
 ```sh
 yarn protractor [--params.outputFile=path/to/logfile.txt]
-```
-
-
-### `example-boilerplate.js`
+```### `example-boilerplate.js`
 
 The [example-boilerplate.js](./example-boilerplate.js) script that adds boilerplate to examples.
 It is used by the Bazel build behind the scenes, but can also be invoked via `yarn example-list-overrides` to print a list of all example files that override boilerplate files.

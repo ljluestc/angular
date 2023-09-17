@@ -48,10 +48,7 @@ Here are the most important tasks you might need to use:
 
 Running `yarn start` (even when explicitly targeting production mode) does not set up the
 ServiceWorker. If you want to test the ServiceWorker locally, you can use `yarn build` and then
-serve the files with `yarn http-server ../dist/bin/aio/build -p 4200`.
-
-
-## Guide to authoring
+serve the files with `yarn http-server ../dist/bin/aio/build -p 4200`.## Guide to authoring
 
 There are two types of content in the documentation:
 

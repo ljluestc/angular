@@ -1,16 +1,1 @@
-load("//tools:defaults.bzl", "ts_library")
-
-package(default_visibility = ["//visibility:public"])
-
-exports_files(["package.json"])
-
-ts_library(
-    name = "testing",
-    srcs = glob([
-        "*.ts",
-    ]),
-    deps = [
-        "//packages/service-worker/cli",
-        "//packages/service-worker/config",
-    ],
-)
+load("//tools:defaults.bzl", "ts_library")package(default_visibility = ["//visibility:public"])exports_files(["package.json"])ts_library(    name = "testing",    srcs = glob([s",    ]),    deps = [  "//ps/service-worker/cli",  "//packageice-worker/config",    ],)

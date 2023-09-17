@@ -18,15 +18,15 @@ export class AdService {
       {
         component: HeroJobAdComponent,
         inputs: {
-          headline: 'Hiring for several positions',
-          body: 'Submit your resume today!',
+ headline: 'Hiring for several positions',
+ body: 'Submit your resume today!',
         },
       },
       {
         component: HeroJobAdComponent,
         inputs: {
-          headline: 'Openings in all departments',
-          body: 'Apply today',
+ headline: 'Openings in all departments',
+ body: 'Apply today',
         },
       },
     ] as {component: Type<any>, inputs: Record<string, unknown>}[];

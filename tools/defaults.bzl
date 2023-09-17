@@ -209,8 +209,8 @@ def ng_package(name, readme_md = None, license_banner = None, deps = [], **kwarg
         readme_md = readme_md,
         license_banner = license_banner,
         substitutions = select({
-            "//:stamp": stamped_substitutions,
-            "//conditions:default": substitutions,
+   "//:stamp": stamped_substitutions,
+   "//conditions:default": substitutions,
         }),
         ng_packager = _INTERNAL_NG_PACKAGE_PACKAGER,
         rollup_config_tmpl = _INTERNAL_NG_PACKAGE_DEFAULT_ROLLUP_CONFIG_TMPL,
@@ -260,8 +260,8 @@ def pkg_npm(name, deps = [], validate = True, **kwargs):
         name = name,
         validate = validate,
         substitutions = select({
-            "//:stamp": stamped_substitutions,
-            "//conditions:default": substitutions,
+   "//:stamp": stamped_substitutions,
+   "//conditions:default": substitutions,
         }),
         deps = [":%s_js_module_output" % name],
         visibility = visibility,
@@ -282,8 +282,8 @@ def karma_web_test_suite(
         name,
         external = [],
         browsers = [
-            "@npm//@angular/build-tooling/bazel/browsers/chromium:chromium",
-            "@npm//@angular/build-tooling/bazel/browsers/firefox:firefox",
+   "@npm//@angular/build-tooling/bazel/browsers/chromium:chromium",
+   "@npm//@angular/build-tooling/bazel/browsers/firefox:firefox",
         ],
         **kwargs):
     """Default values for karma_web_test_suite"""
@@ -321,27 +321,27 @@ def karma_web_test_suite(
     # Add a saucelabs target for Karma tests in `//packages/`.
     if native.package_name().startswith("packages/"):
         _karma_web_test(
-            name = "{}_saucelabs".format(name),
-            # Default timeout is moderate (5min). This causes the test to be terminated while
-            # Saucelabs browsers keep running. Ultimately resulting in failing tests and browsers
-            # unnecessarily being acquired. Our specified Saucelabs idle timeout is 10min, so we use
-            # Bazel's long timeout (15min). This ensures that Karma can shut down properly.
-            timeout = "long",
-            config_file = "//:karma-js.conf.js",
-            deps = [
-                ":%s_bundle" % name,
-            ],
-            data = data + [
-                "//:browser-providers.conf.js",
-                "//tools/saucelabs-daemon/launcher:launcher_cjs",
-            ],
-            tags = tags + [
-                "manual",
-                "no-remote-exec",
-                "saucelabs",
-            ],
-            configuration_env_vars = ["KARMA_WEB_TEST_MODE"],
-            **kwargs
+   name = "{}_saucelabs".format(name),
+   # Default timeout is moderate (5min). This causes the test to be terminated while
+   # Saucelabs browsers keep running. Ultimately resulting in failing tests and browsers
+   # unnecessarily being acquired. Our specified Saucelabs idle timeout is 10min, so we use
+   # Bazel's long timeout (15min). This ensures that Karma can shut down properly.
+   timeout = "long",
+   config_file = "//:karma-js.conf.js",
+   deps = [
+       ":%s_bundle" % name,
+   ],
+   data = data + [
+       "//:browser-providers.conf.js",
+       "//tools/saucelabs-daemon/launcher:launcher_cjs",
+   ],
+   tags = tags + [
+       "manual",
+       "no-remote-exec",
+       "saucelabs",
+   ],
+   configuration_env_vars = ["KARMA_WEB_TEST_MODE"],
+   **kwargs
         )
 
 def protractor_web_test_suite(
@@ -374,9 +374,9 @@ def nodejs_binary(
 
     if not enable_linker:
         templated_args = templated_args + [
-            # Disable the linker and rely on patched resolution which works better on Windows
-            # and is less prone to race conditions when targets build concurrently.
-            "--nobazel_run_linker",
+   # Disable the linker and rely on patched resolution which works better on Windows
+   # and is less prone to race conditions when targets build concurrently.
+   "--nobazel_run_linker",
         ]
 
     _nodejs_binary(
@@ -392,9 +392,9 @@ def nodejs_test(name, templated_args = [], enable_linker = False, **kwargs):
 
     if not enable_linker:
         templated_args = templated_args + [
-            # Disable the linker and rely on patched resolution which works better on Windows
-            # and is less prone to race conditions when targets build concurrently.
-            "--nobazel_run_linker",
+   # Disable the linker and rely on patched resolution which works better on Windows
+   # and is less prone to race conditions when targets build concurrently.
+   "--nobazel_run_linker",
         ]
 
     _nodejs_test(
@@ -489,18 +489,18 @@ def rollup_bundle(name, testonly = False, sourcemap = "true", **kwargs):
     Runs [rollup_bundle], [terser_minified] and [babel] for downleveling to es5
     to produce a number of output bundles.
 
-    es2015 iife                  : "%{name}.es2015.js"
-    es2015 iife minified         : "%{name}.min.es2015.js"
+    es2015 iife: "%{name}.es2015.js"
+    es2015 iife minified: "%{name}.min.es2015.js"
     es2015 iife minified (debug) : "%{name}.min_debug.es2015.js"
-    esm                          : "%{name}.esm.js"
-    esm                          : "%{name}.min.esm.js"
-    es5 iife                     : "%{name}.js"
-    es5 iife minified            : "%{name}.min.js"
+    esm        : "%{name}.esm.js"
+    esm        : "%{name}.min.esm.js"
+    es5 iife   : "%{name}.js"
+    es5 iife minified   : "%{name}.min.js"
     es5 iife minified (debug)    : "%{name}.min_debug.js"
-    es5 umd                      : "%{name}.es5umd.js"
-    es5 umd minified             : "%{name}.min.es5umd.js"
-    es2015 umd                   : "%{name}.umd.js"
-    es2015 umd minified          : "%{name}.min.umd.js"
+    es5 umd    : "%{name}.es5umd.js"
+    es5 umd minified    : "%{name}.min.es5umd.js"
+    es2015 umd : "%{name}.umd.js"
+    es2015 umd minified : "%{name}.min.umd.js"
 
     ".js.map" files are also produced for each bundle.
 
@@ -533,22 +533,22 @@ def rollup_bundle(name, testonly = False, sourcemap = "true", **kwargs):
         name = name,
         testonly = testonly,
         outs = [
-            name + ".js",
+   name + ".js",
         ],
         args = [
-            "$(execpath :%s.es2015.js)" % name,
-            "--types",
-            "--skipLibCheck",
-            "--target",
-            "es5",
-            "--lib",
-            "es2015,dom",
-            "--allowJS",
-            "--outFile",
-            "$(execpath :%s.js)" % name,
+   "$(execpath :%s.es2015.js)" % name,
+   "--types",
+   "--skipLibCheck",
+   "--target",
+   "es5",
+   "--lib",
+   "es2015,dom",
+   "--allowJS",
+   "--outFile",
+   "$(execpath :%s.js)" % name,
         ],
         data = [
-            name + ".es2015.js",
+   name + ".es2015.js",
         ],
     )
     terser_minified(name = name + ".min", testonly = testonly, src = name + "", **common_terser_args)
@@ -564,22 +564,22 @@ def rollup_bundle(name, testonly = False, sourcemap = "true", **kwargs):
         name = name + ".es5umd",
         testonly = testonly,
         outs = [
-            name + ".es5umd.js",
+   name + ".es5umd.js",
         ],
         args = [
-            "$(execpath :%s.umd.js)" % name,
-            "--types",
-            "--skipLibCheck",
-            "--target",
-            "es5",
-            "--lib",
-            "es2015,dom",
-            "--allowJS",
-            "--outFile",
-            "$(execpath :%s.es5umd.js)" % name,
+   "$(execpath :%s.umd.js)" % name,
+   "--types",
+   "--skipLibCheck",
+   "--target",
+   "es5",
+   "--lib",
+   "es2015,dom",
+   "--allowJS",
+   "--outFile",
+   "$(execpath :%s.es5umd.js)" % name,
         ],
         data = [
-            name + ".umd.js",
+   name + ".umd.js",
         ],
     )
     terser_minified(name = name + ".min.es5umd", testonly = testonly, src = name + ".es5umd", **common_terser_args)
@@ -605,7 +605,7 @@ def tsec_test(**kwargs):
 def esbuild(args = None, **kwargs):
     _esbuild(
         args = args if args else {
-            "resolveExtensions": [".mjs", ".js", ".json"],
+   "resolveExtensions": [".mjs", ".js", ".json"],
         },
         **kwargs
     )

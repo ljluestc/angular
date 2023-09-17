@@ -8,7 +8,7 @@ import { PhoneListComponent } from './phone-list/phone-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'phones', pathMatch: 'full' },
-  { path: 'phones',          component: PhoneListComponent },
+  { path: 'phones', component: PhoneListComponent },
   { path: 'phones/:phoneId', component: PhoneDetailComponent }
 ];
 

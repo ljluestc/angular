@@ -20,7 +20,7 @@ index 3b8ce74..85bc77d 100755
 --- internal/node/node.bzl
 +++ internal/node/node.bzl
 @@ -93,7 +93,7 @@ def _write_require_patch_script(ctx, data, node_modules_root):
-         is_executable = True,
+is_executable = True,
      )
 
 -def _ts_to_js(entry_point_path):
@@ -29,27 +29,27 @@ index 3b8ce74..85bc77d 100755
 
      Workaround for #1974
 @@ -103,7 +103,12 @@ def _ts_to_js(entry_point_path):
-         entry_point_path: a file path
+entry_point_path: a file path
      """
      if entry_point_path.endswith(".ts"):
 -        return entry_point_path[:-3] + ".js"
 +        if ctx.attr.use_esm:
-+            ext = ".mjs"
++   ext = ".mjs"
 +        else:
-+            ext = ".js"
++   ext = ".js"
 +
 +        return entry_point_path[:-3] + ext
      elif entry_point_path.endswith(".tsx"):
-         return entry_point_path[:-4] + ".js"
+return entry_point_path[:-4] + ".js"
      return entry_point_path
 @@ -322,6 +327,7 @@ if (process.cwd() !== __dirname) {
-         "TEMPLATED_node_patches_script": _to_manifest_path(ctx, ctx.file._node_patches_script),
-         "TEMPLATED_require_patch_script": _to_manifest_path(ctx, ctx.outputs.require_patch_script),
-         "TEMPLATED_runfiles_helper_script": _to_manifest_path(ctx, ctx.file._runfile_helpers_main),
+"TEMPLATED_node_patches_script": _to_manifest_path(ctx, ctx.file._node_patches_script),
+"TEMPLATED_require_patch_script": _to_manifest_path(ctx, ctx.outputs.require_patch_script),
+"TEMPLATED_runfiles_helper_script": _to_manifest_path(ctx, ctx.file._runfile_helpers_main),
 +        "TEMPLATED_use_esm": "true" if ctx.attr.use_esm else "false",
-         "TEMPLATED_node_tool_path": strip_external(node_toolchain.nodeinfo.target_tool_path),
-         "TEMPLATED_node_args": ctx.attr._node_args[UserBuildSettingInfo].value,
-         "TEMPLATED_chdir": chdir_script_runfiles_path if ctx.attr.chdir else "",
+"TEMPLATED_node_tool_path": strip_external(node_toolchain.nodeinfo.target_tool_path),
+"TEMPLATED_node_args": ctx.attr._node_args[UserBuildSettingInfo].value,
+"TEMPLATED_chdir": chdir_script_runfiles_path if ctx.attr.chdir else "",
 @@ -333,8 +339,8 @@ if (process.cwd() !== __dirname) {
      #else:
      #    substitutions["TEMPLATED_script_path"] = "$(rlocation \"%s\")" % _to_manifest_path(ctx, ctx.file.entry_point)
@@ -59,7 +59,7 @@ index 3b8ce74..85bc77d 100755
 +    substitutions["TEMPLATED_entry_point_execroot_path"] = "\"%s\"" % _ts_to_js(ctx, _to_execroot_path(ctx, _get_entry_point_file(ctx)))
 +    substitutions["TEMPLATED_entry_point_manifest_path"] = "$(rlocation \"%s\")" % _ts_to_js(ctx, _to_manifest_path(ctx, _get_entry_point_file(ctx)))
      if DirectoryFilePathInfo in ctx.attr.entry_point:
-         substitutions["TEMPLATED_entry_point_main"] = ctx.attr.entry_point[DirectoryFilePathInfo].path
+substitutions["TEMPLATED_entry_point_main"] = ctx.attr.entry_point[DirectoryFilePathInfo].path
      else:
 @@ -355,7 +361,7 @@ if (process.cwd() !== __dirname) {
 
@@ -71,18 +71,18 @@ index 3b8ce74..85bc77d 100755
 
      for f in sources_list:
 @@ -370,6 +376,9 @@ if (process.cwd() !== __dirname) {
-         # need to explicitly repeat the entry point in the `data` attribute.
-         runfiles.append(entry_point_script)
+# need to explicitly repeat the entry point in the `data` attribute.
+runfiles.append(entry_point_script)
 
 +    if ctx.attr.use_esm:
 +        node_tool_files.extend(ctx.files._esm_interop_runfiles)
 +
      return [
-         DefaultInfo(
-             executable = executable,
+DefaultInfo(
+    executable = executable,
 @@ -631,6 +640,11 @@ Predefined genrule variables are not supported in this context.
-         ],
-         allow_files = True,
+],
+allow_files = True,
      ),
 +    "_esm_interop_runfiles": attr.label_list(
 +        default = ["@angular//tools/esm-interop:loaders"],

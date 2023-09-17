@@ -8,12 +8,12 @@
 
 !function() {
   function A() {
-    function ignoreA() {}
+function ignoreA() {}
   }
   function B() {
-    let ignoreB = {};
+let ignoreB = {};
   }
   !function() {
-    let ignoreC = {};
+let ignoreC = {};
   };
 }();

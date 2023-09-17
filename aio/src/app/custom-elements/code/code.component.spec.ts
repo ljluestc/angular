@@ -49,7 +49,7 @@ describe('CodeComponent', () => {
     it('should format a one-line code sample without linenums by default', () => {
       hostComponent.setCode(oneLineCode);
       expect(getFormattedCode()).toBe(
-          `Formatted code (language: auto, linenums: false): ${oneLineCode}`);
+ `Formatted code (language: auto, linenums: false): ${oneLineCode}`);
     });
 
     it('should add line numbers to one-line code sample when linenums is `true`', () => {
@@ -58,7 +58,7 @@ describe('CodeComponent', () => {
       fixture.detectChanges();
 
       expect(getFormattedCode()).toBe(
-          `Formatted code (language: auto, linenums: true): ${oneLineCode}`);
+ `Formatted code (language: auto, linenums: true): ${oneLineCode}`);
     });
 
     it('should add line numbers to one-line code sample when linenums is `\'true\'`', () => {
@@ -67,13 +67,13 @@ describe('CodeComponent', () => {
       fixture.detectChanges();
 
       expect(getFormattedCode()).toBe(
-          `Formatted code (language: auto, linenums: true): ${oneLineCode}`);
+ `Formatted code (language: auto, linenums: true): ${oneLineCode}`);
     });
 
     it('should format a small multi-line code sample without linenums by default', () => {
       hostComponent.setCode(smallMultiLineCode);
       expect(getFormattedCode()).toBe(
-          `Formatted code (language: auto, linenums: false): ${htmlEscape(smallMultiLineCode)}`);
+ `Formatted code (language: auto, linenums: false): ${htmlEscape(smallMultiLineCode)}`);
     });
 
     it('should add line numbers to a small multi-line code sample when linenums is `true`', () => {
@@ -82,7 +82,7 @@ describe('CodeComponent', () => {
       fixture.detectChanges();
 
       expect(getFormattedCode()).toBe(
-          `Formatted code (language: auto, linenums: true): ${htmlEscape(smallMultiLineCode)}`);
+ `Formatted code (language: auto, linenums: true): ${htmlEscape(smallMultiLineCode)}`);
     });
 
     it('should add line numbers to  a small multi-line code sample when linenums is `\'true\'`', () => {
@@ -91,13 +91,13 @@ describe('CodeComponent', () => {
       fixture.detectChanges();
 
       expect(getFormattedCode()).toBe(
-          `Formatted code (language: auto, linenums: true): ${htmlEscape(smallMultiLineCode)}`);
+ `Formatted code (language: auto, linenums: true): ${htmlEscape(smallMultiLineCode)}`);
     });
 
     it('should format a big multi-line code without linenums by default', () => {
       hostComponent.setCode(bigMultiLineCode);
       expect(getFormattedCode()).toBe(
-          `Formatted code (language: auto, linenums: false): ${htmlEscape(bigMultiLineCode)}`);
+ `Formatted code (language: auto, linenums: false): ${htmlEscape(bigMultiLineCode)}`);
     });
 
     it('should add line numbers to a big multi-line code sample when linenums is `true`', () => {
@@ -106,7 +106,7 @@ describe('CodeComponent', () => {
       fixture.detectChanges();
 
       expect(getFormattedCode()).toBe(
-          `Formatted code (language: auto, linenums: true): ${htmlEscape(bigMultiLineCode)}`);
+ `Formatted code (language: auto, linenums: true): ${htmlEscape(bigMultiLineCode)}`);
     });
 
     it('should add line numbers to  a big multi-line code sample when linenums is `\'true\'`', () => {
@@ -115,7 +115,7 @@ describe('CodeComponent', () => {
       fixture.detectChanges();
 
       expect(getFormattedCode()).toBe(
-          `Formatted code (language: auto, linenums: true): ${htmlEscape(bigMultiLineCode)}`);
+ `Formatted code (language: auto, linenums: true): ${htmlEscape(bigMultiLineCode)}`);
     });
 
     it('should skip prettify if language is `\'none\'`', () => {
@@ -135,14 +135,14 @@ describe('CodeComponent', () => {
 
       hostComponent.setCode(`
         abc
-          let x = text.split('\\n');
+ let x = text.split('\\n');
         ghi
 
         jkl
       `);
       const codeContent = fixture.nativeElement.querySelector('code').textContent;
       expect(codeContent).toEqual(
-          'Formatted code (language: auto, linenums: false): abc\n  let x = text.split(\'\\n\');\nghi\n\njkl');
+ 'Formatted code (language: auto, linenums: false): abc\n  let x = text.split(\'\\n\');\nghi\n\njkl');
     });
 
     it('should trim whitespace from the code before rendering', () => {

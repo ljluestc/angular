@@ -19,10 +19,7 @@ Follow these steps to align the example apps with new CLI apps.
 - In the [shared/](./shared) directory, run `yarn` to ensure the dependencies are installed in the [shared/node_modules/](./shared/node_modules) directory.
   This command will also ensure that the dependency versions of the `package.json` files in each sub-folder of [shared/boilerplate/](./shared/boilerplate) match the ones in [shared/package.json](./shared/package.json).
 
-- Follow the steps in the following section to update the rest of the boilerplate files.
-
-
-## Update other boilerplate files
+- Follow the steps in the following section to update the rest of the boilerplate files.## Update other boilerplate files
 
 The Angular CLI default setup is updated using `ng update`.
 Any necessary changes to boilerplate files will be done automatically through migration schematics.

@@ -2,10 +2,7 @@ import { Component, NgModule, Type } from '@angular/core';
 import { TestBed, fakeAsync, flushMicrotasks } from '@angular/core/testing';
 
 import { ElementsLoader } from './elements-loader';
-import { ELEMENT_MODULE_LOAD_CALLBACKS_TOKEN, WithCustomElementComponent } from './element-registry';
-
-
-interface Deferred {
+import { ELEMENT_MODULE_LOAD_CALLBACKS_TOKEN, WithCustomElementComponent } from './element-registry';interface Deferred {
   resolve(): void;
   reject(err: any): void;
 }
@@ -18,12 +15,12 @@ describe('ElementsLoader', () => {
       providers: [
         ElementsLoader,
         {
-          provide: ELEMENT_MODULE_LOAD_CALLBACKS_TOKEN,
-          useValue: new Map<string, () => Promise<Type<WithCustomElementComponent>>>([
-            ['element-a-selector', async () => createFakeCustomElementModule('element-a-module')],
-            ['element-b-selector', async () => createFakeCustomElementModule('element-b-module')],
-            ['element-c-selector', async () => createFakeCustomElementModule('element-c-module')],
-          ]),
+ provide: ELEMENT_MODULE_LOAD_CALLBACKS_TOKEN,
+ useValue: new Map<string, () => Promise<Type<WithCustomElementComponent>>>([
+   ['element-a-selector', async () => createFakeCustomElementModule('element-a-module')],
+   ['element-b-selector', async () => createFakeCustomElementModule('element-b-module')],
+   ['element-c-selector', async () => createFakeCustomElementModule('element-c-module')],
+ ]),
         },
       ]
     });

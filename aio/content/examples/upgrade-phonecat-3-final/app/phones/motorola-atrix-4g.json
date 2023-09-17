@@ -14,7 +14,7 @@
     }, 
     "camera": {
         "features": [
-            ""
+   ""
         ], 
         "primary": ""
     }, 
@@ -49,9 +49,9 @@
     "name": "MOTOROLA ATRIX\u2122 4G", 
     "sizeAndWeight": {
         "dimensions": [
-            "63.5 mm (w)", 
-            "117.75 mm (h)", 
-            "10.95 mm (d)"
+   "63.5 mm (w)", 
+   "117.75 mm (h)", 
+   "10.95 mm (d)"
         ], 
         "weight": "135.0 grams"
     }, 

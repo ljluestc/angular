@@ -14,18 +14,18 @@ function parseMappings(mappings) {
 module.exports = function mapHeadings(mappings) {
   const headings = parseMappings(mappings || {});
   return () => ast => {
-    const nodesToFix = [];
-    Object.keys(headings).forEach(heading => {
-      visit(ast, 'heading', node => {
-        if (node.depth === Number(heading)) {
-          nodesToFix.push(node);
-        }
-      });
-    });
+const nodesToFix = [];
+Object.keys(headings).forEach(heading => {
+  visit(ast, 'heading', node => {
+if (node.depth === Number(heading)) {
+  nodesToFix.push(node);
+}
+  });
+});
 
-    // Update the depth of the matched nodes
-    nodesToFix.forEach(node => node.depth = headings[node.depth]);
+// Update the depth of the matched nodes
+nodesToFix.forEach(node => node.depth = headings[node.depth]);
 
-    return ast;
+return ast;
   };
 };

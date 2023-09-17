@@ -14,7 +14,7 @@ import { HeroService } from './hero.service';
 import { LoggerService } from './logger.service';
 import { MinimalLogger } from './minimal-logger.service';
 import { RUNNERS_UP,
-         runnersUpFactory } from './runners-up';
+runnersUpFactory } from './runners-up';
 import { NgFor } from '@angular/common';
 
 // #enddocregion hero-of-the-month
@@ -29,9 +29,9 @@ const someHero = new Hero(42, 'Magma', 'Had a great month!', '555-555-5555');
   templateUrl: './hero-of-the-month.component.html',
   providers: [
     // #docregion use-value
-    { provide: Hero,          useValue:    someHero },
+    { provide: Hero, useValue:    someHero },
     // #docregion provide-injection-token
-    { provide: TITLE,         useValue:   'Hero of the Month' },
+    { provide: TITLE,useValue:   'Hero of the Month' },
     // #enddocregion provide-injection-token
     // #enddocregion use-value
     // #docregion use-class

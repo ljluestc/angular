@@ -1,18 +1,12 @@
 # CSS styles in angular.io
 
-This document gives an overview of how angular.io CSS styles are implemented and organized in files.
-
-
-## General
+This document gives an overview of how angular.io CSS styles are implemented and organized in files.## General
 
 Styles are implemented using [Sass](https://sass-lang.com/) and stored in `.scss` files in [src/styles/](.).
 
 > **NOTE:**<br />
 > We do not use inline styles for components.
-> Styles for components are defined in `.scss` files in [src/styles/](.) and are not referenced from the component files.
-
-
-## File organization
+> Styles for components are defined in `.scss` files in [src/styles/](.) and are not referenced from the component files.## File organization
 
 The `.scss` files are organized in the following subdirectories:
 - [0-base/](./0-base): General styles affecting the whole application.
@@ -25,26 +19,17 @@ There are also some top-level files in `[src/styles/](.):
 - [_constants.scss](./_constants.scss): Defines several constants to be used throughout the styles.
 - [_mixins.scss](./_mixins.scss): Defines Sass mixins to be used throughout the styles.
 - [_print.scss](./_print.scss): Contains styles to be applied when printing.
-- [main.scss](./main.scss): Styles entry-point.
-
-
-### Styles for a specific area/component
+- [main.scss](./main.scss): Styles entry-point.### Styles for a specific area/component
 
 For each area/component, there is a subdirectory in either `1-layouts/` or `2-modules/`.
 
 Each such subdirectory contains a `<name>.scss` file with styles for the corresponding area/component and may also contain a `<name>-theme.scss` file with styles related to theming.
 See the next section for more details.
 
-When appropriate, the styles in these files should be scoped to the targeted component (for example, by using the component's selector).
-
-
-## Theming
+When appropriate, the styles in these files should be scoped to the targeted component (for example, by using the component's selector).## Theming
 
 Angular.io supports choosing between themes. Currently, a `light` and a `dark` theme are supported.
-See also [#41129](https://github.com/angular/angular/pull/41129) for more details/discussions around the theming implementation.
-
-
-## Styles for theming
+See also [#41129](https://github.com/angular/angular/pull/41129) for more details/discussions around the theming implementation.## Styles for theming
 
 Styles for each area/component are split between two files: `<name>.scss` and `<name>-theme.scss`.
 
@@ -61,10 +46,7 @@ Advantages of the chosen approach:
 - Themes can be lazy-loaded at runtime, preventing growth of the default styles chunk every time a new theme is implemented.
 
 Disadvantages of the chosen approach:
-- Splitting styles into two files means that some selectors will be duplicated, resulting in an increase of the total styles chunk size.
-
-
-## Applying a theme at runtime
+- Splitting styles into two files means that some selectors will be duplicated, resulting in an increase of the total styles chunk size.## Applying a theme at runtime
 
 When building the app the following styles bundles are generated:
 - One [based on `main.scss`](https://github.com/angular/angular/blob/62b5a6cb079e489d91982abe88d644d73feb73f3/aio/angular.json#L44), which is always included in `index.html` and contains the general (non-theme-specific) styles.

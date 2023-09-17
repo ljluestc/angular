@@ -14,8 +14,8 @@
     }, 
     "camera": {
         "features": [
-            "Flash", 
-            "Video"
+   "Flash", 
+   "Video"
         ], 
         "primary": "5.0 megapixels"
     }, 
@@ -49,9 +49,9 @@
     "name": "MOTOROLA XOOM\u2122", 
     "sizeAndWeight": {
         "dimensions": [
-            "249.0 mm (w)", 
-            "168.0 mm (h)", 
-            "12.7 mm (d)"
+   "249.0 mm (w)", 
+   "168.0 mm (h)", 
+   "12.7 mm (d)"
         ], 
         "weight": "726.0 grams"
     }, 

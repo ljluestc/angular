@@ -5,9 +5,9 @@
  */
 module.exports = function filterPipes() {
   return (docs, words, index) =>
-    docs.filter(doc =>
-      doc.docType !== 'pipe' ||
-      doc.pipeOptions.name !== '\'' + words[index] + '\'' ||
-      index === 0 ||
-      words[index - 1].trim() === '|');
+docs.filter(doc =>
+  doc.docType !== 'pipe' ||
+  doc.pipeOptions.name !== '\'' + words[index] + '\'' ||
+  index === 0 ||
+  words[index - 1].trim() === '|');
 };

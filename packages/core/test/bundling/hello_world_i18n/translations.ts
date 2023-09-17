@@ -9,11 +9,7 @@
 // below. This would normally be done inside the application `polyfills.ts` file.
 import '@angular/localize/init';
 import {computeMsgId} from '@angular/compiler';
-import {loadTranslations} from '@angular/localize';
-
-const translations = {
+import {loadTranslations} from '@angular/localize';const translations = {
   [computeMsgId('Hello World!')]: 'Bonjour Monde!',
   [computeMsgId('Hello Title!')]: 'Bonjour Titre!',
-};
-
-loadTranslations(translations);
+};loadTranslations(translations);

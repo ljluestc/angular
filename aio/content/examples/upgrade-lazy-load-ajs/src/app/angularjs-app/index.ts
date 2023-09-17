@@ -6,15 +6,15 @@ const appModule = angular.module('myApp', [
 ])
 .config(['$routeProvider', '$locationProvider',
   function config($routeProvider: angular.route.IRouteProvider,
-                  $locationProvider: angular.ILocationProvider) {
+$locationProvider: angular.ILocationProvider) {
     $locationProvider.html5Mode(true);
 
     $routeProvider.
       when('/users', {
         template: `
-          <p>
-            Users Page
-          </p>
+ <p>
+   Users Page
+ </p>
         `
       }).
       otherwise({

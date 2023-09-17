@@ -34,11 +34,11 @@ def link_local_packages(all_aio_deps):
     for dep in aio_angular_deps:
         pkg_name = _angular_dep_to_pkg_name(dep)
         npm_link(
-            name = _npm_link_name(pkg_name),
-            target = to_package_label(pkg_name),
-            package_name = pkg_name,
-            package_path = native.package_name(),
-            tags = ["manual"],
+   name = _npm_link_name(pkg_name),
+   target = to_package_label(pkg_name),
+   package_name = pkg_name,
+   package_path = native.package_name(),
+   tags = ["manual"],
         )
 
     # Special case deps that must be testonly
@@ -53,23 +53,23 @@ def link_local_packages(all_aio_deps):
     for dep in all_aio_deps:
         target = dep
         if dep in aio_angular_deps:
-            pkg_name = _angular_dep_to_pkg_name(dep)
+   pkg_name = _angular_dep_to_pkg_name(dep)
 
-            # We don't need to filter transitives on local packages as they depend
-            # on each other locally.
-            native.alias(
-                name = _filtered_transitives_name(dep),
-                actual = ":%s" % _npm_link_name(pkg_name),
-                tags = ["manual"],
-            )
+   # We don't need to filter transitives on local packages as they depend
+   # on each other locally.
+   native.alias(
+ name = _filtered_transitives_name(dep),
+ actual = ":%s" % _npm_link_name(pkg_name),
+ tags = ["manual"],
+   )
         else:
-            filter_transitive_angular_deps(
-                name = _filtered_transitives_name(dep),
-                target = target,
-                angular_packages = angular_packages,
-                testonly = True if dep in testonly_deps else False,
-                tags = ["manual"],
-            )
+   filter_transitive_angular_deps(
+ name = _filtered_transitives_name(dep),
+ target = target,
+ angular_packages = angular_packages,
+ testonly = True if dep in testonly_deps else False,
+ tags = ["manual"],
+   )
 
 def substitute_local_package_deps(deps):
     """Substitute AIO dependencies with an equivalent target that filters
@@ -104,12 +104,12 @@ def _filter_transitive_angular_deps_impl(ctx):
     # of each transitive dependency to check if it's an angular npm package.
     for file in ctx.attr.target[DefaultInfo].default_runfiles.files.to_list():
         if not any([file.path.startswith(path) for path in paths]):
-            filtered_deps.append(file)
+   filtered_deps.append(file)
 
     filtered_depset = depset(filtered_deps)
     providers = [
         DefaultInfo(
-            files = filtered_depset,
+   files = filtered_depset,
         ),
     ]
 

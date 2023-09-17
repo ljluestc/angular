@@ -1,10 +1,7 @@
 import fs from 'fs';
 import sh from 'shelljs';
 import pre from './pre-deploy-actions.mjs';
-import u from './utils.mjs';
-
-
-describe('deploy-to-firebase/pre-deploy-actions:', () => {
+import u from './utils.mjs';describe('deploy-to-firebase/pre-deploy-actions:', () => {
   beforeEach(() => spyOn(u, 'logSectionHeader'));
 
   it('should define an undo function for each exported function', () => {
@@ -12,8 +9,8 @@ describe('deploy-to-firebase/pre-deploy-actions:', () => {
 
     for (const name of exportedFunctionNames) {
       expect(pre.undo[name]).
-          withContext(`Testing for 'undo.${name}()'`).
-          toEqual(jasmine.any(Function));
+ withContext(`Testing for 'undo.${name}()'`).
+ toEqual(jasmine.any(Function));
     }
   });
 
@@ -104,48 +101,48 @@ describe('deploy-to-firebase/pre-deploy-actions:', () => {
         let writeFileSpy;
 
         beforeEach(() => {
-          readFileSpy = spyOn(fs, 'readFileSync').and.returnValue('Test file content.');
-          writeFileSpy = spyOn(fs, 'writeFileSync');
+ readFileSpy = spyOn(fs, 'readFileSync').and.returnValue('Test file content.');
+ writeFileSpy = spyOn(fs, 'writeFileSync');
         });
 
         it('should read from and write to the Firebase config file', () => {
-          pre[redirectToFnName]();
+ pre[redirectToFnName]();
 
-          expect(readFileSpy).toHaveBeenCalledOnceWith('firebase.json', 'utf8');
-          expect(writeFileSpy).toHaveBeenCalledOnceWith('firebase.json', 'Test file content.');
+ expect(readFileSpy).toHaveBeenCalledOnceWith('firebase.json', 'utf8');
+ expect(writeFileSpy).toHaveBeenCalledOnceWith('firebase.json', 'Test file content.');
         });
 
         it(`should add a redirect rule to '${origin}'`, () => {
-          const re = allRequests ? '^(.*)$' : '^(.*/[^./]*)$';
-          readFileSpy.and.returnValue(`
-            {
-              "foo": "bar",
-              "hosting": {
-                "baz": "qux",
-                "redirects": [
-                  {"type": 301, "regex": "/source/1", "destination": "/destination/1"},
-                  {"type": 301, "source": "/source/2", "destination": "/destination/2"},
-                ]
-              }
-            }
-          `);
+ const re = allRequests ? '^(.*)$' : '^(.*/[^./]*)$';
+ readFileSpy.and.returnValue(`
+   {
+     "foo": "bar",
+     "hosting": {
+ "baz": "qux",
+ "redirects": [
+   {"type": 301, "regex": "/source/1", "destination": "/destination/1"},
+   {"type": 301, "source": "/source/2", "destination": "/destination/2"},
+ ]
+     }
+   }
+ `);
 
-          pre[redirectToFnName]();
+ pre[redirectToFnName]();
 
-          expect(writeFileSpy.calls.first().args[1]).toBe(`
-            {
-              "foo": "bar",
-              "hosting": {
-                "baz": "qux",
-                "redirects": [
-                  {"type": 302, "regex": "${re}", "destination": "${origin}:1"},
+ expect(writeFileSpy.calls.first().args[1]).toBe(`
+   {
+     "foo": "bar",
+     "hosting": {
+ "baz": "qux",
+ "redirects": [
+   {"type": 302, "regex": "${re}", "destination": "${origin}:1"},
 
-                  {"type": 301, "regex": "/source/1", "destination": "/destination/1"},
-                  {"type": 301, "source": "/source/2", "destination": "/destination/2"},
-                ]
-              }
-            }
-          `);
+   {"type": 301, "regex": "/source/1", "destination": "/destination/1"},
+   {"type": 301, "source": "/source/2", "destination": "/destination/2"},
+ ]
+     }
+   }
+ `);
         });
       });
     });
@@ -188,48 +185,48 @@ describe('deploy-to-firebase/pre-deploy-actions:', () => {
         let writeFileSpy;
 
         beforeEach(() => {
-          readFileSpy = spyOn(fs, 'readFileSync').and.returnValue('Test file content.');
-          writeFileSpy = spyOn(fs, 'writeFileSync');
+ readFileSpy = spyOn(fs, 'readFileSync').and.returnValue('Test file content.');
+ writeFileSpy = spyOn(fs, 'writeFileSync');
         });
 
         it('should read from and write to the Firebase config file', () => {
-          pre.undo[redirectToFnName]();
+ pre.undo[redirectToFnName]();
 
-          expect(readFileSpy).toHaveBeenCalledOnceWith('firebase.json', 'utf8');
-          expect(writeFileSpy).toHaveBeenCalledOnceWith('firebase.json', 'Test file content.');
+ expect(readFileSpy).toHaveBeenCalledOnceWith('firebase.json', 'utf8');
+ expect(writeFileSpy).toHaveBeenCalledOnceWith('firebase.json', 'Test file content.');
         });
 
         it('should remove a redirect rule to `angular.io`', () => {
-          const re = allRequests ? '^(.*)$' : '^(.*/[^./]*)$';
-          readFileSpy.and.returnValue(`
-            {
-              "foo": "bar",
-              "hosting": {
-                "baz": "qux",
-                "redirects": [
-                  {"type": 302, "regex": "${re}", "destination": "${origin}:1"},
+ const re = allRequests ? '^(.*)$' : '^(.*/[^./]*)$';
+ readFileSpy.and.returnValue(`
+   {
+     "foo": "bar",
+     "hosting": {
+ "baz": "qux",
+ "redirects": [
+   {"type": 302, "regex": "${re}", "destination": "${origin}:1"},
 
-                  {"type": 301, "regex": "/source/1", "destination": "/destination/1"},
-                  {"type": 301, "source": "/source/2", "destination": "/destination/2"},
-                ]
-              }
-            }
-          `);
+   {"type": 301, "regex": "/source/1", "destination": "/destination/1"},
+   {"type": 301, "source": "/source/2", "destination": "/destination/2"},
+ ]
+     }
+   }
+ `);
 
-          pre.undo[redirectToFnName]();
+ pre.undo[redirectToFnName]();
 
-          expect(writeFileSpy.calls.first().args[1]).toBe(`
-            {
-              "foo": "bar",
-              "hosting": {
-                "baz": "qux",
-                "redirects": [
-                  {"type": 301, "regex": "/source/1", "destination": "/destination/1"},
-                  {"type": 301, "source": "/source/2", "destination": "/destination/2"},
-                ]
-              }
-            }
-          `);
+ expect(writeFileSpy.calls.first().args[1]).toBe(`
+   {
+     "foo": "bar",
+     "hosting": {
+ "baz": "qux",
+ "redirects": [
+   {"type": 301, "regex": "/source/1", "destination": "/destination/1"},
+   {"type": 301, "source": "/source/2", "destination": "/destination/2"},
+ ]
+     }
+   }
+ `);
         });
       });
     });

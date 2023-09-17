@@ -33,8 +33,8 @@ export class LoginComponent {
         // Set our navigation extras object
         // that passes on our global query params and fragment
         const navigationExtras: NavigationExtras = {
-          queryParamsHandling: 'preserve',
-          preserveFragment: true
+ queryParamsHandling: 'preserve',
+ preserveFragment: true
         };
 
         // Redirect the user

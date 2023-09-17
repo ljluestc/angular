@@ -36,10 +36,10 @@ There is a lot more to Angular than that of course, but this does mean that *fol
 
 There are a few rules in particular that will make it much easier to do *an incremental upgrade* using the Angular `upgrade/static` module:
 
-| Rules                                                                                                                                                                                             | Details |
-|:---                                                                                                                                                                                               |:---     |
-| [Rule of 1][GithubJohnpapaAngularStyleguideBlobPrimaryA1ReadmeMdSingleResponsibility]                                                                                                             | There should be one component per file. This not only makes components easy to navigate and find, but will also allow us to migrate them between languages and frameworks one at a time. In this example application, each controller, component, service, and filter is in its own source file. |
-| [Folders-by-Feature Structure][GithubJohnpapaAngularStyleguideBlobPrimaryA1ReadmeMdFoldersByFeatureStructure] <br /> [Modularity][GithubJohnpapaAngularStyleguideBlobPrimaryA1ReadmeMdModularity] | Define similar principles on a higher level of abstraction: Different parts of the application should reside in different directories and NgModules.                                                                                                                                             |
+| Rules| Details |
+|:---  |:---     |
+| [Rule of 1][GithubJohnpapaAngularStyleguideBlobPrimaryA1ReadmeMdSingleResponsibility]    | There should be one component per file. This not only makes components easy to navigate and find, but will also allow us to migrate them between languages and frameworks one at a time. In this example application, each controller, component, service, and filter is in its own source file. |
+| [Folders-by-Feature Structure][GithubJohnpapaAngularStyleguideBlobPrimaryA1ReadmeMdFoldersByFeatureStructure] <br /> [Modularity][GithubJohnpapaAngularStyleguideBlobPrimaryA1ReadmeMdModularity] | Define similar principles on a higher level of abstraction: Different parts of the application should reside in different directories and NgModules.      |
 
 When an application is laid out feature per feature in this way, it can also be migrated one feature at a time.
 For applications that don't already look like this, applying the rules in the AngularJS style guide is a highly recommended preparation step.
@@ -86,27 +86,27 @@ Applications built with component directives are much easier to migrate to Angul
 
 To be Angular compatible, an AngularJS component directive should configure these attributes:
 
-| Attributes                         | Details |
-|:---                                |:---     |
-| `restrict: 'E'`                    | Components are usually used as elements.                                                                                       |
-| `scope: {}`                        | An isolate scope. In Angular, components are always isolated from their surroundings, and you should do this in AngularJS too. |
-| `bindToController: {}`             | Component inputs and outputs should be bound to the controller instead of using the `$scope`.                                  |
-| `controller` <br /> `controllerAs` | Components have their own controllers.                                                                                         |
-| `template` <br /> `templateUrl`    | Components have their own templates.                                                                                           |
+| Attributes | Details |
+|:---  |:---     |
+| `restrict: 'E'`     | Components are usually used as elements.   |
+| `scope: {}`| An isolate scope. In Angular, components are always isolated from their surroundings, and you should do this in AngularJS too. |
+| `bindToController: {}`    | Component inputs and outputs should be bound to the controller instead of using the `$scope`.    |
+| `controller` <br /> `controllerAs` | Components have their own controllers.     |
+| `template` <br /> `templateUrl`    | Components have their own templates. |
 
 Component directives may also use the following attributes:
 
-| Attributes            | Details |
-|:---                   |:---     |
-| `transclude: true/{}` | If the component needs to transclude content from elsewhere.                        |
-| `require`             | If the component needs to communicate with the controller of some parent component. |
+| Attributes   | Details |
+|:---    |:---     |
+| `transclude: true/{}` | If the component needs to transclude content from elsewhere.|
+| `require`    | If the component needs to communicate with the controller of some parent component. |
 
 Component directives **should not** use the following attributes:
 
-| Attributes \(avoid\)         | Details |
-|:---                          |:---     |
-| `compile`                    | This will not be supported in Angular.                                                                                         |
-| `replace: true`              | Angular never replaces a component element with the component template. This attribute is also deprecated in AngularJS.        |
+| Attributes \(avoid\)| Details |
+|:---  |:---     |
+| `compile`     | This will not be supported in Angular.     |
+| `replace: true`     | Angular never replaces a component element with the component template. This attribute is also deprecated in AngularJS.        |
 | `priority` <br /> `terminal` | While AngularJS components may use these, they are not used in Angular and it is better not to write code that relies on them. |
 
 An AngularJS component directive that is fully aligned with the Angular architecture may look something like this:
@@ -159,9 +159,9 @@ Dependency injection, the DOM, and change detection.
 
 Dependency injection is front and center in both AngularJS and Angular, but there are some key differences between the two frameworks in how it actually works.
 
-| AngularJS                                                                                                             | Angular |
-|:---                                                                                                                   |:---     |
-| Dependency injection tokens are always strings                                                                        | Tokens [can have different types][AioGuideDependencyInjection]. <br /> They are often classes. <br /> They may also be strings.                        |
+| AngularJS    | Angular |
+|:--- |:---     |
+| Dependency injection tokens are always strings   | Tokens [can have different types][AioGuideDependencyInjection]. <br /> They are often classes. <br /> They may also be strings.|
 | There is exactly one injector. <br /> Even in multi-module applications, everything is poured into one big namespace. | There is a [tree hierarchy of injectors][AioGuideHierarchicalDependencyInjection], with a root injector and an additional injector for each component. |
 
 Even accounting for these differences you can still have dependency injection interoperability.
@@ -480,12 +480,12 @@ As far as Angular knows, the upgraded component is just a directive &mdash;a tag
 An upgraded component may also have inputs and outputs, as defined by the scope/controller bindings of the original AngularJS component directive.
 When you use the component from an Angular template, provide the inputs and outputs using **Angular template syntax**, observing the following rules:
 
-| Bindings           | Binding definition            | Template syntax |
-|:---                |:---                           |:---             |
-| Attribute binding  | `myAttribute: '@myAttribute'` | `<my-component myAttribute="value">`                                                                                                                                                                                               |
-| Expression binding | `myOutput: '&myOutput'`       | `<my-component (myOutput)="action()">`                                                                                                                                                                                             |
-| One-way binding    | `myValue: '<myValue'`         | `<my-component [myValue]="anExpression">`                                                                                                                                                                                          |
-| Two-way binding    | `myValue: '=myValue'`         | As a two-way binding: <br /> `<my-component [(myValue)]="anExpression">` <br /> Since most AngularJS two-way bindings actually only need a one-way binding in practice, `<my-component [myValue]="anExpression">` is often enough. |
+| Bindings  | Binding definition   | Template syntax |
+|:--- |:---   |:---    |
+| Attribute binding  | `myAttribute: '@myAttribute'` | `<my-component myAttribute="value">`  |
+| Expression binding | `myOutput: '&myOutput'`       | `<my-component (myOutput)="action()">`|
+| One-way binding    | `myValue: '<myValue'`| `<my-component [myValue]="anExpression">`      |
+| Two-way binding    | `myValue: '=myValue'`| As a two-way binding: <br /> `<my-component [(myValue)]="anExpression">` <br /> Since most AngularJS two-way bindings actually only need a one-way binding in practice, `<my-component [myValue]="anExpression">` is often enough. |
 
 For example, imagine a hero detail AngularJS component directive with one input and one output:
 
@@ -820,32 +820,32 @@ In terms of project structure, this is where the work begins:
       </div>
       <div class="children">
         <div class="file">
-          checkmark
+ checkmark
         </div>
         <div class="children">
-          <div class="file">
-            checkmark.filter.js
-          </div>
-          <div class="file">
-            checkmark.filter.spec.js
-          </div>
+ <div class="file">
+   checkmark.filter.js
+ </div>
+ <div class="file">
+   checkmark.filter.spec.js
+ </div>
         </div>
         <div class="file">
-          phone
+ phone
         </div>
         <div class="children">
-          <div class="file">
-            phone.module.js
-          </div>
-          <div class="file">
-            phone.service.js
-          </div>
-          <div class="file">
-            phone.service.spec.js
-          </div>
+ <div class="file">
+   phone.module.js
+ </div>
+ <div class="file">
+   phone.service.js
+ </div>
+ <div class="file">
+   phone.service.spec.js
+ </div>
         </div>
         <div class="file">
-          core.module.js
+ core.module.js
         </div>
       </div>
       <div class="file">
@@ -853,16 +853,16 @@ In terms of project structure, this is where the work begins:
       </div>
       <div class="children">
         <div class="file">
-          phone-detail.component.js
+ phone-detail.component.js
         </div>
         <div class="file">
-          phone-detail.component.spec.js
+ phone-detail.component.spec.js
         </div>
         <div class="file">
-          phone-detail.module.js
+ phone-detail.module.js
         </div>
         <div class="file">
-          phone-detail.template.html
+ phone-detail.template.html
         </div>
       </div>
       <div class="file">
@@ -870,16 +870,16 @@ In terms of project structure, this is where the work begins:
       </div>
       <div class="children">
         <div class="file">
-          phone-list.component.js
+ phone-list.component.js
         </div>
         <div class="file">
-          phone-list.component.spec.js
+ phone-list.component.spec.js
         </div>
         <div class="file">
-          phone-list.module.js
+ phone-list.module.js
         </div>
         <div class="file">
-          phone-list.template.html
+ phone-list.template.html
         </div>
       </div>
       <div class="file">
@@ -887,7 +887,7 @@ In terms of project structure, this is where the work begins:
       </div>
       <div class="children">
         <div class="file">
-           &hellip;
+  &hellip;
         </div>
       </div>
       <div class="file">
@@ -895,7 +895,7 @@ In terms of project structure, this is where the work begins:
       </div>
       <div class="children">
         <div class="file">
-           &hellip;
+  &hellip;
         </div>
       </div>
       <div class="file">
@@ -1215,12 +1215,12 @@ If your use case requires the UMD format, use [`rollup`][RollupjsMain] to manual
         <code-example language="javascript">
 
         export default {
-          input: 'node_modules/&commat;angular/core/fesm2022/core.js',
-          output: {
-            file: 'bundle.js',
-            format: 'umd',
-            name: 'ng'
-          }
+ input: 'node_modules/&commat;angular/core/fesm2022/core.js',
+ output: {
+   file: 'bundle.js',
+   format: 'umd',
+   name: 'ng'
+ }
         }
 
         </code-example>
@@ -1591,13 +1591,13 @@ ng12Hybrid: true
 When you start to upgrade components and their templates to Angular, you'll make more changes because the E2E tests have matchers that are specific to AngularJS.
 For PhoneCat you need to make the following changes in order to make things work with Angular:
 
-| Previous code                                               | New code                  | Details |
-|:---                                                         |:---                       |:---     |
+| Previous code  | New code   | Details |
+|:---   |:---        |:---     |
 | `by.repeater('phone in $ctrl.phones').column('phone.name')` | `by.css('.phones .name')` | The repeater matcher relies on AngularJS `ng-repeat` |
-| `by.repeater('phone in $ctrl.phones')`                      | `by.css('.phones li')`    | The repeater matcher relies on AngularJS `ng-repeat` |
-| `by.model('$ctrl.query')`                                   | `by.css('input')`         | The model matcher relies on AngularJS `ng-model`     |
-| `by.model('$ctrl.orderProp')`                               | `by.css('select')`        | The model matcher relies on AngularJS `ng-model`     |
-| `by.binding('$ctrl.phone.name')`                            | `by.css('h1')`            | The binding matcher relies on AngularJS data binding |
+| `by.repeater('phone in $ctrl.phones')`       | `by.css('.phones li')`    | The repeater matcher relies on AngularJS `ng-repeat` |
+| `by.model('$ctrl.query')`     | `by.css('input')`| The model matcher relies on AngularJS `ng-model`     |
+| `by.model('$ctrl.orderProp')` | `by.css('select')`        | The model matcher relies on AngularJS `ng-model`     |
+| `by.binding('$ctrl.phone.name')`    | `by.css('h1')`   | The binding matcher relies on AngularJS data binding |
 
 When the bootstrap method is switched from that of `UpgradeModule` to pure Angular, AngularJS ceases to exist on the page completely.
 At this point, you need to tell Protractor that it should not be looking for an AngularJS application anymore, but instead it should find *Angular apps* from the page.

@@ -36,14 +36,14 @@ export class IpcServer {
     this._connections.set(socketId, socket);
     socket.on('data', b => {
       this._processMessage(
-              socket,
-              socketId,
-              JSON.parse(b.toString()) as BackgroundServiceReceiveMessages,
-              )
-          .catch((err) => {
-            console.error(err);
-            this._sendInternalError(socket, err.toString());
-          });
+     socket,
+     socketId,
+     JSON.parse(b.toString()) as BackgroundServiceReceiveMessages,
+     )
+ .catch((err) => {
+   console.error(err);
+   this._sendInternalError(socket, err.toString());
+ });
     });
   }
 
@@ -56,15 +56,15 @@ export class IpcServer {
       case 'start-test':
         console.debug(`Requesting test browser: SID#${socketId}: ${message.testDescription}`);
         const started = await this._service.startTest({
-          testId: socketId,
-          pageUrl: message.url,
-          requestedBrowserId: message.browserId,
+ testId: socketId,
+ pageUrl: message.url,
+ requestedBrowserId: message.browserId,
         });
         if (!started) {
-          console.debug('  > Browser not available.');
-          this._sendUnavailableBrowserMessage(socket);
+ console.debug('  > Browser not available.');
+ this._sendUnavailableBrowserMessage(socket);
         } else {
-          console.debug('  > Browser available. Test can start.');
+ console.debug('  > Browser available. Test can start.');
         }
         break;
       case 'end-test':

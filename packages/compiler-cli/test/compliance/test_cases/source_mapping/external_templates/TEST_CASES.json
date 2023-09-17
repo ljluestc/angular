@@ -21,12 +21,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "external_template.js",
-              "expected": "external_template_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "external_template.js",
+     "expected": "external_template_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -49,8 +49,8 @@
         "sourceMap": true,
         "inlineSources": true,
         "rootDirs": [
-          ".",
-          "extraRootDir"
+ ".",
+ "extraRootDir"
         ]
       }
     },
@@ -64,20 +64,20 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "extra_root_dir.js",
-              "expected": "extra_root_dir_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "extra_root_dir.js",
+     "expected": "extra_root_dir_partial.js"
+   }
+ ]
         }
       ],
       "compilerOptions": {
         "sourceMap": true,
         "inlineSources": true,
         "rootDirs": [
-          ".",
-          "extraRootDir"
+ ".",
+ "extraRootDir"
         ]
       }
     },
@@ -101,12 +101,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "escaped_chars.js",
-              "expected": "escaped_chars_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "escaped_chars.js",
+     "expected": "escaped_chars_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [

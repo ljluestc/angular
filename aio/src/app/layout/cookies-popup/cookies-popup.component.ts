@@ -13,10 +13,10 @@ export const storageKey = 'aio-accepts-cookies';
 
       <div class="actions">
         <a mat-button href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener">
-          Learn more
+ Learn more
         </a>
         <button mat-button (click)="acceptCookies()">
-          OK, got it
+ OK, got it
         </button>
       </div>
     </div>

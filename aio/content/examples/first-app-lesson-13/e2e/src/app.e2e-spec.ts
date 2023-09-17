@@ -56,10 +56,7 @@ describe('first-app-lesson-13 app', () => {
     await filterField.clear();
     await submitButton.click();
     expect(await element.all(by.css('app-housing-location'))['length'] === 10);
-  });
-
-
-  afterEach(async () => {
+  });  afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
     expect(logs).not.toContain(jasmine.objectContaining({

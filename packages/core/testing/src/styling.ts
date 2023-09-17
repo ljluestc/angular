@@ -4,9 +4,7 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-/**
+ *//**
  * Returns element classes in form of a stable (sorted) string.
  *
  * @param element HTML Element.
@@ -16,9 +14,7 @@ export function getSortedClassName(element: Element): string {
   const names: string[] = Object.keys(getElementClasses(element));
   names.sort();
   return names.join(' ');
-}
-
-/**
+}/**
  * Returns element classes in form of a map.
  *
  * @param element HTML Element.
@@ -29,14 +25,12 @@ export function getElementClasses(element: Element): {[key: string]: true} {
   if (element.nodeType === Node.ELEMENT_NODE) {
     const classList = element.classList;
     for (let i = 0; i < classList.length; i++) {
-      const key = classList[i];
-      classes[key] = true;
+const key = classList[i];
+classes[key] = true;
     }
   }
   return classes;
-}
-
-/**
+}/**
  * Returns element styles in form of a stable (sorted) string.
  *
  * @param element HTML Element.
@@ -50,14 +44,12 @@ export function getSortedStyle(element: Element): string {
   names.forEach(key => {
     const value = styles[key];
     if (value != null && value !== '') {
-      if (sorted !== '') sorted += ' ';
-      sorted += key + ': ' + value + ';';
+if (sorted !== '') sorted += ' ';
+sorted += key + ': ' + value + ';';
     }
   });
   return sorted;
-}
-
-/**
+}/**
  * Returns element styles in form of a map.
  *
  * @param element HTML Element.
@@ -72,11 +64,11 @@ export function getElementStyles(element: Element): {[key: string]: string} {
     // stale value to be updated. (As of Domino v 2.1.3)
     style.color;
     for (let i = 0; i < style.length; i++) {
-      const key = style.item(i);
-      const value = style.getPropertyValue(key);
-      if (value !== '') {
-        styles[key] = value;
-      }
+const key = style.item(i);
+const value = style.getPropertyValue(key);
+if (value !== '') {
+  styles[key] = value;
+}
     }
   }
   return styles;

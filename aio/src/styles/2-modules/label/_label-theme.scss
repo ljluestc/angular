@@ -34,7 +34,7 @@
       @each $name,
       $symbol in constants.$api-symbols {
         &.#{$name} {
-          background: map.get($symbol, background);
+ background: map.get($symbol, background);
         }
       }
     }

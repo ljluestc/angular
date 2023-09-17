@@ -7,10 +7,7 @@ import {fromInnerHTML} from 'app/shared/security';
 import {TocService} from 'app/shared/toc.service';
 import {asapScheduler, Observable, of, timer} from 'rxjs';
 import {catchError, observeOn, switchMap, takeUntil, tap} from 'rxjs/operators';
-import {EMPTY_HTML, unwrapHtml} from 'safevalues';
-
-
-// Constants
+import {EMPTY_HTML, unwrapHtml} from 'safevalues';// Constants
 export const NO_ANIMATIONS = 'no-animations';
 
 // Initialization prevents flicker once pre-rendering is on
@@ -75,10 +72,10 @@ export class DocViewerComponent implements OnDestroy {
 
     this.docContents$
         .pipe(
-            observeOn(asapScheduler),
-            switchMap(newDoc => this.render(newDoc)),
-            takeUntil(this.onDestroy$),
-            )
+   observeOn(asapScheduler),
+   switchMap(newDoc => this.render(newDoc)),
+   takeUntil(this.onDestroy$),
+   )
         .subscribe();
   }
 
@@ -114,11 +111,11 @@ export class DocViewerComponent implements OnDestroy {
       // If you don't want a ToC, add "no-toc" class to `<h1>`.
       if (titleEl) {
         if (needsTitle) {
-          title = (typeof titleEl.innerText === 'string') ? titleEl.innerText : titleEl.textContent;
+ title = (typeof titleEl.innerText === 'string') ? titleEl.innerText : titleEl.textContent;
         }
 
         if (needsToc) {
-          this.tocService.genToc(targetElem, docId);
+ this.tocService.genToc(targetElem, docId);
         }
       }
 
@@ -131,7 +128,7 @@ export class DocViewerComponent implements OnDestroy {
       // is empty.
       const paragraphs = targetElem.querySelectorAll('p');
       const firstParagraph =
-          Array.from(paragraphs).find(p => p.textContent?.trim());
+ Array.from(paragraphs).find(p => p.textContent?.trim());
 
       const firstParagraphText = firstParagraph?.textContent?.trim();
       if (firstParagraphText) {
@@ -151,13 +148,13 @@ export class DocViewerComponent implements OnDestroy {
 
     return this.void$.pipe(
         tap(() => {
-          if (doc.contents === null) {
-            this.nextViewContainer.textContent = '';
-          } else {
-            // Security: `doc.contents` is always authored by the documentation team
-            //           and is considered to be safe.
-            this.nextViewContainer.innerHTML = unwrapHtml(doc.contents) as string;
-          }
+ if (doc.contents === null) {
+   this.nextViewContainer.textContent = '';
+ } else {
+   // Security: `doc.contents` is always authored by the documentation team
+   //  and is considered to be safe.
+   this.nextViewContainer.innerHTML = unwrapHtml(doc.contents) as string;
+ }
         }),
         tap(() => addTitleAndToc = this.prepareMetadataAndToc(this.nextViewContainer, doc.id)),
         switchMap(() => this.elementsLoader.loadContainedCustomElements(this.nextViewContainer)),
@@ -165,13 +162,13 @@ export class DocViewerComponent implements OnDestroy {
         switchMap(() => this.swapViews(addTitleAndToc)),
         tap(() => this.docRendered.emit()),
         catchError(err => {
-          const errorMessage = `${(err instanceof Error) ? err.stack : err}`;
-          this.logger.error(
-              new Error(`[DocViewer] Error preparing document '${doc.id}': ${errorMessage}`));
-          this.nextViewContainer.textContent = '';
-          this.setNoIndex(true);
+ const errorMessage = `${(err instanceof Error) ? err.stack : err}`;
+ this.logger.error(
+     new Error(`[DocViewer] Error preparing document '${doc.id}': ${errorMessage}`));
+ this.nextViewContainer.textContent = '';
+ this.setNoIndex(true);
 
-          return this.void$;
+ return this.void$;
         }),
     );
   }
@@ -220,29 +217,29 @@ export class DocViewerComponent implements OnDestroy {
     // "setProperty"
     type StringValueCSSStyleDeclaration = Exclude<
         {[K in keyof CSSStyleDeclaration]:
-             CSSStyleDeclaration[K] extends string ? K : never;}[keyof CSSStyleDeclaration],
+    CSSStyleDeclaration[K] extends string ? K : never;}[keyof CSSStyleDeclaration],
         number>;
     const animateProp =
         (elem: HTMLElement, prop: StringValueCSSStyleDeclaration, from: string, to: string,
-         duration = 200) => {
-          const animationsDisabled = this.hostElement.classList.contains(NO_ANIMATIONS);
-          elem.style.transition = '';
-          return animationsDisabled ?
-              this.void$.pipe(tap(() => elem.style[prop] = to)) :
-              this.void$.pipe(
-                  // In order to ensure that the `from` value will be applied immediately (i.e.
-                  // without transition) and that the `to` value will be affected by the
-                  // `transition` style, we need to ensure an animation frame has passed between
-                  // setting each style.
-                  switchMap(() => raf$),
-                  tap(() => elem.style[prop] = from),
-                  switchMap(() => raf$),
-                  tap(() => elem.style.transition = `all ${duration}ms ease-in-out`),
-                  switchMap(() => raf$),
-                  tap(() => elem.style[prop] = to),
-                  switchMap(() => timer(getActualDuration(elem))),
-                  switchMap(() => this.void$),
-              );
+duration = 200) => {
+ const animationsDisabled = this.hostElement.classList.contains(NO_ANIMATIONS);
+ elem.style.transition = '';
+ return animationsDisabled ?
+     this.void$.pipe(tap(() => elem.style[prop] = to)) :
+     this.void$.pipe(
+   // In order to ensure that the `from` value will be applied immediately (i.e.
+   // without transition) and that the `to` value will be affected by the
+   // `transition` style, we need to ensure an animation frame has passed between
+   // setting each style.
+   switchMap(() => raf$),
+   tap(() => elem.style[prop] = from),
+   switchMap(() => raf$),
+   tap(() => elem.style.transition = `all ${duration}ms ease-in-out`),
+   switchMap(() => raf$),
+   tap(() => elem.style[prop] = to),
+   switchMap(() => timer(getActualDuration(elem))),
+   switchMap(() => this.void$),
+     );
         };
 
     const animateLeave = (elem: HTMLElement) => animateProp(elem, 'opacity', '1', '0.1');
@@ -252,11 +249,11 @@ export class DocViewerComponent implements OnDestroy {
 
     if (this.currViewContainer.parentElement) {
       done$ = done$.pipe(
-          // Remove the current view from the viewer.
-          switchMap(() => animateLeave(this.currViewContainer)),
-          tap(() => (this.currViewContainer.parentElement as HTMLElement)
-                        .removeChild(this.currViewContainer)),
-          tap(() => this.docRemoved.emit()),
+ // Remove the current view from the viewer.
+ switchMap(() => animateLeave(this.currViewContainer)),
+ tap(() => (this.currViewContainer.parentElement as HTMLElement)
+.removeChild(this.currViewContainer)),
+ tap(() => this.docRemoved.emit()),
       );
     }
 
@@ -268,10 +265,10 @@ export class DocViewerComponent implements OnDestroy {
         switchMap(() => animateEnter(this.nextViewContainer)),
         // Update the view references and clean up unused nodes.
         tap(() => {
-          const prevViewContainer = this.currViewContainer;
-          this.currViewContainer = this.nextViewContainer;
-          this.nextViewContainer = prevViewContainer;
-          this.nextViewContainer.textContent = '';  // Empty to release memory.
+ const prevViewContainer = this.currViewContainer;
+ this.currViewContainer = this.nextViewContainer;
+ this.nextViewContainer = prevViewContainer;
+ this.nextViewContainer.textContent = '';  // Empty to release memory.
         }),
     );
   }

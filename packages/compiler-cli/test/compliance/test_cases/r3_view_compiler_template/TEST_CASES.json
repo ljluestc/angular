@@ -8,13 +8,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "nested_template_context_template.js",
-              "generated": "nested_template_context.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "nested_template_context_template.js",
+     "generated": "nested_template_context.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -26,13 +26,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "nested_template_context_many_bindings_template.js",
-              "generated": "nested_template_context_many_bindings.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "nested_template_context_many_bindings_template.js",
+     "generated": "nested_template_context_many_bindings.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -43,13 +43,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "implicit_receiver_template.js",
-              "generated": "implicit_receiver.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "implicit_receiver_template.js",
+     "generated": "implicit_receiver.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -60,13 +60,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "ng_for_context_variables_template.js",
-              "generated": "ng_for_context_variables.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "ng_for_context_variables_template.js",
+     "generated": "ng_for_context_variables.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -77,13 +77,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "ng_for_parent_context_variables_template.js",
-              "generated": "ng_for_parent_context_variables.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "ng_for_parent_context_variables_template.js",
+     "generated": "ng_for_parent_context_variables.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -95,13 +95,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "template_context_skip_template.js",
-              "generated": "template_context_skip.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "template_context_skip_template.js",
+     "generated": "template_context_skip.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -112,13 +112,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "ng_template_template.js",
-              "generated": "ng_template.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "ng_template_template.js",
+     "generated": "ng_template.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -129,13 +129,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "ng_template_local_ref_template.js",
-              "generated": "ng_template_local_ref.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "ng_template_local_ref_template.js",
+     "generated": "ng_template_local_ref.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -147,13 +147,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "ng_template_output_template.js",
-              "generated": "ng_template_output.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "ng_template_output_template.js",
+     "generated": "ng_template_output.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -165,13 +165,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "ng_template_interpolated_prop_template.js",
-              "generated": "ng_template_interpolated_prop.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "ng_template_interpolated_prop_template.js",
+     "generated": "ng_template_interpolated_prop.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -182,22 +182,22 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "ng_template_interpolated_prop_with_structural_directive_inner_template.js",
-              "generated": "ng_template_interpolated_prop_with_structural_directive.js"
-            }
-          ],
-          "failureMessage": "Incorrect inner template"
+ "files": [
+   {
+     "expected": "ng_template_interpolated_prop_with_structural_directive_inner_template.js",
+     "generated": "ng_template_interpolated_prop_with_structural_directive.js"
+   }
+ ],
+ "failureMessage": "Incorrect inner template"
         },
         {
-          "files": [
-            {
-              "expected": "ng_template_interpolated_prop_with_structural_directive_outer_template.js",
-              "generated": "ng_template_interpolated_prop_with_structural_directive.js"
-            }
-          ],
-          "failureMessage": "Incorrect outer template"
+ "files": [
+   {
+     "expected": "ng_template_interpolated_prop_with_structural_directive_outer_template.js",
+     "generated": "ng_template_interpolated_prop_with_structural_directive.js"
+   }
+ ],
+ "failureMessage": "Incorrect outer template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -209,13 +209,13 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            [
-              "verifyUniqueFunctions",
-              "Template",
-              16
-            ]
-          ]
+ "extraChecks": [
+   [
+     "verifyUniqueFunctions",
+     "Template",
+     16
+   ]
+ ]
         }
       ]
     },
@@ -226,13 +226,13 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            [
-              "verifyUniqueFunctions",
-              "Template",
-              4
-            ]
-          ]
+ "extraChecks": [
+   [
+     "verifyUniqueFunctions",
+     "Template",
+     4
+   ]
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -244,13 +244,13 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            [
-              "verifyUniqueFunctions",
-              "listener",
-              3
-            ]
-          ]
+ "extraChecks": [
+   [
+     "verifyUniqueFunctions",
+     "listener",
+     3
+   ]
+ ]
         }
       ]
     },
@@ -261,13 +261,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "template_binding_pipe_template.js",
-              "generated": "template_binding_pipe.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "template_binding_pipe_template.js",
+     "generated": "template_binding_pipe.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -278,13 +278,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "nested_ternary_operation_template.js",
-              "generated": "nested_ternary_operation.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "nested_ternary_operation_template.js",
+     "generated": "nested_ternary_operation.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -295,13 +295,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "shorthand_property_declaration_template.js",
-              "generated": "shorthand_property_declaration.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "shorthand_property_declaration_template.js",
+     "generated": "shorthand_property_declaration.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -312,13 +312,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "self_closing_tags_template.js",
-              "generated": "self_closing_tags.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "self_closing_tags_template.js",
+     "generated": "self_closing_tags.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -329,13 +329,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "self_closing_tags_nested_template.js",
-              "generated": "self_closing_tags_nested.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "self_closing_tags_nested_template.js",
+     "generated": "self_closing_tags_nested.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     }

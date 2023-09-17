@@ -8,10 +8,7 @@ This sample comes from the Angular documentation's "[Example Angular Internation
 2. `npm start` to see it run in English
 3. `npm run start:fr` to see it run with French translation.
 
->See the scripts in `package.json` for an explanation of these commands.
-
-
-## Run in Stackblitz
+>See the scripts in `package.json` for an explanation of these commands.## Run in Stackblitz
 
 Stackblitz compiles and runs the English version by default.
 

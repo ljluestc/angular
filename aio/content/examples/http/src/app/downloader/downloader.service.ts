@@ -20,8 +20,8 @@ export class DownloaderService {
       .pipe(
         tap( // Log the result or error
         {
-          next: (data) => this.log(filename, data),
-          error: (error) => this.logError(filename, error)
+ next: (data) => this.log(filename, data),
+ error: (error) => this.logError(filename, error)
         }
         )
       );

@@ -40,11 +40,11 @@ describe('DashboardComponent class only', () => {
     heroService.lastResult // the one from getHeroes
       .subscribe({
         next: () => {
-          // throw new Error('deliberate error'); // see it fail gracefully
-          expect(comp.heroes.length)
-            .withContext('should have heroes after service promise resolves')
-            .toBeGreaterThan(0);
-          done();
+ // throw new Error('deliberate error'); // see it fail gracefully
+ expect(comp.heroes.length)
+   .withContext('should have heroes after service promise resolves')
+   .toBeGreaterThan(0);
+ done();
         },
         error: done.fail,
       });

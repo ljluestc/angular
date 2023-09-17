@@ -21,11 +21,11 @@ import { NgFor } from '@angular/common';
   template: `
     <ul class="heroes">
       <li *ngFor="let hero of heroes"
-          [@flyInOut]="'in'">
-          <button class="inner" type="button" (click)="removeHero(hero.id)">
-            <span class="badge">{{ hero.id }}</span>
-            <span class="name">{{ hero.name }}</span>
-          </button>
+ [@flyInOut]="'in'">
+ <button class="inner" type="button" (click)="removeHero(hero.id)">
+   <span class="badge">{{ hero.id }}</span>
+   <span class="name">{{ hero.name }}</span>
+ </button>
       </li>
     </ul>
   `,

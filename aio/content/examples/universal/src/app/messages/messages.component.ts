@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
-
-
-import { MessageService } from '../message.service';
+import { NgFor, NgIf } from '@angular/common';import { MessageService } from '../message.service';
 
 @Component({
   standalone: true,

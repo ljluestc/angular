@@ -1079,10 +1079,7 @@ This example uses a variable of `routerOutlet`.
 
 <code-example header="src/app/app.component.html (router outlet)" path="router/src/app/app.component.2.html"></code-example>
 
-The `@routeAnimation` property is bound to the `getAnimationData()` which returns the animation property from the `data` provided by the primary route. The `animation` property matches the `transition` names you used in the `slideInAnimation` defined in `animations.ts`.
-
-
-<code-example header="src/app/app.component.ts (router outlet)" path="router/src/app/app.component.2.ts" region="function-binding"></code-example>
+The `@routeAnimation` property is bound to the `getAnimationData()` which returns the animation property from the `data` provided by the primary route. The `animation` property matches the `transition` names you used in the `slideInAnimation` defined in `animations.ts`.<code-example header="src/app/app.component.ts (router outlet)" path="router/src/app/app.component.2.ts" region="function-binding"></code-example>
 
 When switching between the two routes, the `HeroDetailComponent` and `HeroListComponent` now ease in from the left when routed to, and slide to the right when navigating away.
 
@@ -1960,10 +1957,7 @@ In `app.module.ts`, import and add `AuthModule` to the `AppModule` imports array
     <code-pane header="src/app/auth/login/login.component.html" path="router/src/app/auth/login/login.component.html"></code-pane>
     <code-pane header="src/app/auth/login/login.component.ts" path="router/src/app/auth/login/login.component.1.ts"></code-pane>
     <code-pane header="src/app/auth/auth.module.ts" path="router/src/app/auth/auth.module.ts"></code-pane>
-</code-tabs>
-
-
-<a id="can-activate-child-guard"></a>
+</code-tabs><a id="can-activate-child-guard"></a>
 
 ### `canActivateChild`: guarding child routes
 

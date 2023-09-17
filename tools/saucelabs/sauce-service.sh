@@ -100,11 +100,11 @@ service-setup-command() {
       CYGWIN*)    local machine=windows ;;
       MINGW*)     local machine=windows ;;
       MSYS_NT*)   local machine=windows ;;
-      *)          local machine=linux
-                  printf "\nUnrecongized uname '${unameOut}'; defaulting to use node for linux.\n" >&2
-                  printf "Please file an issue to https://github.com/bazelbuild/rules_nodejs/issues if \n" >&2
-                  printf "you would like to add your platform to the supported rules_nodejs node platforms.\n\n" >&2
-                  ;;
+      *) local machine=linux
+printf "\nUnrecongized uname '${unameOut}'; defaulting to use node for linux.\n" >&2
+printf "Please file an issue to https://github.com/bazelbuild/rules_nodejs/issues if \n" >&2
+printf "you would like to add your platform to the supported rules_nodejs node platforms.\n\n" >&2
+;;
   esac
 
   case "${machine}" in
@@ -237,9 +237,9 @@ service-ready-wait() {
       if [ $counter -gt $[${SAUCE_READY_FILE_TIMEOUT} * 2] ]; then
         @echo "Timed out after ${SAUCE_READY_FILE_TIMEOUT} seconds waiting for tunnel ready file."
         if [[ -f "${SAUCE_LOG_FILE}" ]]; then
-          echo "================================================================================"
-          echo "${SAUCE_LOG_FILE}:"
-          cat "${SAUCE_LOG_FILE}"
+ echo "================================================================================"
+ echo "${SAUCE_LOG_FILE}:"
+ cat "${SAUCE_LOG_FILE}"
         fi
         exit 5
       fi

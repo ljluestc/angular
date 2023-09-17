@@ -54,18 +54,15 @@
 
 <div [ngClass]="currentClasses">
   This div should be {{ canSave ? "": "not"}} saveable,
-                  {{ isUnchanged ? "unchanged" : "modified" }} and
-                  {{ isSpecial ? "": "not"}} special after clicking "Refresh".</div>
+{{ isUnchanged ? "unchanged" : "modified" }} and
+{{ isSpecial ? "": "not"}} special after clicking "Refresh".</div>
 <br><br>
 <!-- #docregion special-div -->
 <!-- toggle the "special" class on/off with a property -->
 <div [ngClass]="isSpecial ? 'special' : ''">This div is special</div>
 <!-- #enddocregion special-div -->
 <div class="helpful study course">Helpful study course</div>
-<div [ngClass]="{'helpful':false, 'study':true, 'course':true}">Study course</div>
-
-
-<!-- NgStyle binding -->
+<div [ngClass]="{'helpful':false, 'study':true, 'course':true}">Study course</div><!-- NgStyle binding -->
 <hr><h3>NgStyle Binding</h3>
 <div [style.font-size]="isSpecial ? 'x-large' : 'smaller'">
   This div is x-large or smaller.
@@ -78,11 +75,7 @@
 <div [ngStyle]="currentStyles">
   This div is initially italic, normal weight, and extra large (24px).
 </div>
-<!-- #enddocregion NgStyle-2 -->
-
-
-
-<br>
+<!-- #enddocregion NgStyle-2 --><br>
 <label for="canSave">italic: <input id="canSave" type="checkbox" [(ngModel)]="canSave"></label> |
 <label for="isUnchanged">normal: <input id="isUnchanged" type="checkbox" [(ngModel)]="isUnchanged"></label> |
 <label for="isSpecial">xlarge: <input id="isSpecial" type="checkbox" [(ngModel)]="isSpecial"></label>
@@ -90,8 +83,8 @@
 <br><br>
 <div [ngStyle]="currentStyles">
   This div should be {{ canSave ? "italic": "plain"}},
-                  {{ isUnchanged ? "normal weight" : "bold" }} and,
-                  {{ isSpecial ? "extra large": "normal size"}} after clicking "Refresh".</div>
+{{ isUnchanged ? "normal weight" : "bold" }} and,
+{{ isSpecial ? "extra large": "normal size"}} after clicking "Refresh".</div>
 
 <hr>
 <h2>Built-in structural directives</h2>
@@ -112,10 +105,7 @@
 <!-- #docregion NgIf-2b -->
 <div *ngIf="nullCustomer">Hello, <span>{{nullCustomer}}</span></div>
 <!-- #enddocregion NgIf-2b -->
-<button type="button" (click)="giveNullCustomerValue()">Give nullCustomer a value</button>
-
-
-<h4>NgIf binding with template (no *)</h4>
+<button type="button" (click)="giveNullCustomerValue()">Give nullCustomer a value</button><h4>NgIf binding with template (no *)</h4>
 
 <ng-template [ngIf]="currentItem">Add {{currentItem.name}} with template</ng-template>
 <hr>
@@ -129,10 +119,7 @@
 <app-item-detail [class.hidden]="isSpecial"></app-item-detail>
 
 <div [style.display]="isSpecial ? 'block' : 'none'">Show with style</div>
-<div [style.display]="isSpecial ? 'none'  : 'block'">Hide with style</div>
-
-
-<hr>
+<div [style.display]="isSpecial ? 'none'  : 'block'">Hide with style</div><hr>
 <h2 id="ngFor">NgFor Binding</h2>
 
 <div class="box">
@@ -146,10 +133,7 @@
   <!-- #docregion NgFor-2, NgFor-1-2 -->
   <app-item-detail *ngFor="let item of items" [item]="item"></app-item-detail>
   <!-- #enddocregion NgFor-2, NgFor-1-2 -->
-</div>
-
-
-<h4 id="ngFor-index">*ngFor with index</h4>
+</div><h4 id="ngFor-index">*ngFor with index</h4>
 <p>with <em>semi-colon</em> separator</p>
 <div class="box">
   <!-- #docregion NgFor-3 -->
@@ -232,7 +216,7 @@
   <div *ngSwitchCase="'bright'"> Are you as bright as {{currentItem.name}}?</div>
   <!-- #enddocregion NgSwitch-div -->
 <!-- #docregion NgSwitch -->
-  <app-unknown-item  *ngSwitchDefault           [item]="currentItem"></app-unknown-item>
+  <app-unknown-item  *ngSwitchDefault  [item]="currentItem"></app-unknown-item>
 </div>
 <!-- #enddocregion NgSwitch -->
 

@@ -4,12 +4,8 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-import {IMAGE_LOADER, NgOptimizedImage} from '@angular/common';
-import {Component} from '@angular/core';
-
-@Component({
+ */import {IMAGE_LOADER, NgOptimizedImage} from '@angular/common';
+import {Component} from '@angular/core';@Component({
   selector: 'basic',
   standalone: true,
   imports: [NgOptimizedImage],

@@ -3,18 +3,12 @@ import { logging } from 'selenium-webdriver';
 
 describe('Binding syntax e2e tests', () => {
 
-  beforeEach(() => browser.get(''));
-
-
-  // helper function used to test what's logged to the console
+  beforeEach(() => browser.get(''));  // helper function used to test what's logged to the console
   async function logChecker(contents: string) {
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
     const messages = logs.filter(({ message }) => message.indexOf(contents) !== -1 ? true : false);
     expect(messages.length).toBeGreaterThan(0);
-  }
-
-
-  it('should display Binding syntax', async () => {
+  }  it('should display Binding syntax', async () => {
     expect(await element(by.css('h1')).getText()).toEqual('Binding syntax');
   });
 
@@ -32,10 +26,7 @@ describe('Binding syntax e2e tests', () => {
 
   it('should display Disabled property vs. attribute', async () => {
     expect(await element.all(by.css('h3')).get(0).getText()).toBe('Disabled property vs. attribute');
-  });
-
-
-  it('should log a message including Sarah', async () => {
+  });  it('should log a message including Sarah', async () => {
     const attributeButton = element.all(by.css('button')).get(1);
     await attributeButton.click();
     const contents = 'Sarah';

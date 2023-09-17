@@ -71,10 +71,10 @@ function compileAndCreate() {
       Object.assign({}, appConfig, {
         imports: [DashboardComponent],
         providers: [
-          provideRouter([{ path: '**', component: DashboardComponent }]),
-          provideHttpClient(),
-          provideHttpClientTesting(),
-          HeroService,
+ provideRouter([{ path: '**', component: DashboardComponent }]),
+ provideHttpClient(),
+ provideHttpClientTesting(),
+ HeroService,
         ],
       }),
     )

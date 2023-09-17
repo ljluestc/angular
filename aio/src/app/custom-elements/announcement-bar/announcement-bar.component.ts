@@ -61,13 +61,13 @@ export class AnnouncementBarComponent implements OnInit {
     this.http.get<Announcement[]>(announcementsPath)
       .pipe(
         catchError(error => {
-          this.logger.error(new Error(`${announcementsPath} request failed: ${error.message}`));
-          return [];
+ this.logger.error(new Error(`${announcementsPath} request failed: ${error.message}`));
+ return [];
         }),
         map(announcements => this.findCurrentAnnouncement(announcements)),
         catchError(error => {
-          this.logger.error(new Error(`${announcementsPath} contains invalid data: ${error.message}`));
-          return [];
+ this.logger.error(new Error(`${announcementsPath} contains invalid data: ${error.message}`));
+ return [];
         }),
       )
       .subscribe(announcement => this.announcement = announcement);

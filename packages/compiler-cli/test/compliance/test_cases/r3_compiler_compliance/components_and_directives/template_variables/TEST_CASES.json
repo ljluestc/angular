@@ -9,10 +9,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid component definition",
-          "files": [
-            "svg_embedded_view.js"
-          ]
+ "failureMessage": "Invalid component definition",
+ "files": [
+   "svg_embedded_view.js"
+ ]
         }
       ]
     },
@@ -24,10 +24,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid component definition",
-          "files": [
-            "let_variable_and_reference.js"
-          ]
+ "failureMessage": "Invalid component definition",
+ "files": [
+   "let_variable_and_reference.js"
+ ]
         }
       ]
     },
@@ -39,10 +39,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid component definition",
-          "files": [
-            "parent_template_variable.js"
-          ]
+ "failureMessage": "Invalid component definition",
+ "files": [
+   "parent_template_variable.js"
+ ]
         }
       ]
     },
@@ -53,22 +53,22 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid directive definition",
-          "files": [
-            {
-              "generated": "for_of.js",
-              "expected": "for_of_def.js"
-            }
-          ]
+ "failureMessage": "Invalid directive definition",
+ "files": [
+   {
+     "generated": "for_of.js",
+     "expected": "for_of_def.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Invalid directive factory",
-          "files": [
-            {
-              "generated": "for_of.js",
-              "expected": "for_of_fac.js"
-            }
-          ]
+ "failureMessage": "Invalid directive factory",
+ "files": [
+   {
+     "generated": "for_of.js",
+     "expected": "for_of_fac.js"
+   }
+ ]
         }
       ]
     }

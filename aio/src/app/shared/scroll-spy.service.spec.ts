@@ -8,10 +8,7 @@ import {
   ScrollSpiedElement,
   ScrollSpiedElementGroup,
   ScrollSpyService,
-} from 'app/shared/scroll-spy.service';
-
-
-describe('ScrollSpiedElement', () => {
+} from 'app/shared/scroll-spy.service';describe('ScrollSpiedElement', () => {
   it('should expose the spied element and index', () => {
     const elem = {} as Element;
     const spiedElem = new ScrollSpiedElement(elem, 42);
@@ -38,10 +35,7 @@ describe('ScrollSpiedElement', () => {
       expect(spiedElem.top).toBe(110);
     });
   });
-});
-
-
-describe('ScrollSpiedElementGroup', () => {
+});describe('ScrollSpiedElementGroup', () => {
   describe('#calibrate()', () => {
     it('should calculate `top` for all spied elements', () => {
       const spy = spyOn(ScrollSpiedElement.prototype, 'calculateTop');
@@ -81,10 +75,7 @@ describe('ScrollSpiedElementGroup', () => {
       group = new ScrollSpiedElementGroup([{}, {}, {}] as Element[]);
       group.activeScrollItem.subscribe(item => activeItems.push(item));
       group.calibrate(20, 10);
-    });
-
-
-    it('should emit a `ScrollItem` on `activeScrollItem`', () => {
+    });    it('should emit a `ScrollItem` on `activeScrollItem`', () => {
       expect(activeItems.length).toBe(0);
 
       group.onScroll(20, 140);
@@ -148,10 +139,7 @@ describe('ScrollSpiedElementGroup', () => {
       expect(activeItems).toEqual([null, null, null]);
     });
   });
-});
-
-
-describe('ScrollSpyService', () => {
+});describe('ScrollSpyService', () => {
   let injector: Injector;
   let scrollSpyService: ScrollSpyService;
 
@@ -163,18 +151,12 @@ describe('ScrollSpyService', () => {
     ]});
 
     scrollSpyService = injector.get(ScrollSpyService);
-  });
-
-
-  describe('#spyOn()', () => {
+  });  describe('#spyOn()', () => {
     let getSpiedElemGroups: () => ScrollSpiedElementGroup[];
 
     beforeEach(() => {
       getSpiedElemGroups = () => (scrollSpyService as any).spiedElementGroups;
-    });
-
-
-    it('should create a `ScrollSpiedElementGroup` when called', () => {
+    });    it('should create a `ScrollSpiedElementGroup` when called', () => {
       expect(getSpiedElemGroups().length).toBe(0);
 
       scrollSpyService.spyOn([]);
@@ -198,9 +180,9 @@ describe('ScrollSpyService', () => {
       const actions: string[] = [];
 
       const onResizeSpy = spyOn(ScrollSpyService.prototype as any, 'onResize')
-                          .and.callFake(() => actions.push('onResize'));
+  .and.callFake(() => actions.push('onResize'));
       const calibrateSpy = spyOn(ScrollSpiedElementGroup.prototype, 'calibrate')
-                           .and.callFake(() => actions.push('calibrate'));
+   .and.callFake(() => actions.push('calibrate'));
 
       expect(onResizeSpy).not.toHaveBeenCalled();
       expect(calibrateSpy).not.toHaveBeenCalled();
@@ -308,10 +290,7 @@ describe('ScrollSpyService', () => {
 
     beforeEach(() => {
       onResizeSpy = spyOn(ScrollSpyService.prototype as any, 'onResize');
-    });
-
-
-    it('should be subscribed to when the first group of elements is spied on', fakeAsync(() => {
+    });    it('should be subscribed to when the first group of elements is spied on', fakeAsync(() => {
       window.dispatchEvent(new Event('resize'));
       expect(onResizeSpy).not.toHaveBeenCalled();
 
@@ -388,10 +367,7 @@ describe('ScrollSpyService', () => {
 
     beforeEach(() => {
       onScrollSpy = spyOn(ScrollSpyService.prototype as any, 'onScroll');
-    });
-
-
-    it('should be subscribed to when the first group of elements is spied on', fakeAsync(() => {
+    });    it('should be subscribed to when the first group of elements is spied on', fakeAsync(() => {
       window.dispatchEvent(new Event('scroll'));
       expect(onScrollSpy).not.toHaveBeenCalled();
 
@@ -500,7 +476,7 @@ describe('ScrollSpyService', () => {
       const spiedElemGroups: ScrollSpiedElementGroup[] = (scrollSpyService as any).spiedElementGroups;
       const onScrollSpies = spiedElemGroups.map(group => spyOn(group, 'onScroll'));
       const calibrateSpies = spiedElemGroups.map((group, i) => spyOn(group, 'calibrate')
-                .and.callFake(() => expect(onScrollSpies[i]).not.toHaveBeenCalled()));
+ .and.callFake(() => expect(onScrollSpies[i]).not.toHaveBeenCalled()));
 
       calibrateSpies.forEach(spy => expect(spy).not.toHaveBeenCalled());
       onScrollSpies.forEach(spy => expect(spy).not.toHaveBeenCalled());

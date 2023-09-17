@@ -1,2 +1,1 @@
-#!/usr/bin/env bash
-../../../node_modules/.bin/karma start
+#!/usr/bin/env bash../../../node_modules/.bin/karma start

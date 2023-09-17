@@ -48,11 +48,11 @@ export class AppComponent {
   }
 
   get isAuthorized() { return this.user.isAuthorized; }
-  nextUser()         { this.userService.getNewUser(); }
-  get user()         { return this.userService.user; }
+  nextUser(){ this.userService.getNewUser(); }
+  get user(){ return this.userService.user; }
 
   get userInfo()     {
     return `Current user, ${this.user.name}, is ` +
-           `${this.isAuthorized ? '' : 'not'} authorized. `;
+  `${this.isAuthorized ? '' : 'not'} authorized. `;
   }
 }

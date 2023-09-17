@@ -20,5 +20,3 @@ export class HostComponent {
 // #enddocregion host-component
 
 // if you take out @Host() and the providers array, flower will be red hibiscus
-
-

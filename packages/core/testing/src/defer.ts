@@ -4,13 +4,7 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-import {ɵCONTAINER_HEADER_OFFSET as CONTAINER_HEADER_OFFSET, ɵDeferBlockDetails as DeferBlockDetails, ɵDeferBlockState as DeferBlockState, ɵgetDeferBlocks as getDeferBlocks, ɵrenderDeferBlockState as renderDeferBlockState, ɵtriggerResourceLoading as triggerResourceLoading} from '@angular/core';
-
-import type {ComponentFixture} from './component_fixture';
-
-/**
+ */import {ɵCONTAINER_HEADER_OFFSET as CONTAINER_HEADER_OFFSET, ɵDeferBlockDetails as DeferBlockDetails, ɵDeferBlockState as DeferBlockState, ɵgetDeferBlocks as getDeferBlocks, ɵrenderDeferBlockState as renderDeferBlockState, ɵtriggerResourceLoading as triggerResourceLoading} from '@angular/core';import type {ComponentFixture} from './component_fixture';/**
  * Represents an individual `{#defer}` block for testing purposes.
  *
  * @publicApi
@@ -19,28 +13,24 @@ import type {ComponentFixture} from './component_fixture';
 export class DeferBlockFixture {
   /** @nodoc */
   constructor(
-      private block: DeferBlockDetails, private componentFixture: ComponentFixture<unknown>) {}
-
-  /**
+private block: DeferBlockDetails, private componentFixture: ComponentFixture<unknown>) {}  /**
    * Renders the specified state of the defer fixture.
    * @param state the defer state to render
    */
   async render(state: DeferBlockState): Promise<void> {
     if (!hasStateTemplate(state, this.block)) {
-      const stateAsString = getDeferBlockStateNameFromEnum(state);
-      throw new Error(
-          `Tried to render this defer block in the \`${stateAsString}\` state, ` +
-          `but there was no \`{:${stateAsString.toLowerCase()}}\` section defined in a template.`);
+const stateAsString = getDeferBlockStateNameFromEnum(state);
+throw new Error(
+`Tried to render this defer block in the \`${stateAsString}\` state, ` +
+`but there was no \`{:${stateAsString.toLowerCase()}}\` section defined in a template.`);
     }
     if (state === DeferBlockState.Complete) {
-      await triggerResourceLoading(this.block.tDetails, this.block.lView);
+await triggerResourceLoading(this.block.tDetails, this.block.lView);
     }
     renderDeferBlockState(state, this.block.tNode, this.block.lContainer);
     this.componentFixture.detectChanges();
     return this.componentFixture.whenStable();
-  }
-
-  /**
+  }  /**
    * Retrieves all nested child defer block fixtures
    * in a given defer block.
    */
@@ -51,40 +41,36 @@ export class DeferBlockFixture {
     // it for nested defer blocks.
     const deferBlockFixtures = [];
     if (this.block.lContainer.length >= CONTAINER_HEADER_OFFSET) {
-      const lView = this.block.lContainer[CONTAINER_HEADER_OFFSET];
-      getDeferBlocks(lView, deferBlocks);
-      for (const block of deferBlocks) {
-        deferBlockFixtures.push(new DeferBlockFixture(block, this.componentFixture));
-      }
+const lView = this.block.lContainer[CONTAINER_HEADER_OFFSET];
+getDeferBlocks(lView, deferBlocks);
+for (const block of deferBlocks) {
+  deferBlockFixtures.push(new DeferBlockFixture(block, this.componentFixture));
+}
     }
     return Promise.resolve(deferBlockFixtures);
   }
-}
-
-function hasStateTemplate(state: DeferBlockState, block: DeferBlockDetails) {
+}function hasStateTemplate(state: DeferBlockState, block: DeferBlockDetails) {
   switch (state) {
     case DeferBlockState.Placeholder:
-      return block.tDetails.placeholderTmplIndex !== null;
+return block.tDetails.placeholderTmplIndex !== null;
     case DeferBlockState.Loading:
-      return block.tDetails.loadingTmplIndex !== null;
+return block.tDetails.loadingTmplIndex !== null;
     case DeferBlockState.Error:
-      return block.tDetails.errorTmplIndex !== null;
+return block.tDetails.errorTmplIndex !== null;
     case DeferBlockState.Complete:
-      return true;
+return true;
     default:
-      return false;
+return false;
   }
-}
-
-function getDeferBlockStateNameFromEnum(state: DeferBlockState) {
+}function getDeferBlockStateNameFromEnum(state: DeferBlockState) {
   switch (state) {
     case DeferBlockState.Placeholder:
-      return 'Placeholder';
+return 'Placeholder';
     case DeferBlockState.Loading:
-      return 'Loading';
+return 'Loading';
     case DeferBlockState.Error:
-      return 'Error';
+return 'Error';
     default:
-      return 'Main';
+return 'Main';
   }
 }

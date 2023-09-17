@@ -4,8 +4,8 @@
  */
 // (function (global) {
 //   System.config({
-//     packages: {
-//       // add packages here
-//     }
+// packages: {
+//   // add packages here
+// }
 //   });
 // })(this);

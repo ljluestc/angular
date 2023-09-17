@@ -1,6 +1,6 @@
 module.exports = function() {
   return {
-    name: 'alias',
-    docProperty: 'aliasDocId'
+name: 'alias',
+docProperty: 'aliasDocId'
   };
 };

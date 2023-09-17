@@ -26,12 +26,12 @@ export class EventsComponent implements OnInit {
   ngOnInit() {
     this.eventsService.events.subscribe(events => {
       this.pastEvents = events
-          .filter(event => isInThePast(event))
-          .sort((l: AngularEvent, r: AngularEvent) => (l.date.start < r.date.start) ? 1 : -1);
+ .filter(event => isInThePast(event))
+ .sort((l: AngularEvent, r: AngularEvent) => (l.date.start < r.date.start) ? 1 : -1);
 
       this.upcomingEvents = events
-          .filter(event => !isInThePast(event))
-          .sort((l: AngularEvent, r: AngularEvent) => (l.date.start < r.date.start) ? -1 : 1);
+ .filter(event => !isInThePast(event))
+ .sort((l: AngularEvent, r: AngularEvent) => (l.date.start < r.date.start) ? -1 : 1);
     });
   }
 }

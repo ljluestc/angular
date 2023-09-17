@@ -16,7 +16,7 @@ import fs from 'fs';
 
 const containingDir = path.dirname(url.fileURLToPath(import.meta.url));
 const testDirs = glob.sync('*/BUILD.bazel', {cwd: containingDir})
-                     .map((d) => path.join(containingDir, path.dirname(d)));
+   .map((d) => path.join(containingDir, path.dirname(d)));
 
 const yarnTestTmpDir = path.join(containingDir, '.tmp-yarn-cache');
 

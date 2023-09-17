@@ -1,11 +1,11 @@
 # Update Angular to v15
 
-<!-- NOTE to writers: When creating the topic for the next version,                               -->
-<!--   remember to update the redirect link in angular/aio/firebase.json                          -->
-<!-- To update the redirect link in angular/aio/firebase.json:                                    -->
+<!-- NOTE to writers: When creating the topic for the next version, -->
+<!--   remember to update the redirect link in angular/aio/firebase.json  -->
+<!-- To update the redirect link in angular/aio/firebase.json:      -->
 <!--   1. Search for the entry in firebase.json with "source": "guide/update-to-latest-version"   -->
-<!--   2,  Update the destination value to refer to the new guide's URL                           -->
-<!--                                                                                              -->
+<!--   2,  Update the destination value to refer to the new guide's URL   -->
+<!--    -->
 
 This topic provides information about updating your Angular applications to Angular version 15.
 

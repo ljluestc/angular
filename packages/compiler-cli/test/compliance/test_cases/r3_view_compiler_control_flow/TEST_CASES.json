@@ -5,7 +5,7 @@
       "description": "should generate a basic switch block",
       "angularCompilerOptions": {
         "_enabledBlockTypes": [
-          "switch"
+ "switch"
         ]
       },
       "inputFiles": [
@@ -13,13 +13,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "basic_switch_template.js",
-              "generated": "basic_switch.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "basic_switch_template.js",
+     "generated": "basic_switch.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -27,7 +27,7 @@
       "description": "should generate a switch block without a default block",
       "angularCompilerOptions": {
         "_enabledBlockTypes": [
-          "switch"
+ "switch"
         ]
       },
       "inputFiles": [
@@ -35,13 +35,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "switch_without_default_template.js",
-              "generated": "switch_without_default.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "switch_without_default_template.js",
+     "generated": "switch_without_default.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -50,7 +50,7 @@
       "description": "should generate nested switch blocks",
       "angularCompilerOptions": {
         "_enabledBlockTypes": [
-          "switch"
+ "switch"
         ]
       },
       "inputFiles": [
@@ -58,13 +58,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "nested_switch_template.js",
-              "generated": "nested_switch.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "nested_switch_template.js",
+     "generated": "nested_switch.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -73,7 +73,7 @@
       "description": "should generate switch block with a pipe in its expression",
       "angularCompilerOptions": {
         "_enabledBlockTypes": [
-          "switch"
+ "switch"
         ]
       },
       "inputFiles": [
@@ -81,13 +81,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "switch_with_pipe_template.js",
-              "generated": "switch_with_pipe.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "switch_with_pipe_template.js",
+     "generated": "switch_with_pipe.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -96,7 +96,7 @@
       "description": "should generate a basic if block",
       "angularCompilerOptions": {
         "_enabledBlockTypes": [
-          "if"
+ "if"
         ]
       },
       "inputFiles": [
@@ -104,13 +104,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "basic_if_template.js",
-              "generated": "basic_if.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "basic_if_template.js",
+     "generated": "basic_if.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -119,7 +119,7 @@
       "description": "should generate a basic if/else block",
       "angularCompilerOptions": {
         "_enabledBlockTypes": [
-          "if"
+ "if"
         ]
       },
       "inputFiles": [
@@ -127,13 +127,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "basic_if_else_template.js",
-              "generated": "basic_if_else.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "basic_if_else_template.js",
+     "generated": "basic_if_else.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -142,7 +142,7 @@
       "description": "should generate a basic if/else if block",
       "angularCompilerOptions": {
         "_enabledBlockTypes": [
-          "if"
+ "if"
         ]
       },
       "inputFiles": [
@@ -150,13 +150,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "basic_if_else_if_template.js",
-              "generated": "basic_if_else_if.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "basic_if_else_if_template.js",
+     "generated": "basic_if_else_if.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -165,7 +165,7 @@
       "description": "should generate a nested if block",
       "angularCompilerOptions": {
         "_enabledBlockTypes": [
-          "if"
+ "if"
         ]
       },
       "inputFiles": [
@@ -173,13 +173,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "nested_if_template.js",
-              "generated": "nested_if.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "nested_if_template.js",
+     "generated": "nested_if.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -188,7 +188,7 @@
       "description": "should generate an if block using pipes in its conditions",
       "angularCompilerOptions": {
         "_enabledBlockTypes": [
-          "if"
+ "if"
         ]
       },
       "inputFiles": [
@@ -196,13 +196,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "if_with_pipe_template.js",
-              "generated": "if_with_pipe.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "if_with_pipe_template.js",
+     "generated": "if_with_pipe.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -211,7 +211,7 @@
       "description": "should generate an if block with an aliased expression",
       "angularCompilerOptions": {
         "_enabledBlockTypes": [
-          "if"
+ "if"
         ]
       },
       "inputFiles": [
@@ -219,13 +219,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "if_with_alias_template.js",
-              "generated": "if_with_alias.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "if_with_alias_template.js",
+     "generated": "if_with_alias.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -234,7 +234,7 @@
       "description": "should expose the alias to nested conditional blocks",
       "angularCompilerOptions": {
         "_enabledBlockTypes": [
-          "if"
+ "if"
         ]
       },
       "inputFiles": [
@@ -242,13 +242,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "if_nested_alias_template.js",
-              "generated": "if_nested_alias.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "if_nested_alias_template.js",
+     "generated": "if_nested_alias.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -257,7 +257,7 @@
       "description": "should expose the alias to nested event listeners",
       "angularCompilerOptions": {
         "_enabledBlockTypes": [
-          "if"
+ "if"
         ]
       },
       "inputFiles": [
@@ -265,13 +265,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "if_nested_alias_listeners_template.js",
-              "generated": "if_nested_alias_listeners.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "if_nested_alias_listeners_template.js",
+     "generated": "if_nested_alias_listeners.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -286,13 +286,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "basic_for_template.js",
-              "generated": "basic_for.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "basic_for_template.js",
+     "generated": "basic_for.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -307,13 +307,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "for_with_empty_template.js",
-              "generated": "for_with_empty.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "for_with_empty_template.js",
+     "generated": "for_with_empty.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -328,13 +328,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "for_track_by_index_template.js",
-              "generated": "for_track_by_index.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "for_track_by_index_template.js",
+     "generated": "for_track_by_index.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -349,13 +349,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "for_track_by_field_template.js",
-              "generated": "for_track_by_field.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "for_track_by_field_template.js",
+     "generated": "for_track_by_field.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -370,13 +370,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "nested_for_template.js",
-              "generated": "nested_for.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "nested_for_template.js",
+     "generated": "nested_for.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -391,13 +391,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "for_template_variables_template.js",
-              "generated": "for_template_variables.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "for_template_variables_template.js",
+     "generated": "for_template_variables.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -412,13 +412,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "for_aliased_template_variables_template.js",
-              "generated": "for_aliased_template_variables.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "for_aliased_template_variables_template.js",
+     "generated": "for_aliased_template_variables.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -433,13 +433,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "nested_for_template_variables_template.js",
-              "generated": "nested_for_template_variables.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "nested_for_template_variables_template.js",
+     "generated": "nested_for_template_variables.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -454,13 +454,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "for_template_variables_listener_template.js",
-              "generated": "for_template_variables_listener.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "for_template_variables_listener_template.js",
+     "generated": "for_template_variables_listener.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -475,13 +475,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "for_variables_expression_template.js",
-              "generated": "for_variables_expression.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "for_variables_expression_template.js",
+     "generated": "for_variables_expression.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -496,13 +496,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "for_data_slots_template.js",
-              "generated": "for_data_slots.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "for_data_slots_template.js",
+     "generated": "for_data_slots.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -517,13 +517,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "for_template_variables_scope_template.js",
-              "generated": "for_template_variables_scope.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "for_template_variables_scope_template.js",
+     "generated": "for_template_variables_scope.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -538,13 +538,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "for_template_track_method_root_template.js",
-              "generated": "for_template_track_method_root.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "for_template_track_method_root_template.js",
+     "generated": "for_template_track_method_root.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -559,13 +559,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "for_template_track_method_nested_template.js",
-              "generated": "for_template_track_method_nested.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "for_template_track_method_nested_template.js",
+     "generated": "for_template_track_method_nested.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -580,13 +580,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "for_pure_track_reuse_template.js",
-              "generated": "for_pure_track_reuse.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "for_pure_track_reuse_template.js",
+     "generated": "for_pure_track_reuse.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -601,13 +601,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "for_impure_track_reuse_template.js",
-              "generated": "for_impure_track_reuse.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "for_impure_track_reuse_template.js",
+     "generated": "for_impure_track_reuse.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -622,13 +622,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "for_track_literals_template.js",
-              "generated": "for_track_literals.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "for_track_literals_template.js",
+     "generated": "for_track_literals.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true

@@ -13,12 +13,12 @@ You can choose to run multiple animations in parallel, or run discrete animation
 
 The functions that control complex animation sequences are:
 
-| Functions                         | Details |
-|:---                               |:---     |
-| `query()`                         | Finds one or more inner HTML elements. |
-| `stagger()`                       | Applies a cascading delay to animations for multiple elements. |
+| Functions | Details |
+|:--- |:---     |
+| `query()` | Finds one or more inner HTML elements. |
+| `stagger()`        | Applies a cascading delay to animations for multiple elements. |
 | [`group()`](api/animations/group) | Runs multiple animation steps in parallel. |
-| `sequence()`                      | Runs animation steps one after another. |
+| `sequence()`       | Runs animation steps one after another. |
 
 <a id="complex-sequence"></a>
 
@@ -26,19 +26,19 @@ The functions that control complex animation sequences are:
 
 Most complex animations rely on the `query()` function to find child elements and apply animations to them, basic examples of such are:
 
-| Examples                               | Details |
-|:---                                    |:---     |
-| `query()` followed by `animate()`      | Used to query simple HTML elements and directly apply animations to them.                                                                                                                            |
+| Examples | Details |
+|:---      |:---     |
+| `query()` followed by `animate()`      | Used to query simple HTML elements and directly apply animations to them.    |
 | `query()` followed by `animateChild()` | Used to query child elements, which themselves have animations metadata applied to them and trigger such animation \(which would be otherwise be blocked by the current/parent element's animation\). |
 
 The first argument of `query()` is a [css selector](https://developer.mozilla.org/docs/Web/CSS/CSS_Selectors) string which can also contain the following Angular-specific tokens:
 
-| Tokens                     | Details |
-|:---                        |:---     |
-| `:enter` <br /> `:leave`   | For entering/leaving elements.               |
-| `:animating`               | For elements currently animating.            |
+| Tokens      | Details |
+|:---|:---     |
+| `:enter` <br /> `:leave`   | For entering/leaving elements.|
+| `:animating`| For elements currently animating.   |
 | `@*` <br /> `@triggerName` | For elements with any—or a specific—trigger. |
-| `:self`                    | The animating element itself.                |
+| `:self`     | The animating element itself. |
 
 <div class="callout is-helpful">
 

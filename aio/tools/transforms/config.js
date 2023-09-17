@@ -23,7 +23,7 @@ const API_SOURCE_PATH = resolve(PROJECT_ROOT, 'packages');
 function requireFolder(dirname, folderPath) {
   const absolutePath = resolve(dirname, folderPath);
   return readdirSync(absolutePath)
-    .filter(p => !/[._]spec\.js$/.test(p))  // ignore spec files
-    .map(p => require(resolve(absolutePath, p)));
+.filter(p => !/[._]spec\.js$/.test(p))  // ignore spec files
+.map(p => require(resolve(absolutePath, p)));
 }
 module.exports = { BAZEL_OUTPUT_PATH, PROJECT_ROOT, AIO_PATH, TEMPLATES_PATH, API_TEMPLATES_PATH, CONTENTS_PATH, GUIDE_EXAMPLES_PATH, SRC_PATH, OUTPUT_PATH, DOCS_OUTPUT_PATH, API_SOURCE_PATH, requireFolder };

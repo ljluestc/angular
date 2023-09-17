@@ -7,10 +7,7 @@ import {
 import { Observable, of, startWith, tap } from 'rxjs';
 
 import { RequestCache } from '../request-cache.service';
-import { searchUrl } from '../package-search/package-search.service';
-
-
-/**
+import { searchUrl } from '../package-search/package-search.service';/**
  * If request is cacheable (e.g., package search) and
  * response is in cache return the cached response as observable.
  * If has 'x-refresh' header that is true,
@@ -46,10 +43,7 @@ export class CachingInterceptor implements HttpInterceptor {
     // #enddocregion intercept-refresh
   }
 }
-// #enddocregion v1
-
-
-/** Is this request cacheable? */
+// #enddocregion v1/** Is this request cacheable? */
 function isCacheable(req: HttpRequest<any>) {
   // Only GET requests are cacheable
   return req.method === 'GET' &&

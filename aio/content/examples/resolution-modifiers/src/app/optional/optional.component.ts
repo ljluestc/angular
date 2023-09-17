@@ -17,6 +17,3 @@ export class OptionalComponent {
 // The OptionalService isn't provided here, in the @Injectable()
 // providers array, or in the NgModule. If you remove @Optional()
 // from the constructor, you'll get an error.
-
-
-

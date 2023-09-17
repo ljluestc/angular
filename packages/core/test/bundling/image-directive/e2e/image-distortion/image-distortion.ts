@@ -4,12 +4,8 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-import {NgOptimizedImage} from '@angular/common';
-import {Component} from '@angular/core';
-
-@Component({
+ */import {NgOptimizedImage} from '@angular/common';
+import {Component} from '@angular/core';@Component({
   selector: 'image-distortion-passing',
   standalone: true,
   imports: [NgOptimizedImage],
@@ -85,24 +81,24 @@ export class ImageDistortionPassingComponent {
      <br>
      <!-- Image styling is causing distortion -->
      <div style="width: 300px; height: 300px">
-       <img ngSrc="/e2e/b.png" width="250" height="250" style="width: 10%" disableOptimizedSrcset>
-       <img ngSrc="/e2e/b.png" width="250" height="250" style="max-height: 10%" disableOptimizedSrcset>
-       <!-- Images dimensions are incorrect AND image styling is incorrect -->
-       <img ngSrc="/e2e/b.png" width="150" height="250" style="max-height: 10%" disableOptimizedSrcset>
+ <img ngSrc="/e2e/b.png" width="250" height="250" style="width: 10%" disableOptimizedSrcset>
+ <img ngSrc="/e2e/b.png" width="250" height="250" style="max-height: 10%" disableOptimizedSrcset>
+ <!-- Images dimensions are incorrect AND image styling is incorrect -->
+ <img ngSrc="/e2e/b.png" width="150" height="250" style="max-height: 10%" disableOptimizedSrcset>
      </div>
      <!-- Image is distorted but padding is applied to trick clientWidth -->
      <img
-       ngSrc="/e2e/logo-500w.jpg"
-       width="500"
-       height="500"
-       priority
-       style="width: 100px; height: 500px; padding-left: 400px; box-sizing: content-box">
+ ngSrc="/e2e/logo-500w.jpg"
+ width="500"
+ height="500"
+ priority
+ style="width: 100px; height: 500px; padding-left: 400px; box-sizing: content-box">
      <img
-       ngSrc="/e2e/logo-500w.jpg"
-       width="500"
-       height="500"
-       priority
-       style="width: 400px; height: 400px; padding-left: 200px; box-sizing: border-box">
+ ngSrc="/e2e/logo-500w.jpg"
+ width="500"
+ height="500"
+ priority
+ style="width: 400px; height: 400px; padding-left: 200px; box-sizing: border-box">
      `,
 })
 export class ImageDistortionFailingComponent {

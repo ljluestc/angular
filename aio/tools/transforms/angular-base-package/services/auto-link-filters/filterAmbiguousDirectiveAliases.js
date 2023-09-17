@@ -7,20 +7,20 @@
  */
 module.exports = function filterAmbiguousDirectiveAliases() {
   return (docs, words, index) => {
-    const word = words[index];
+const word = words[index];
 
-    // we are only interested if there are multiple matching docs
-    if (docs.length > 1) {
-      if (docs.every(doc =>
-        // We are only interested if they are all either directives or components
-        (doc.docType === 'directive' || doc.docType === 'component') &&
-        // and the matching word is in the selector for all of them
-        doc[doc.docType + 'Options'].selector.indexOf(word) != -1
-      )) {
-        // find the directive whose class name matches the word (case-insensitive)
-        return docs.filter(doc => doc.name.toLowerCase() === word.toLowerCase());
-      }
-    }
-    return docs;
+// we are only interested if there are multiple matching docs
+if (docs.length > 1) {
+  if (docs.every(doc =>
+// We are only interested if they are all either directives or components
+(doc.docType === 'directive' || doc.docType === 'component') &&
+// and the matching word is in the selector for all of them
+doc[doc.docType + 'Options'].selector.indexOf(word) != -1
+  )) {
+// find the directive whose class name matches the word (case-insensitive)
+return docs.filter(doc => doc.name.toLowerCase() === word.toLowerCase());
+  }
+}
+return docs;
   };
 };

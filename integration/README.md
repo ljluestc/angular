@@ -53,10 +53,7 @@ directly from `file:../../node_modules`.
 > Always ensure that `yarn.lock` files are up-to-date with the corresponding `package.json` files
 > (wrt the non-local dependencies - i.e. dependencies whose versions do not start with `file:`).
 >
-> You can update a `yarn.lock` file by running `yarn install` in the project subdirectory.
-
-
-## Running integration tests
+> You can update a `yarn.lock` file by running `yarn install` in the project subdirectory.## Running integration tests
 
 ```
 $ ./integration/run_tests.sh
@@ -121,9 +118,9 @@ The manually configured ports are as follows:
 
 | TEST | PORT | CONFIGURATION |
 | ---------------------------- | ---------------- | -------------------------------------- |
-| dynamic-compiler             |      4201        | /e2e/browser.config.json: "port": 4201 |
-| ng_elements                  |      4205        | /e2e/browser.config.json: "port": 4205 |
-| platform-server              |      4206        | /src/server.ts: app.listen(4206,...    |
+| dynamic-compiler    |      4201        | /e2e/browser.config.json: "port": 4201 |
+| ng_elements|      4205        | /e2e/browser.config.json: "port": 4205 |
+| platform-server     |      4206        | /src/server.ts: app.listen(4206,...    |
 
 **Note**: This will become obsolete soon once we start running integration tests with RBE and within a sandbox environment.
 

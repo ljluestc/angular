@@ -8,70 +8,67 @@ const mapHeadings = require('./plugins/mapHeadings');
  * @description
  * Render the markdown in the given string as HTML.
  * @param headingMap A map of headings to convert.
- *                   E.g. `{h3: 'h4'} will map heading 3 level into heading 4.
+ *   E.g. `{h3: 'h4'} will map heading 3 level into heading 4.
  */
 module.exports = function renderMarkdown() {
   return function renderMarkdownImpl(content, headingMap) {
 
-    const renderer = remark()
-      .use(inlineTagDefs)
-      .use(noIndentedCodeBlocks)
-      .use(plainHTMLBlocks)
-      // USEFUL DEBUGGING CODE
-      // .use(() => tree => {
-      //   console.log(require('util').inspect(tree, { colors: true, depth: 4 }));
-      // })
-      .use(mapHeadings(headingMap))
-      .use(html, { handlers: { code }, sanitize: false });
+const renderer = remark()
+  .use(inlineTagDefs)
+  .use(noIndentedCodeBlocks)
+  .use(plainHTMLBlocks)
+  // USEFUL DEBUGGING CODE
+  // .use(() => tree => {
+  //   console.log(require('util').inspect(tree, { colors: true, depth: 4 }));
+  // })
+  .use(mapHeadings(headingMap))
+  .use(html, { handlers: { code }, sanitize: false });
 
-    return renderer.processSync(content).toString();
+return renderer.processSync(content).toString();
   };
 
   /**
    * Teach remark not to render indented codeblocks
    */
   function noIndentedCodeBlocks() {
-    const blockMethods = this.Parser.prototype.blockMethods;
-    blockMethods.splice(blockMethods.indexOf('indentedCode'), 1);
-  }
-
-
-  /**
+const blockMethods = this.Parser.prototype.blockMethods;
+blockMethods.splice(blockMethods.indexOf('indentedCode'), 1);
+  }  /**
    * Teach remark about inline tags, so that it neither wraps block level
    * tags in paragraphs nor processes the text within the tag.
    */
   function inlineTagDefs() {
-    const Parser = this.Parser;
-    const inlineTokenizers = Parser.prototype.inlineTokenizers;
-    const inlineMethods = Parser.prototype.inlineMethods;
-    const blockTokenizers = Parser.prototype.blockTokenizers;
-    const blockMethods = Parser.prototype.blockMethods;
+const Parser = this.Parser;
+const inlineTokenizers = Parser.prototype.inlineTokenizers;
+const inlineMethods = Parser.prototype.inlineMethods;
+const blockTokenizers = Parser.prototype.blockTokenizers;
+const blockMethods = Parser.prototype.blockMethods;
 
-    blockTokenizers.inlineTag = tokenizeInlineTag;
-    blockMethods.splice(blockMethods.indexOf('paragraph'), 0, 'inlineTag');
+blockTokenizers.inlineTag = tokenizeInlineTag;
+blockMethods.splice(blockMethods.indexOf('paragraph'), 0, 'inlineTag');
 
-    inlineTokenizers.inlineTag = tokenizeInlineTag;
-    inlineMethods.splice(blockMethods.indexOf('text'), 0, 'inlineTag');
-    tokenizeInlineTag.notInLink = true;
-    tokenizeInlineTag.locator = inlineTagLocator;
+inlineTokenizers.inlineTag = tokenizeInlineTag;
+inlineMethods.splice(blockMethods.indexOf('text'), 0, 'inlineTag');
+tokenizeInlineTag.notInLink = true;
+tokenizeInlineTag.locator = inlineTagLocator;
 
-    function tokenizeInlineTag(eat, value, silent) {
-      const match = /^\{@[^\s}]+[^}]*\}/.exec(value);
+function tokenizeInlineTag(eat, value, silent) {
+  const match = /^\{@[^\s}]+[^}]*\}/.exec(value);
 
-      if (match) {
-        if (silent) {
-          return true;
-        }
-        return eat(match[0])({
-          'type': 'inlineTag',
-          'value': match[0]
-        });
-      }
-    }
+  if (match) {
+if (silent) {
+  return true;
+}
+return eat(match[0])({
+  'type': 'inlineTag',
+  'value': match[0]
+});
+  }
+}
 
-    function inlineTagLocator(value, fromIndex) {
-      return value.indexOf('{@', fromIndex);
-    }
+function inlineTagLocator(value, fromIndex) {
+  return value.indexOf('{@', fromIndex);
+}
   }
 
   /**
@@ -79,37 +76,37 @@ module.exports = function renderMarkdown() {
    */
   function plainHTMLBlocks() {
 
-    const plainBlocks = ['code-example', 'code-tabs'];
+const plainBlocks = ['code-example', 'code-tabs'];
 
-    // Create matchers for each block
-    const anyBlockMatcher = new RegExp('^' + createOpenMatcher(`(${plainBlocks.join('|')})`));
+// Create matchers for each block
+const anyBlockMatcher = new RegExp('^' + createOpenMatcher(`(${plainBlocks.join('|')})`));
 
-    const Parser = this.Parser;
-    const blockTokenizers = Parser.prototype.blockTokenizers;
-    const blockMethods = Parser.prototype.blockMethods;
+const Parser = this.Parser;
+const blockTokenizers = Parser.prototype.blockTokenizers;
+const blockMethods = Parser.prototype.blockMethods;
 
-    blockTokenizers.plainHTMLBlocks = tokenizePlainHTMLBlocks;
-    blockMethods.splice(blockMethods.indexOf('html'), 0, 'plainHTMLBlocks');
+blockTokenizers.plainHTMLBlocks = tokenizePlainHTMLBlocks;
+blockMethods.splice(blockMethods.indexOf('html'), 0, 'plainHTMLBlocks');
 
-    function tokenizePlainHTMLBlocks(eat, value, silent) {
-      const openMatch = anyBlockMatcher.exec(value);
-      if (openMatch) {
-        const blockName = openMatch[1];
-        try {
-          const fullMatch = matchRecursiveRegExp(value, createOpenMatcher(blockName), createCloseMatcher(blockName))[0];
-          if (silent || !fullMatch) {
-            // either we are not eating (silent) or the match failed
-            return !!fullMatch;
-          }
-          return eat(fullMatch[0])({
-            type: 'html',
-            value: fullMatch[0]
-          });
-        } catch(e) {
-          this.file.fail('Unmatched plain HTML block tag ' + e.message);
-        }
-      }
-    }
+function tokenizePlainHTMLBlocks(eat, value, silent) {
+  const openMatch = anyBlockMatcher.exec(value);
+  if (openMatch) {
+const blockName = openMatch[1];
+try {
+  const fullMatch = matchRecursiveRegExp(value, createOpenMatcher(blockName), createCloseMatcher(blockName))[0];
+  if (silent || !fullMatch) {
+// either we are not eating (silent) or the match failed
+return !!fullMatch;
+  }
+  return eat(fullMatch[0])({
+type: 'html',
+value: fullMatch[0]
+  });
+} catch(e) {
+  this.file.fail('Unmatched plain HTML block tag ' + e.message);
+}
+  }
+}
   }
 };
 
@@ -149,12 +146,12 @@ function matchRecursiveRegExp(str, left, right, flags) {
   const results = [];
 
   for (var i = 0; i < matchPos.length; ++i) {
-    results.push([
-      str.slice(matchPos[i].wholeMatch.start, matchPos[i].wholeMatch.end),
-      str.slice(matchPos[i].match.start, matchPos[i].match.end),
-      str.slice(matchPos[i].left.start, matchPos[i].left.end),
-      str.slice(matchPos[i].right.start, matchPos[i].right.end)
-    ]);
+results.push([
+  str.slice(matchPos[i].wholeMatch.start, matchPos[i].wholeMatch.end),
+  str.slice(matchPos[i].match.start, matchPos[i].match.end),
+  str.slice(matchPos[i].left.start, matchPos[i].left.end),
+  str.slice(matchPos[i].right.start, matchPos[i].right.end)
+]);
   }
   return results;
 }
@@ -170,30 +167,30 @@ function rgxFindMatchPos(str, left, right, flags) {
   let count = 0;
 
   while ((match = bothMatcher.exec(str))) {
-    if (leftMatcher.test(match[0])) {
-      if (!(count++)) {
-        index = bothMatcher.lastIndex;
-        start = index - match[0].length;
-      }
-    } else if (count) {
-      if (!--count) {
-        end = match.index + match[0].length;
-        var obj = {
-          left: {start: start, end: index},
-          match: {start: index, end: match.index},
-          right: {start: match.index, end: end},
-          wholeMatch: {start: start, end: end}
-        };
-        pos.push(obj);
-        if (!global) {
-          return pos;
-        }
-      }
-    }
+if (leftMatcher.test(match[0])) {
+  if (!(count++)) {
+index = bothMatcher.lastIndex;
+start = index - match[0].length;
+  }
+} else if (count) {
+  if (!--count) {
+end = match.index + match[0].length;
+var obj = {
+  left: {start: start, end: index},
+  match: {start: index, end: match.index},
+  right: {start: match.index, end: end},
+  wholeMatch: {start: start, end: end}
+};
+pos.push(obj);
+if (!global) {
+  return pos;
+}
+  }
+}
   }
 
   if (count) {
-    throw new Error(str.slice(start, index));
+throw new Error(str.slice(start, index));
   }
 
   return pos;

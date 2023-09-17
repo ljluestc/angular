@@ -42,9 +42,9 @@ export class ConfigComponent {
     this.configService.getConfig_1()
   // #docregion  typed_response, v1
       .subscribe(data => this.config = {
-          heroesUrl: data.heroesUrl,
-          textfile:  data.textfile,
-          date: data.date,
+ heroesUrl: data.heroesUrl,
+ textfile:  data.textfile,
+ date: data.date,
       });
   }
   // #enddocregion  typed_response, v1
@@ -53,16 +53,12 @@ export class ConfigComponent {
     this.configService.getConfig_untyped_response()
      // #docregion untyped_response
       .subscribe(data => this.config = {
-          heroesUrl: (data as any).heroesUrl,
-          textfile:  (data as any).textfile,
-          date: (data as any).date,
+ heroesUrl: (data as any).heroesUrl,
+ textfile:  (data as any).textfile,
+ date: (data as any).date,
       });
     }
-    // #enddocregion untyped_response
-
-
-
-  showConfig_v2() {
+    // #enddocregion untyped_response  showConfig_v2() {
     this.configService.getConfig()
   // #docregion v2
       // clone the data object, using its known Config shape
@@ -78,7 +74,7 @@ export class ConfigComponent {
         // display its headers
         const keys = resp.headers.keys();
         this.headers = keys.map(key =>
-          `${key}: ${resp.headers.get(key)}`);
+ `${key}: ${resp.headers.get(key)}`);
 
         // access the body directly, which is typed as `Config`.
         this.config = { ...resp.body! };

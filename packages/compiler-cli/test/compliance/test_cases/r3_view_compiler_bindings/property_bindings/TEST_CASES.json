@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect property binding",
-          "files": [
-            "bind.js"
-          ]
+ "failureMessage": "Incorrect property binding",
+ "files": [
+   "bind.js"
+ ]
         }
       ]
     },
@@ -22,10 +22,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect interpolated property binding",
-          "files": [
-            "interpolation.js"
-          ]
+ "failureMessage": "Incorrect interpolated property binding",
+ "files": [
+   "interpolation.js"
+ ]
         }
       ]
     },
@@ -36,10 +36,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect handling of interpolated properties",
-          "files": [
-            "interpolated_properties.js"
-          ]
+ "failureMessage": "Incorrect handling of interpolated properties",
+ "files": [
+   "interpolated_properties.js"
+ ]
         }
       ]
     },
@@ -50,10 +50,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "special_property_remapping.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "special_property_remapping.js"
+ ]
         }
       ]
     },
@@ -64,10 +64,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "temporary_variables.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "temporary_variables.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -79,10 +79,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_multiple_bindings.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_multiple_bindings.js"
+ ]
         }
       ]
     },
@@ -93,10 +93,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_multiple_bindings_mixed.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_multiple_bindings_mixed.js"
+ ]
         }
       ]
     },
@@ -107,10 +107,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_bindings_with_interpolations.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_bindings_with_interpolations.js"
+ ]
         }
       ]
     },
@@ -121,10 +121,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_synthetic_bindings.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_synthetic_bindings.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -136,10 +136,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_ngtemplate_bindings.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_ngtemplate_bindings.js"
+ ]
         }
       ]
     },
@@ -150,10 +150,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_multiple_bindings_for_multiple_elements.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_multiple_bindings_for_multiple_elements.js"
+ ]
         }
       ]
     },
@@ -164,10 +164,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_multiple_bindings_with_child_elements.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_multiple_bindings_with_child_elements.js"
+ ]
         }
       ]
     }

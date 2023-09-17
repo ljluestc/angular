@@ -41,10 +41,7 @@ describe('ApiListComponent', () => {
       expect(filtered.length).withContext('expected something').toBeGreaterThan(0);
       expect(filtered.every(section => section.items?.every(itemTest))).withContext(label).toBe(true);
     });
-  }
-
-
-  describe('#filteredSections', () => {
+  }  describe('#filteredSections', () => {
 
     beforeEach(() => {
       fixture.detectChanges();
@@ -75,8 +72,8 @@ describe('ApiListComponent', () => {
       it('should null if there are no matching items and the section itself does not match', () => {
         component.setQuery('core');
         component.filteredSections.subscribe(filtered => {
-          const commonSection = filtered.find(section => section.name === 'common');
-          expect(commonSection?.items).toBe(null);
+ const commonSection = filtered.find(section => section.name === 'common');
+ expect(commonSection?.items).toBe(null);
         });
       });
 

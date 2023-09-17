@@ -52,7 +52,7 @@ export class ApiService implements OnDestroy {
     return this._sections.pipe(tap(sections => {
       sections.forEach(section => {
         section.deprecated = !!section.items &&
-            section.items.every(item => item.stability === 'deprecated');
+   section.items.every(item => item.stability === 'deprecated');
       });
     }));
   }
@@ -81,9 +81,9 @@ export class ApiService implements OnDestroy {
       .subscribe({
         next: sections => this.sectionsSubject.next(sections),
         error: (err: HttpErrorResponse) => {
-          // TODO: handle error
-          this.logger.error(err);
-          throw err; // rethrow for now.
+ // TODO: handle error
+ this.logger.error(err);
+ throw err; // rethrow for now.
         },
       });
   }

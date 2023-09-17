@@ -130,8 +130,8 @@ export class CodeComponent implements OnChanges {
 
     ((this.language === 'none' ? skipPrettify : prettifyCode) as Observable<unknown>)
         .subscribe({
-          next: () => this.codeFormatted.emit(),
-          error: () => { /* ignore failure to format */ },
+ next: () => this.codeFormatted.emit(),
+ error: () => { /* ignore failure to format */ },
         });
   }
 

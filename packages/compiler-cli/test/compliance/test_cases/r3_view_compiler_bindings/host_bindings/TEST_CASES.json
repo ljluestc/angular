@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid host binding code",
-          "files": [
-            "host_bindings.js"
-          ]
+ "failureMessage": "Invalid host binding code",
+ "files": [
+   "host_bindings.js"
+ ]
         }
       ]
     },
@@ -22,10 +22,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid host binding code",
-          "files": [
-            "host_bindings_with_temporaries.js"
-          ]
+ "failureMessage": "Invalid host binding code",
+ "files": [
+   "host_bindings_with_temporaries.js"
+ ]
         }
       ]
     },
@@ -36,10 +36,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid host binding code",
-          "files": [
-            "host_bindings_with_pure_functions.js"
-          ]
+ "failureMessage": "Invalid host binding code",
+ "files": [
+   "host_bindings_with_pure_functions.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -51,10 +51,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid host attribute code",
-          "files": [
-            "host_attribute_bindings.js"
-          ]
+ "failureMessage": "Invalid host attribute code",
+ "files": [
+   "host_attribute_bindings.js"
+ ]
         }
       ]
     },
@@ -65,10 +65,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid host attribute code",
-          "files": [
-            "host_attributes.js"
-          ]
+ "failureMessage": "Invalid host attribute code",
+ "files": [
+   "host_attributes.js"
+ ]
         }
       ]
     },
@@ -79,10 +79,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid host attribute code",
-          "files": [
-            "host_attributes_with_classes_and_styles.js"
-          ]
+ "failureMessage": "Invalid host attribute code",
+ "files": [
+   "host_attributes_with_classes_and_styles.js"
+ ]
         }
       ]
     },
@@ -93,10 +93,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_multiple_property_bindings.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_multiple_property_bindings.js"
+ ]
         }
       ]
     },
@@ -107,10 +107,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_property_bindings_all.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_property_bindings_all.js"
+ ]
         }
       ]
     },
@@ -121,10 +121,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_property_bindings_mixed.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_property_bindings_mixed.js"
+ ]
         }
       ]
     },
@@ -135,10 +135,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_synthetic_properties.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_synthetic_properties.js"
+ ]
         }
       ]
     },
@@ -149,10 +149,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_multiple_attribute_bindings.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_multiple_attribute_bindings.js"
+ ]
         }
       ]
     },
@@ -163,10 +163,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_attribute_bindings_all.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_attribute_bindings_all.js"
+ ]
         }
       ]
     },
@@ -177,10 +177,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_attribute_bindings_mixed.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_attribute_bindings_mixed.js"
+ ]
         }
       ]
     },
@@ -191,10 +191,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_multiple_listeners.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_multiple_listeners.js"
+ ]
         }
       ]
     },
@@ -205,10 +205,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_synthetic_listeners.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_synthetic_listeners.js"
+ ]
         }
       ]
     },
@@ -219,10 +219,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_synthetic_listeners_mixed.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_synthetic_listeners_mixed.js"
+ ]
         }
       ]
     },
@@ -233,10 +233,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid host binding code",
-          "files": [
-            "host_bindings_primitive_names.js"
-          ]
+ "failureMessage": "Invalid host binding code",
+ "files": [
+   "host_bindings_primitive_names.js"
+ ]
         }
       ]
     },
@@ -247,10 +247,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid host binding code",
-          "files": [
-            "host_bindings_quoted_names.js"
-          ]
+ "failureMessage": "Invalid host binding code",
+ "files": [
+   "host_bindings_quoted_names.js"
+ ]
         }
       ]
     }

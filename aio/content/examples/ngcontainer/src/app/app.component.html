@@ -145,8 +145,8 @@
 <p>
   <label for="default-traits" (change)="traitPicker.value=showDefaultTraits ? 'loyal' : heroTraits[0]">
     <input id="default-traits" type="checkbox"
-          [checked]="showDefaultTraits"
-          (change)="showDefaultTraits=!showDefaultTraits">Show default traits
+ [checked]="showDefaultTraits"
+ (change)="showDefaultTraits=!showDefaultTraits">Show default traits
   </label>
 </p>
 
@@ -162,10 +162,7 @@
   <option *ngFor="let trait of heroTraits" [value]="trait">
     {{ trait | uppercase }}
   </option>
-</select>
-
-
-<p>Options with &lt;span&gt;</p>
+</select><p>Options with &lt;span&gt;</p>
 <select>
   <!-- Default traits are always excluded because intermediate <span> is illegal -->
   <span *ngIf="showDefaultTraits">

@@ -31,8 +31,8 @@
     <tbody>
       <tr *ngFor="let event of events">
         <th [ngSwitch]="!!event.linkUrl">
-          <span *ngSwitchCase="false">{{ event.name }}</span>
-          <a *ngSwitchDefault href="{{ event.linkUrl }}">{{ event.name }}</a>
+ <span *ngSwitchCase="false">{{ event.name }}</span>
+ <a *ngSwitchDefault href="{{ event.linkUrl }}">{{ event.name }}</a>
         </th>
         <td>{{ event.date.start }}</td>
       </tr>

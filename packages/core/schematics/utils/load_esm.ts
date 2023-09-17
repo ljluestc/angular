@@ -4,11 +4,7 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-import {URL} from 'url';
-
-/**
+ */import {URL} from 'url';/**
  * This uses a dynamic import to load a module which may be ESM.
  * CommonJS code can load ESM code via a dynamic import. Unfortunately, TypeScript
  * will currently, unconditionally downlevel dynamic import into a require call.
@@ -23,18 +19,14 @@ import {URL} from 'url';
  */
 export async function loadEsmModule<T>(modulePath: string|URL): Promise<T> {
   const namespaceObject =
-      (await new Function('modulePath', `return import(modulePath);`)(modulePath));
-
-  // If it is not ESM then the values needed will be stored in the `default` property.
+(await new Function('modulePath', `return import(modulePath);`)(modulePath));  // If it is not ESM then the values needed will be stored in the `default` property.
   // TODO_ESM: This can be removed once `@angular/*` packages are ESM only.
   if (namespaceObject.default) {
     return namespaceObject.default;
   } else {
     return namespaceObject;
   }
-}
-
-/**
+}/**
  * Attempt to load the new `@angular/compiler-cli/private/migrations` entry. If not yet present
  * the previous deep imports are used to constructor an equivalent object.
  *

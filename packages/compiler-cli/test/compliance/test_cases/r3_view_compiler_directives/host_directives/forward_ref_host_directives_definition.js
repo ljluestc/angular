@@ -1,10 +1,10 @@
 MyComponent.ɵcmp = /*@__PURE__*/ $r3$.ɵɵdefineComponent({
   type: MyComponent,
   selectors: [
-    ["my-component"]
+["my-component"]
   ],
   features: [$r3$.ɵɵHostDirectivesFeature(function () {
-    return [DirectiveB];
+return [DirectiveB];
   })],
   decls: 0,
   vars: 0,
@@ -15,16 +15,16 @@ DirectiveB.ɵdir = /*@__PURE__*/ $r3$.ɵɵdefineDirective({
   type: DirectiveB,
   standalone: true,
   features: [$r3$.ɵɵHostDirectivesFeature(function () {
-    return [{
-      directive: DirectiveA,
-      inputs: ["value", "value"]
-    }];
+return [{
+  directive: DirectiveA,
+  inputs: ["value", "value"]
+}];
   })]
 });…
 DirectiveA.ɵdir = /*@__PURE__*/ $r3$.ɵɵdefineDirective({
   type: DirectiveA,
   inputs: {
-    value: "value"
+value: "value"
   },
   standalone: true
 });

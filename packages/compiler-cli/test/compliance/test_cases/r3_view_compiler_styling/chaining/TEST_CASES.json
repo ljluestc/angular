@@ -6,8 +6,8 @@
       "inputFiles": ["class_bindings.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["class_bindings.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["class_bindings.js"]
         }
       ]
     },
@@ -16,8 +16,8 @@
       "inputFiles": ["style_bindings.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["style_bindings.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["style_bindings.js"]
         }
       ]
     },
@@ -26,8 +26,8 @@
       "inputFiles": ["mixed_bindings.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["mixed_bindings.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["mixed_bindings.js"]
         }
       ]
     },
@@ -36,8 +36,8 @@
       "inputFiles": ["interpolations_equal_arity.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["interpolations_equal_arity.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["interpolations_equal_arity.js"]
         }
       ]
     },
@@ -46,8 +46,8 @@
       "inputFiles": ["interpolations_different_arity.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["interpolations_different_arity.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["interpolations_different_arity.js"]
         }
       ]
     },
@@ -56,8 +56,8 @@
       "inputFiles": ["break_different_instructions.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["break_different_instructions.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["break_different_instructions.js"]
         }
       ]
     },
@@ -66,8 +66,8 @@
       "inputFiles": ["break_different_interpolation_instructions.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["break_different_interpolation_instructions.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["break_different_interpolation_instructions.js"]
         }
       ]
     },
@@ -76,8 +76,8 @@
       "inputFiles": ["host_bindings.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["host_bindings.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["host_bindings.js"]
         }
       ]
     }

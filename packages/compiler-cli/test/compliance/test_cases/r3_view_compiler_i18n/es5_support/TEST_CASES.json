@@ -11,10 +11,10 @@
       ],
       "expectations": [
         {
-          "extraChecks": [
-            "verifyPlaceholdersIntegrity",
-            "verifyUniqueConsts"
-          ]
+ "extraChecks": [
+   "verifyPlaceholdersIntegrity",
+   "verifyUniqueConsts"
+ ]
         }
       ],
       "skipForTemplatePipeline": true

@@ -2,7 +2,7 @@ module.exports = function removeEslintComments(input, fileType) {
   const regexForFileType = regexesForFileTypes[fileType];
 
   if (!input || !regexForFileType) {
-    return input;
+return input;
   }
 
   return input.replace(regexForFileType, '');

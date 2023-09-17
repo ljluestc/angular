@@ -122,10 +122,7 @@ v16 - v19
 | `@angular/platform-server`          | [`PlatformConfig.baseUrl` and `PlatformConfig.useAbsoluteUrl` config options](api/platform-server/PlatformConfig) | v16           | v18               |
 | `@angular/platform-server`          | [`platformDynamicServer`](api/platform-server/platformDynamicServer) | v16           | v18               |
 | `@angular/platform-browser`         | [`BrowserModule.withServerTransition`](api/platform-browser/BrowserModule#withservertransition)            | v16           | v18         |
-| `@angular/platform-browser`         | [`makeStateKey`, `StateKey` and `TransferState`](#platform-browser), symbols were moved to `@angular/core`                                        | v16           | v18         |
-
-
-### Deprecated features that can be removed in v19 or later
+| `@angular/platform-browser`         | [`makeStateKey`, `StateKey` and `TransferState`](#platform-browser), symbols were moved to `@angular/core`                                        | v16           | v18         |### Deprecated features that can be removed in v19 or later
 
 | Area                                | API or Feature                                                                                             | Deprecated in | May be removed in |
 |:---                                 |:---                                                                                                        |:---           |:---               |
@@ -186,10 +183,7 @@ In the [API reference section](api) of this site, deprecated APIs are indicated 
 | [`providedIn`](api/core/Injectable#providedIn) with NgModule | Prefer `'root'` providers, or use NgModule `providers` if scoping to an NgModule is necessary | v15 | none |
 | [`providedIn: 'any'`](api/core/Injectable#providedIn) | none | v15 | This option has confusing semantics and nearly zero usage. |
 | [`EnvironmentInjector.runInContext`](api/core/EnvironmentInjector#runInContext) | `runInInjectionContext`  | v16 | `runInInjectionContext` is a more flexible operation which supports element injectors as well |
-| [`@Component.moduleId`](api/core/Component#moduleId) | none | v16 |
-
-
-<a id="testing"></a>
+| [`@Component.moduleId`](api/core/Component#moduleId) | none | v16 |<a id="testing"></a>
 
 ### &commat;angular/core/testing
 
@@ -207,10 +201,7 @@ In the [API reference section](api) of this site, deprecated APIs are indicated 
 | [`RouterLinkWithHref` directive](api/router/RouterLinkWithHref) | Use `RouterLink` instead. | v15                   | The `RouterLinkWithHref` directive code was merged into `RouterLink`. Now the `RouterLink` directive can be used for all elements that have `routerLink` attribute. |
 | [`provideRoutes` function](api/router/provideRoutes) | Use `ROUTES` `InjectionToken` instead. | v15                   | The `provideRoutes` helper function is minimally useful and can be unintentionally used instead of `provideRouter` due to similar spelling. |
 | [`setupTestingRouter` function](api/router/testing/setupTestingRouter) | Use `provideRouter` or `RouterModule` instead. | v15.1                   | The `setupTestingRouter` function is not necessary. The `Router` is initialized based on the DI configuration in tests as it would be in production. |
-| [class and `InjectionToken` guards and resolvers](api/router/DeprecatedGuard) | Use plain JavaScript functions instead. | v15.2                   | Functional guards are simpler and more powerful than class and token-based guards. |
-
-
-<a id="platform-browser"></a>
+| [class and `InjectionToken` guards and resolvers](api/router/DeprecatedGuard) | Use plain JavaScript functions instead. | v15.2                   | Functional guards are simpler and more powerful than class and token-based guards. |<a id="platform-browser"></a>
 
 ### &commat;angular/platform-browser
 
@@ -235,10 +226,7 @@ In the [API reference section](api) of this site, deprecated APIs are indicated 
 |:---                                                              |:---                                                |:---                   |:---     |
 | [`ServerTransferStateModule`](api/platform-server/ServerTransferStateModule) | No replacement needed.  | v14.1                   | The `TransferState` class is available for injection without importing additional modules during server side rendering, when `ServerModule` is imported or `renderApplication` function is used for bootstrap. |
 | [`PlatformConfig.baseUrl` and `PlatformConfig.useAbsoluteUrl` config options](api/platform-server/PlatformConfig) | none                    | v16                   | This was previously unused.                   |
-| [`platformDynamicServer`](api/platform-server/platformDynamicServer) | Import `@angular/compiler` and replace the usage with `platformServer` instead. | v16                   | This is done to decrease the server bundle size for AOT builds.                   |
-
-
-<a id="forms"></a>
+| [`platformDynamicServer`](api/platform-server/platformDynamicServer) | Import `@angular/compiler` and replace the usage with `platformServer` instead. | v16                   | This is done to decrease the server bundle size for AOT builds.                   |<a id="forms"></a>
 
 ### &commat;angular/forms
 
@@ -360,10 +348,7 @@ You can choose to silence this warning by configuring `ReactiveFormsModule` at i
 <code-example path="deprecation-guide/src/app/app.module.ts" region="reactive-form-no-warning"></code-example>
 
 Alternatively, you can choose to surface a separate warning for each instance of this pattern with a configuration value of `"always"`.
-This may help to track down where in the code the pattern is being used as the code is being updated.
-
-
-<a id="router-class-and-injection-token-guards"></a>
+This may help to track down where in the code the pattern is being used as the code is being updated.<a id="router-class-and-injection-token-guards"></a>
 
 ### Router class and InjectionToken guards and resolvers
 

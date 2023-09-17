@@ -33,7 +33,7 @@ describe('TopMenuComponent', () => {
   it('should create an item for each navigation node', () => {
     const items = getListItems();
     const links = items.map(item => item.querySelector('a'))
-                      .filter((link): link is NonNullable<typeof link> => link !== null);
+       .filter((link): link is NonNullable<typeof link> => link !== null);
 
     expect(links.length).toBe(2);
     expect(links.map(link => link.pathname)).toEqual(['/api', '/features']);

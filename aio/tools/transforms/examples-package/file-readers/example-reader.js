@@ -6,9 +6,9 @@
  */
 module.exports = function exampleFileReader() {
   return {
-    name: 'exampleFileReader',
-    getDocs: function(fileInfo) {
-      return [{docType: 'example-file', content: fileInfo.content, startingLine: 1}];
-    }
+name: 'exampleFileReader',
+getDocs: function(fileInfo) {
+  return [{docType: 'example-file', content: fileInfo.content, startingLine: 1}];
+}
   };
 };

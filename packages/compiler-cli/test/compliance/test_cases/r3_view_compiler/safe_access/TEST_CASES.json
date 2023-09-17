@@ -6,13 +6,13 @@
       "inputFiles": ["safe_keyed_read.ts"],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "safe_keyed_read_template.js",
-              "generated": "safe_keyed_read.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "safe_keyed_read_template.js",
+     "generated": "safe_keyed_read.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -21,12 +21,12 @@
       "inputFiles": ["safe_access_deep.ts"],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "safe_access_deep_template.js",
-              "generated": "safe_access_deep.js"
-            }
-          ]
+ "files": [
+   {
+     "expected": "safe_access_deep_template.js",
+     "generated": "safe_access_deep.js"
+   }
+ ]
         }
       ]
     },
@@ -35,14 +35,14 @@
       "inputFiles": ["safe_access_temporaries.ts"],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "safe_access_temporaries_template.js",
-              "templatePipelineExpected": "safe_access_temporaries_template.pipeline.js",
-              "generated": "safe_access_temporaries.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "safe_access_temporaries_template.js",
+     "templatePipelineExpected": "safe_access_temporaries_template.pipeline.js",
+     "generated": "safe_access_temporaries.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -51,13 +51,13 @@
       "inputFiles": ["safe_method_call.ts"],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "safe_method_call.js",
-              "generated": "safe_method_call.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "safe_method_call.js",
+     "generated": "safe_method_call.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -66,14 +66,14 @@
       "inputFiles": ["safe_call.ts"],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "safe_call_template.js",
-              "templatePipelineExpected": "safe_call_template.pipeline.js",
-              "generated": "safe_call.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "safe_call_template.js",
+     "templatePipelineExpected": "safe_call_template.pipeline.js",
+     "generated": "safe_call.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ]
     },
@@ -82,13 +82,13 @@
       "inputFiles": ["safe_access_non_null.ts"],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "safe_access_non_null_template.js",
-              "generated": "safe_access_non_null.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "safe_access_non_null_template.js",
+     "generated": "safe_access_non_null.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true

@@ -1,8 +1,5 @@
 // #docplaster
-// #docregion directive
-
-
-import { Directive } from '@angular/core';
+// #docregion directiveimport { Directive } from '@angular/core';
 
 @Directive({
   selector: '[appItem]'

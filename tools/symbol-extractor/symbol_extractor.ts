@@ -6,10 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import ts from 'typescript';
-
-
-export interface Symbol {
+import ts from 'typescript';export interface Symbol {
   name: string;
 }
 
@@ -30,13 +27,13 @@ export class SymbolExtractor {
       switch (child.kind) {
         case ts.SyntaxKind.ArrowFunction:
         case ts.SyntaxKind.FunctionExpression:
-          fnRecurseDepth++;
-          // Handles IIFE function/arrow expressions.
-          if (fnRecurseDepth <= 1) {
-            ts.forEachChild(child, visitor);
-          }
-          fnRecurseDepth--;
-          break;
+ fnRecurseDepth++;
+ // Handles IIFE function/arrow expressions.
+ if (fnRecurseDepth <= 1) {
+   ts.forEachChild(child, visitor);
+ }
+ fnRecurseDepth--;
+ break;
         case ts.SyntaxKind.SourceFile:
         case ts.SyntaxKind.VariableStatement:
         case ts.SyntaxKind.VariableDeclarationList:
@@ -45,28 +42,28 @@ export class SymbolExtractor {
         case ts.SyntaxKind.ParenthesizedExpression:
         case ts.SyntaxKind.Block:
         case ts.SyntaxKind.PrefixUnaryExpression:
-          ts.forEachChild(child, visitor);
-          break;
+ ts.forEachChild(child, visitor);
+ break;
         case ts.SyntaxKind.VariableDeclaration:
-          const varDecl = child as ts.VariableDeclaration;
-          // Terser optimizes variable declarations with `undefined` as initializer
-          // by omitting the initializer completely. We capture such declarations as well.
-          // https://github.com/terser/terser/blob/86ea74d5c12ae51b64468/CHANGELOG.md#v540.
-          if (fnRecurseDepth !== 0) {
-            symbols.push({name: stripSuffix(varDecl.name.getText())});
-          }
-          break;
+ const varDecl = child as ts.VariableDeclaration;
+ // Terser optimizes variable declarations with `undefined` as initializer
+ // by omitting the initializer completely. We capture such declarations as well.
+ // https://github.com/terser/terser/blob/86ea74d5c12ae51b64468/CHANGELOG.md#v540.
+ if (fnRecurseDepth !== 0) {
+   symbols.push({name: stripSuffix(varDecl.name.getText())});
+ }
+ break;
         case ts.SyntaxKind.FunctionDeclaration:
-          const funcDecl = child as ts.FunctionDeclaration;
-          funcDecl.name && symbols.push({name: stripSuffix(funcDecl.name.getText())});
-          break;
+ const funcDecl = child as ts.FunctionDeclaration;
+ funcDecl.name && symbols.push({name: stripSuffix(funcDecl.name.getText())});
+ break;
         case ts.SyntaxKind.ClassDeclaration:
-          const classDecl = child as ts.ClassDeclaration;
-          classDecl.name && symbols.push({name: stripSuffix(classDecl.name.getText())});
-          break;
+ const classDecl = child as ts.ClassDeclaration;
+ classDecl.name && symbols.push({name: stripSuffix(classDecl.name.getText())});
+ break;
         default:
-          // Left for easier debugging.
-          // console.log('###', ts.SyntaxKind[child.kind], child.getText());
+ // Left for easier debugging.
+ // console.log('###', ts.SyntaxKind[child.kind], child.getText());
       }
     }
     visitor(source);
@@ -96,10 +93,7 @@ export class SymbolExtractor {
       }
     });
     return diff;
-  }
-
-
-  constructor(private path: string, private contents: string) {
+  }  constructor(private path: string, private contents: string) {
     this.actual = SymbolExtractor.parse(path, contents);
   }
 

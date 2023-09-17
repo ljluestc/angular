@@ -25,9 +25,9 @@ export class NavItemComponent implements OnChanges {
       const ix = this.selectedNodes.indexOf(this.node);
       this.isSelected = ix !== -1;  // this node is the selected node or its ancestor
       this.isExpanded = this.isParentExpanded &&
-          (this.isSelected ||  // expand if selected or ...
-                               // preserve expanded state when display is wide; collapse in mobile.
-           (this.isWide && this.isExpanded));
+ (this.isSelected ||  // expand if selected or ...
+ // preserve expanded state when display is wide; collapse in mobile.
+  (this.isWide && this.isExpanded));
     } else {
       this.isSelected = false;
     }

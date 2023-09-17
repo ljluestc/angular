@@ -56,8 +56,4 @@ Angular provides `assertInInjectionContext` helper function to assert that the c
 
 ## Using DI outside of a context
 
-Calling [`inject`](api/core/inject) or calling `assertInInjectionContext` outside of an injection context will throw [error NG0203](/errors/NG0203).
-
-
-
-@reviewed 2023-04-11
+Calling [`inject`](api/core/inject) or calling `assertInInjectionContext` outside of an injection context will throw [error NG0203](/errors/NG0203).@reviewed 2023-04-11

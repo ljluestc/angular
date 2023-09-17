@@ -327,10 +327,7 @@ export class TemplatePageTitleStrategy extends TitleStrategy {
       this.title.setTitle(`My Application | ${title}`);
     }
   }
-}
-
-
-export const appConfig: ApplicationConfig = {
+}export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     {provide: TitleStrategy, useClass: TemplatePageTitleStrategy},
@@ -615,10 +612,10 @@ localhost:3002/src/#/crisis-center
 
 The router supports both styles with two `LocationStrategy` providers:
 
-| Providers              | Details |
-|:---                    |:---     |
+| Providers     | Details |
+|:---  |:---     |
 | `PathLocationStrategy` | The default "HTML5 pushState" style. |
-| `HashLocationStrategy` | The "hash URL" style.                |
+| `HashLocationStrategy` | The "hash URL" style.       |
 
 The `provideRouter` function sets the `LocationStrategy` to the `PathLocationStrategy`, which makes it the default strategy.
 You also have the option of switching to the `HashLocationStrategy` with an override during the bootstrapping process.
@@ -673,7 +670,7 @@ This diagram outlines what those parts refer to:
 
 foo://example.com:8042/over/there?name=ferret#nose
 &bsol;&lowbar;/   &bsol;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;/&bsol;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;/ &bsol;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;&lowbar;/ &bsol;&lowbar;&lowbar;/
- &verbar;           &verbar;            &verbar;            &verbar;        &verbar;
+ &verbar;  &verbar;   &verbar;   &verbar;        &verbar;
 scheme    authority      path        query   fragment
 
 </code-example>
@@ -716,10 +713,7 @@ Use `HashLocationStrategy` by adding the `withHashLocation` feature to the `prov
   ]
 ```
 
-When using `RouterModule.forRoot`, this is configured with the `useHash: true` in the second argument: `RouterModule.forRoot(routes, {useHash: true})`.
-
-
-<!-- links -->
+When using `RouterModule.forRoot`, this is configured with the `useHash: true` in the second argument: `RouterModule.forRoot(routes, {useHash: true})`.<!-- links -->
 
 <!-- external links -->
 

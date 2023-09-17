@@ -31,5 +31,3 @@ export class ContactService implements OnDestroy {
     return contact$.pipe(delay(FETCH_LATENCY));
   }
 }
-
-

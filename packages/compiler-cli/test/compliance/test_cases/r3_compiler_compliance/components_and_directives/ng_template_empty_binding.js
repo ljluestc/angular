@@ -7,9 +7,9 @@ MyComponent.ɵcmp = /*@__PURE__*/ $r3$.ɵɵdefineComponent({
   vars: 0,
   consts: [[__AttributeMarker.Bindings__, "id"]],
   template: function MyComponent_Template(rf, $ctx$) {
-    if (rf & 1) {
-      $r3$.ɵɵtemplate(0, MyComponent_ng_template_0_Template, 0, 0, "ng-template", 0);
-    }
+if (rf & 1) {
+  $r3$.ɵɵtemplate(0, MyComponent_ng_template_0_Template, 0, 0, "ng-template", 0);
+}
   },
   encapsulation: 2
 });

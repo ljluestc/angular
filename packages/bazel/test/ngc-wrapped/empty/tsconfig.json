@@ -1,8 +1,1 @@
-{
-  "compilerOptions": {
-    "paths": {
-      "@angular/core": ["../../../../dist/packages/core"]
-    },
-    "skipLibCheck": true
-  }
-}
+{  "compilerOptions": {    "paths": {lar/core": ["../../../../dist/packages/core"]    },    "skipLibCheck": true  }}

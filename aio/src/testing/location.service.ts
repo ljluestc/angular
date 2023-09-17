@@ -10,7 +10,7 @@ export class MockLocationService {
   setSearch = jasmine.createSpy('setSearch');
   fullPageNavigationNeeded = jasmine.createSpy('Location.fullPageNavigationNeeded');
   go = jasmine.createSpy('Location.go').and
-              .callFake((url: string) => this.urlSubject.next(url));
+     .callFake((url: string) => this.urlSubject.next(url));
   goExternal = jasmine.createSpy('Location.goExternal');
   replace = jasmine.createSpy('Location.replace');
   reloadPage = jasmine.createSpy('Location.reloadPage');

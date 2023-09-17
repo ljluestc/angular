@@ -6,8 +6,8 @@
       "inputFiles": ["mixed.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["mixed.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["mixed.js"]
         }
       ]
     },
@@ -16,8 +16,8 @@
       "inputFiles": ["pipe_bindings.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["pipe_bindings.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["pipe_bindings.js"]
         }
       ],
       "skipForTemplatePipeline": true
@@ -27,8 +27,8 @@
       "inputFiles": ["pipe_bindings_slots.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["pipe_bindings_slots.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["pipe_bindings_slots.js"]
         }
       ],
       "skipForTemplatePipeline": true
@@ -38,8 +38,8 @@
       "inputFiles": ["multiple_elements.ts"],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": ["multiple_elements.js"]
+ "failureMessage": "Incorrect template",
+ "files": ["multiple_elements.js"]
         }
       ]
     }

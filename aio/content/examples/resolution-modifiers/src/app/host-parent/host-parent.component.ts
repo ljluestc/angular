@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { FlowerService } from '../flower.service';
-import { HostComponent } from '../host/host.component';
-
-
-@Component({
+import { HostComponent } from '../host/host.component';@Component({
   standalone: true,
   selector: 'app-host-parent',
   templateUrl: './host-parent.component.html',

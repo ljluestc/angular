@@ -65,19 +65,19 @@ aio-contributor {
         overflow: hidden;
 
         mat-icon {
-          $icon-size: 3rem;
-          font-size: $icon-size;
-          height: $icon-size;
-          width: $icon-size;
+ $icon-size: 3rem;
+ font-size: $icon-size;
+ height: $icon-size;
+ width: $icon-size;
 
-          svg {
-            height: $icon-size;
-            width: $icon-size;
-          }
+ svg {
+   height: $icon-size;
+   width: $icon-size;
+ }
 
-          &.link-icon {
-            transform: rotate(45deg);
-          }
+ &.link-icon {
+   transform: rotate(45deg);
+ }
         }
       }
       margin-bottom: 0.5rem;

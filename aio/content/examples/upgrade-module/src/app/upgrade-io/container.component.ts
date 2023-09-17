@@ -7,7 +7,7 @@ import { Hero } from '../hero';
   template: `
     <h1>Tour of Heroes</h1>
     <hero-detail [hero]="hero"
-                 (deleted)="heroDeleted($event)">
+        (deleted)="heroDeleted($event)">
     </hero-detail>
   `
 })

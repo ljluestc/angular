@@ -13,10 +13,7 @@ export class AngularJSComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.lazyLoader.load(this.elRef.nativeElement);
-  }
-
-
-  ngOnDestroy() {
+  }  ngOnDestroy() {
     this.lazyLoader.destroy();
   }
 }

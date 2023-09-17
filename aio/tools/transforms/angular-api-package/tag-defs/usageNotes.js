@@ -1,5 +1,5 @@
 module.exports = function() {
   return {
-    name: 'usageNotes'
+name: 'usageNotes'
   };
 };

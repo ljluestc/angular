@@ -6,16 +6,16 @@
  */
 module.exports = function filterMembers() {
   return {
-    $runAfter: ['processing-docs'],
-    $runBefore: ['docs-processed'],
-    notAllowedPatterns: [],
-    $process(docs) {
-      const isAllowed = ({name}) => !this.notAllowedPatterns.some(re => re.test(name));
+$runAfter: ['processing-docs'],
+$runBefore: ['docs-processed'],
+notAllowedPatterns: [],
+$process(docs) {
+  const isAllowed = ({name}) => !this.notAllowedPatterns.some(re => re.test(name));
 
-      docs.forEach(doc => {
-        if (doc.statics) doc.statics = doc.statics.filter(isAllowed);
-        if (doc.members) doc.members = doc.members.filter(isAllowed);
-      });
-    },
+  docs.forEach(doc => {
+if (doc.statics) doc.statics = doc.statics.filter(isAllowed);
+if (doc.members) doc.members = doc.members.filter(isAllowed);
+  });
+},
   };
 };

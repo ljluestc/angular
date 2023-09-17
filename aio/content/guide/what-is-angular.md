@@ -357,13 +357,13 @@ Some examples of common Angular CLI commands include:
 
 <!-- vale Angular.Google_WordListSuggestions = NO -->
 
-| Command                     | Details                                                               |
+| Command      | Details   |
 | :-------------------------- | :-------------------------------------------------------------------- |
-| [ng build](cli/build)       | Compiles an Angular application into an output directory.             |
+| [ng build](cli/build)       | Compiles an Angular application into an output directory.    |
 | [ng serve](cli/serve)       | Builds and serves your application, rebuilding on file changes.       |
-| [ng generate](cli/generate) | Generates or modifies files based on a schematic.                     |
-| [ng test](cli/test)         | Runs unit tests on a given project.                                   |
-| [ng e2e](cli/e2e)           | Builds and serves an Angular application, then runs end-to-end tests. |
+| [ng generate](cli/generate) | Generates or modifies files based on a schematic.      |
+| [ng test](cli/test)| Runs unit tests on a given project.     |
+| [ng e2e](cli/e2e)  | Builds and serves an Angular application, then runs end-to-end tests. |
 
 <!-- vale Angular.Google_WordListSuggestions = YES -->
 
@@ -379,14 +379,14 @@ Some of the popular libraries available in the ecosystem include:
 
 <!-- vale Angular.Google_Acronyms = NO -->
 
-| Library                                                           | Details                                                                                                                                        |
+| Library     | Details |
 | :---------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Angular Router](guide/router)                                    | Advanced client-side navigation and routing based on Angular components. Supports lazy-loading, nested routes, custom path matching, and more. |
-| [Angular Forms](guide/forms-overview)                             | Uniform system for form participation and validation.                                                                                          |
-| [Angular HttpClient](guide/understanding-communicating-with-http) | Robust HTTP client that can power more advanced client-server communication.                                                                   |
-| [Angular Animations](guide/animations)                            | Rich system for driving animations based on application state.                                                                                 |
-| [Angular PWA](guide/service-worker-intro)                         | Tools for building Progressive Web Applications \(PWA\) including a service worker and Web application manifest.                               |
-| [Angular Schematics](guide/schematics)                            | Automated scaffolding, refactoring, and update tools that simplify development at large scale.                                                 |
+| [Angular Router](guide/router)      | Advanced client-side navigation and routing based on Angular components. Supports lazy-loading, nested routes, custom path matching, and more. |
+| [Angular Forms](guide/forms-overview)     | Uniform system for form participation and validation.|
+| [Angular HttpClient](guide/understanding-communicating-with-http) | Robust HTTP client that can power more advanced client-server communication.       |
+| [Angular Animations](guide/animations)    | Rich system for driving animations based on application state.      |
+| [Angular PWA](guide/service-worker-intro) | Tools for building Progressive Web Applications \(PWA\) including a service worker and Web application manifest. |
+| [Angular Schematics](guide/schematics)    | Automated scaffolding, refactoring, and update tools that simplify development at large scale.    |
 
 <!-- vale Angular.Google_Acronyms = YES -->
 

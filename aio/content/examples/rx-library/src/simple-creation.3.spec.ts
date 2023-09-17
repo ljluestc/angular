@@ -12,9 +12,9 @@ describe('simple-creation.3', () => {
       addEventListener: jasmine
         .createSpy('addEventListener')
         .and.callFake((eventName, cb) => {
-          if (eventName === 'mousemove') {
-            triggerMousemove = cb;
-          }
+ if (eventName === 'mousemove') {
+   triggerMousemove = cb;
+ }
         }),
       removeEventListener: jasmine.createSpy('removeEventListener'),
     } as unknown as HTMLInputElement;

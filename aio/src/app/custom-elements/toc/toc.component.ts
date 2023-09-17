@@ -34,16 +34,16 @@ export class TocComponent implements OnInit, AfterViewInit, OnDestroy {
     this.tocService.tocList
         .pipe(takeUntil(this.onDestroy))
         .subscribe(tocList => {
-          this.tocList = tocList;
-          const itemCount = count(this.tocList, item => item.level !== 'h1');
+ this.tocList = tocList;
+ const itemCount = count(this.tocList, item => item.level !== 'h1');
 
-          this.type = (itemCount > 0) ?
-                        this.isEmbedded ?
-                          (itemCount > this.primaryMax) ?
-                            'EmbeddedExpandable' :
-                          'EmbeddedSimple' :
-                        'Floating' :
-                      'None';
+ this.type = (itemCount > 0) ?
+this.isEmbedded ?
+  (itemCount > this.primaryMax) ?
+    'EmbeddedExpandable' :
+  'EmbeddedSimple' :
+'Floating' :
+       'None';
         });
   }
 
@@ -57,25 +57,25 @@ export class TocComponent implements OnInit, AfterViewInit, OnDestroy {
         this.tocService.activeItemIndex.pipe(subscribeOn(asapScheduler)),
         this.items.changes.pipe(startWith(this.items)),
       ])
-          .pipe(takeUntil(this.onDestroy))
-          .subscribe(([index, items]) => {
-            this.activeIndex = index;
-            if (index === null || index >= items.length) {
-              return;
-            }
+ .pipe(takeUntil(this.onDestroy))
+ .subscribe(([index, items]) => {
+   this.activeIndex = index;
+   if (index === null || index >= items.length) {
+     return;
+   }
 
-            const e = items.toArray()[index].nativeElement;
-            const p = e.offsetParent;
+   const e = items.toArray()[index].nativeElement;
+   const p = e.offsetParent;
 
-            const eRect = e.getBoundingClientRect();
-            const pRect = p.getBoundingClientRect();
+   const eRect = e.getBoundingClientRect();
+   const pRect = p.getBoundingClientRect();
 
-            const isInViewport = (eRect.top >= pRect.top) && (eRect.bottom <= pRect.bottom);
+   const isInViewport = (eRect.top >= pRect.top) && (eRect.bottom <= pRect.bottom);
 
-            if (!isInViewport) {
-              p.scrollTop += (eRect.top - pRect.top) - (p.clientHeight / 2);
-            }
-          });
+   if (!isInViewport) {
+     p.scrollTop += (eRect.top - pRect.top) - (p.clientHeight / 2);
+   }
+ });
     }
   }
 

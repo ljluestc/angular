@@ -1,15 +1,5 @@
-import {Component, NgModule} from '@angular/core';
-
-@Component({
-  selector: 'my-component',
-  template: `
-  <div>
-    Some content
-    <div *ngIf="visible">
-      <div i18n>
-        Some other content {{ valueA }}
-        <div>
-          More nested levels with bindings {{ valueB | uppercase }}
+import {Component, NgModule} from '@angular/core';        <div>
+ More nested levels with bindings {{ valueB | uppercase }}
         </div>
       </div>
     </div>
@@ -17,8 +7,6 @@ import {Component, NgModule} from '@angular/core';
 `,
 })
 export class MyComponent {
-}
-
-@NgModule({declarations: [MyComponent]})
+}@NgModule({declarations: [MyComponent]})
 export class MyModule {
 }

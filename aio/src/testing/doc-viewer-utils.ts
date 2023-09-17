@@ -8,12 +8,9 @@ import { DocViewerComponent } from 'app/layout/doc-viewer/doc-viewer.component';
 import { Logger } from 'app/shared/logger.service';
 import { TocService } from 'app/shared/toc.service';
 import { MockLogger } from 'testing/logger.service';
-import { ElementsLoader } from 'app/custom-elements/elements-loader';
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
+import { ElementsLoader } from 'app/custom-elements/elements-loader';////////////////////////////////////////////////////////////////////////////////////////////////////
 /// `TestDocViewerComponent` (for exposing internal `DocViewerComponent` methods as public).     ///
-/// Only used for type-casting; the actual implementation is irrelevant.                         ///
+/// Only used for type-casting; the actual implementation is irrelevant. ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export class TestDocViewerComponent extends DocViewerComponent {
@@ -30,11 +27,8 @@ export class TestDocViewerComponent extends DocViewerComponent {
 
   // Only used for type-casting; the actual implementation is irrelevant.
   override swapViews(_onInsertedCb?: () => void): Observable<void> { return null as any; }
-}
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-/// `TestModule` and `TestParentComponent`.                                                      ///
+}////////////////////////////////////////////////////////////////////////////////////////////////////
+/// `TestModule` and `TestParentComponent`.///
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Test parent component.
@@ -80,11 +74,8 @@ export class MockElementsLoader {
     { provide: ElementsLoader, useClass: MockElementsLoader },
   ],
 })
-export class TestModule { }
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-/// An observable with spies to test subscribing/unsubscribing.                                  ///
+export class TestModule { }////////////////////////////////////////////////////////////////////////////////////////////////////
+/// An observable with spies to test subscribing/unsubscribing.    ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export class ObservableWithSubscriptionSpies<T = void> extends Observable<T> {

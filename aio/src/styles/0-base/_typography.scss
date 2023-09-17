@@ -208,7 +208,7 @@ code {
       > a {
         &[href^="http:"],
         &[href^="https:"] {
-          @include mixins.external-link-with-icon();
+ @include mixins.external-link-with-icon();
         }
       }
     }

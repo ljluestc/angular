@@ -47,7 +47,7 @@ export class SortedHeroesComponent extends HeroesBaseComponent {
 
   protected override afterGetHeroes() {
     this.heroes = this.heroes.sort((h1, h2) => h1.name < h2.name ? -1 :
-            (h1.name > h2.name ? 1 : 0));
+   (h1.name > h2.name ? 1 : 0));
   }
 }
 // #enddocregion sorted-heroes

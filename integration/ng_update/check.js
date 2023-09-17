@@ -16,26 +16,26 @@ Object.keys(angularModules).forEach(function (name) {
 
   const ngUpdate = packageJson['ng-update'];
   if (!ngUpdate) {
-    console.error('Package ' + JSON.stringify(name) + ' does not have an "ng-update" key.');
-    error = true;
-    return;
+console.error('Package ' + JSON.stringify(name) + ' does not have an "ng-update" key.');
+error = true;
+return;
   }
 
   const packageGroup = ngUpdate['packageGroup'];
   if (!packageGroup) {
-    console.error('Package ' + JSON.stringify(name) + ' does not have a "packageGroup" key.');
-    error = true;
-    return;
+console.error('Package ' + JSON.stringify(name) + ' does not have a "packageGroup" key.');
+error = true;
+return;
   }
 
   // Verify that every packageGroup is represented in the list of modules.
   Object.keys(angularModules).forEach(function (groupEntry) {
-    if (packageGroup.indexOf(groupEntry) == -1) {
-      console.error('Package ' + JSON.stringify(name) + ' is missing ' + JSON.stringify(groupEntry)
-        + ' as a packageGroup entry.');
-      error = true;
-      return;
-    }
+if (packageGroup.indexOf(groupEntry) == -1) {
+  console.error('Package ' + JSON.stringify(name) + ' is missing ' + JSON.stringify(groupEntry)
++ ' as a packageGroup entry.');
+  error = true;
+  return;
+}
   });
 });
 

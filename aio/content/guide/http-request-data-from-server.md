@@ -158,10 +158,7 @@ The callback in the updated component method receives a typed data object, which
 
 You can go a step further and clone the result directly into the component's `config` property with [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#description).
 
-<code-example header="Config Component - with destructured assignment" path="http/src/app/config/config.component.ts" region="v2"></code-example>
-
-
-## Reading the full response
+<code-example header="Config Component - with destructured assignment" path="http/src/app/config/config.component.ts" region="v2"></code-example>## Reading the full response
 
 In the previous example, the call to `HttpClient.get()` did not specify any options.
 By default, it returned the JSON data contained in the response body.

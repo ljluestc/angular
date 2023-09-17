@@ -2,10 +2,7 @@
 import { AfterContentInit, AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { CONTENT_URL_PREFIX } from 'app/documents/document.service';
-import { AttrMap, boolFromValue, getAttrs, getAttrValue } from 'app/shared/attribute-utils';
-
-
-const LIVE_EXAMPLE_BASE = CONTENT_URL_PREFIX + 'live-examples/';
+import { AttrMap, boolFromValue, getAttrs, getAttrValue } from 'app/shared/attribute-utils';const LIVE_EXAMPLE_BASE = CONTENT_URL_PREFIX + 'live-examples/';
 const ZIP_BASE = CONTENT_URL_PREFIX + 'zips/';
 
 /**
@@ -19,11 +16,11 @@ const ZIP_BASE = CONTENT_URL_PREFIX + 'zips/';
  *   <live-example
  *      [name="..."]        // name of the example directory
  *      [stackblitz="...""] // name of the stackblitz file (becomes part of zip file name as well)
- *      [embedded]          // embed the stackblitz in the doc page, else display in new browser tab (default)
+ *      [embedded] // embed the stackblitz in the doc page, else display in new browser tab (default)
  *      [noDownload]        // no downloadable zip option
  *      [downloadOnly]      // just the zip
  *      [title="..."]>      // text for live example link and tooltip
- *        text              // higher precedence way to specify text for live example link and tooltip
+ *        text     // higher precedence way to specify text for live example link and tooltip
  *  </live-example>
  * Example:
  *   <p>Run <live-example>Try the live example</live-example></p>.
@@ -105,8 +102,8 @@ export class LiveExampleComponent implements AfterContentInit {
     const isEmbedded = boolFromValue(getAttrValue(attrs, 'embedded'));
 
     return downloadOnly ? 'downloadOnly'
-           : isEmbedded ? 'embedded' :
-                          'default';
+  : isEmbedded ? 'embedded' :
+  'default';
   }
 
   private getStackblitz(exampleDir: string, stackblitzName: string, isEmbedded: boolean) {

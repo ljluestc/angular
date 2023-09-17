@@ -12,34 +12,34 @@ const source = require('unist-util-source');
  */
 module.exports = function addImageDimensions(getImageDimensions) {
   return function addImageDimensionsImpl()  {
-    return (ast, file) => {
-      visit(ast, node => {
+return (ast, file) => {
+  visit(ast, node => {
 
-        if (!is(node, 'img')) {
-          return;
-        }
+if (!is(node, 'img')) {
+  return;
+}
 
-        const props = node.properties;
-        const src = props.src;
-        if (!src) {
-          file.message('Missing src in image tag `' + source(node, file) + '`');
-          return;
-        }
+const props = node.properties;
+const src = props.src;
+if (!src) {
+  file.message('Missing src in image tag `' + source(node, file) + '`');
+  return;
+}
 
-        try {
-          const dimensions = getImageDimensions(addImageDimensionsImpl.basePaths, src);
-          if (props.width === undefined && props.height === undefined) {
-            props.width = '' + dimensions.width;
-            props.height = '' + dimensions.height;
-          }
-        } catch(e) {
-          if (e.code === 'ENOENT') {
-            file.fail('Unable to load src in image tag `' + source(node, file) + '`');
-          } else {
-            file.fail(e.message);
-          }
-        }
-      });
-    };
+try {
+  const dimensions = getImageDimensions(addImageDimensionsImpl.basePaths, src);
+  if (props.width === undefined && props.height === undefined) {
+props.width = '' + dimensions.width;
+props.height = '' + dimensions.height;
+  }
+} catch(e) {
+  if (e.code === 'ENOENT') {
+file.fail('Unable to load src in image tag `' + source(node, file) + '`');
+  } else {
+file.fail(e.message);
+  }
+}
+  });
+};
   };
 };

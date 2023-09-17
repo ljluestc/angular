@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "encapsulation_default.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "encapsulation_default.js"
+ ]
         }
       ]
     },
@@ -22,10 +22,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "encapsulation_none.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "encapsulation_none.js"
+ ]
         }
       ]
     },
@@ -36,10 +36,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "encapsulation_shadow_dom.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "encapsulation_shadow_dom.js"
+ ]
         }
       ]
     }

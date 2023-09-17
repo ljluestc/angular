@@ -50,10 +50,7 @@ describe('Pipes', () => {
     await factorInputEle.clear();
     await factorInputEle.sendKeys('3');
     expect(await outputEle.getText()).toContain('343');
-  });
-
-
-  it('should support flying heroes (pure) ', async () => {
+  });  it('should support flying heroes (pure) ', async () => {
     const nameEle = element(by.css('app-flying-heroes input[type="text"]'));
     const canFlyCheckEle = element(by.css('app-flying-heroes #can-fly'));
     const mutateCheckEle = element(by.css('app-flying-heroes #mutate'));
@@ -75,10 +72,7 @@ describe('Pipes', () => {
 
     await resetEle.click();
     expect(await flyingHeroesEle.count()).toEqual(2, 'reset should restore original flying heroes');
-  });
-
-
-  it('should support flying heroes (impure) ', async () => {
+  });  it('should support flying heroes (impure) ', async () => {
     const nameEle = element(by.css('app-flying-heroes-impure input[type="text"]'));
     const canFlyCheckEle = element(by.css('app-flying-heroes-impure #can-fly'));
     const mutateCheckEle = element(by.css('app-flying-heroes-impure #mutate'));

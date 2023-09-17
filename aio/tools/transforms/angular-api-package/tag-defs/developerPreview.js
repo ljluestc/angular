@@ -3,7 +3,7 @@
  */
  module.exports = function() {
   return {
-    name: 'developerPreview',
-    transforms: function() { return true; }
+name: 'developerPreview',
+transforms: function() { return true; }
   };
 };

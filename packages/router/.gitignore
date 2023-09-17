@@ -1,6 +1,1 @@
-node_modules/
-dist/
-typings/
-npm-debug.log
-.idea/
-package
+node_modules/dist/typings/npm-debug.log.idea/package

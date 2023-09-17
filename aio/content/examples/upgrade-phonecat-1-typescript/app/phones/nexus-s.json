@@ -20,8 +20,8 @@
     }, 
     "camera": {
         "features": [
-            "Flash", 
-            "Video"
+   "Flash", 
+   "Video"
         ], 
         "primary": "5.0 megapixels"
     }, 
@@ -56,9 +56,9 @@
     "name": "Nexus S", 
     "sizeAndWeight": {
         "dimensions": [
-            "63.0 mm (w)", 
-            "123.9 mm (h)", 
-            "10.88 mm (d)"
+   "63.0 mm (w)", 
+   "123.9 mm (h)", 
+   "10.88 mm (d)"
         ], 
         "weight": "129.0 grams"
     }, 

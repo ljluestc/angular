@@ -22,15 +22,15 @@ After you select an issue to resolve:
 <a id="links-to-documentation-issues"/>
 
 | Links to documentation issues |
-|:---                           |
-| [All open documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22)                                  |
-| [All open and unassigned documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22+no%3Aassignee+-label%3A"state%3A+has+PR")                                  |
+|:---   |
+| [All open documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22)    |
+| [All open and unassigned documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22+no%3Aassignee+-label%3A"state%3A+has+PR")    |
 | [Unassigned good first documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22+label%3A%22good+first+issue%22+no%3Aassignee+-label%3A"state%3A+has+PR") |
-| [Unassigned priority 1 documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22+label%3Ap1+no%3Aassignee+-label%3A"state%3A+has+PR")                     |
-| [Unassigned priority 2 documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22+label%3Ap2+no%3Aassignee+-label%3A"state%3A+has+PR")                     |
-| [Unassigned priority 3 documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22+label%3Ap3+no%3Aassignee+-label%3A"state%3A+has+PR")                     |
-| [Unassigned priority 4 documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22+label%3Ap4+no%3Aassignee+-label%3A"state%3A+has+PR")                     |
-| [Unassigned priority 5 documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22+label%3Ap5+no%3Aassignee+-label%3A"state%3A+has+PR")                     |
+| [Unassigned priority 1 documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22+label%3Ap1+no%3Aassignee+-label%3A"state%3A+has+PR")      |
+| [Unassigned priority 2 documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22+label%3Ap2+no%3Aassignee+-label%3A"state%3A+has+PR")      |
+| [Unassigned priority 3 documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22+label%3Ap3+no%3Aassignee+-label%3A"state%3A+has+PR")      |
+| [Unassigned priority 4 documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22+label%3Ap4+no%3Aassignee+-label%3A"state%3A+has+PR")      |
+| [Unassigned priority 5 documentation issues](https://github.com/angular/angular/issues?q=is%3Aissue+is%3Aopen+label%3A%22area%3A+docs%22+label%3Ap5+no%3Aassignee+-label%3A"state%3A+has+PR")      |
 
 <!-- links -->
 

@@ -153,11 +153,11 @@ async function createResolveEsbuildPlugin() {
     setup: (build) => {
       build.onResolve({filter: /(@angular\/|angular-in-memory-web-api|zone.js)/}, async (args) => {
         const matchedPattern = Array.from(resolveMappings.keys()).find((pattern) =>
-          args.path.match(pattern)
+ args.path.match(pattern)
         );
 
         if (matchedPattern === undefined) {
-          return undefined;
+ return undefined;
         }
 
         let resolvedPath = args.path.replace(matchedPattern, resolveMappings.get(matchedPattern));
@@ -165,13 +165,13 @@ async function createResolveEsbuildPlugin() {
 
         // If the resolved path points to a directory, resolve the contained `index.js` file
         if (stats && stats.isDirectory()) {
-          resolvedPath = join(resolvedPath, 'index.js');
-          stats = await statGraceful(resolvedPath);
+ resolvedPath = join(resolvedPath, 'index.js');
+ stats = await statGraceful(resolvedPath);
         }
         // If the resolved path does not exist, check with an explicit JS extension.
         else if (stats === null) {
-          resolvedPath += '.js';
-          stats = await statGraceful(resolvedPath);
+ resolvedPath += '.js';
+ stats = await statGraceful(resolvedPath);
         }
 
         return stats !== null ? {path: resolvedPath} : undefined;

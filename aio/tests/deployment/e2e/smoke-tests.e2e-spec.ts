@@ -30,10 +30,10 @@ describe(browser.baseUrl, () => {
 
       Object.keys(textPerUrl).forEach(url => {
         it(`should show the page at '${url}'`, async () => {
-          await page.goTo(url);
-          await browser.wait(() => page.getDocViewerText(), 5000);  // Wait for the document to be loaded.
+ await page.goTo(url);
+ await browser.wait(() => page.getDocViewerText(), 5000);  // Wait for the document to be loaded.
 
-          expect(await page.getDocViewerText()).toContain(textPerUrl[url]);
+ expect(await page.getDocViewerText()).toContain(textPerUrl[url]);
         });
       });
     });
@@ -50,10 +50,10 @@ describe(browser.baseUrl, () => {
 
       Object.keys(textPerUrl).forEach(url => {
         it(`should show the page at '${url}'`, async () => {
-          await page.goTo(url);
-          await browser.wait(() => page.getDocViewerText(), 5000);  // Wait for the document to be loaded.
+ await page.goTo(url);
+ await browser.wait(() => page.getDocViewerText(), 5000);  // Wait for the document to be loaded.
 
-          expect(await page.getDocViewerText()).toContain(textPerUrl[url]);
+ expect(await page.getDocViewerText()).toContain(textPerUrl[url]);
         });
       });
     });
@@ -74,10 +74,10 @@ describe(browser.baseUrl, () => {
 
       Object.keys(textPerUrl).forEach(url => {
         it(`should show the page at '${url}'`, async () => {
-          await page.goTo(url);
-          await browser.wait(() => page.getDocViewerText(), 5000);  // Wait for the document to be loaded.
+ await page.goTo(url);
+ await browser.wait(() => page.getDocViewerText(), 5000);  // Wait for the document to be loaded.
 
-          expect(await page.getDocViewerText()).toContain(textPerUrl[url]);
+ expect(await page.getDocViewerText()).toContain(textPerUrl[url]);
         });
       });
     });

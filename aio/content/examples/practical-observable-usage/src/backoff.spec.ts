@@ -11,7 +11,7 @@ describe('backoff()', () => {
     const source = interval(10).pipe(
       tap(i => {
         if (i > 0) {
-          throw new Error('Test error');
+ throw new Error('Test error');
         }
       }),
       backoff(3, 100),

@@ -8,11 +8,11 @@
     li {
       .symbol {
         &.runtime {
-          background: constants.$green-500;
+ background: constants.$green-500;
         }
 
         &.compiler {
-          background: constants.$blue-500;
+ background: constants.$blue-500;
         }
       }
 
@@ -20,8 +20,8 @@
         color: constants.$blue-grey-600;
 
         &:hover {
-          background: if($is-dark-theme, constants.$darkgray, constants.$blue-grey-50);
-          color: constants.$blue-500;
+ background: if($is-dark-theme, constants.$darkgray, constants.$blue-grey-50);
+ color: constants.$blue-500;
         }
       }
     }

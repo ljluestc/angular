@@ -39,15 +39,15 @@ import { NgIf } from '@angular/common';
       transition(':enter', [
         style({ height: 0 }),
         group([
-          animate(500, style({ height: '*' })),
-          query(':enter', [
-            style({ opacity: 0, transform: 'scale(0)'}),
-            animate(2000, style({ opacity: 1, transform: 'scale(1)' }))
-          ]),
-          query('.hero', [
-            style({ transform: 'translateX(-100%)'}),
-            animate('.7s 500ms ease-in', style({ transform: 'translateX(0)' }))
-          ]),
+ animate(500, style({ height: '*' })),
+ query(':enter', [
+   style({ opacity: 0, transform: 'scale(0)'}),
+   animate(2000, style({ opacity: 1, transform: 'scale(1)' }))
+ ]),
+ query('.hero', [
+   style({ transform: 'translateX(-100%)'}),
+   animate('.7s 500ms ease-in', style({ transform: 'translateX(0)' }))
+ ]),
         ]),
         query('@animateMe', animateChild()),
       ]),
@@ -55,15 +55,15 @@ import { NgIf } from '@angular/common';
         style({ height: '*' }),
         query('@animateMe', animateChild()),
         group([
-          animate('500ms 500ms', style({ height: '0', padding: '0' })),
-          query(':leave', [
-            style({ opacity: 1, transform: 'scale(1)'}),
-            animate('1s', style({ opacity: 0, transform: 'scale(0)' }))
-          ]),
-          query('.hero', [
-            style({ transform: 'translateX(0)'}),
-            animate('.7s ease-out', style({ transform: 'translateX(-100%)' }))
-          ]),
+ animate('500ms 500ms', style({ height: '0', padding: '0' })),
+ query(':leave', [
+   style({ opacity: 1, transform: 'scale(1)'}),
+   animate('1s', style({ opacity: 0, transform: 'scale(0)' }))
+ ]),
+ query('.hero', [
+   style({ transform: 'translateX(0)'}),
+   animate('.7s ease-out', style({ transform: 'translateX(-100%)' }))
+ ]),
         ]),
       ]),
     ]),

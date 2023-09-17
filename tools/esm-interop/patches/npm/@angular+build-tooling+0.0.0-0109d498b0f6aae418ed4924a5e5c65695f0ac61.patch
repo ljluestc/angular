@@ -37,14 +37,14 @@ index d6249b8..761d50a 100755
 --- a/node_modules/@angular/build-tooling/bazel/app-bundling/index.bzl
 +++ b/node_modules/@angular/build-tooling/bazel/app-bundling/index.bzl
 @@ -64,7 +64,7 @@ def app_bundle(
-         name = "%s_esbuild_config" % name,
-         config_file = ":%s_config_file" % name,
-         deps = [
--            "@npm//@angular/compiler-cli",
-+            "@angular//packages/compiler-cli/private",
-             "@npm//@angular/build-tooling/shared-scripts/angular-optimization:js_lib",
-         ],
-         **common_base_attributes
+name = "%s_esbuild_config" % name,
+config_file = ":%s_config_file" % name,
+deps = [
+-   "@npm//@angular/compiler-cli",
++   "@angular//packages/compiler-cli/private",
+    "@npm//@angular/build-tooling/shared-scripts/angular-optimization:js_lib",
+],
+**common_base_attributes
 diff --git a/node_modules/@angular/build-tooling/bazel/benchmark/component_benchmark/benchmark_test.bzl b/node_modules/@angular/build-tooling/bazel/benchmark/component_benchmark/benchmark_test.bzl
 index 8bfab84..175cc9d 100755
 --- a/node_modules/@angular/build-tooling/bazel/benchmark/component_benchmark/benchmark_test.bzl
@@ -62,16 +62,16 @@ index 8bfab84..175cc9d 100755
 -def benchmark_test(name, server, tags = [], **kwargs):
 +def benchmark_test(name, server, tags = [], data = [], **kwargs):
      protractor_web_test_suite(
-         name = name,
-         browsers = ["@npm//@angular/build-tooling/bazel/browsers/chromium:chromium"],
+name = name,
+browsers = ["@npm//@angular/build-tooling/bazel/browsers/chromium:chromium"],
 @@ -20,6 +20,7 @@ def benchmark_test(name, server, tags = [], **kwargs):
-             "manual",
-             "no-remote-exec",
-         ],
+    "manual",
+    "no-remote-exec",
+],
 +        data = data + ["@angular//packages/benchpress"],
-         test_suite_tags = [
-             "manual",
-             "no-remote-exec",
+test_suite_tags = [
+    "manual",
+    "no-remote-exec",
 diff --git a/node_modules/@angular/build-tooling/bazel/benchmark/component_benchmark/component_benchmark.bzl b/node_modules/@angular/build-tooling/bazel/benchmark/component_benchmark/component_benchmark.bzl
 index 6213703..0c1d70f 100755
 --- a/node_modules/@angular/build-tooling/bazel/benchmark/component_benchmark/component_benchmark.bzl
@@ -86,25 +86,25 @@ index 6213703..0c1d70f 100755
  load(":benchmark_test.bzl", "benchmark_test")
 
 @@ -37,8 +37,8 @@ def component_benchmark(
-         driver_deps,
-         ng_srcs,
-         ng_deps = [
--            "@npm//@angular/core",
--            "@npm//@angular/platform-browser",
-+            "@angular//packages/core",
-+            "@angular//packages/platform-browser",
-         ],
-         ng_assets = [],
-         assets = None,
+driver_deps,
+ng_srcs,
+ng_deps = [
+-   "@npm//@angular/core",
+-   "@npm//@angular/platform-browser",
++   "@angular//packages/core",
++   "@angular//packages/platform-browser",
+],
+ng_assets = [],
+assets = None,
 @@ -108,7 +108,7 @@ def component_benchmark(
-         # checked by TypeScript. We add the dependency only for bundling to reduce the compilation
-         # scope and to make it easier to replace this dependency inside the `angular/angular`
-         # repository with its corresponding source target that does not come with any typings.
+# checked by TypeScript. We add the dependency only for bundling to reduce the compilation
+# scope and to make it easier to replace this dependency inside the `angular/angular`
+# repository with its corresponding source target that does not come with any typings.
 -        ng_bundle_deps.append("@npm//zone.js")
 +        ng_bundle_deps.append("@angular//packages/zone.js:npm_package")
 
      if not assets:
-         html = prefix + "index.html"
+html = prefix + "index.html"
 diff --git a/node_modules/@angular/build-tooling/bazel/http-server/BUILD.bazel b/node_modules/@angular/build-tooling/bazel/http-server/BUILD.bazel
 index 04cc755..ec01017 100755
 --- a/node_modules/@angular/build-tooling/bazel/http-server/BUILD.bazel
@@ -145,12 +145,12 @@ index 870da1b..e0bdb71 100755
 @@ -43,7 +43,8 @@ js_library(
      srcs = [":js_lib_files"],
      deps = [
-         ":angular_devkit_plugins",
+":angular_devkit_plugins",
 -        "@npm//@angular/compiler-cli",
 +        "@angular//packages/compiler-cli",
 +        "@angular//packages/compiler-cli/linker/babel",
-         "@npm//@babel/core",
-         "@npm//@babel/plugin-proposal-async-generator-functions",
+"@npm//@babel/core",
+"@npm//@babel/plugin-proposal-async-generator-functions",
      ],
 diff --git a/node_modules/@angular/build-tooling/shared-scripts/angular-optimization/esbuild-plugin.mjs b/node_modules/@angular/build-tooling/shared-scripts/angular-optimization/esbuild-plugin.mjs
 index 6d5ec3f..a4ebfd7 100755

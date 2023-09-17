@@ -1,7 +1,4 @@
-import { browser, element, by, logging } from 'protractor';
-
-
-describe('What is Angular', () => {
+import { browser, element, by, logging } from 'protractor';describe('What is Angular', () => {
 
   const paragraphs = element.all(by.css('p'));
   const buttons = element.all(by.css('button'));

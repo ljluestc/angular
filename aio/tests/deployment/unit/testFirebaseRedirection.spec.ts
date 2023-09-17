@@ -18,10 +18,10 @@ describe('firebase.json redirect config', () => {
 
     afterAll(() => {
       expect(redirector.unusedRedirectConfigs)
-          .withContext(
-              'Some redirect rules from \'firebase.json\' were not tested. ' +
-              `Ensure there is at least one testcase for each redirect rule in '${PATH_TO_LEGACY_URLS}'.`)
-          .toEqual([]);
+ .withContext(
+     'Some redirect rules from \'firebase.json\' were not tested. ' +
+     `Ensure there is at least one testcase for each redirect rule in '${PATH_TO_LEGACY_URLS}'.`)
+ .toEqual([]);
     });
 
     loadLegacyUrls().forEach(urlPair => {
@@ -30,7 +30,7 @@ describe('firebase.json redirect config', () => {
 
         expect(redirected).not.toEqual(urlPair[0]);
         if (urlPair[1]) {
-          expect(redirected).toEqual(urlPair[1]);
+ expect(redirected).toEqual(urlPair[1]);
         }
       });
     });

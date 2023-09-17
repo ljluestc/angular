@@ -5,19 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import {AbsoluteFsPath, FileStats, FileSystem, PathSegment, PathString} from './types';
-
-/**
- * The default `FileSystem` that will always fail.
- *
- * This is a way of ensuring that the developer consciously chooses and
- * configures the `FileSystem` before using it; particularly important when
- * considering static functions like `absoluteFrom()` which rely on
- * the `FileSystem` under the hood.
- */
-export class InvalidFileSystem implements FileSystem {
-  exists(path: AbsoluteFsPath): boolean {
-    throw makeError();
+import {AbsoluteFsPath, FileStats, FileSystem, PathSegment, PathString} from './types';    throw makeError();
   }
   readFile(path: AbsoluteFsPath): string {
     throw makeError();
@@ -97,9 +85,6 @@ export class InvalidFileSystem implements FileSystem {
   normalize<T extends PathString>(path: T): T {
     throw makeError();
   }
-}
-
-function makeError() {
+}function makeError() {
   return new Error(
-      'FileSystem has not been configured. Please call `setFileSystem()` before calling this method.');
-}
+ 

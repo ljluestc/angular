@@ -41,8 +41,8 @@ describe('retry-on-error', () => {
       // Fail on the first 2 requests, but succeed from the 3rd onwards.
       mergeMap(() => {
         if (failCount > 0) {
-          failCount--;
-          return throwError('Test error');
+ failCount--;
+ return throwError('Test error');
         }
         return of({ response: { foo: 'bar' } });
       }),

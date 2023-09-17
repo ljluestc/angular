@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid NgModule/Injector definition",
-          "files": [
-            "basic_linked.js"
-          ]
+ "failureMessage": "Invalid NgModule/Injector definition",
+ "files": [
+   "basic_linked.js"
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -25,10 +25,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid NgModule/Injector definition",
-          "files": [
-            "basic_full.js"
-          ]
+ "failureMessage": "Invalid NgModule/Injector definition",
+ "files": [
+   "basic_full.js"
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -43,10 +43,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid NgModule/Injector definition",
-          "files": [
-            "declarations.js"
-          ]
+ "failureMessage": "Invalid NgModule/Injector definition",
+ "files": [
+   "declarations.js"
+ ]
         }
       ]
     },
@@ -57,10 +57,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid NgModule/Injector definition",
-          "files": [
-            "declarations_jit_mode.js"
-          ]
+ "failureMessage": "Invalid NgModule/Injector definition",
+ "files": [
+   "declarations_jit_mode.js"
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -77,10 +77,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid NgModule/Injector definition",
-          "files": [
-            "providers.js"
-          ]
+ "failureMessage": "Invalid NgModule/Injector definition",
+ "files": [
+   "providers.js"
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -96,10 +96,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid NgModule/Injector definition",
-          "files": [
-            "imports_exports.js"
-          ]
+ "failureMessage": "Invalid NgModule/Injector definition",
+ "files": [
+   "imports_exports.js"
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -114,10 +114,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid NgModule/Injector definition",
-          "files": [
-            "imports_exports_jit_mode.js"
-          ]
+ "failureMessage": "Invalid NgModule/Injector definition",
+ "files": [
+   "imports_exports_jit_mode.js"
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -134,10 +134,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid NgModule/Injector definition",
-          "files": [
-            "no_aot.js"
-          ]
+ "failureMessage": "Invalid NgModule/Injector definition",
+ "files": [
+   "no_aot.js"
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -153,10 +153,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid NgModule/Injector definition",
-          "files": [
-            "inheritance.js"
-          ]
+ "failureMessage": "Invalid NgModule/Injector definition",
+ "files": [
+   "inheritance.js"
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -172,10 +172,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid NgModule/Injector definition",
-          "files": [
-            "forward_refs.js"
-          ]
+ "failureMessage": "Invalid NgModule/Injector definition",
+ "files": [
+   "forward_refs.js"
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -192,10 +192,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Empty declaration exists",
-          "files": [
-            "empty_fields.js"
-          ]
+ "failureMessage": "Empty declaration exists",
+ "files": [
+   "empty_fields.js"
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -211,10 +211,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid injector definition",
-          "files": [
-            "variable_providers.js"
-          ]
+ "failureMessage": "Invalid injector definition",
+ "files": [
+   "variable_providers.js"
+ ]
         }
       ],
       "compilationModeFilter": [

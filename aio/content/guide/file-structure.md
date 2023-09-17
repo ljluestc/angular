@@ -34,17 +34,17 @@ See [Setting up for a multi-project workspace](#multiple-projects) below.
 All projects within a workspace share a [CLI configuration context](guide/workspace-config).
 The top level of the workspace contains workspace-wide configuration files, configuration files for the root-level application, and subfolders for the root-level application source and test files.
 
-| Workspace configuration files | Purpose                                                                                                                                                                                                                                                                                                                                                                               |
-|:---                           |:---                                                                                                                                                                                                                                                                                                                                                                                   |
-| `.editorconfig`               | Configuration for code editors. See [EditorConfig](https://editorconfig.org).                                                                                                                                                                                                                                                                                                        |
-| `.gitignore`                  | Specifies intentionally untracked files that [Git](https://git-scm.com) should ignore.                                                                                                                                                                                                                                                                                               |
-| `README.md`                   | Introductory documentation for the root application.                                                                                                                                                                                                                                                                                                                                  |
-| `angular.json`                | CLI configuration defaults for all projects in the workspace, including configuration options for build, serve, and test tools that the CLI uses, such as [Karma](https://karma-runner.github.io), and [Protractor](https://www.protractortest.org). For details, see [Angular Workspace Configuration](guide/workspace-config).                                                    |
-| `package.json`                | Configures [npm package dependencies](guide/npm-packages) that are available to all projects in the workspace. See [npm documentation](https://docs.npmjs.com/files/package.json) for the specific format and contents of this file.                                                                                                                                                  |
-| `package-lock.json`           | Provides version information for all packages installed into `node_modules` by the npm client. See [npm documentation](https://docs.npmjs.com/files/package-lock.json) for details. If you use the yarn client, this file will be [yarn.lock](https://yarnpkg.com/lang/en/docs/yarn-lock) instead.                                                                                   |
-| `src/`                        | Source files for the root-level application project.                                                                                                                                                                                                                                                                                                                                  |
-| `node_modules/`               | Provides [npm packages](guide/npm-packages) to the entire workspace. Workspace-wide `node_modules` dependencies are visible to all projects.                                                                                                                                                                                                                                          |
-| `tsconfig.json`               | The base [TypeScript](https://www.typescriptlang.org) configuration for projects in the workspace. All other configuration files inherit from this base file. For more information, see the [Configuration inheritance with extends](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html#configuration-inheritance-with-extends) section of the TypeScript documentation.|
+| Workspace configuration files | Purpose       |
+|:---   |:---  |
+| `.editorconfig`| Configuration for code editors. See [EditorConfig](https://editorconfig.org).  |
+| `.gitignore`   | Specifies intentionally untracked files that [Git](https://git-scm.com) should ignore.  |
+| `README.md`    | Introductory documentation for the root application.       |
+| `angular.json` | CLI configuration defaults for all projects in the workspace, including configuration options for build, serve, and test tools that the CLI uses, such as [Karma](https://karma-runner.github.io), and [Protractor](https://www.protractortest.org). For details, see [Angular Workspace Configuration](guide/workspace-config).       |
+| `package.json` | Configures [npm package dependencies](guide/npm-packages) that are available to all projects in the workspace. See [npm documentation](https://docs.npmjs.com/files/package.json) for the specific format and contents of this file.  |
+| `package-lock.json`  | Provides version information for all packages installed into `node_modules` by the npm client. See [npm documentation](https://docs.npmjs.com/files/package-lock.json) for details. If you use the yarn client, this file will be [yarn.lock](https://yarnpkg.com/lang/en/docs/yarn-lock) instead.        |
+| `src/`| Source files for the root-level application project.       |
+| `node_modules/`| Provides [npm packages](guide/npm-packages) to the entire workspace. Workspace-wide `node_modules` dependencies are visible to all projects.|
+| `tsconfig.json`| The base [TypeScript](https://www.typescriptlang.org) configuration for projects in the workspace. All other configuration files inherit from this base file. For more information, see the [Configuration inheritance with extends](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html#configuration-inheritance-with-extends) section of the TypeScript documentation.|
 
 ## Application project files
 
@@ -68,14 +68,14 @@ For a multi-project workspace, additional projects in the `projects` folder cont
 Files at the top level of `src/` support testing and running your application.
 Subfolders contain the application source and application-specific configuration.
 
-| Application support files | Purpose                                                                                                                                                                                                                                                                                                                                                    |
-|:---                       |:---                                                                                                                                                                                                                                                                                                                                                        |
-| `app/`                    | Contains the component files in which your application logic and data are defined. See details [below](#app-src).                                                                                                                                                                                                                                          |
-| `assets/`                 | Contains image and other asset files to be copied as-is when you build your application.                                                                                                                                                                                                                                                                   |
-| `favicon.ico`             | An icon to use for this application in the bookmark bar.                                                                                                                                                                                                                                                                                                   |
-| `index.html`              | The main HTML page that is served when someone visits your site. The CLI automatically adds all JavaScript and CSS files when building your app, so you typically don't need to add any `<script>` or` <link>` tags here manually.                                                                                                                         |
-| `main.ts`                 | The main entry point for your application. Compiles the application with the [JIT compiler](guide/glossary#jit) and bootstraps the application's root module \(AppModule\) to run in the browser. You can also use the [AOT compiler](guide/aot-compiler) without changing any code by appending the `--aot` flag to the CLI `build` and `serve` commands. |
-| `styles.css`             | Lists CSS files that supply styles for a project. The extension reflects the style preprocessor you have configured for the project.                                                                                                                                                                                                                       |
+| Application support files | Purpose |
+|:---        |:---     |
+| `app/`     | Contains the component files in which your application logic and data are defined. See details [below](#app-src).|
+| `assets/`  | Contains image and other asset files to be copied as-is when you build your application.    |
+| `favicon.ico`    | An icon to use for this application in the bookmark bar.      |
+| `index.html`     | The main HTML page that is served when someone visits your site. The CLI automatically adds all JavaScript and CSS files when building your app, so you typically don't need to add any `<script>` or` <link>` tags here manually. |
+| `main.ts`  | The main entry point for your application. Compiles the application with the [JIT compiler](guide/glossary#jit) and bootstraps the application's root module \(AppModule\) to run in the browser. You can also use the [AOT compiler](guide/aot-compiler) without changing any code by appending the `--aot` flag to the CLI `build` and `serve` commands. |
+| `styles.css`    | Lists CSS files that supply styles for a project. The extension reflects the style preprocessor you have configured for the project.     |
 
 <div class="alert is-helpful">
 
@@ -106,10 +106,10 @@ For a multi-project workspace, project-specific configuration files are in the p
 
 Project-specific [TypeScript](https://www.typescriptlang.org) configuration files inherit from the workspace-wide `tsconfig.json`.
 
-| Application-specific configuration files | Purpose                                                                                                                                                                                                                                                                      |
-|:---                                      |:---                                                                                                                                                                                                                                                                          |
-| `tsconfig.app.json`                      | Application-specific [TypeScript](https://www.typescriptlang.org) configuration, including TypeScript and Angular template compiler options. See [TypeScript Configuration](guide/typescript-configuration) and [Angular Compiler Options](guide/angular-compiler-options). |
-| `tsconfig.spec.json`                     | [TypeScript](https://www.typescriptlang.org) configuration for the application tests. See [TypeScript Configuration](guide/typescript-configuration).                                                                                                                       |
+| Application-specific configuration files | Purpose       |
+|:---        |:---  |
+| `tsconfig.app.json`       | Application-specific [TypeScript](https://www.typescriptlang.org) configuration, including TypeScript and Angular template compiler options. See [TypeScript Configuration](guide/typescript-configuration) and [Angular Compiler Options](guide/angular-compiler-options). |
+| `tsconfig.spec.json`      | [TypeScript](https://www.typescriptlang.org) configuration for the application tests. See [TypeScript Configuration](guide/typescript-configuration).     |
 
 <a id="multiple-projects"></a>
 
@@ -150,34 +150,34 @@ When you create projects this way, the file structure of the workspace is entire
     </div>
     <div class="children">
         <div class="file">
-          &hellip; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (workspace-wide config files)
+ &hellip; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (workspace-wide config files)
         </div>
         <div class="file">
-          projects &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (generated applications and libraries)
+ projects &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (generated applications and libraries)
         </div>
         <div class="children">
-            <div class="file">
-              my-first-app &nbsp; --(an explicitly generated application)
-            </div>
-            <div class="children">
-                <div class="file">
-                  &hellip; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --(application-specific config)
-                </div>
-                <div class="file">
-                  src &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --(source and support files for application)
-                </div>
-            </div>
-            <div class="file">
-              my-lib &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --(a generated library)
-            </div>
-            <div class="children">
-                <div class="file">
-                  &hellip; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --(library-specific config)
-                </div>
-                <div class="file">
-                  src &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --(source and support files for library)
-                </div>
-            </div>
+   <div class="file">
+     my-first-app &nbsp; --(an explicitly generated application)
+   </div>
+   <div class="children">
+ <div class="file">
+   &hellip; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --(application-specific config)
+ </div>
+ <div class="file">
+   src &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --(source and support files for application)
+ </div>
+   </div>
+   <div class="file">
+     my-lib &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --(a generated library)
+   </div>
+   <div class="children">
+ <div class="file">
+   &hellip; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --(library-specific config)
+ </div>
+ <div class="file">
+   src &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --(source and support files for library)
+ </div>
+   </div>
         </div>
     </div>
 </div>
@@ -191,15 +191,15 @@ Libraries unlike applications have their own `package.json` configuration file.
 
 Under the `projects/` folder, the `my-lib` folder contains your library code.
 
-| Library source files     | Purpose                                                                                                                                                                                                   |
-|:---                      |:---                                                                                                                                                                                                       |
-| `src/lib`                |  Contains your library project's logic and data. Like an application project, a library project can contain components, services, modules, directives, and pipes.                                         |
-| `src/public-api.ts`      | Specifies all files that are exported from your library.                                                                                                                                                  |
-| `ng-package.json`        | Configuration file used by [ng-packagr](https://github.com/ng-packagr/ng-packagr) for building your library.                                                                                              |
-| `package.json`           | Configures [npm package dependencies](guide/npm-packages) that are required for this library.                                                                                                             |
+| Library source files     | Purpose|
+|:---       |:---    |
+| `src/lib` |  Contains your library project's logic and data. Like an application project, a library project can contain components, services, modules, directives, and pipes.  |
+| `src/public-api.ts`      | Specifies all files that are exported from your library.  |
+| `ng-package.json`        | Configuration file used by [ng-packagr](https://github.com/ng-packagr/ng-packagr) for building your library.    |
+| `package.json`  | Configures [npm package dependencies](guide/npm-packages) that are required for this library.    |
 | `tsconfig.lib.json`      | Library-specific [TypeScript](https://www.typescriptlang.org) configuration, including TypeScript and Angular template compiler options. See [TypeScript Configuration](guide/typescript-configuration). |
-| `tsconfig.lib.prod.json` | Library-specific [TypeScript](https://www.typescriptlang.org) configuration that is used when building the library in production mode.                                                                   |
-| `tsconfig.spec.json`     | [TypeScript](https://www.typescriptlang.org) configuration for the library tests. See [TypeScript Configuration](guide/typescript-configuration).                                                        |
+| `tsconfig.lib.prod.json` | Library-specific [TypeScript](https://www.typescriptlang.org) configuration that is used when building the library in production mode.       |
+| `tsconfig.spec.json`     | [TypeScript](https://www.typescriptlang.org) configuration for the library tests. See [TypeScript Configuration](guide/typescript-configuration).  |
 
 <!-- links -->
 

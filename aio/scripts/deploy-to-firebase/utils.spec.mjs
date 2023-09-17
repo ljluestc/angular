@@ -1,9 +1,6 @@
 import fs from 'fs';
 import sh from 'shelljs';
-import u from './utils.mjs';
-
-
-describe('deploy-to-firebase/utils:', () => {
+import u from './utils.mjs';describe('deploy-to-firebase/utils:', () => {
   beforeEach(() => {
     // Clear the `getRemoteRefs()` cache before each test to prevent previous executions from
     // affecting subsequent tests.
@@ -22,7 +19,7 @@ describe('deploy-to-firebase/utils:', () => {
     it('should return the directory path given a file URL', () => {
       expect(u.getDirname(import.meta.url)).toMatch(/aio[\\/]scripts[\\/]deploy-to-firebase$/);
       expect(u.getDirname('file:///C:/foo/bar/baz.ext'))
-          .toBe((process.platform === 'win32') ? 'C:\\foo\\bar' : '/C:/foo/bar');
+ .toBe((process.platform === 'win32') ? 'C:\\foo\\bar' : '/C:/foo/bar');
     });
   });
 
@@ -67,12 +64,12 @@ describe('deploy-to-firebase/utils:', () => {
       ];
 
       getRemoteRefsSpy = spyOn(u, 'getRemoteRefs')
-          .withArgs('refs/heads/3.*.x', undefined).and.returnValue(mockRefs3)
-          .withArgs('refs/heads/3.*.x', jasmine.anything()).and.returnValue(mockRefs3)
-          .withArgs('refs/heads/4.*.x', undefined).and.returnValue(mockRefs4)
-          .withArgs('refs/heads/4.*.x', jasmine.anything()).and.returnValue(mockRefs4)
-          .withArgs('refs/heads/*.*.x', undefined).and.returnValue(mockRefsAll)
-          .withArgs('refs/heads/*.*.x', jasmine.anything()).and.returnValue(mockRefsAll);
+ .withArgs('refs/heads/3.*.x', undefined).and.returnValue(mockRefs3)
+ .withArgs('refs/heads/3.*.x', jasmine.anything()).and.returnValue(mockRefs3)
+ .withArgs('refs/heads/4.*.x', undefined).and.returnValue(mockRefs4)
+ .withArgs('refs/heads/4.*.x', jasmine.anything()).and.returnValue(mockRefs4)
+ .withArgs('refs/heads/*.*.x', undefined).and.returnValue(mockRefsAll)
+ .withArgs('refs/heads/*.*.x', jasmine.anything()).and.returnValue(mockRefsAll);
     });
 
     it('should get all minor branches for the specified major version', () => {
@@ -142,17 +139,17 @@ describe('deploy-to-firebase/utils:', () => {
     it('should retrieve the remote refs based on the speficied pattern/remote', () => {
       u.getRemoteRefs('some-pattern', {remote: 'https://example.com/repo.git'});
       expect(execSpy).toHaveBeenCalledWith(
-          'git ls-remote https://example.com/repo.git some-pattern', jasmine.anything());
+ 'git ls-remote https://example.com/repo.git some-pattern', jasmine.anything());
     });
 
     it('should use the `angular/angular` repo if not remote is specified', () => {
       u.getRemoteRefs('some-pattern');
       expect(execSpy).toHaveBeenCalledWith(
-          `git ls-remote ${u.NG_REMOTE_URL} some-pattern`, jasmine.anything());
+ `git ls-remote ${u.NG_REMOTE_URL} some-pattern`, jasmine.anything());
 
       u.getRemoteRefs('other-pattern', {other: 'option'});
       expect(execSpy).toHaveBeenCalledWith(
-          `git ls-remote ${u.NG_REMOTE_URL} other-pattern`, jasmine.anything());
+ `git ls-remote ${u.NG_REMOTE_URL} other-pattern`, jasmine.anything());
     });
 
     it('should run the git command in silent mode', () => {
@@ -208,7 +205,7 @@ describe('deploy-to-firebase/utils:', () => {
       expect(execSpy).toHaveBeenCalledTimes(2);
 
       const results3 = u.getRemoteRefs(
-          'some-pattern', {remote: u.NG_REMOTE_URL, retrieveFromCache: false});
+ 'some-pattern', {remote: u.NG_REMOTE_URL, retrieveFromCache: false});
       expect(results3).not.toBe(results1);
       expect(results3).not.toBe(results2);
       expect(execSpy).toHaveBeenCalledTimes(3);

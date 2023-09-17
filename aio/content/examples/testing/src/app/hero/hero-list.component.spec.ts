@@ -29,8 +29,8 @@ describe('HeroListComponent', () => {
     TestBed.configureTestingModule(
       Object.assign({}, appConfig, {
         providers: [
-          { provide: HeroService, useClass: TestHeroService },
-          { provide: Router, useValue: routerSpy },
+ { provide: HeroService, useClass: TestHeroService },
+ { provide: Router, useValue: routerSpy },
         ],
       }),
     )

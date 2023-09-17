@@ -40,7 +40,7 @@ export class StackblitzBuilder {
     const stackblitzPaths = path.join(this.examplePath, '*stackblitz.json');
     const fileNames = globbySync(stackblitzPaths, {
       dot: true // Include subpaths that begin with '.' when using a wildcard inclusion.
-                // Needed to include the bazel .cache folder on Linux.
+ // Needed to include the bazel .cache folder on Linux.
     });
     return fileNames;
   }
@@ -103,7 +103,7 @@ export class StackblitzBuilder {
     const plunkerPaths = path.join(this.examplePath, '**/*plnkr.json');
     const fileNames = globbySync(plunkerPaths, { ignore: ['**/node_modules/**'],
       dot: true // Include subpaths that begin with '.' when using a wildcard inclusion.
-                // Needed to include the bazel .cache folder on Linux.
+ // Needed to include the bazel .cache folder on Linux.
     });
 
     if (fileNames.length) {
@@ -295,7 +295,7 @@ export class StackblitzBuilder {
     config.fileNames = globbySync(gpaths, {
       ignore: ['**/node_modules/**'],
       dot: true // Include subpaths that begin with '.' when using a wildcard inclusion.
-                // Needed to include the bazel .cache folder on Linux.
+ // Needed to include the bazel .cache folder on Linux.
     });
 
     // We want to throw an Error if there are binary images 

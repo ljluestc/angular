@@ -19,16 +19,16 @@ platform(
     remote_execution_properties = """
         {PARENT_REMOTE_EXECUTION_PROPERTIES}
         properties: {
-            name: "dockerAddCapabilities"
-            value: "SYS_ADMIN"
+   name: "dockerAddCapabilities"
+   value: "SYS_ADMIN"
         }
         properties: {
-            name: "dockerNetwork"
-            value: "standard"
+   name: "dockerNetwork"
+   value: "standard"
         }
         properties: {
-            name: "Pool"
-            value: "default"
+   name: "Pool"
+   value: "default"
         }
         """,
 )

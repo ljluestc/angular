@@ -11,13 +11,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "basic_deferred_template.js",
-              "generated": "basic_deferred.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "basic_deferred_template.js",
+     "generated": "basic_deferred.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -32,13 +32,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "deferred_secondary_blocks_template.js",
-              "generated": "deferred_secondary_blocks.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "deferred_secondary_blocks_template.js",
+     "generated": "deferred_secondary_blocks.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -53,13 +53,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "deferred_with_placeholder_params_template.js",
-              "generated": "deferred_with_placeholder_params.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "deferred_with_placeholder_params_template.js",
+     "generated": "deferred_with_placeholder_params.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -74,13 +74,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "deferred_with_loading_params_template.js",
-              "generated": "deferred_with_loading_params.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "deferred_with_loading_params_template.js",
+     "generated": "deferred_with_loading_params.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -95,13 +95,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "deferred_with_local_deps_template.js",
-              "generated": "deferred_with_local_deps.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "deferred_with_local_deps_template.js",
+     "generated": "deferred_with_local_deps.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -119,13 +119,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "deferred_with_external_deps_template.js",
-              "generated": "deferred_with_external_deps.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "deferred_with_external_deps_template.js",
+     "generated": "deferred_with_external_deps.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -140,13 +140,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "deferred_with_triggers_template.js",
-              "generated": "deferred_with_triggers.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "deferred_with_triggers_template.js",
+     "generated": "deferred_with_triggers.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -161,13 +161,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "deferred_with_prefetch_triggers_template.js",
-              "generated": "deferred_with_prefetch_triggers.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "deferred_with_prefetch_triggers_template.js",
+     "generated": "deferred_with_prefetch_triggers.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true
@@ -182,13 +182,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "deferred_when_with_pipe_template.js",
-              "generated": "deferred_when_with_pipe.js"
-            }
-          ],
-          "failureMessage": "Incorrect template"
+ "files": [
+   {
+     "expected": "deferred_when_with_pipe_template.js",
+     "generated": "deferred_when_with_pipe.js"
+   }
+ ],
+ "failureMessage": "Incorrect template"
         }
       ],
       "skipForTemplatePipeline": true

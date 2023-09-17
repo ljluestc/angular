@@ -28,11 +28,11 @@ describe('AppComponent & TestModule', () => {
     TestBed.configureTestingModule(
       Object.assign({}, appConfig, {
         imports: [
-          AppComponent,
-          BannerStubComponent,
-          RouterLink,
-          RouterOutletStubComponent,
-          WelcomeStubComponent,
+ AppComponent,
+ BannerStubComponent,
+ RouterLink,
+ RouterOutletStubComponent,
+ WelcomeStubComponent,
         ],
         providers: [provideRouter([]), UserService],
       }),
@@ -54,11 +54,11 @@ describe('AppComponent & NO_ERRORS_SCHEMA', () => {
     TestBed.configureTestingModule(
       Object.assign({}, appConfig, {
         imports: [
-          AppComponent,
-          // #enddocregion no-errors-schema
-          BannerStubComponent,
-          // #docregion no-errors-schema
-          RouterLink,
+ AppComponent,
+ // #enddocregion no-errors-schema
+ BannerStubComponent,
+ // #docregion no-errors-schema
+ RouterLink,
         ],
         providers: [provideRouter([]), UserService],
         schemas: [NO_ERRORS_SCHEMA],

@@ -42,10 +42,7 @@ export class AppComponent {
   addItem(newItem: string) {
     this.items.push(newItem);
   }
-  // #enddocregion add-new-item
-
-
-  crossOffItem(item: string) {
+  // #enddocregion add-new-item  crossOffItem(item: string) {
     console.warn(`Parent says: crossing off ${item}.`);
   }
 

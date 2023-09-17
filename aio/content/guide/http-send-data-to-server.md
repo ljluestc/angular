@@ -17,7 +17,7 @@ The method takes a resource URL and two additional parameters:
 
 | Parameter | Details |
 |:---       |:---     |
-| body      | The data to POST in the body of the request.                                                          |
+| body      | The data to POST in the body of the request.    |
 | options   | An object containing method options which, in this case, specify required headers. |
 
 The example catches errors as [described above](guide/http-handle-request-errors#error-details).
@@ -48,10 +48,7 @@ You must call `subscribe()` or nothing happens.
 Just calling `HeroesService.deleteHero()` does not initiate the DELETE request.
 
 <code-example path="http/src/app/heroes/heroes.component.ts" region="delete-hero-no-subscribe"></code-example>
-</div>
-
-
-## Make a PUT request
+</div>## Make a PUT request
 
 An app can send PUT requests using the HTTP client service.
 The following `HeroesService` example, like the POST example, replaces a resource with updated data.

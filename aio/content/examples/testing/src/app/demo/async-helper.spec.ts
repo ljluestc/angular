@@ -144,7 +144,7 @@ describe('Angular async helper', () => {
       of('hello')
         .pipe(delay(1000))
         .subscribe((v) => {
-          result = v;
+ result = v;
         });
       expect(result).toBe('');
       tick(1000);
@@ -196,9 +196,9 @@ describe('Angular async helper', () => {
       let finished = false;
       new Promise<void>((res) => {
         jsonp('localhost:8080/jsonp', () => {
-          // success callback and resolve the promise
-          finished = true;
-          res();
+ // success callback and resolve the promise
+ finished = true;
+ res();
         });
       }).then(() => {
         // async will wait until promise.then is called

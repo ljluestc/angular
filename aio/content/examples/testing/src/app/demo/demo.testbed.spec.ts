@@ -258,31 +258,31 @@ describe('demo (with TestBed):', () => {
       fixture
         .whenStable()
         .then(() => {
-          expect(input.value)
-            .withContext(
-              `After ngModel updates input box, input.value should be ${expectedOrigName} `,
-            )
-            .toBe(expectedOrigName);
+ expect(input.value)
+   .withContext(
+     `After ngModel updates input box, input.value should be ${expectedOrigName} `,
+   )
+   .toBe(expectedOrigName);
 
-          // simulate user entering new name in input
-          input.value = expectedNewName;
+ // simulate user entering new name in input
+ input.value = expectedNewName;
 
-          // that change doesn't flow to the component immediately
-          expect(comp.name)
-            .withContext(
-              `comp.name should still be ${expectedOrigName} after value change, before binding happens`,
-            )
-            .toBe(expectedOrigName);
+ // that change doesn't flow to the component immediately
+ expect(comp.name)
+   .withContext(
+     `comp.name should still be ${expectedOrigName} after value change, before binding happens`,
+   )
+   .toBe(expectedOrigName);
 
-          // Dispatch a DOM event so that Angular learns of input value change.
-          // then wait while ngModel pushes input.box value to comp.name
-          input.dispatchEvent(new Event('input'));
-          return fixture.whenStable();
+ // Dispatch a DOM event so that Angular learns of input value change.
+ // then wait while ngModel pushes input.box value to comp.name
+ input.dispatchEvent(new Event('input'));
+ return fixture.whenStable();
         })
         .then(() => {
-          expect(comp.name)
-            .withContext(`After ngModel updates the model, comp.name should be ${expectedNewName} `)
-            .toBe(expectedNewName);
+ expect(comp.name)
+   .withContext(`After ngModel updates the model, comp.name should be ${expectedNewName} `)
+   .toBe(expectedNewName);
         });
     }));
 
@@ -314,7 +314,7 @@ describe('demo (with TestBed):', () => {
       // that change doesn't flow to the component immediately
       expect(comp.name)
         .withContext(
-          `comp.name should still be ${expectedOrigName} after value change, before binding happens`,
+ `comp.name should still be ${expectedOrigName} after value change, before binding happens`,
         )
         .toBe(expectedOrigName);
 
@@ -400,7 +400,7 @@ describe('demo (with TestBed):', () => {
         imports: [Child1Component],
       })
         .overrideComponent(Child1Component, {
-          set: { template: '<span>Fake</span>' },
+ set: { template: '<span>Fake</span>' },
         })
         .createComponent(Child1Component);
 
@@ -413,11 +413,11 @@ describe('demo (with TestBed):', () => {
         imports: [TestProvidersComponent],
       })
         .overrideComponent(TestProvidersComponent, {
-          remove: { providers: [ValueService] },
-          add: { providers: [{ provide: ValueService, useClass: FakeValueService }] },
+ remove: { providers: [ValueService] },
+ add: { providers: [{ provide: ValueService, useClass: FakeValueService }] },
 
-          // Or replace them all (this component has only one provider)
-          // set:    { providers: [{ provide: ValueService, useClass: FakeValueService }] },
+ // Or replace them all (this component has only one provider)
+ // set:    { providers: [{ provide: ValueService, useClass: FakeValueService }] },
         })
         .createComponent(TestProvidersComponent);
 
@@ -436,12 +436,12 @@ describe('demo (with TestBed):', () => {
         imports: [TestViewProvidersComponent],
       })
         .overrideComponent(TestViewProvidersComponent, {
-          // remove: { viewProviders: [ValueService]},
-          // add:    { viewProviders: [{ provide: ValueService, useClass: FakeValueService }]
-          // },
+ // remove: { viewProviders: [ValueService]},
+ // add:    { viewProviders: [{ provide: ValueService, useClass: FakeValueService }]
+ // },
 
-          // Or replace them all (this component has only one viewProvider)
-          set: { viewProviders: [{ provide: ValueService, useClass: FakeValueService }] },
+ // Or replace them all (this component has only one viewProvider)
+ set: { viewProviders: [{ provide: ValueService, useClass: FakeValueService }] },
         })
         .createComponent(TestViewProvidersComponent);
 
@@ -464,10 +464,10 @@ describe('demo (with TestBed):', () => {
         providers: [ValueService],
       })
         .overrideComponent(TestComponent, {
-          set: { providers: [{ provide: ValueService, useValue: {} }] },
+ set: { providers: [{ provide: ValueService, useValue: {} }] },
         })
         .overrideComponent(TestProvidersComponent, {
-          set: { providers: [{ provide: ValueService, useClass: FakeValueService }] },
+ set: { providers: [{ provide: ValueService, useClass: FakeValueService }] },
         })
         .createComponent(TestComponent);
 
@@ -497,27 +497,27 @@ describe('demo (with TestBed):', () => {
     it('can access template local variables as references', () => {
       const fixture = TestBed.configureTestingModule({
         imports: [
-          ShellComponent,
-          NeedsContentComponent,
-          Child1Component,
-          Child2Component,
-          Child3Component,
+ ShellComponent,
+ NeedsContentComponent,
+ Child1Component,
+ Child2Component,
+ Child3Component,
         ],
       })
         .overrideComponent(ShellComponent, {
-          set: {
-            selector: 'test-shell',
-            imports: [NeedsContentComponent, Child1Component, Child2Component, Child3Component],
-            template: `
-          <needs-content #nc>
-            <child-1 #content text="My"></child-1>
-            <child-2 #content text="dog"></child-2>
-            <child-2 text="has"></child-2>
-            <child-3 #content text="fleas"></child-3>
-            <div #content>!</div>
-          </needs-content>
-          `,
-          },
+ set: {
+   selector: 'test-shell',
+   imports: [NeedsContentComponent, Child1Component, Child2Component, Child3Component],
+   template: `
+ <needs-content #nc>
+   <child-1 #content text="My"></child-1>
+   <child-2 #content text="dog"></child-2>
+   <child-2 text="has"></child-2>
+   <child-3 #content text="fleas"></child-3>
+   <div #content>!</div>
+ </needs-content>
+ `,
+ },
         })
         .createComponent(ShellComponent);
 
@@ -647,11 +647,11 @@ describe('demo (with TestBed):', () => {
         fixture.detectChanges();
 
         expect(child.ngOnChangesCounter)
-          .withContext('expected 2 changes: initial value and changed value')
-          .toBe(2);
+ .withContext('expected 2 changes: initial value and changed value')
+ .toBe(2);
         expect(parent.parentValue)
-          .withContext('parentValue should eq changed parent value')
-          .toBe('bar');
+ .withContext('parentValue should eq changed parent value')
+ .toBe('bar');
       });
     }));
 

@@ -10,5 +10,5 @@ HostAttributeDir.ɵdir = /*@__PURE__*/ $r3$.ɵɵdefineDirective({
   hostAttrs: ["title", "hello there from directive", __AttributeMarker.Classes__, "one", "two", __AttributeMarker.Styles__, "width", "200px", "height", "500px"],
   hostVars: 4,
   hostBindings: function HostAttributeDir_HostBindings(rf, ctx) {
-    …
+…
   }

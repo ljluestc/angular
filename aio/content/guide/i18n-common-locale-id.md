@@ -33,12 +33,12 @@ The differences include grammar, punctuation, formats for currency, decimal numb
 
 For the examples in this guide, use the following languages and locales.
 
-| Language | Locale                   | Unicode locale ID |
-|:---      |:---                      |:---               |
-| English  | Canada                   | `en-CA`           |
-| English  | United States of America | `en-US`           |
-| French   | Canada                   | `fr-CA`           |
-| French   | France                   | `fr-FR`           |
+| Language | Locale    | Unicode locale ID |
+|:---      |:---       |:---|
+| English  | Canada    | `en-CA`  |
+| English  | United States of America | `en-US`  |
+| French   | Canada    | `fr-CA`  |
+| French   | France    | `fr-FR`  |
 
 The [Angular repository][GithubAngularAngularTreeMasterPackagesCommonLocales] includes common locales.
 

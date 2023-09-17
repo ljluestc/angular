@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_multiple_bindings.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_multiple_bindings.js"
+ ]
         }
       ]
     },
@@ -22,10 +22,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_multiple_single_interpolation.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_multiple_single_interpolation.js"
+ ]
         }
       ]
     },
@@ -36,10 +36,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_multiple_bindings_mixed.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_multiple_bindings_mixed.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -51,10 +51,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_bindings_with_interpolations.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_bindings_with_interpolations.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -66,10 +66,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_multiple_bindings_for_multiple_elements.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_multiple_bindings_for_multiple_elements.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -81,10 +81,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "chain_multiple_bindings_with_child_elements.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "chain_multiple_bindings_with_child_elements.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -96,10 +96,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect attribute array",
-          "files": [
-            "exclude_bindings_from_consts.js"
-          ]
+ "failureMessage": "Incorrect attribute array",
+ "files": [
+   "exclude_bindings_from_consts.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -111,10 +111,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect handling of interpolated attributes",
-          "files": [
-            "interpolated_attributes.js"
-          ]
+ "failureMessage": "Incorrect handling of interpolated attributes",
+ "files": [
+   "interpolated_attributes.js"
+ ]
         }
       ]
     }

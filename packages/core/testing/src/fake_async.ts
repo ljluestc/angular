@@ -6,13 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 const _Zone: any = typeof Zone !== 'undefined' ? Zone : null;
-const fakeAsyncTestModule = _Zone && _Zone[_Zone.__symbol__('fakeAsyncTest')];
-
-const fakeAsyncTestModuleNotLoadedErrorMessage =
+const fakeAsyncTestModule = _Zone && _Zone[_Zone.__symbol__('fakeAsyncTest')];const fakeAsyncTestModuleNotLoadedErrorMessage =
     `zone-testing.js is needed for the fakeAsync() test helper but could not be found.
-        Please make sure that your environment includes zone.js/testing`;
-
-/**
+  Please make sure that your environment includes zone.js/testing`;/**
  * Clears out the shared fake async zone for a test.
  * To be called in a global `beforeEach`.
  *
@@ -23,9 +19,7 @@ export function resetFakeAsyncZone(): void {
     return fakeAsyncTestModule.resetFakeAsyncZone();
   }
   throw new Error(fakeAsyncTestModuleNotLoadedErrorMessage);
-}
-
-/**
+}/**
  * Wraps a function to be executed in the `fakeAsync` zone:
  * - Microtasks are manually executed by calling `flushMicrotasks()`.
  * - Timers are synchronous; `tick()` simulates the asynchronous passage of time.
@@ -53,9 +47,7 @@ export function fakeAsync(fn: Function): (...args: any[]) => any {
     return fakeAsyncTestModule.fakeAsync(fn);
   }
   throw new Error(fakeAsyncTestModuleNotLoadedErrorMessage);
-}
-
-/**
+}/**
  * Simulates the asynchronous passage of time for the timers in the `fakeAsync` zone.
  *
  * The microtasks queue is drained at the very start of this function and after any timer callback
@@ -90,7 +82,7 @@ export function fakeAsync(fn: Function): (...args: any[]) => any {
  *   let nestedTimeoutInvoked = false;
  *   function funcWithNestedTimeout() {
  *     setTimeout(() => {
- *       nestedTimeoutInvoked = true;
+ * nestedTimeoutInvoked = true;
  *     });
  *   };
  *   setTimeout(funcWithNestedTimeout);
@@ -107,7 +99,7 @@ export function fakeAsync(fn: Function): (...args: any[]) => any {
  *   let nestedTimeoutInvoked = false;
  *   function funcWithNestedTimeout() {
  *     setTimeout(() => {
- *       nestedTimeoutInvoked = true;
+ * nestedTimeoutInvoked = true;
  *     });
  *   };
  *   setTimeout(funcWithNestedTimeout);
@@ -121,15 +113,13 @@ export function fakeAsync(fn: Function): (...args: any[]) => any {
  */
 export function tick(
     millis: number = 0, tickOptions: {processNewMacroTasksSynchronously: boolean} = {
-      processNewMacroTasksSynchronously: true
+processNewMacroTasksSynchronously: true
     }): void {
   if (fakeAsyncTestModule) {
     return fakeAsyncTestModule.tick(millis, tickOptions);
   }
   throw new Error(fakeAsyncTestModuleNotLoadedErrorMessage);
-}
-
-/**
+}/**
  * Flushes any pending microtasks and simulates the asynchronous passage of time for the timers in
  * the `fakeAsync` zone by
  * draining the macrotask queue until it is empty.
@@ -145,9 +135,7 @@ export function flush(maxTurns?: number): number {
     return fakeAsyncTestModule.flush(maxTurns);
   }
   throw new Error(fakeAsyncTestModuleNotLoadedErrorMessage);
-}
-
-/**
+}/**
  * Discard all remaining periodic tasks.
  *
  * @publicApi
@@ -157,9 +145,7 @@ export function discardPeriodicTasks(): void {
     return fakeAsyncTestModule.discardPeriodicTasks();
   }
   throw new Error(fakeAsyncTestModuleNotLoadedErrorMessage);
-}
-
-/**
+}/**
  * Flush any pending microtasks.
  *
  * @publicApi

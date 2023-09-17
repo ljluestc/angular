@@ -30,15 +30,15 @@ export class HeroFormReactiveComponent implements OnInit {
     this.heroForm = new FormGroup(
       {
         name: new FormControl(this.hero.name, [
-          Validators.required,
-          Validators.minLength(4),
-          forbiddenNameValidator(/bob/i),
+ Validators.required,
+ Validators.minLength(4),
+ forbiddenNameValidator(/bob/i),
         ]),
         alterEgo: new FormControl(this.hero.alterEgo, {
-          asyncValidators: [
-            this.alterEgoValidator.validate.bind(this.alterEgoValidator),
-          ],
-          updateOn: 'blur',
+ asyncValidators: [
+   this.alterEgoValidator.validate.bind(this.alterEgoValidator),
+ ],
+ updateOn: 'blur',
         }),
         power: new FormControl(this.hero.power, Validators.required),
       },

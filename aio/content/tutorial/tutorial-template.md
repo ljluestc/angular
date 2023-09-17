@@ -25,7 +25,7 @@ This tutorial lesson demonstrates how to \[TODO: do something interesting in Ang
 This lesson starts with the code from the previous lesson, so you can:
 
 *   Use the code that you created in Lesson \[TODO: insert previous lesson number\] in your interactive development environment (IDE).
-<!--                                                                         update previous lesson link: vv -->
+<!--    update previous lesson link: vv -->
 *   Start with the code example from the previous lesson. Choose the <live-example name="first-app-lesson-00"></live-example> from Lesson \[TODO: previous lesson number\] where you can:
     *   Use the *live example* in StackBlitz, where the StackBlitz interface is your IDE.
     *   Use the *download example* and open it in your IDE.

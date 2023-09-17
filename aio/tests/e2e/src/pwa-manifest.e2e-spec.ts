@@ -1,7 +1,4 @@
-import { PwaManifestPage, PwaShortcutItem } from './pwa-manifest.po';
-
-
-describe('PWA manifest', () => {
+import { PwaManifestPage, PwaShortcutItem } from './pwa-manifest.po';describe('PWA manifest', () => {
   const page = new PwaManifestPage();
 
   describe('shortcuts', () => {
@@ -24,8 +21,8 @@ describe('PWA manifest', () => {
         // favor of using the `.withContext()` matcher. However, JasmineWD does not support that.
         // tslint:disable-next-line: deprecation
         expect(await pageExists(url)).toBe(
-            true,
-            `Page for shortcut '${short_name}' (from '${page.pwaManifestUrl}') does not exist. (URL: ${url})`);
+   true,
+   `Page for shortcut '${short_name}' (from '${page.pwaManifestUrl}') does not exist. (URL: ${url})`);
       }
     });
   });

@@ -52,11 +52,11 @@ aio-api-list {
         width: 182px;
 
         @include mixins.placeholder {
-          @include mixins.font-size(14);
+ @include mixins.font-size(14);
         }
 
         @media screen and (max-width: 600px) {
-          width: 100%;
+ width: 100%;
         }
       }
 
@@ -120,14 +120,14 @@ aio-api-list {
         white-space: nowrap;
 
         a {
-          @include mixins.line-height(16);
-          padding: 0 16px;
-          text-decoration: none;
-          transition: all .3s;
+ @include mixins.line-height(16);
+ padding: 0 16px;
+ text-decoration: none;
+ transition: all .3s;
 
-          &.deprecated-api-item {
-            text-decoration: line-through;
-          }
+ &.deprecated-api-item {
+   text-decoration: line-through;
+ }
         }
       }
     }

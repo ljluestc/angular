@@ -63,16 +63,16 @@ describe('Lazy Loading AngularJS Tests', () => {
     {
         const moduleNames = [];
         for (const {name, script, args} of browser.mockModules_) {
-            moduleNames.push(name);
-            await browser.executeScriptWithDescription(script, 'add mock module ' + name, ...args);
+   moduleNames.push(name);
+   await browser.executeScriptWithDescription(script, 'add mock module ' + name, ...args);
         }
 
         await browser.executeScriptWithDescription(
-            // TODO: must manually assign __TESTABILITY__NG1_APP_ROOT_INJECTOR__ (https://github.com/angular/angular/issues/22723)
-            `window.__TESTABILITY__NG1_APP_ROOT_INJECTOR__ = angular.resumeBootstrap(arguments[0]) `
-            + `|| angular.element('app-angular-js').injector();`,
-            'resume bootstrap',
-            moduleNames
+   // TODO: must manually assign __TESTABILITY__NG1_APP_ROOT_INJECTOR__ (https://github.com/angular/angular/issues/22723)
+   `window.__TESTABILITY__NG1_APP_ROOT_INJECTOR__ = angular.resumeBootstrap(arguments[0]) `
+   + `|| angular.element('app-angular-js').injector();`,
+   'resume bootstrap',
+   moduleNames
         );
     }
 

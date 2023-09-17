@@ -18,7 +18,7 @@
     <script src="systemjs.config.1.js"></script>
     <script>
       System.import('app/downgrade-io/app.module')
-            .then(null, console.error.bind(console));
+   .then(null, console.error.bind(console));
     </script>
   </head>
 
@@ -27,15 +27,15 @@
       <!-- #docregion usecomponent -->
       <div ng-controller="MainController as mainCtrl">
         <hero-detail [hero]="mainCtrl.hero"
-                     (deleted)="mainCtrl.onDelete($event)">
+   (deleted)="mainCtrl.onDelete($event)">
         </hero-detail>
       </div>
       <!-- #enddocregion usecomponent -->
       <!-- #docregion userepeatedcomponent -->
       <div ng-controller="MainController as mainCtrl">
         <hero-detail [hero]="hero"
-                     (deleted)="mainCtrl.onDelete($event)"
-                     ng-repeat="hero in mainCtrl.heroes">
+   (deleted)="mainCtrl.onDelete($event)"
+   ng-repeat="hero in mainCtrl.heroes">
         </hero-detail>
       </div>
       <!-- #enddocregion userepeatedcomponent-->

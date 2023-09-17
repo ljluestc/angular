@@ -9,9 +9,9 @@ const docs = [
 
 describe('disambiguateByDeprecated', () => {
   it('should filter out docs whose `deprecated` property is defined', () => {
-    expect(disambiguateByDeprecated('alias', {}, docs)).toEqual([
-      { id: 'doc1' },
-      { id: 'doc4' },
-    ]);
+expect(disambiguateByDeprecated('alias', {}, docs)).toEqual([
+  { id: 'doc1' },
+  { id: 'doc4' },
+]);
   });
 });

@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid component definition",
-          "files": [
-            "component.js"
-          ]
+ "failureMessage": "Invalid component definition",
+ "files": [
+   "component.js"
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -26,10 +26,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid directive definition",
-          "files": [
-            "directive.js"
-          ]
+ "failureMessage": "Invalid directive definition",
+ "files": [
+   "directive.js"
+ ]
         }
       ]
     },
@@ -40,10 +40,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid pipe definition",
-          "files": [
-            "pipe.js"
-          ]
+ "failureMessage": "Invalid pipe definition",
+ "files": [
+   "pipe.js"
+ ]
         }
       ]
     },
@@ -54,10 +54,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid standalone component dependencies",
-          "files": [
-            "imports.js"
-          ]
+ "failureMessage": "Invalid standalone component dependencies",
+ "files": [
+   "imports.js"
+ ]
         }
       ]
     },
@@ -68,10 +68,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Recursive usage not accounted for",
-          "files": [
-            "recursive.js"
-          ]
+ "failureMessage": "Recursive usage not accounted for",
+ "files": [
+   "recursive.js"
+ ]
         }
       ]
     },
@@ -82,10 +82,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Injector imports not optimized",
-          "files": [
-            "module_optimization.js"
-          ]
+ "failureMessage": "Injector imports not optimized",
+ "files": [
+   "module_optimization.js"
+ ]
         }
       ]
     },
@@ -96,10 +96,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid component definition",
-          "files": [
-            "forward_ref.js"
-          ]
+ "failureMessage": "Invalid component definition",
+ "files": [
+   "forward_ref.js"
+ ]
         }
       ]
     }

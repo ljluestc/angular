@@ -212,18 +212,14 @@ describe('SelectComponent', () => {
       expect(getOptionContainer()).toBeTruthy();
     });
   });
-});
-
-
-
-@Component({
+});@Component({
   template: `
     <aio-select (change)="onChange($event)"
-              [options]="options"
-              [selected]="selected"
-              [label]="label"
-              [showSymbol]="showSymbol"
-              [disabled]="disabled">
+     [options]="options"
+     [selected]="selected"
+     [label]="label"
+     [showSymbol]="showSymbol"
+     [disabled]="disabled">
     </aio-select>`
 })
 class HostComponent {

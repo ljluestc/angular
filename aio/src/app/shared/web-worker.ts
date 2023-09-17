@@ -21,10 +21,10 @@ export class WebWorkerClient {
       const handleMessage = (response: MessageEvent) => {
         const {type: responseType, id: responseId, payload: responsePayload} = response.data as WebWorkerMessage;
         if (type === responseType && id === responseId) {
-          this.zone.run(() => {
-            subscriber.next(responsePayload);
-            subscriber.complete();
-          });
+ this.zone.run(() => {
+   subscriber.next(responsePayload);
+   subscriber.complete();
+ });
         }
       };
 

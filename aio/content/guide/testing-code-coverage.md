@@ -61,17 +61,11 @@ coverageReporter: {
   }
 }
 
-</code-example>
-
-
-<div class="alert is-helpful">
+</code-example><div class="alert is-helpful">
 
 Read more about creating and fine tunning Karma configuration in the [testing guide](guide/testing#configuration).
 
-</div>
-
-
-The `check` property causes the tool to enforce a minimum of 80% code coverage when the unit tests are run in the project.
+</div>The `check` property causes the tool to enforce a minimum of 80% code coverage when the unit tests are run in the project.
 
 Read more on coverage configuration options in the [karma coverage documentation](https://github.com/karma-runner/karma-coverage/blob/master/docs/configuration.md).
 

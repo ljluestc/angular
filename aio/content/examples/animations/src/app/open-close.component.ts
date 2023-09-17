@@ -51,7 +51,7 @@ import { trigger, transition, state, animate, style, AnimationEvent } from '@ang
 // #docregion transition4
       transition ('* => open', [
         animate ('1s',
-          style ({ opacity: '*' }),
+ style ({ opacity: '*' }),
         ),
       ]),
 // #enddocregion transition4

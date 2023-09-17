@@ -82,18 +82,18 @@ describe('CodeTabsComponent', () => {
   template: `
     <code-tabs linenums="default-linenums">
       <code-pane class="class-A"
-                 language="language-A"
-                 linenums="linenums-A"
-                 path="path-A"
-                 region="region-A"
-                 header="header-A">
+  language="language-A"
+  linenums="linenums-A"
+  path="path-A"
+  region="region-A"
+  header="header-A">
         Code example 1
       </code-pane>
       <code-pane class="class-B"
-                 language="language-B"
-                 path="path-B"
-                 region="region-B"
-                 header="header-B">
+  language="language-B"
+  path="path-B"
+  region="region-B"
+  header="header-B">
         Code example 2
       </code-pane>
     </code-tabs>

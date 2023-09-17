@@ -8,13 +8,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "component_definition.js",
-              "generated": "component.js"
-            }
-          ],
-          "failureMessage": "Incorrect component definition"
+ "files": [
+   {
+     "expected": "component_definition.js",
+     "generated": "component.js"
+   }
+ ],
+ "failureMessage": "Incorrect component definition"
         }
       ]
     },
@@ -25,13 +25,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "directive_definition.js",
-              "generated": "directive.js"
-            }
-          ],
-          "failureMessage": "Incorrect directive definition"
+ "files": [
+   {
+     "expected": "directive_definition.js",
+     "generated": "directive.js"
+   }
+ ],
+ "failureMessage": "Incorrect directive definition"
         }
       ]
     },
@@ -42,13 +42,13 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "expected": "input_transform_definition.js",
-              "generated": "input_transform.js"
-            }
-          ],
-          "failureMessage": "Incorrect directive definition"
+ "files": [
+   {
+     "expected": "input_transform_definition.js",
+     "generated": "input_transform.js"
+   }
+ ],
+ "failureMessage": "Incorrect directive definition"
         }
       ]
     }

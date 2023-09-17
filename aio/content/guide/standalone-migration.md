@@ -17,10 +17,10 @@ Before using the schematic, please ensure that the project:
 
 ## Schematic options
 
-| Option              | Details                                                    |
-|:---                 |:---                                                        |
-| `mode`              | The transformation to perform. See [Migration modes](#migration-modes) below for details on the available options. |
-| `path`              | The path to migrate, relative to the project root. You can use this option to migrate sections of your project incrementally. |
+| Option     | Details       |
+|:---  |:---  |
+| `mode`     | The transformation to perform. See [Migration modes](#migration-modes) below for details on the available options. |
+| `path`     | The path to migrate, relative to the project root. You can use this option to migrate sections of your project incrementally. |
 
 ## Migrations steps
 

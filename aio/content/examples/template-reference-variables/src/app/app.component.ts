@@ -1,9 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgForm, FormsModule } from '@angular/forms';
-
-
-@Component({
+import { NgForm, FormsModule } from '@angular/forms';@Component({
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',

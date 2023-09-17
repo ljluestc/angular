@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { FlowerService } from './flower.service';
-import { AnimalService } from './animal.service';
-
-
-@Component({
+import { AnimalService } from './animal.service';@Component({
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',

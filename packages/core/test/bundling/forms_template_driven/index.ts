@@ -7,34 +7,26 @@
  */
 import {Component, NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {BrowserModule, platformBrowser} from '@angular/platform-browser';
-
-@Component({
+import {BrowserModule, platformBrowser} from '@angular/platform-browser';@Component({
   selector: 'app-template-forms',
   template: `
     <form novalidate>
-      <div ngModelGroup="profileForm">
-        <div>
-          First Name:
-          <input name="first" ngModel required />
-        </div>
-        <div>
-          Last Name:
-          <input name="last" ngModel />
-        </div>
-        <div>
-          Subscribe:
-          <input name="subscribed" type="checkbox" ngModel />
-        </div>
-
-        <div>Disabled: <input name="foo" ngModel disabled /></div>
-
-        <div *ngFor="let city of addresses; let i = index">
-          City <input [(ngModel)]="addresses[i].city" name="name" />
-        </div>
-
-        <button (click)="addCity()">Add City</button>
-      </div>
+<div ngModelGroup="profileForm">
+  <div>
+First Name:
+<input name="first" ngModel required />
+  </div>
+  <div>
+Last Name:
+<input name="last" ngModel />
+  </div>
+  <div>
+Subscribe:
+<input name="subscribed" type="checkbox" ngModel />
+  </div>  <div>Disabled: <input name="foo" ngModel disabled /></div>  <div *ngFor="let city of addresses; let i = index">
+City <input [(ngModel)]="addresses[i].city" name="name" />
+  </div>  <button (click)="addCity()">Add City</button>
+</div>
     </form>
   `
 })
@@ -44,23 +36,17 @@ class TemplateFormsComponent {
   constructor() {
     // We use this reference in our test
     (window as any).templateFormsComponent = this;
-  }
-
-  addCity() {
+  }  addCity() {
     this.addresses.push({city: ''});
   }
-}
-
-@Component({
+}@Component({
   selector: 'app-root',
   template: `
     <app-template-forms></app-template-forms>
   `
 })
 class RootComponent {
-}
-
-@NgModule({
+}@NgModule({
   declarations: [RootComponent, TemplateFormsComponent],
   imports: [BrowserModule, FormsModule],
 })
@@ -68,10 +54,6 @@ class FormsExampleModule {
   ngDoBootstrap(app: any) {
     app.bootstrap(RootComponent);
   }
-}
-
-function bootstrapApp() {
+}function bootstrapApp() {
   return platformBrowser().bootstrapModule(FormsExampleModule, {ngZone: 'noop'});
-}
-
-(window as any).bootstrapApp = bootstrapApp;
+}(window as any).bootstrapApp = bootstrapApp;

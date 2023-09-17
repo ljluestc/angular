@@ -90,7 +90,7 @@ aio-nav-menu {
       &[href^="http:"],
       &[href^="https:"] {
         .vertical-menu-item-text {
-          @include mixins.external-link-with-icon();
+ @include mixins.external-link-with-icon();
         }
       }
     }

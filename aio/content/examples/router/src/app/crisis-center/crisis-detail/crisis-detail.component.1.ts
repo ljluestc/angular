@@ -27,13 +27,13 @@ export class CrisisDetailComponent implements OnInit {
     this.route.paramMap
       .pipe(
         switchMap((params: ParamMap) =>
-          this.service.getCrisis(params.get('id')!)))
+ this.service.getCrisis(params.get('id')!)))
       .subscribe((crisis: Crisis) => {
         if (crisis) {
-          this.editName = crisis.name;
-          this.crisis = crisis;
+ this.editName = crisis.name;
+ this.crisis = crisis;
         } else { // id not found
-          this.gotoCrises();
+ this.gotoCrises();
         }
       });
   }

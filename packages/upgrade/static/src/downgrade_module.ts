@@ -4,20 +4,9 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-import {Injector, NgModuleFactory, NgModuleRef, PlatformRef, StaticProvider, Type} from '@angular/core';
-import {platformBrowser} from '@angular/platform-browser';
-
-import {ɵangular1, ɵconstants, ɵutil} from '../common';
-
-import {angular1Providers, setTempInjectorRef} from './angular1_providers';
-import {NgAdapterInjector} from './util';
-
-
-let moduleUid = 0;
-
-/**
+ */import {Injector, NgModuleFactory, NgModuleRef, PlatformRef, StaticProvider, Type} from '@angular/core';
+import {platformBrowser} from '@angular/platform-browser';import {ɵangular1, ɵconstants, ɵutil} from '../common';import {angular1Providers, setTempInjectorRef} from './angular1_providers';
+import {NgAdapterInjector} from './util';let moduleUid = 0;/**
  * @description
  *
  * A helper function for creating an AngularJS module that can bootstrap an Angular module
@@ -74,10 +63,10 @@ let moduleUid = 0;
  * `downgradeModule()` and `UpgradeModule` that affect the behavior of hybrid applications:
  *
  * 1. Unlike `UpgradeModule`, `downgradeModule()` does not bootstrap the main AngularJS module
- *    inside the {@link NgZone Angular zone}.
+ *inside the {@link NgZone Angular zone}.
  * 2. Unlike `UpgradeModule`, `downgradeModule()` does not automatically run a
- *    [$digest()](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest) when changes are
- *    detected in the Angular part of the application.
+ *[$digest()](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest) when changes are
+ *detected in the Angular part of the application.
  *
  * What this means is that applications using `UpgradeModule` will run change detection more
  * frequently in order to ensure that both frameworks are properly notified about possible changes.
@@ -131,7 +120,7 @@ let moduleUid = 0;
  * @publicApi
  */
 export function downgradeModule<T>(moduleOrBootstrapFn: Type<T>|(
-    (extraProviders: StaticProvider[]) => Promise<NgModuleRef<T>>)): string;
+(extraProviders: StaticProvider[]) => Promise<NgModuleRef<T>>)): string;
 /**
  * @description
  *
@@ -189,10 +178,10 @@ export function downgradeModule<T>(moduleOrBootstrapFn: Type<T>|(
  * `downgradeModule()` and `UpgradeModule` that affect the behavior of hybrid applications:
  *
  * 1. Unlike `UpgradeModule`, `downgradeModule()` does not bootstrap the main AngularJS module
- *    inside the {@link NgZone Angular zone}.
+ *inside the {@link NgZone Angular zone}.
  * 2. Unlike `UpgradeModule`, `downgradeModule()` does not automatically run a
- *    [$digest()](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest) when changes are
- *    detected in the Angular part of the application.
+ *[$digest()](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest) when changes are
+ *detected in the Angular part of the application.
  *
  * What this means is that applications using `UpgradeModule` will run change detection more
  * frequently in order to ensure that both frameworks are properly notified about possible changes.
@@ -246,7 +235,7 @@ export function downgradeModule<T>(moduleOrBootstrapFn: Type<T>|(
  * @publicApi
  *
  * @deprecated Passing `NgModuleFactory` as the `downgradeModule` function argument is deprecated,
- *     please pass an NgModule class reference instead.
+ * please pass an NgModule class reference instead.
  */
 export function downgradeModule<T>(moduleOrBootstrapFn: NgModuleFactory<T>): string;
 /**
@@ -306,10 +295,10 @@ export function downgradeModule<T>(moduleOrBootstrapFn: NgModuleFactory<T>): str
  * `downgradeModule()` and `UpgradeModule` that affect the behavior of hybrid applications:
  *
  * 1. Unlike `UpgradeModule`, `downgradeModule()` does not bootstrap the main AngularJS module
- *    inside the {@link NgZone Angular zone}.
+ *inside the {@link NgZone Angular zone}.
  * 2. Unlike `UpgradeModule`, `downgradeModule()` does not automatically run a
- *    [$digest()](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest) when changes are
- *    detected in the Angular part of the application.
+ *[$digest()](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest) when changes are
+ *detected in the Angular part of the application.
  *
  * What this means is that applications using `UpgradeModule` will run change detection more
  * frequently in order to ensure that both frameworks are properly notified about possible changes.
@@ -363,78 +352,64 @@ export function downgradeModule<T>(moduleOrBootstrapFn: NgModuleFactory<T>): str
  * @publicApi
  */
 export function downgradeModule<T>(moduleOrBootstrapFn: Type<T>|NgModuleFactory<T>|(
-    (extraProviders: StaticProvider[]) => Promise<NgModuleRef<T>>)): string {
+(extraProviders: StaticProvider[]) => Promise<NgModuleRef<T>>)): string {
   const lazyModuleName = `${ɵconstants.UPGRADE_MODULE_NAME}.lazy${++moduleUid}`;
   const lazyModuleRefKey = `${ɵconstants.LAZY_MODULE_REF}${lazyModuleName}`;
-  const lazyInjectorKey = `${ɵconstants.INJECTOR_KEY}${lazyModuleName}`;
-
-  let bootstrapFn: (extraProviders: StaticProvider[]) => Promise<NgModuleRef<T>>;
+  const lazyInjectorKey = `${ɵconstants.INJECTOR_KEY}${lazyModuleName}`;  let bootstrapFn: (extraProviders: StaticProvider[]) => Promise<NgModuleRef<T>>;
   if (ɵutil.isNgModuleType(moduleOrBootstrapFn)) {
-    // NgModule class
-    bootstrapFn = (extraProviders: StaticProvider[]) =>
-        platformBrowser(extraProviders).bootstrapModule(moduleOrBootstrapFn);
+// NgModule class
+bootstrapFn = (extraProviders: StaticProvider[]) =>
+platformBrowser(extraProviders).bootstrapModule(moduleOrBootstrapFn);
   } else if (!ɵutil.isFunction(moduleOrBootstrapFn)) {
-    // NgModule factory
-    bootstrapFn = (extraProviders: StaticProvider[]) =>
-        platformBrowser(extraProviders).bootstrapModuleFactory(moduleOrBootstrapFn);
+// NgModule factory
+bootstrapFn = (extraProviders: StaticProvider[]) =>
+platformBrowser(extraProviders).bootstrapModuleFactory(moduleOrBootstrapFn);
   } else {
-    // bootstrap function
-    bootstrapFn = moduleOrBootstrapFn;
-  }
-
-  let injector: Injector;
-
-  // Create an ng1 module to bootstrap.
+// bootstrap function
+bootstrapFn = moduleOrBootstrapFn;
+  }  let injector: Injector;  // Create an ng1 module to bootstrap.
   ɵangular1.module_(lazyModuleName, [])
-      .constant(ɵconstants.UPGRADE_APP_TYPE_KEY, ɵutil.UpgradeAppType.Lite)
-      .factory(ɵconstants.INJECTOR_KEY, [lazyInjectorKey, identity])
-      .factory(
-          lazyInjectorKey,
-          () => {
-            if (!injector) {
-              throw new Error(
-                  'Trying to get the Angular injector before bootstrapping the corresponding ' +
-                  'Angular module.');
-            }
-            return injector;
-          })
-      .factory(ɵconstants.LAZY_MODULE_REF, [lazyModuleRefKey, identity])
-      .factory(
-          lazyModuleRefKey,
-          [
-            ɵconstants.$INJECTOR,
-            ($injector: ɵangular1.IInjectorService) => {
-              setTempInjectorRef($injector);
-              const result: ɵutil.LazyModuleRef = {
-                promise: bootstrapFn(angular1Providers).then(ref => {
-                  injector = result.injector = new NgAdapterInjector(ref.injector);
-                  injector.get(ɵconstants.$INJECTOR);
-
-                  // Destroy the AngularJS app once the Angular `PlatformRef` is destroyed.
-                  // This does not happen in a typical SPA scenario, but it might be useful for
-                  // other use-cases where disposing of an Angular/AngularJS app is necessary
-                  // (such as Hot Module Replacement (HMR)).
-                  // See https://github.com/angular/angular/issues/39935.
-                  injector.get(PlatformRef).onDestroy(() => ɵutil.destroyApp($injector));
-
-                  return injector;
-                })
-              };
-              return result;
-            }
-          ])
-      .config([
-        ɵconstants.$INJECTOR, ɵconstants.$PROVIDE,
-        ($injector: ɵangular1.IInjectorService, $provide: ɵangular1.IProvideService) => {
-          $provide.constant(
-              ɵconstants.DOWNGRADED_MODULE_COUNT_KEY,
-              ɵutil.getDowngradedModuleCount($injector) + 1);
-        }
-      ]);
-
-  return lazyModuleName;
+  .constant(ɵconstants.UPGRADE_APP_TYPE_KEY, ɵutil.UpgradeAppType.Lite)
+  .factory(ɵconstants.INJECTOR_KEY, [lazyInjectorKey, identity])
+  .factory(
+  lazyInjectorKey,
+  () => {
+if (!injector) {
+  throw new Error(
+  'Trying to get the Angular injector before bootstrapping the corresponding ' +
+  'Angular module.');
 }
-
-function identity<T = any>(x: T): T {
+return injector;
+  })
+  .factory(ɵconstants.LAZY_MODULE_REF, [lazyModuleRefKey, identity])
+  .factory(
+  lazyModuleRefKey,
+  [
+ɵconstants.$INJECTOR,
+($injector: ɵangular1.IInjectorService) => {
+  setTempInjectorRef($injector);
+  const result: ɵutil.LazyModuleRef = {
+promise: bootstrapFn(angular1Providers).then(ref => {
+  injector = result.injector = new NgAdapterInjector(ref.injector);
+  injector.get(ɵconstants.$INJECTOR);  // Destroy the AngularJS app once the Angular `PlatformRef` is destroyed.
+  // This does not happen in a typical SPA scenario, but it might be useful for
+  // other use-cases where disposing of an Angular/AngularJS app is necessary
+  // (such as Hot Module Replacement (HMR)).
+  // See https://github.com/angular/angular/issues/39935.
+  injector.get(PlatformRef).onDestroy(() => ɵutil.destroyApp($injector));  return injector;
+})
+  };
+  return result;
+}
+  ])
+  .config([
+ɵconstants.$INJECTOR, ɵconstants.$PROVIDE,
+($injector: ɵangular1.IInjectorService, $provide: ɵangular1.IProvideService) => {
+  $provide.constant(
+  ɵconstants.DOWNGRADED_MODULE_COUNT_KEY,
+  ɵutil.getDowngradedModuleCount($injector) + 1);
+}
+  ]);  return lazyModuleName;
+}function identity<T = any>(x: T): T {
   return x;
 }

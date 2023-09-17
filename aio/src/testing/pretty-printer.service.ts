@@ -12,7 +12,7 @@ export class MockPrettyPrinter {
     const linenumsStr = (linenums === undefined) ? '' : `, linenums: ${linenums}`;
     return of(htmlSafeByReview(
         `Formatted code (language: ${language || 'auto'}${linenumsStr}): ${
-          unwrapHtml(code)}`,
+ unwrapHtml(code)}`,
         'safe transformation of existing TrustedHTML'));
   }
 }

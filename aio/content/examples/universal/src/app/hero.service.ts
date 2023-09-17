@@ -5,10 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Hero } from './hero';
-import { MessageService } from './message.service';
-
-
-@Injectable({ providedIn: 'root' })
+import { MessageService } from './message.service';@Injectable({ providedIn: 'root' })
 export class HeroService {
 
   private heroesUrl = 'api/heroes';  // URL to web api
@@ -37,8 +34,8 @@ export class HeroService {
       .pipe(
         map(heroes => heroes[0]), // returns a {0|1} element array
         tap(h => {
-          const outcome = h ? 'fetched' : 'did not find';
-          this.log(`${outcome} hero id=${id}`);
+ const outcome = h ? 'fetched' : 'did not find';
+ this.log(`${outcome} hero id=${id}`);
         }),
         catchError(this.handleError<Hero>(`getHero id=${id}`))
       );
@@ -61,8 +58,8 @@ export class HeroService {
     }
     return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
       tap(x => x.length ?
-         this.log(`found heroes matching "${term}"`) :
-         this.log(`no heroes matching "${term}"`)),
+this.log(`found heroes matching "${term}"`) :
+this.log(`no heroes matching "${term}"`)),
       catchError(this.handleError<Hero[]>('searchHeroes', []))
     );
   }

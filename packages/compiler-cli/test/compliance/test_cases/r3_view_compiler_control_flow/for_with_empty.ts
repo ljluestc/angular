@@ -1,14 +1,4 @@
-import {Component} from '@angular/core';
-
-@Component({
-  template: `
-    <div>
-      {{message}}
-      {#for item of items; track item}
-        {{item.name}}
-        {:empty} No items!
-      {/for}
-    </div>
+import {Component} from '@angular/core';    </div>
   `,
 })
 export class MyApp {

@@ -29,7 +29,7 @@
     .code-tab-group {
       .mat-tab-label {
         &:hover {
-          background: rgba(black, 0.04);
+ background: rgba(black, 0.04);
         }
       }
     }
@@ -52,28 +52,28 @@
     pre.prettyprint {
       code {
         ol.linenums {
-          color: color.adjust(constants.$mediumgray, $lightness: 25%);
+ color: color.adjust(constants.$mediumgray, $lightness: 25%);
 
-          li {
-            &::marker {
-              color: color.adjust(constants.$mediumgray, $lightness: 25%);
-            }
-          }
+ li {
+   &::marker {
+     color: color.adjust(constants.$mediumgray, $lightness: 25%);
+   }
+ }
         }
 
         .code-missing {
-          color: constants.$darkred;
+ color: constants.$darkred;
         }
       }
 
       &.lang-sh,
       &.lang-bash {
         .copy-button {
-          color: if($is-dark-theme, constants.$blue-grey-200, constants.$lightgray);
+ color: if($is-dark-theme, constants.$blue-grey-200, constants.$lightgray);
 
-          &:hover {
-            color: if($is-dark-theme, constants.$blue-grey-300, constants.$superlightgray);
-          }
+ &:hover {
+   color: if($is-dark-theme, constants.$blue-grey-300, constants.$superlightgray);
+ }
         }
       }
     }

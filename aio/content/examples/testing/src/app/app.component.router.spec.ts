@@ -27,16 +27,16 @@ describe('AppComponent & router testing', () => {
     TestBed.configureTestingModule(
       Object.assign({}, appConfig, {
         providers: [
-          { provide: HeroService, useClass: TestHeroService },
-          UserService,
-          TwainService,
-          provideHttpClient(),
-          provideLocationMocks(),
-          provideRouter([
-            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-            { path: 'about', component: AboutComponent },
-            { path: 'dashboard', component: DashboardComponent },
-          ]),
+ { provide: HeroService, useClass: TestHeroService },
+ UserService,
+ TwainService,
+ provideHttpClient(),
+ provideLocationMocks(),
+ provideRouter([
+   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+   { path: 'about', component: AboutComponent },
+   { path: 'dashboard', component: DashboardComponent },
+ ]),
         ],
       }),
     ).compileComponents();

@@ -5,24 +5,24 @@
  */
 module.exports = function simplifyMemberAnchors() {
   return {
-    $runAfter: ['paths-computed'],
-    $runBefore: ['rendering-docs'],
-    $process: function(docs) {
-      return docs.forEach(doc => {
-        if (doc.members) {
-          doc.members.forEach(member => {
-            member.anchor = computeAnchor(member);
-            member.path = doc.path + '#' + member.anchor;
-          });
-        }
-        if (doc.statics) {
-          doc.statics.forEach(member => {
-            member.anchor = computeAnchor(member);
-            member.path = doc.path + '#' + member.anchor;
-          });
-        }
-      });
-    }
+$runAfter: ['paths-computed'],
+$runBefore: ['rendering-docs'],
+$process: function(docs) {
+  return docs.forEach(doc => {
+if (doc.members) {
+  doc.members.forEach(member => {
+member.anchor = computeAnchor(member);
+member.path = doc.path + '#' + member.anchor;
+  });
+}
+if (doc.statics) {
+  doc.statics.forEach(member => {
+member.anchor = computeAnchor(member);
+member.path = doc.path + '#' + member.anchor;
+  });
+}
+  });
+}
   };
 };
 

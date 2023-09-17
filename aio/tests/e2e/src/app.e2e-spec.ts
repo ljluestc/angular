@@ -129,9 +129,9 @@ describe('site App', () => {
       // the window. As a result, the element may end up behind the fixed top menu, thus being
       // unclickable. To avoid this, we click the element directly using JavaScript instead.
       const clickButton =
-          (elementFinder: ElementFinder) => browser.executeScript('arguments[0].click()', elementFinder);
+ (elementFinder: ElementFinder) => browser.executeScript('arguments[0].click()', elementFinder);
       const getContributorNames =
-          () => contributors.all(by.css('h3')).map<string>(c => c?.getText());
+ () => contributors.all(by.css('h3')).map<string>(c => c?.getText());
 
       const names1 = await getContributorNames();
       expect(await contributors.count()).toBeGreaterThan(1);

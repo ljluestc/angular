@@ -8,22 +8,22 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect definition",
-          "files": [
-            {
-              "expected": "i18n_attribute_directive_definition.js",
-              "generated": "i18n_attribute_directive.js"
-            }
-          ]
+ "failureMessage": "Incorrect definition",
+ "files": [
+   {
+     "expected": "i18n_attribute_directive_definition.js",
+     "generated": "i18n_attribute_directive.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect factory",
-          "files": [
-            {
-              "expected": "i18n_attribute_directive_factory.js",
-              "generated": "i18n_attribute_directive.js"
-            }
-          ]
+ "failureMessage": "Incorrect factory",
+ "files": [
+   {
+     "expected": "i18n_attribute_directive_factory.js",
+     "generated": "i18n_attribute_directive.js"
+   }
+ ]
         }
       ]
     },
@@ -34,22 +34,22 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect definition",
-          "files": [
-            {
-              "expected": "i18n_prefix_attribute_directive_definition.js",
-              "generated": "i18n_prefix_attribute_directive.js"
-            }
-          ]
+ "failureMessage": "Incorrect definition",
+ "files": [
+   {
+     "expected": "i18n_prefix_attribute_directive_definition.js",
+     "generated": "i18n_prefix_attribute_directive.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect factory",
-          "files": [
-            {
-              "expected": "i18n_prefix_attribute_directive_factory.js",
-              "generated": "i18n_prefix_attribute_directive.js"
-            }
-          ]
+ "failureMessage": "Incorrect factory",
+ "files": [
+   {
+     "expected": "i18n_prefix_attribute_directive_factory.js",
+     "generated": "i18n_prefix_attribute_directive.js"
+   }
+ ]
         }
       ]
     },
@@ -60,13 +60,13 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect definition",
-          "files": [
-            {
-              "expected": "property_binding_directive_definition.js",
-              "generated": "property_binding_directive.js"
-            }
-          ]
+ "failureMessage": "Incorrect definition",
+ "files": [
+   {
+     "expected": "property_binding_directive_definition.js",
+     "generated": "property_binding_directive.js"
+   }
+ ]
         }
       ]
     },
@@ -77,13 +77,13 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect definition",
-          "files": [
-            {
-              "expected": "ng_template_directive_definition.js",
-              "generated": "ng_template_directive.js"
-            }
-          ]
+ "failureMessage": "Incorrect definition",
+ "files": [
+   {
+     "expected": "ng_template_directive_definition.js",
+     "generated": "ng_template_directive.js"
+   }
+ ]
         }
       ]
     },
@@ -94,13 +94,13 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect definition",
-          "files": [
-            {
-              "expected": "ng_container_directive_definition.js",
-              "generated": "ng_container_directive.js"
-            }
-          ]
+ "failureMessage": "Incorrect definition",
+ "files": [
+   {
+     "expected": "ng_container_directive_definition.js",
+     "generated": "ng_container_directive.js"
+   }
+ ]
         }
       ]
     },
@@ -111,13 +111,13 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect definition",
-          "files": [
-            {
-              "expected": "ng_template_binding_directive_definition.js",
-              "generated": "ng_template_binding_directive.js"
-            }
-          ]
+ "failureMessage": "Incorrect definition",
+ "files": [
+   {
+     "expected": "ng_template_binding_directive_definition.js",
+     "generated": "ng_template_binding_directive.js"
+   }
+ ]
         }
       ]
     },
@@ -128,13 +128,13 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect definition",
-          "files": [
-            {
-              "expected": "structural_directive_definition.js",
-              "generated": "structural_directive.js"
-            }
-          ]
+ "failureMessage": "Incorrect definition",
+ "files": [
+   {
+     "expected": "structural_directive_definition.js",
+     "generated": "structural_directive.js"
+   }
+ ]
         }
       ]
     },
@@ -145,13 +145,13 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect definition",
-          "files": [
-            {
-              "expected": "output_directive_definition.js",
-              "generated": "output_directive.js"
-            }
-          ]
+ "failureMessage": "Incorrect definition",
+ "files": [
+   {
+     "expected": "output_directive_definition.js",
+     "generated": "output_directive.js"
+   }
+ ]
         }
       ]
     }

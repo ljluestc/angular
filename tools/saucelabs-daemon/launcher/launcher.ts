@@ -62,8 +62,8 @@ export function SaucelabsLauncher(
     switch (message.type) {
       case 'browser-not-ready':
         log.error(
-            'Browser %s is not ready in the Saucelabs background service.',
-            browserDisplayName,
+   'Browser %s is not ready in the Saucelabs background service.',
+   browserDisplayName,
         );
         this._done('failure');
     }

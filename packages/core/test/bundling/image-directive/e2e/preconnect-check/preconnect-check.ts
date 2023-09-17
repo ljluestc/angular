@@ -4,12 +4,8 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */
-
-import {DOCUMENT, IMAGE_LOADER, NgOptimizedImage} from '@angular/common';
-import {Component, Inject} from '@angular/core';
-
-@Component({
+ */import {DOCUMENT, IMAGE_LOADER, NgOptimizedImage} from '@angular/common';
+import {Component, Inject} from '@angular/core';@Component({
   selector: 'preconnect-check',
   standalone: true,
   imports: [NgOptimizedImage],
@@ -26,9 +22,7 @@ import {Component, Inject} from '@angular/core';
 export class PreconnectCheckComponent {
   constructor(@Inject(DOCUMENT) private doc: Document) {
     this.createRequestedLinkElements();
-  }
-
-  /**
+  }  /**
    * Setup an environment required for e2e testing: create the necessary `<link>` elements in the
    * `document.head`, so that the `NgOptimizedImage` logic can be verified in various scenarios.
    */
@@ -38,12 +32,10 @@ export class PreconnectCheckComponent {
     const url = new URL(win.location.href).searchParams;
     const preconnect = url.get('preconnect');
     if (preconnect !== null) {
-      const link = this.createLinkElement('preconnect', 'https://angular.io');
-      this.doc.head.appendChild(link);
+const link = this.createLinkElement('preconnect', 'https://angular.io');
+this.doc.head.appendChild(link);
     }
-  }
-
-  /**
+  }  /**
    * Helper method to create a simple `<link>` element based on inputs.
    */
   private createLinkElement(rel: string, href: string, as?: string): HTMLLinkElement {

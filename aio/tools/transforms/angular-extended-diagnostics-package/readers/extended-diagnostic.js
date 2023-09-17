@@ -13,12 +13,12 @@
  */
 module.exports = function extendedDiagnosticFileReader() {
   return {
-    name: 'extendedDiagnosticFileReader',
-    defaultPattern: /\.md$/,
-    getDocs: fileInfo => {
-      // We return a single element array because extended-diagnostic files only contain one
-      // document.
-      return [{docType: 'extended-diagnostic', content: fileInfo.content}];
-    },
+name: 'extendedDiagnosticFileReader',
+defaultPattern: /\.md$/,
+getDocs: fileInfo => {
+  // We return a single element array because extended-diagnostic files only contain one
+  // document.
+  return [{docType: 'extended-diagnostic', content: fileInfo.content}];
+},
   };
 };

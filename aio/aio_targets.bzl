@@ -7,10 +7,10 @@ def aio_test(name, data, args, **kwargs):
         chdir = native.package_name(),
         data = data,
         env = {
-            "CHROME_BIN": "../$(CHROMIUM)",
+   "CHROME_BIN": "../$(CHROMIUM)",
         },
         toolchains = [
-            "@aio_npm//@angular/build-tooling/bazel/browsers/chromium:toolchain_alias",
+   "@aio_npm//@angular/build-tooling/bazel/browsers/chromium:toolchain_alias",
         ],
         **kwargs
     )

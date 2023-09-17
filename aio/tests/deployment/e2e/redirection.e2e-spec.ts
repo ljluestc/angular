@@ -38,14 +38,14 @@ describe(browser.baseUrl, () => {
         const actualUrl = await getCurrentUrl();
 
         if (actualUrl !== expectedUrl) {
-          // If the actual URL does not match the expected URL, check whether the expected URL
-          // itself is also redirected to the actual URL.
-          await page.goTo(expectedUrl);
-          const redirectedExpectedUrl = await getCurrentUrl();
+ // If the actual URL does not match the expected URL, check whether the expected URL
+ // itself is also redirected to the actual URL.
+ await page.goTo(expectedUrl);
+ const redirectedExpectedUrl = await getCurrentUrl();
 
-          if (actualUrl === redirectedExpectedUrl) {
-            expectedUrl = redirectedExpectedUrl;
-          }
+ if (actualUrl === redirectedExpectedUrl) {
+   expectedUrl = redirectedExpectedUrl;
+ }
         }
 
         expect(actualUrl).toBe(expectedUrl);

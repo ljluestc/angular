@@ -1,10 +1,7 @@
 import fs from 'fs';
 import {dirname} from 'path';
 import sh from 'shelljs';
-import {fileURLToPath} from 'url';
-
-
-// Constants
+import {fileURLToPath} from 'url';// Constants
 const REPO_SLUG = 'angular/angular';
 const NG_REMOTE_URL = `https://github.com/${REPO_SLUG}.git`;
 const ORIGINS = {

@@ -14,10 +14,7 @@
 
 Components, directives, and pipes can now be marked as `standalone: true`. Angular classes marked as standalone do not need to be declared in an `NgModule` (the Angular compiler will report an error if you try).
 
-Standalone components specify their dependencies directly instead of getting them through `NgModule`s. For example, if `PhotoGalleryComponent` is a standalone component, it can directly import another standalone component `ImageGridComponent`:
-
-
-```ts
+Standalone components specify their dependencies directly instead of getting them through `NgModule`s. For example, if `PhotoGalleryComponent` is a standalone component, it can directly import another standalone component `ImageGridComponent`:```ts
 @Component({
   standalone: true,
   selector: 'photo-gallery',
@@ -365,10 +362,7 @@ For example, this situation happens when a standalone parent component imports a
 })
 export class ParentComponent {
   @Input() hideParent: boolean;
-}
-
-
-@Component({
+}@Component({
   standalone: true,
   imports: [CommonModule, forwardRef(() => ParentComponent)],
   selector: 'app-child',

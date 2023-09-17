@@ -9,10 +9,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid ViewQuery declaration",
-          "files": [
-            "view_query_for_directive.js"
-          ]
+ "failureMessage": "Invalid ViewQuery declaration",
+ "files": [
+   "view_query_for_directive.js"
+ ]
         }
       ]
     },
@@ -23,10 +23,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid ViewQuery declaration",
-          "files": [
-            "view_query_forward_ref.js"
-          ]
+ "failureMessage": "Invalid ViewQuery declaration",
+ "files": [
+   "view_query_forward_ref.js"
+ ]
         }
       ]
     },
@@ -37,10 +37,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid ViewQuery declaration",
-          "files": [
-            "view_query_for_local_ref.js"
-          ]
+ "failureMessage": "Invalid ViewQuery declaration",
+ "files": [
+   "view_query_for_local_ref.js"
+ ]
         }
       ]
     },
@@ -52,10 +52,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid ViewQuery declaration",
-          "files": [
-            "static_view_query.js"
-          ]
+ "failureMessage": "Invalid ViewQuery declaration",
+ "files": [
+   "static_view_query.js"
+ ]
         }
       ]
     },
@@ -67,10 +67,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid ViewQuery declaration",
-          "files": [
-            "view_query_read_token.js"
-          ]
+ "failureMessage": "Invalid ViewQuery declaration",
+ "files": [
+   "view_query_read_token.js"
+ ]
         }
       ]
     },
@@ -82,10 +82,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid ContentQuery declaration",
-          "files": [
-            "content_query_for_directive.js"
-          ]
+ "failureMessage": "Invalid ContentQuery declaration",
+ "files": [
+   "content_query_for_directive.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -97,10 +97,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid ContentQuery declaration",
-          "files": [
-            "content_query_forward_ref.js"
-          ]
+ "failureMessage": "Invalid ContentQuery declaration",
+ "files": [
+   "content_query_forward_ref.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -112,10 +112,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid ContentQuery declaration",
-          "files": [
-            "content_query_for_local_ref.js"
-          ]
+ "failureMessage": "Invalid ContentQuery declaration",
+ "files": [
+   "content_query_for_local_ref.js"
+ ]
         }
       ]
     },
@@ -127,10 +127,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid ContentQuery declaration",
-          "files": [
-            "static_content_query.js"
-          ]
+ "failureMessage": "Invalid ContentQuery declaration",
+ "files": [
+   "static_content_query.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -143,10 +143,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid ContentQuery declaration",
-          "files": [
-            "content_query_read_token.js"
-          ]
+ "failureMessage": "Invalid ContentQuery declaration",
+ "files": [
+   "content_query_read_token.js"
+ ]
         }
       ]
     },
@@ -158,10 +158,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid ContentQuery declaration",
-          "files": [
-            "query_with_emit_distinct_changes_only.js"
-          ]
+ "failureMessage": "Invalid ContentQuery declaration",
+ "files": [
+   "query_with_emit_distinct_changes_only.js"
+ ]
         }
       ]
     }

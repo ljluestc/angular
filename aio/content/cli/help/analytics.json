@@ -20,13 +20,13 @@
       "shortDescription": "Disables analytics gathering and reporting for the user.",
       "options": [
         {
-          "name": "global",
-          "type": "boolean",
-          "aliases": [
-            "g"
-          ],
-          "default": false,
-          "description": "Configure analytics gathering and reporting globally in the caller's home directory."
+ "name": "global",
+ "type": "boolean",
+ "aliases": [
+   "g"
+ ],
+ "default": false,
+ "description": "Configure analytics gathering and reporting globally in the caller's home directory."
         }
       ],
       "aliases": [
@@ -40,13 +40,13 @@
       "shortDescription": "Enables analytics gathering and reporting for the user.",
       "options": [
         {
-          "name": "global",
-          "type": "boolean",
-          "aliases": [
-            "g"
-          ],
-          "default": false,
-          "description": "Configure analytics gathering and reporting globally in the caller's home directory."
+ "name": "global",
+ "type": "boolean",
+ "aliases": [
+   "g"
+ ],
+ "default": false,
+ "description": "Configure analytics gathering and reporting globally in the caller's home directory."
         }
       ],
       "aliases": [
@@ -68,13 +68,13 @@
       "shortDescription": "Prompts the user to set the analytics gathering status interactively.",
       "options": [
         {
-          "name": "global",
-          "type": "boolean",
-          "aliases": [
-            "g"
-          ],
-          "default": false,
-          "description": "Configure analytics gathering and reporting globally in the caller's home directory."
+ "name": "global",
+ "type": "boolean",
+ "aliases": [
+   "g"
+ ],
+ "default": false,
+ "description": "Configure analytics gathering and reporting globally in the caller's home directory."
         }
       ],
       "aliases": [],

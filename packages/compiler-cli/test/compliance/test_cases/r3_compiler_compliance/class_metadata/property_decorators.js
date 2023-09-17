@@ -10,17 +10,17 @@ __decorate([
 ], MyDir.prototype, "mixed", void 0);
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && $i0$.ɵsetClassMetadata(MyDir, [{
-    type: Directive
+type: Directive
   }], null, {
-    foo: [{
-      type: Input
-    }], bar: [{
-      type: Input,
-      args: ['baz']
-    }], custom: [], mixed: [{
-      type: Input
-    }, {
-      type: Output
-    }]
+foo: [{
+  type: Input
+}], bar: [{
+  type: Input,
+  args: ['baz']
+}], custom: [], mixed: [{
+  type: Input
+}, {
+  type: Output
+}]
   });
 })();

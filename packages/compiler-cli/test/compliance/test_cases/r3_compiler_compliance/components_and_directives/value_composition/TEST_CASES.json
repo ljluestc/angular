@@ -8,58 +8,58 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect ChildComponent.ɵcmp",
-          "files": [
-            {
-              "expected": "directives_child_component_def.js",
-              "generated": "directives.js"
-            }
-          ]
+ "failureMessage": "Incorrect ChildComponent.ɵcmp",
+ "files": [
+   {
+     "expected": "directives_child_component_def.js",
+     "generated": "directives.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect ChildComponent.ɵfac",
-          "files": [
-            {
-              "expected": "directives_child_component_fac.js",
-              "generated": "directives.js"
-            }
-          ]
+ "failureMessage": "Incorrect ChildComponent.ɵfac",
+ "files": [
+   {
+     "expected": "directives_child_component_fac.js",
+     "generated": "directives.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect SomeDirective.ɵdir",
-          "files": [
-            {
-              "expected": "directives_some_directive_dir.js",
-              "generated": "directives.js"
-            }
-          ]
+ "failureMessage": "Incorrect SomeDirective.ɵdir",
+ "files": [
+   {
+     "expected": "directives_some_directive_dir.js",
+     "generated": "directives.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect SomeDirective.ɵfac",
-          "files": [
-            {
-              "expected": "directives_some_directive_fac.js",
-              "generated": "directives.js"
-            }
-          ]
+ "failureMessage": "Incorrect SomeDirective.ɵfac",
+ "files": [
+   {
+     "expected": "directives_some_directive_fac.js",
+     "generated": "directives.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect MyComponentDefinition.ɵcmp",
-          "files": [
-            {
-              "expected": "directives_my_component_def.js",
-              "generated": "directives.js"
-            }
-          ]
+ "failureMessage": "Incorrect MyComponentDefinition.ɵcmp",
+ "files": [
+   {
+     "expected": "directives_my_component_def.js",
+     "generated": "directives.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect MyComponentDefinition.ɵfac",
-          "files": [
-            {
-              "expected": "directives_my_component_fac.js",
-              "generated": "directives.js"
-            }
-          ]
+ "failureMessage": "Incorrect MyComponentDefinition.ɵfac",
+ "files": [
+   {
+     "expected": "directives_my_component_fac.js",
+     "generated": "directives.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -74,40 +74,40 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect SomeDirective.ɵdir",
-          "files": [
-            {
-              "expected": "complex_selectors_some_directive_dir.js",
-              "generated": "complex_selectors.js"
-            }
-          ]
+ "failureMessage": "Incorrect SomeDirective.ɵdir",
+ "files": [
+   {
+     "expected": "complex_selectors_some_directive_dir.js",
+     "generated": "complex_selectors.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect SomeDirective.ɵfac",
-          "files": [
-            {
-              "expected": "complex_selectors_some_directive_fac.js",
-              "generated": "complex_selectors.js"
-            }
-          ]
+ "failureMessage": "Incorrect SomeDirective.ɵfac",
+ "files": [
+   {
+     "expected": "complex_selectors_some_directive_fac.js",
+     "generated": "complex_selectors.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect OtherDirective.ɵdir",
-          "files": [
-            {
-              "expected": "complex_selectors_other_directive_dir.js",
-              "generated": "complex_selectors.js"
-            }
-          ]
+ "failureMessage": "Incorrect OtherDirective.ɵdir",
+ "files": [
+   {
+     "expected": "complex_selectors_other_directive_dir.js",
+     "generated": "complex_selectors.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect OtherDirective.ɵfac",
-          "files": [
-            {
-              "expected": "complex_selectors_other_directive_fac.js",
-              "generated": "complex_selectors.js"
-            }
-          ]
+ "failureMessage": "Incorrect OtherDirective.ɵfac",
+ "files": [
+   {
+     "expected": "complex_selectors_other_directive_fac.js",
+     "generated": "complex_selectors.js"
+   }
+ ]
         }
       ]
     },
@@ -118,10 +118,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect SomeComponent.ɵcomp",
-          "files": [
-            "id_selector.js"
-          ]
+ "failureMessage": "Incorrect SomeComponent.ɵcomp",
+ "files": [
+   "id_selector.js"
+ ]
         }
       ]
     },
@@ -132,22 +132,22 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect EmptyOutletComponent.ɵcmp",
-          "files": [
-            {
-              "expected": "no_selector_def.js",
-              "generated": "no_selector.js"
-            }
-          ]
+ "failureMessage": "Incorrect EmptyOutletComponent.ɵcmp",
+ "files": [
+   {
+     "expected": "no_selector_def.js",
+     "generated": "no_selector.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect EmptyOutletComponent.ɵfac",
-          "files": [
-            {
-              "expected": "no_selector_fac.js",
-              "generated": "no_selector.js"
-            }
-          ]
+ "failureMessage": "Incorrect EmptyOutletComponent.ɵfac",
+ "files": [
+   {
+     "expected": "no_selector_fac.js",
+     "generated": "no_selector.js"
+   }
+ ]
         }
       ]
     },
@@ -158,22 +158,22 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect MyComponent.ɵcmp",
-          "files": [
-            {
-              "expected": "view_tokens_di_def.js",
-              "generated": "view_tokens_di.js"
-            }
-          ]
+ "failureMessage": "Incorrect MyComponent.ɵcmp",
+ "files": [
+   {
+     "expected": "view_tokens_di_def.js",
+     "generated": "view_tokens_di.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect MyComponent.ɵfac",
-          "files": [
-            {
-              "expected": "view_tokens_di_fac.js",
-              "generated": "view_tokens_di.js"
-            }
-          ]
+ "failureMessage": "Incorrect MyComponent.ɵfac",
+ "files": [
+   {
+     "expected": "view_tokens_di_fac.js",
+     "generated": "view_tokens_di.js"
+   }
+ ]
         }
       ]
     },
@@ -184,40 +184,40 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect IfDirective.ɵdir",
-          "files": [
-            {
-              "expected": "structural_directives_if_directive_def.js",
-              "generated": "structural_directives.js"
-            }
-          ]
+ "failureMessage": "Incorrect IfDirective.ɵdir",
+ "files": [
+   {
+     "expected": "structural_directives_if_directive_def.js",
+     "generated": "structural_directives.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect IfDirective.ɵfac",
-          "files": [
-            {
-              "expected": "structural_directives_if_directive_fac.js",
-              "generated": "structural_directives.js"
-            }
-          ]
+ "failureMessage": "Incorrect IfDirective.ɵfac",
+ "files": [
+   {
+     "expected": "structural_directives_if_directive_fac.js",
+     "generated": "structural_directives.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect MyComponent.ɵcmp",
-          "files": [
-            {
-              "expected": "structural_directives_my_component_def.js",
-              "generated": "structural_directives.js"
-            }
-          ]
+ "failureMessage": "Incorrect MyComponent.ɵcmp",
+ "files": [
+   {
+     "expected": "structural_directives_my_component_def.js",
+     "generated": "structural_directives.js"
+   }
+ ]
         },
         {
-          "failureMessage": "Incorrect MyComponent.ɵfac",
-          "files": [
-            {
-              "expected": "structural_directives_my_component_fac.js",
-              "generated": "structural_directives.js"
-            }
-          ]
+ "failureMessage": "Incorrect MyComponent.ɵfac",
+ "files": [
+   {
+     "expected": "structural_directives_my_component_fac.js",
+     "generated": "structural_directives.js"
+   }
+ ]
         }
       ]
     },
@@ -228,10 +228,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid array emit",
-          "files": [
-            "array_literals.js"
-          ]
+ "failureMessage": "Invalid array emit",
+ "files": [
+   "array_literals.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -243,10 +243,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid array binding",
-          "files": [
-            "array_literals_many.js"
-          ]
+ "failureMessage": "Invalid array binding",
+ "files": [
+   "array_literals_many.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -258,10 +258,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid object literal binding",
-          "files": [
-            "object_literals.js"
-          ]
+ "failureMessage": "Invalid object literal binding",
+ "files": [
+   "object_literals.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -273,10 +273,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid array/object literal binding",
-          "files": [
-            "literal_nested_expression.js"
-          ]
+ "failureMessage": "Invalid array/object literal binding",
+ "files": [
+   "literal_nested_expression.js"
+ ]
         }
       ],
       "skipForTemplatePipeline": true
@@ -288,10 +288,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Invalid number literal",
-          "files": [
-            "number_separator.js"
-          ]
+ "failureMessage": "Invalid number literal",
+ "files": [
+   "number_separator.js"
+ ]
         }
       ]
     }

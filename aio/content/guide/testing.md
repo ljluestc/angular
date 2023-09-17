@@ -152,23 +152,20 @@ To test your Angular CLI application in Continuous integration \(CI\) run the fo
 
 ng test --no-watch --no-progress --browsers=ChromeHeadless
 
-</code-example>
-
-
-## More information on testing
+</code-example>## More information on testing
 
 After you've set up your application for testing, you might find the following testing guides useful.
 
-|                                                                    | Details |
-|:---                                                                |:---     |
-| [Code coverage](guide/testing-code-coverage)                       | How much of your app your tests are covering and how to specify required amounts. |
-| [Testing services](guide/testing-services)                         | How to test the services your application uses.                                   |
-| [Basics of testing components](guide/testing-components-basics)    | Basics of testing Angular components.                                             |
-| [Component testing scenarios](guide/testing-components-scenarios)  | Various kinds of component testing scenarios and use cases.                       |
-| [Testing attribute directives](guide/testing-attribute-directives) | How to test your attribute directives.                                            |
-| [Testing pipes](guide/testing-pipes)                               | How to test pipes.                                                                |
-| [Debugging tests](guide/test-debugging)                            | Common testing bugs.                                                              |
-| [Testing utility APIs](guide/testing-utility-apis)                 | Angular testing features.                                                         |
+|     | Details |
+|:--- |:---     |
+| [Code coverage](guide/testing-code-coverage)     | How much of your app your tests are covering and how to specify required amounts. |
+| [Testing services](guide/testing-services)       | How to test the services your application uses.        |
+| [Basics of testing components](guide/testing-components-basics)    | Basics of testing Angular components.|
+| [Component testing scenarios](guide/testing-components-scenarios)  | Various kinds of component testing scenarios and use cases.     |
+| [Testing attribute directives](guide/testing-attribute-directives) | How to test your attribute directives.        |
+| [Testing pipes](guide/testing-pipes)    | How to test pipes. |
+| [Debugging tests](guide/test-debugging) | Common testing bugs.        |
+| [Testing utility APIs](guide/testing-utility-apis)        | Angular testing features.   |
 
 <!-- links -->
 

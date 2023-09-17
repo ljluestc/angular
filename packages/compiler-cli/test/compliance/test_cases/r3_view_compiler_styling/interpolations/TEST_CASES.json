@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect handling of interpolated classes",
-          "files": [
-            "class_interpolations.js"
-          ]
+ "failureMessage": "Incorrect handling of interpolated classes",
+ "files": [
+   "class_interpolations.js"
+ ]
         }
       ]
     },
@@ -22,10 +22,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect handling of interpolated style properties",
-          "files": [
-            "style_properties.js"
-          ]
+ "failureMessage": "Incorrect handling of interpolated style properties",
+ "files": [
+   "style_properties.js"
+ ]
         }
       ]
     },
@@ -36,10 +36,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect handling of interpolated style properties",
-          "files": [
-            "style_binding_suffixed.js"
-          ]
+ "failureMessage": "Incorrect handling of interpolated style properties",
+ "files": [
+   "style_binding_suffixed.js"
+ ]
         }
       ]
     },
@@ -50,10 +50,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect handling of interpolated style properties",
-          "files": [
-            "style_binding_sanitizer.js"
-          ]
+ "failureMessage": "Incorrect handling of interpolated style properties",
+ "files": [
+   "style_binding_sanitizer.js"
+ ]
         }
       ]
     },
@@ -64,10 +64,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect handling of interpolated style properties",
-          "files": [
-            "style_binding_important.js"
-          ]
+ "failureMessage": "Incorrect handling of interpolated style properties",
+ "files": [
+   "style_binding_important.js"
+ ]
         }
       ]
     }

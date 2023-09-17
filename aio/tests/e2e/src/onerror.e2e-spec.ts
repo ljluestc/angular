@@ -9,10 +9,7 @@ describe('onerror handler', () => {
   beforeAll(async () => {
     page = new SitePage();
     await page.navigateTo('');
-  });
-
-
-  it('(called without an error object) should call ga with a payload based on the message, url, row and column arguments', async () => {
+  });  it('(called without an error object) should call ga with a payload based on the message, url, row and column arguments', async () => {
     const message1 = await callOnError('Error: some error message', 'some-file.js', 12, 3, undefined);
     expect(message1).toEqual('some error message\nsome-file.js:12:3');
     const message2 = await callOnError('Error: some error message', undefined, undefined, undefined, undefined);

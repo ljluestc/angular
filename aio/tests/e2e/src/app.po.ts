@@ -23,8 +23,8 @@ export class SitePage {
 
   getNavItem(pattern: RegExp) {
     return element.all(by.css('aio-nav-item .vertical-menu-item'))
-                  .filter(async elementFinder => pattern.test(await elementFinder.getText()))
-                  .first();
+.filter(async elementFinder => pattern.test(await elementFinder.getText()))
+.first();
   }
   getNavItemHeadings(parent: ElementFinder, level: number) {
     const targetSelector = `aio-nav-item .vertical-menu-item.heading.level-${level}`;

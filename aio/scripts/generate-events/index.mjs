@@ -3,10 +3,7 @@ import {writeFileSync} from 'node:fs';
 import {get} from 'node:https';
 import {dirname, resolve as resolvePath} from 'node:path';
 import {argv} from 'node:process';
-import {fileURLToPath} from 'node:url';
-
-
-// Constants
+import {fileURLToPath} from 'node:url';// Constants
 const __dirname = dirname(fileURLToPath(import.meta.url));
 // README: Keep in sync with `./apps-script-project/constants.js`.
 const DB_BASE_URL = 'https://angular-io.firebaseio.com';
@@ -60,9 +57,9 @@ function fetchData(url) {
       let responseText = '';
 
       response
-          .on('data', d => responseText += d)
-          .on('end', () => resolve(JSON.parse(responseText)))
-          .on('error', err => reject(err));
+ .on('data', d => responseText += d)
+ .on('end', () => resolve(JSON.parse(responseText)))
+ .on('error', err => reject(err));
     }).on('error', err => reject(err));
   });
 }

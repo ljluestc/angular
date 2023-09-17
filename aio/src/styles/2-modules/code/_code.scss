@@ -59,7 +59,7 @@ code-tabs {
         transform: none;
 
         .fadeIn {
-          animation: opacity 2s ease-in;
+ animation: opacity 2s ease-in;
         }
       }
     }
@@ -88,10 +88,10 @@ aio-code {
         margin: 0;
 
         li {
-          margin: 0;
-          font-family: constants.$code-font;
-          font-size: 90%;
-          @include mixins.line-height(24);
+ margin: 0;
+ font-family: constants.$code-font;
+ font-size: 90%;
+ @include mixins.line-height(24);
         }
       }
     }

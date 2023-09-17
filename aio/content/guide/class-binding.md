@@ -39,12 +39,12 @@ If there are multiple bindings to the same class name, Angular uses [styling pre
 
 The following table summarizes class binding syntax.
 
-| Binding Type         | Syntax                      | Input Type                                                                  | Example Input Values |
-|:---                  |:---                         |:---                                                                         |:---                  |
-| Single class binding | `[class.sale]="onSale"`     | <code>boolean &verbar; undefined &verbar; null</code>                       | `true`, `false`                      |
-| Multi-class binding  | `[class]="classExpression"` | `string`                                                                    | `"my-class-1 my-class-2 my-class-3"` |
-| Multi-class binding  | `[class]="classExpression"` | <code>Record&lt;string, boolean &verbar; undefined &verbar; null&gt;</code> | `{foo: true, bar: false}`            |
-| Multi-class binding  | `[class]="classExpression"` | <code>Array&lt;string&gt;</code>                                            | `['foo', 'bar']`                     |
+| Binding Type| Syntax       | Input Type      | Example Input Values |
+|:---   |:--- |:---    |:---   |
+| Single class binding | `[class.sale]="onSale"`     | <code>boolean &verbar; undefined &verbar; null</code>        | `true`, `false`       |
+| Multi-class binding  | `[class]="classExpression"` | `string`        | `"my-class-1 my-class-2 my-class-3"` |
+| Multi-class binding  | `[class]="classExpression"` | <code>Record&lt;string, boolean &verbar; undefined &verbar; null&gt;</code> | `{foo: true, bar: false}`   |
+| Multi-class binding  | `[class]="classExpression"` | <code>Array&lt;string&gt;</code>     | `['foo', 'bar']`      |
 
 ## Binding to a single style
 
@@ -86,12 +86,12 @@ If there are multiple bindings to the same style attribute, Angular uses [stylin
 
 The following table summarizes style binding syntax.
 
-| Binding Type                    | Syntax                      | Input Type                                                                 | Example Input Values |
-|:---                             |:---                         |:---                                                                        |:---                  |
-| Single style binding            | `[style.width]="width"`     | <code>string &verbar; undefined &verbar; null</code>                       | `"100px"`                           |
-| Single style binding with units | `[style.width.px]="width"`  | <code>number &verbar; undefined &verbar; null</code>                       | `100`                               |
-| Multi-style binding             | `[style]="styleExpression"` | `string`                                                                   | `"width: 100px; height: 100px"`     |
-| Multi-style binding             | `[style]="styleExpression"` | <code>Record&lt;string, string &verbar; undefined &verbar; null&gt;</code> | `{width: '100px', height: '100px'}` |
+| Binding Type     | Syntax       | Input Type     | Example Input Values |
+|:---     |:--- |:---   |:---   |
+| Single style binding   | `[style.width]="width"`     | <code>string &verbar; undefined &verbar; null</code>        | `"100px"`   |
+| Single style binding with units | `[style.width.px]="width"`  | <code>number &verbar; undefined &verbar; null</code>        | `100` |
+| Multi-style binding    | `[style]="styleExpression"` | `string`       | `"width: 100px; height: 100px"`     |
+| Multi-style binding    | `[style]="styleExpression"` | <code>Record&lt;string, string &verbar; undefined &verbar; null&gt;</code> | `{width: '100px', height: '100px'}` |
 
 {@a styling-precedence}
 ## Styling precedence

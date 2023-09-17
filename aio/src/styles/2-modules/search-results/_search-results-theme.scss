@@ -16,17 +16,17 @@
 
       .search-area {
         .search-section-header {
-          color: constants.$white;
+ color: constants.$white;
         }
 
         ul {
-          .search-result-item {
-            color: $item-color;
+ .search-result-item {
+   color: $item-color;
 
-            &:hover {
-              color: constants.$white;
-            }
-          }
+   &:hover {
+     color: constants.$white;
+   }
+ }
         }
       }
 
@@ -46,25 +46,25 @@
     &.embedded {
       .search-results {
         .search-area {
-          .search-section-header {
-            color: if($is-dark-theme, constants.$offwhite, constants.$darkgray);
-          }
+ .search-section-header {
+   color: if($is-dark-theme, constants.$offwhite, constants.$darkgray);
+ }
 
-          .search-result-item {
-            color: if($is-dark-theme, constants.$offwhite, color.adjust(constants.$darkgray, $lightness: 10%));
+ .search-result-item {
+   color: if($is-dark-theme, constants.$offwhite, color.adjust(constants.$darkgray, $lightness: 10%));
 
-            &:hover {
-              color: constants.$accentblue;
-            }
-          }
+   &:hover {
+     color: constants.$accentblue;
+   }
+ }
         }
 
         .no-results {
-          color: mat.get-color-from-palette($foreground, text);
+ color: mat.get-color-from-palette($foreground, text);
         }
 
         a {
-          color: constants.$blue;
+ color: constants.$blue;
         }
       }
     }

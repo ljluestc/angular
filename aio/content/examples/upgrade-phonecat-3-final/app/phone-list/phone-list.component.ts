@@ -39,13 +39,13 @@ export class PhoneListComponent {
       return phones
         .slice(0) // Make a copy
         .sort((a, b) => {
-          if (a[this.orderProp] < b[this.orderProp]) {
-            return -1;
-          } else if ([b[this.orderProp] < a[this.orderProp]]) {
-            return 1;
-          } else {
-            return 0;
-          }
+ if (a[this.orderProp] < b[this.orderProp]) {
+   return -1;
+ } else if ([b[this.orderProp] < a[this.orderProp]]) {
+   return 1;
+ } else {
+   return 0;
+ }
         });
     }
     return phones;

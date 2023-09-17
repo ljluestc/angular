@@ -116,9 +116,9 @@ describe('Reactive forms', () => {
       const aliasText = 'Johnny';
       await Promise.all(
         Object.keys(profile)
-          .map(key =>
-            getInput(key).sendKeys(`${profile[key]}`)
-          )
+ .map(key =>
+   getInput(key).sendKeys(`${profile[key]}`)
+ )
       );
 
       const aliasInput = profileEditor.all(by.css('#alias-0'));

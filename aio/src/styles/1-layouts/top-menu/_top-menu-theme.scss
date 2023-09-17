@@ -46,34 +46,34 @@
     aio-top-menu {
       ul {
         li {
-          a.nav-link {
-            .nav-link-inner {
-              &:hover {
-                background: rgba(constants.$white, 0.15);
-              }
-            }
+ a.nav-link {
+   .nav-link-inner {
+     &:hover {
+ background: rgba(constants.$white, 0.15);
+     }
+   }
 
-            &:focus {
-              .nav-link-inner {
-                background: rgba(constants.$white, 0.15);
-                box-shadow: 0 0 1px 2px constants.$focus-outline-ondark;
-              }
-            }
+   &:focus {
+     .nav-link-inner {
+ background: rgba(constants.$white, 0.15);
+ box-shadow: 0 0 1px 2px constants.$focus-outline-ondark;
+     }
+   }
 
-            &:active {
-              .nav-link-inner {
-                background: rgba(constants.$white, 0.15);
-              }
-            }
-          }
+   &:active {
+     .nav-link-inner {
+ background: rgba(constants.$white, 0.15);
+     }
+   }
+ }
 
-          &.selected {
-            a.nav-link {
-              .nav-link-inner {
-                background: rgba(constants.$white, 0.15);
-              }
-            }
-          }
+ &.selected {
+   a.nav-link {
+     .nav-link-inner {
+ background: rgba(constants.$white, 0.15);
+     }
+   }
+ }
         }
       }
     }
@@ -85,7 +85,7 @@
         background-color: constants.$white;
 
         @include mixins.placeholder {
-          color: constants.$mediumgray;
+ color: constants.$mediumgray;
         }
       }
 

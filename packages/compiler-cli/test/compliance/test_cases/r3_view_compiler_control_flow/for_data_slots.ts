@@ -1,14 +1,4 @@
-import {Component} from '@angular/core';
-
-// We verify the data slots by defining templates before/after
-// and checking that the indexes are sequential.
-@Component({
-  template: `
-    <ng-template/>
-    {#for item of items; track item}{{item}}{:empty}Empty{/for}
-    <ng-template/>
-  `,
-})
+import {Component} from '@angular/core';})
 export class MyApp {
   items = ['one', 'two', 'three'];
   item: any;  // TODO(crisbeto): remove this once template type checking is fully implemented.

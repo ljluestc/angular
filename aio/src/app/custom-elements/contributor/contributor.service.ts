@@ -26,11 +26,11 @@ export class ContributorService {
       map((contribs) => {
         const contribMap: {[name: string]: Contributor[]} = {};
         Object.keys(contribs).forEach((key) => {
-          const contributor = contribs[key];
-          contributor.groups.forEach((group) => {
-            const contribGroup = contribMap[group] || (contribMap[group] = []);
-            contribGroup.push(contributor);
-          });
+ const contributor = contribs[key];
+ contributor.groups.forEach((group) => {
+   const contribGroup = contribMap[group] || (contribMap[group] = []);
+   contribGroup.push(contributor);
+ });
         });
 
         return contribMap;
@@ -39,15 +39,15 @@ export class ContributorService {
       // Flatten group map into sorted group array of sorted contributors
       map((cmap) =>
         Object.keys(cmap)
-          .map((key) => {
-            const order = knownGroups.indexOf(key);
-            return {
-              name: key,
-              order: order === -1 ? knownGroups.length : order,
-              contributors: cmap[key].sort(compareContributors),
-            };
-          })
-          .sort(compareGroups)
+ .map((key) => {
+   const order = knownGroups.indexOf(key);
+   return {
+     name: key,
+     order: order === -1 ? knownGroups.length : order,
+     contributors: cmap[key].sort(compareContributors),
+   };
+ })
+ .sort(compareGroups)
       )
     );
 

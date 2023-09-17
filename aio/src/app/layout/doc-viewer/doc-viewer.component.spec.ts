@@ -218,11 +218,11 @@ describe('DocViewerComponent', () => {
       it('should fall back to `textContent` if `innerText` is not available', () => {
         const querySelector = targetEl.querySelector;
         spyOn(targetEl, 'querySelector').and.callFake((selector: string) => {
-          const elem = querySelector.call(targetEl, selector);
-          return elem && Object.defineProperties(elem, {
-            innerText: {value: undefined},
-            textContent: {value: 'Text Content'},
-          });
+ const elem = querySelector.call(targetEl, selector);
+ return elem && Object.defineProperties(elem, {
+   innerText: {value: undefined},
+   textContent: {value: 'Text Content'},
+ });
         });
 
         doAddTitleAndToc(DOC_WITH_HIDDEN_H1_CONTENT);
@@ -233,11 +233,11 @@ describe('DocViewerComponent', () => {
       it('should still use `innerText` if available but empty', () => {
         const querySelector = targetEl.querySelector;
         spyOn(targetEl, 'querySelector').and.callFake((selector: string) => {
-          const elem = querySelector.call(targetEl, selector);
-          return elem && Object.defineProperties(elem, {
-            innerText: { value: '' },
-            textContent: { value: 'Text Content' }
-          });
+ const elem = querySelector.call(targetEl, selector);
+ return elem && Object.defineProperties(elem, {
+   innerText: { value: '' },
+   textContent: { value: 'Text Content' }
+ });
         });
 
         doAddTitleAndToc(DOC_WITH_HIDDEN_H1_CONTENT);
@@ -249,45 +249,39 @@ describe('DocViewerComponent', () => {
     describe('(ToC)', () => {
       describe('needed', () => {
         it('should add an embedded ToC element if there is an `<h1>` heading', () => {
-          prepareMetadataAndToc(DOC_WITH_H1);
-          const tocEl = getTocEl();
+ prepareMetadataAndToc(DOC_WITH_H1);
+ const tocEl = getTocEl();
 
-          expect(tocEl).toBeTruthy();
-          expect(tocEl?.classList.contains('embedded')).toBe(true);
+ expect(tocEl).toBeTruthy();
+ expect(tocEl?.classList.contains('embedded')).toBe(true);
         });
 
         it('should not add a second ToC element if there a hard coded one in place', () => {
-          prepareMetadataAndToc(DOC_WITH_EMBEDDED_TOC);
-          expect(targetEl.querySelectorAll('aio-toc').length).toEqual(1);
+ prepareMetadataAndToc(DOC_WITH_EMBEDDED_TOC);
+ expect(targetEl.querySelectorAll('aio-toc').length).toEqual(1);
         });
-      });
-
-
-      describe('not needed', () => {
+      });      describe('not needed', () => {
         it('should not add a ToC element if there is a `.no-toc` `<h1>` heading', () => {
-          prepareMetadataAndToc(DOC_WITH_NO_TOC_H1);
-          expect(getTocEl()).toBeFalsy();
+ prepareMetadataAndToc(DOC_WITH_NO_TOC_H1);
+ expect(getTocEl()).toBeFalsy();
         });
 
         it('should not add a ToC element if there is no `<h1>` heading', () => {
-          prepareMetadataAndToc(DOC_WITHOUT_H1);
-          expect(getTocEl()).toBeFalsy();
+ prepareMetadataAndToc(DOC_WITHOUT_H1);
+ expect(getTocEl()).toBeFalsy();
 
-          prepareMetadataAndToc(EMPTY_DOC);
-          expect(getTocEl()).toBeFalsy();
+ prepareMetadataAndToc(EMPTY_DOC);
+ expect(getTocEl()).toBeFalsy();
         });
 
         it('should remove ToC a hard coded one', () => {
-          prepareMetadataAndToc(DOC_WITH_EMBEDDED_TOC_WITHOUT_H1);
-          expect(getTocEl()).toBeFalsy();
+ prepareMetadataAndToc(DOC_WITH_EMBEDDED_TOC_WITHOUT_H1);
+ expect(getTocEl()).toBeFalsy();
 
-          prepareMetadataAndToc(DOC_WITH_EMBEDDED_TOC_WITH_NO_TOC_H1);
-          expect(getTocEl()).toBeFalsy();
+ prepareMetadataAndToc(DOC_WITH_EMBEDDED_TOC_WITH_NO_TOC_H1);
+ expect(getTocEl()).toBeFalsy();
         });
-      });
-
-
-      it('should generate ToC entries if there is an `<h1>` heading', () => {
+      });      it('should generate ToC entries if there is an `<h1>` heading', () => {
         doAddTitleAndToc(DOC_WITH_H1, 'foo');
 
         expect(tocService.genToc).toHaveBeenCalledTimes(1);
@@ -375,8 +369,8 @@ describe('DocViewerComponent', () => {
 
       it('should prepare the title and ToC (before embedding components)', async () => {
         prepareMetadataAndTocSpy.and.callFake((targetEl: HTMLElement, docId: string) => {
-          expect(targetEl.innerHTML).toBe('Some content');
-          expect(docId).toBe('foo');
+ expect(targetEl.innerHTML).toBe('Some content');
+ expect(docId).toBe('foo');
         });
 
         await doRender(htmlEscape('Some content'), 'foo');
@@ -501,8 +495,8 @@ describe('DocViewerComponent', () => {
       it('when `prepareMetadataAndTocSpy()` fails', async () => {
         const error = Error('Typical `prepareMetadataAndToc()` error');
         prepareMetadataAndTocSpy.and.callFake(() => {
-          expect(docViewer.nextViewContainer.innerHTML).not.toBe('');
-          throw error;
+ expect(docViewer.nextViewContainer.innerHTML).not.toBe('');
+ throw error;
         });
 
         await doRender(htmlEscape('Some content'), 'foo');
@@ -511,7 +505,7 @@ describe('DocViewerComponent', () => {
         expect(swapViewsSpy).not.toHaveBeenCalled();
         expect(docViewer.nextViewContainer.innerHTML).toBe('');
         expect(logger.output.error).toEqual([
-          [jasmine.any(Error)]
+ [jasmine.any(Error)]
         ]);
         expect(logger.output.error[0][0].message).toEqual(`[DocViewer] Error preparing document 'foo': ${error.stack}`);
         expect(TestBed.inject(Meta).addTag).toHaveBeenCalledWith({ name: 'robots', content: 'noindex' });
@@ -520,8 +514,8 @@ describe('DocViewerComponent', () => {
       it('when `EmbedComponentsService.embedInto()` fails', async () => {
         const error = Error('Typical `embedInto()` error');
         loadElementsSpy.and.callFake(() => {
-          expect(docViewer.nextViewContainer.innerHTML).not.toBe('');
-          throw error;
+ expect(docViewer.nextViewContainer.innerHTML).not.toBe('');
+ throw error;
         });
 
         await doRender(htmlEscape('Some content'), 'bar');
@@ -531,7 +525,7 @@ describe('DocViewerComponent', () => {
         expect(swapViewsSpy).not.toHaveBeenCalled();
         expect(docViewer.nextViewContainer.innerHTML).toBe('');
         expect(logger.output.error).toEqual([
-          [jasmine.any(Error)]
+ [jasmine.any(Error)]
         ]);
         expect(TestBed.inject(Meta).addTag).toHaveBeenCalledWith({ name: 'robots', content: 'noindex' });
       });
@@ -539,8 +533,8 @@ describe('DocViewerComponent', () => {
       it('when `swapViews()` fails', async () => {
         const error = Error('Typical `swapViews()` error');
         swapViewsSpy.and.callFake(() => {
-          expect(docViewer.nextViewContainer.innerHTML).not.toBe('');
-          throw error;
+ expect(docViewer.nextViewContainer.innerHTML).not.toBe('');
+ throw error;
         });
 
         await doRender(htmlEscape('Some content'), 'qux');
@@ -549,7 +543,7 @@ describe('DocViewerComponent', () => {
         expect(swapViewsSpy).toHaveBeenCalledTimes(1);
         expect(docViewer.nextViewContainer.innerHTML).toBe('');
         expect(logger.output.error).toEqual([
-          [jasmine.any(Error)]
+ [jasmine.any(Error)]
         ]);
         expect(logger.output.error[0][0].message).toEqual(`[DocViewer] Error preparing document 'qux': ${error.stack}`);
         expect(TestBed.inject(Meta).addTag).toHaveBeenCalledWith({ name: 'robots', content: 'noindex' });
@@ -558,8 +552,8 @@ describe('DocViewerComponent', () => {
       it('when something fails with non-Error', async () => {
         const error = 'Typical string error';
         swapViewsSpy.and.callFake(() => {
-          expect(docViewer.nextViewContainer.innerHTML).not.toBe('');
-          throw error;
+ expect(docViewer.nextViewContainer.innerHTML).not.toBe('');
+ throw error;
         });
 
         await doRender(htmlEscape('Some content'), 'qux');
@@ -567,7 +561,7 @@ describe('DocViewerComponent', () => {
         expect(swapViewsSpy).toHaveBeenCalledTimes(1);
         expect(docViewer.nextViewContainer.innerHTML).toBe('');
         expect(logger.output.error).toEqual([
-          [jasmine.any(Error)]
+ [jasmine.any(Error)]
         ]);
         expect(logger.output.error[0][0].message).toEqual(`[DocViewer] Error preparing document 'qux': ${error}`);
         expect(TestBed.inject(Meta).addTag).toHaveBeenCalledWith({ name: 'robots', content: 'noindex' });
@@ -631,134 +625,134 @@ describe('DocViewerComponent', () => {
         beforeEach(() => docViewerEl.classList[animationsEnabled ? 'remove' : 'add'](NO_ANIMATIONS));
 
         it('should return an observable', done => {
-          docViewer.swapViews().subscribe({ next: done, error: done.fail });
+ docViewer.swapViews().subscribe({ next: done, error: done.fail });
         });
 
         it('should swap the views', async () => {
-          await doSwapViews();
+ await doSwapViews();
 
-          expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
-          expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
-          expect(docViewer.currViewContainer).toBe(oldNextViewContainer);
-          expect(docViewer.nextViewContainer).toBe(oldCurrViewContainer);
+ expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
+ expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
+ expect(docViewer.currViewContainer).toBe(oldNextViewContainer);
+ expect(docViewer.nextViewContainer).toBe(oldCurrViewContainer);
 
-          await doSwapViews();
+ await doSwapViews();
 
-          expect(docViewerEl.contains(oldCurrViewContainer)).toBe(true);
-          expect(docViewerEl.contains(oldNextViewContainer)).toBe(false);
-          expect(docViewer.currViewContainer).toBe(oldCurrViewContainer);
-          expect(docViewer.nextViewContainer).toBe(oldNextViewContainer);
+ expect(docViewerEl.contains(oldCurrViewContainer)).toBe(true);
+ expect(docViewerEl.contains(oldNextViewContainer)).toBe(false);
+ expect(docViewer.currViewContainer).toBe(oldCurrViewContainer);
+ expect(docViewer.nextViewContainer).toBe(oldNextViewContainer);
         });
 
         it('should emit `docRemoved` after removing the leaving view', async () => {
-          const onDocRemovedSpy = jasmine.createSpy('onDocRemoved').and.callFake(() => {
-            expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
-            expect(docViewerEl.contains(oldNextViewContainer)).toBe(false);
-          });
+ const onDocRemovedSpy = jasmine.createSpy('onDocRemoved').and.callFake(() => {
+   expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
+   expect(docViewerEl.contains(oldNextViewContainer)).toBe(false);
+ });
 
-          docViewer.docRemoved.subscribe(onDocRemovedSpy);
+ docViewer.docRemoved.subscribe(onDocRemovedSpy);
 
-          expect(docViewerEl.contains(oldCurrViewContainer)).toBe(true);
-          expect(docViewerEl.contains(oldNextViewContainer)).toBe(false);
+ expect(docViewerEl.contains(oldCurrViewContainer)).toBe(true);
+ expect(docViewerEl.contains(oldNextViewContainer)).toBe(false);
 
-          await doSwapViews();
+ await doSwapViews();
 
-          expect(onDocRemovedSpy).toHaveBeenCalledTimes(1);
-          expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
-          expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
+ expect(onDocRemovedSpy).toHaveBeenCalledTimes(1);
+ expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
+ expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
         });
 
         it('should not emit `docRemoved` if the leaving view is already removed', async () => {
-          const onDocRemovedSpy = jasmine.createSpy('onDocRemoved');
+ const onDocRemovedSpy = jasmine.createSpy('onDocRemoved');
 
-          docViewer.docRemoved.subscribe(onDocRemovedSpy);
-          docViewerEl.removeChild(oldCurrViewContainer);
+ docViewer.docRemoved.subscribe(onDocRemovedSpy);
+ docViewerEl.removeChild(oldCurrViewContainer);
 
-          await doSwapViews();
+ await doSwapViews();
 
-          expect(onDocRemovedSpy).not.toHaveBeenCalled();
+ expect(onDocRemovedSpy).not.toHaveBeenCalled();
         });
 
         it('should emit `docInserted` after inserting the entering view', async () => {
-          const onDocInsertedSpy = jasmine.createSpy('onDocInserted').and.callFake(() => {
-            expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
-            expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
-          });
+ const onDocInsertedSpy = jasmine.createSpy('onDocInserted').and.callFake(() => {
+   expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
+   expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
+ });
 
-          docViewer.docInserted.subscribe(onDocInsertedSpy);
+ docViewer.docInserted.subscribe(onDocInsertedSpy);
 
-          expect(docViewerEl.contains(oldCurrViewContainer)).toBe(true);
-          expect(docViewerEl.contains(oldNextViewContainer)).toBe(false);
+ expect(docViewerEl.contains(oldCurrViewContainer)).toBe(true);
+ expect(docViewerEl.contains(oldNextViewContainer)).toBe(false);
 
-          await doSwapViews();
+ await doSwapViews();
 
-          expect(onDocInsertedSpy).toHaveBeenCalledTimes(1);
-          expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
-          expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
+ expect(onDocInsertedSpy).toHaveBeenCalledTimes(1);
+ expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
+ expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
         });
 
         it('should call the callback after inserting the entering view', async () => {
-          const onInsertedCb = jasmine.createSpy('onInsertedCb').and.callFake(() => {
-            expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
-            expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
-          });
-          const onDocInsertedSpy = jasmine.createSpy('onDocInserted');
+ const onInsertedCb = jasmine.createSpy('onInsertedCb').and.callFake(() => {
+   expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
+   expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
+ });
+ const onDocInsertedSpy = jasmine.createSpy('onDocInserted');
 
-          docViewer.docInserted.subscribe(onDocInsertedSpy);
+ docViewer.docInserted.subscribe(onDocInsertedSpy);
 
-          expect(docViewerEl.contains(oldCurrViewContainer)).toBe(true);
-          expect(docViewerEl.contains(oldNextViewContainer)).toBe(false);
+ expect(docViewerEl.contains(oldCurrViewContainer)).toBe(true);
+ expect(docViewerEl.contains(oldNextViewContainer)).toBe(false);
 
-          await doSwapViews(onInsertedCb);
+ await doSwapViews(onInsertedCb);
 
-          expect(onInsertedCb).toHaveBeenCalledTimes(1);
-          expect(onInsertedCb).toHaveBeenCalledBefore(onDocInsertedSpy);
-          expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
-          expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
+ expect(onInsertedCb).toHaveBeenCalledTimes(1);
+ expect(onInsertedCb).toHaveBeenCalledBefore(onDocInsertedSpy);
+ expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
+ expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
         });
 
         it('should empty the previous view', async () => {
-          await doSwapViews();
+ await doSwapViews();
 
-          expect(docViewer.currViewContainer.innerHTML).toBe('Next view');
-          expect(docViewer.nextViewContainer.innerHTML).toBe('');
+ expect(docViewer.currViewContainer.innerHTML).toBe('Next view');
+ expect(docViewer.nextViewContainer.innerHTML).toBe('');
 
-          docViewer.nextViewContainer.innerHTML = 'Next view 2';
-          await doSwapViews();
+ docViewer.nextViewContainer.innerHTML = 'Next view 2';
+ await doSwapViews();
 
-          expect(docViewer.currViewContainer.innerHTML).toBe('Next view 2');
-          expect(docViewer.nextViewContainer.innerHTML).toBe('');
+ expect(docViewer.currViewContainer.innerHTML).toBe('Next view 2');
+ expect(docViewer.nextViewContainer.innerHTML).toBe('');
         });
 
         if (animationsEnabled) {
-          // Only test this when there are animations. Without animations, the views are swapped
-          // synchronously, so there is no need (or way) to abort.
-          it('should abort swapping if the returned observable is unsubscribed from', async () => {
-            docViewer.swapViews().subscribe().unsubscribe();
-            await doSwapViews();
+ // Only test this when there are animations. Without animations, the views are swapped
+ // synchronously, so there is no need (or way) to abort.
+ it('should abort swapping if the returned observable is unsubscribed from', async () => {
+   docViewer.swapViews().subscribe().unsubscribe();
+   await doSwapViews();
 
-            // Since the first call was cancelled, only one swapping should have taken place.
-            expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
-            expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
-            expect(docViewer.currViewContainer).toBe(oldNextViewContainer);
-            expect(docViewer.nextViewContainer).toBe(oldCurrViewContainer);
-            expect(docViewer.currViewContainer.innerHTML).toBe('Next view');
-            expect(docViewer.nextViewContainer.innerHTML).toBe('');
-          });
+   // Since the first call was cancelled, only one swapping should have taken place.
+   expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
+   expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
+   expect(docViewer.currViewContainer).toBe(oldNextViewContainer);
+   expect(docViewer.nextViewContainer).toBe(oldCurrViewContainer);
+   expect(docViewer.currViewContainer.innerHTML).toBe('Next view');
+   expect(docViewer.nextViewContainer.innerHTML).toBe('');
+ });
         } else {
-          it('should swap views synchronously when animations are disabled', () => {
-            const cbSpy = jasmine.createSpy('cb');
+ it('should swap views synchronously when animations are disabled', () => {
+   const cbSpy = jasmine.createSpy('cb');
 
-            docViewer.swapViews(cbSpy).subscribe();
+   docViewer.swapViews(cbSpy).subscribe();
 
-            expect(cbSpy).toHaveBeenCalledTimes(1);
-            expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
-            expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
-            expect(docViewer.currViewContainer).toBe(oldNextViewContainer);
-            expect(docViewer.nextViewContainer).toBe(oldCurrViewContainer);
-            expect(docViewer.currViewContainer.innerHTML).toBe('Next view');
-            expect(docViewer.nextViewContainer.innerHTML).toBe('');
-          });
+   expect(cbSpy).toHaveBeenCalledTimes(1);
+   expect(docViewerEl.contains(oldCurrViewContainer)).toBe(false);
+   expect(docViewerEl.contains(oldNextViewContainer)).toBe(true);
+   expect(docViewer.currViewContainer).toBe(oldNextViewContainer);
+   expect(docViewer.nextViewContainer).toBe(oldCurrViewContainer);
+   expect(docViewer.currViewContainer.innerHTML).toBe('Next view');
+   expect(docViewer.nextViewContainer.innerHTML).toBe('');
+ });
         }
       });
     });

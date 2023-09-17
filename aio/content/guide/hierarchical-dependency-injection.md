@@ -8,14 +8,14 @@ By understanding these rules, you can determine whether to declare a provider at
 This topic uses the following pictographs.
 
 | html entities | pictographs |
-|:---         |:--- |
+|:---|:--- |
 | <code>&#x1F33A;</code> | red hibiscus \(`🌺`\)  |
 | <code>&#x1F33B;</code> | sunflower \(`🌻`\)     |
-| <code>&#x1F337;</code> | tulip \(`🌷`\)         |
-| <code>&#x1F33F;</code> | fern \(`🌿`\)          |
+| <code>&#x1F337;</code> | tulip \(`🌷`\)|
+| <code>&#x1F33F;</code> | fern \(`🌿`\) |
 | <code>&#x1F341;</code> | maple leaf \(`🍁`\)    |
-| <code>&#x1F433;</code> | whale \(`🐳`\)         |
-| <code>&#x1F436;</code> | dog \(`🐶`\)           |
+| <code>&#x1F433;</code> | whale \(`🐳`\)|
+| <code>&#x1F436;</code> | dog \(`🐶`\)  |
 | <code>&#x1F994;</code> | hedgehog \(`🦔`\)       |
 
 </div>
@@ -35,7 +35,7 @@ By understanding these rules, you can determine whether to declare a provider at
 Angular has two injector hierarchies:
 
 | Injector hierarchies        | Details |
-|:---                         |:---     |
+|:--- |:---     |
 | `EnvironmentInjector` hierarchy | Configure an `ElementInjector` in this hierarchy using `@Injectable()` or `providers` array in `ApplicationConfig`. |
 | `ElementInjector` hierarchy | Created implicitly at each DOM element. An `ElementInjector` is empty by default unless you configure it in the `providers` property on `@Directive()` or `@Component()`. |
 
@@ -356,8 +356,8 @@ The following sections demonstrate `providers` and `viewProviders` along with wa
 
 A component class can provide services in two ways:
 
-| Arrays                       | Details |
-|:---                          |:---     |
+| Arrays        | Details |
+|:---  |:---     |
 | With a `providers` array     | <code-example format="typescript" language="typescript"> &commat;Component({ &NewLine;&nbsp; &hellip; &NewLine;&nbsp; providers: [ &NewLine;&nbsp;&nbsp;&nbsp; {provide: FlowerService, useValue: {emoji: '&#x1F33A;'}} &NewLine;&nbsp; ] &NewLine;}) </code-example>    |
 | With a `viewProviders` array | <code-example format="typescript" language="typescript"> &commat;Component({ &NewLine;&nbsp; &hellip; &NewLine;&nbsp;viewProviders: [ &NewLine;&nbsp;&nbsp;&nbsp; {provide: AnimalService, useValue: {emoji: '&#x1F436;'}} &NewLine;&nbsp; ] &NewLine;}) </code-example> |
 
@@ -367,11 +367,11 @@ To understand how the `providers` and `viewProviders` influence service visibili
 
 In the logical tree, you'll find `@Provide`, `@Inject`, and `ApplicationConfig`, which are not real HTML attributes but are here to demonstrate what is going on under the hood.
 
-| Angular service attribute                                                                                          | Details |
-|:---                                                                                                                |:---     |
-| <code-example format="typescript" hideCopy language="typescript"> &commat;Inject(Token)=&gt;Value </code-example> | Demonstrates that if `Token` is injected at this location in the logical tree its value would be `Value`.             |
+| Angular service attribute| Details |
+|:---       |:---     |
+| <code-example format="typescript" hideCopy language="typescript"> &commat;Inject(Token)=&gt;Value </code-example> | Demonstrates that if `Token` is injected at this location in the logical tree its value would be `Value`.    |
 | <code-example format="typescript" hideCopy language="typescript"> &commat;Provide(Token=Value) </code-example>    | Demonstrates that there is a declaration of `Token` provider with value `Value` at this location in the logical tree. |
-| <code-example format="typescript" hideCopy language="typescript"> ApplicationConfig(Token) </code-example>         | Demonstrates that a fallback `EnvironmentInjector` should be used at this location.                                     |
+| <code-example format="typescript" hideCopy language="typescript"> ApplicationConfig(Token) </code-example>| Demonstrates that a fallback `EnvironmentInjector` should be used at this location.       |
 
 </div>
 
@@ -400,8 +400,8 @@ However, behind the scenes, Angular uses a logical view representation as follow
 &lt;app-root&gt; &lt;!-- AppComponent selector --&gt;
     &lt;#VIEW&gt;
         &lt;app-child&gt; &lt;!-- ChildComponent selector --&gt;
-            &lt;#VIEW&gt;
-            &lt;/#VIEW&gt;
+   &lt;#VIEW&gt;
+   &lt;/#VIEW&gt;
         &lt;/app-child&gt;
     &lt;/#VIEW&gt;
 &lt;/app-root&gt;
@@ -498,7 +498,7 @@ In the logical tree, this is represented as follows:
   &lt;#VIEW&gt;
     &lt;p&gt;Emoji from FlowerService: {{flower.emoji}} (&#x1F33A;)&lt;/p&gt;
     &lt;app-child &commat;Provide(FlowerService="&#x1F33B;")
-               &commat;Inject(FlowerService)=&gt;"&#x1F33B;"&gt; &lt;!-- search ends here --&gt;
+&commat;Inject(FlowerService)=&gt;"&#x1F33B;"&gt; &lt;!-- search ends here --&gt;
       &lt;#VIEW&gt; &lt;!-- search starts here --&gt;
         &lt;h2&gt;Child Component&lt;/h2&gt;
         &lt;p&gt;Emoji from FlowerService: {{flower.emoji}} (&#x1F33B;)&lt;/p&gt;
@@ -577,11 +577,11 @@ The logic tree for this example of `viewProviders` is as follows:
 <code-example format="html" language="html">
 
 &lt;app-root ApplicationConfig
-         &commat;Inject(AnimalService) animal=&gt;"&#x1F433;"&gt;
+&commat;Inject(AnimalService) animal=&gt;"&#x1F433;"&gt;
   &lt;#VIEW&gt;
     &lt;app-child&gt;
       &lt;#VIEW &commat;Provide(AnimalService="&#x1F436;")
-            &commat;Inject(AnimalService=&gt;"&#x1F436;")&gt;
+   &commat;Inject(AnimalService=&gt;"&#x1F436;")&gt;
        &lt;!-- ^^using viewProviders means AnimalService is available in &lt;#VIEW&gt;--&gt;
        &lt;p&gt;Emoji from AnimalService: {{animal.emoji}} (&#x1F436;)&lt;/p&gt;
       &lt;/#VIEW&gt;
@@ -659,25 +659,25 @@ The `AnimalService` in the logical tree would look like this:
 <code-example format="html" language="html">
 
 &lt;app-root ApplicationConfig
-         &commat;Inject(AnimalService) animal=&gt;"&#x1F433;"&gt;
+&commat;Inject(AnimalService) animal=&gt;"&#x1F433;"&gt;
   &lt;#VIEW&gt;
     &lt;app-child&gt;
       &lt;#VIEW &commat;Provide(AnimalService="&#x1F436;")
-            &commat;Inject(AnimalService=&gt;"&#x1F436;")&gt;
+   &commat;Inject(AnimalService=&gt;"&#x1F436;")&gt;
         &lt;!-- ^^using viewProviders means AnimalService is available in &lt;#VIEW&gt;--&gt;
         &lt;p&gt;Emoji from AnimalService: {{animal.emoji}} (&#x1F436;)&lt;/p&gt;
   
         &lt;div class="container"&gt;
-          &lt;h3&gt;Content projection&lt;/h3&gt;
-          &lt;app-inspector &commat;Inject(AnimalService) animal=&gt;"&#x1F433;"&gt;
-            &lt;p&gt;Emoji from AnimalService: {{animal.emoji}} (&#x1F433;)&lt;/p&gt;
-          &lt;/app-inspector&gt;
+ &lt;h3&gt;Content projection&lt;/h3&gt;
+ &lt;app-inspector &commat;Inject(AnimalService) animal=&gt;"&#x1F433;"&gt;
+   &lt;p&gt;Emoji from AnimalService: {{animal.emoji}} (&#x1F433;)&lt;/p&gt;
+ &lt;/app-inspector&gt;
         &lt;/div&gt;
 
         &lt;app-inspector&gt;
-          &lt;#VIEW &commat;Inject(AnimalService) animal=&gt;"&#x1F436;"&gt;
-            &lt;p&gt;Emoji from AnimalService: {{animal.emoji}} (&#x1F436;)&lt;/p&gt;
-          &lt;/#VIEW&gt;
+ &lt;#VIEW &commat;Inject(AnimalService) animal=&gt;"&#x1F436;"&gt;
+   &lt;p&gt;Emoji from AnimalService: {{animal.emoji}} (&#x1F436;)&lt;/p&gt;
+ &lt;/#VIEW&gt;
         &lt;/app-inspector&gt;
       &lt;/#VIEW&gt;
     &lt;/app-child&gt;
@@ -804,11 +804,11 @@ The logical tree looks like this with `@SkipSelf()` in `<app-child>`:
 <code-example format="html" language="html">
 
 &lt;app-root ApplicationConfig
-          &commat;Inject(AnimalService=&gt;"&#x1F433;")&gt;
+ &commat;Inject(AnimalService=&gt;"&#x1F433;")&gt;
   &lt;#VIEW&gt;&lt;!-- search begins here --&gt;
     &lt;app-child&gt;
       &lt;#VIEW &commat;Provide(AnimalService="&#x1F436;")
-             &commat;Inject(AnimalService, SkipSelf=&gt;"&#x1F433;")&gt;
+    &commat;Inject(AnimalService, SkipSelf=&gt;"&#x1F433;")&gt;
         &lt;!--Add &commat;SkipSelf --&gt;
       &lt;/#VIEW&gt;
     &lt;/app-child&gt;
@@ -846,11 +846,11 @@ export class ChildComponent {
 <code-example format="html" language="html">
 
 &lt;app-root ApplicationConfig
-          &commat;Inject(AnimalService=&gt;"&#x1F433;")&gt;
+ &commat;Inject(AnimalService=&gt;"&#x1F433;")&gt;
   &lt;#VIEW&gt;
     &lt;app-child&gt;
       &lt;#VIEW &commat;Provide(AnimalService="&#x1F436;")
-             &commat;Inject(AnimalService, &commat;Host=&gt;"&#x1F436;")&gt; &lt;!-- &commat;Host stops search here --&gt;
+    &commat;Inject(AnimalService, &commat;Host=&gt;"&#x1F436;")&gt; &lt;!-- &commat;Host stops search here --&gt;
       &lt;/#VIEW&gt;
     &lt;/app-child&gt;
   &lt;/#VIEW&gt;
@@ -899,12 +899,12 @@ The logical tree representation shows why this is:
 &lt;app-root ApplicationConfig
         &commat;Inject(AnimalService=&gt;"&#x1F433;")&gt;
   &lt;#VIEW &commat;Provide(AnimalService="&#x1F994;")
-         &commat;Inject(AnimalService, &commat;Optional)=&gt;"&#x1F994;"&gt;
+&commat;Inject(AnimalService, &commat;Optional)=&gt;"&#x1F994;"&gt;
     &lt;!-- ^^&commat;SkipSelf() starts here,  &commat;Host() stops here^^ --&gt;
     &lt;app-child&gt;
       &lt;#VIEW &commat;Provide(AnimalService="&#x1F436;")
-             &commat;Inject(AnimalService, &commat;SkipSelf, &commat;Host, &commat;Optional)=&gt;"&#x1F994;"&gt;
-               &lt;!-- Add &commat;SkipSelf ^^--&gt;
+    &commat;Inject(AnimalService, &commat;SkipSelf, &commat;Host, &commat;Optional)=&gt;"&#x1F994;"&gt;
+&lt;!-- Add &commat;SkipSelf ^^--&gt;
       &lt;/#VIEW&gt;
       &lt;/app-child&gt;
   &lt;/#VIEW&gt;

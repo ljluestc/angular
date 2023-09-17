@@ -40,10 +40,7 @@ describe('Upgrade Tests', () => {
       expect(await element(by.css('h2')).getText()).toEqual('Windstorm details!');
     });
 
-  });
-
-
-  describe('Upgraded component with IO', () => {
+  });  describe('Upgraded component with IO', () => {
 
     beforeAll(() => browser.get('/index-upgrade-io.html'));
 
@@ -56,10 +53,7 @@ describe('Upgrade Tests', () => {
       expect(await element(by.css('h2')).getText()).toEqual('Ex-Windstorm details!');
     });
 
-  });
-
-
-  describe('Downgraded static component', () => {
+  });  describe('Downgraded static component', () => {
 
     beforeAll(() => browser.get('/index-downgrade-static.html'));
 
@@ -86,10 +80,7 @@ describe('Upgrade Tests', () => {
       expect(await element.all(by.css('hero-detail')).count()).toBe(3);
     });
 
-  });
-
-
-  describe('Downgraded component with content projection', () => {
+  });  describe('Downgraded component with content projection', () => {
 
     beforeAll(() => browser.get('/index-ajs-to-a-projection.html'));
 
@@ -97,10 +88,7 @@ describe('Upgrade Tests', () => {
       expect(await element(by.css('hero-detail')).getText()).toContain('Specific powers of controlling winds');
     });
 
-  });
-
-
-  describe('Upgraded component with transclusion', () => {
+  });  describe('Upgraded component with transclusion', () => {
 
     beforeAll(() => browser.get('/index-a-to-ajs-transclusion.html'));
 
@@ -108,10 +96,7 @@ describe('Upgrade Tests', () => {
       expect(await element(by.css('hero-detail')).getText()).toContain('Specific powers of controlling winds');
     });
 
-  });
-
-
-  describe('Upgrading AngularJS Providers', () => {
+  });  describe('Upgrading AngularJS Providers', () => {
 
     beforeAll(() => browser.get('/index-ajs-to-a-providers.html'));
 
@@ -119,10 +104,7 @@ describe('Upgrade Tests', () => {
       expect(await element(by.css('h2')).getText()).toBe('1: Windstorm');
     });
 
-  });
-
-
-  describe('Downgrading Angular Providers', () => {
+  });  describe('Downgrading Angular Providers', () => {
 
     beforeAll(() => browser.get('/index-a-to-ajs-providers.html'));
 

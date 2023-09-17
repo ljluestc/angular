@@ -14,10 +14,7 @@ With `<ng-template>`, you can define template content that is only being rendere
     <p>Hooray!</p>
   ```
 
-</div>
-
-
-@usageNotes
+</div>@usageNotes
 
 ### Structural Directives
 

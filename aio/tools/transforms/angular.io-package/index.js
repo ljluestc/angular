@@ -14,8 +14,8 @@ const extendedDiagnosticsPackage = require('../angular-extended-diagnostics-pack
 const cliDocsPackage = require('../cli-docs-package');
 
 module.exports = new Package(
-    'angular.io',
-    [gitPackage, apiPackage, contentPackage, cliDocsPackage, errorsPackage, extendedDiagnosticsPackage])
+'angular.io',
+[gitPackage, apiPackage, contentPackage, cliDocsPackage, errorsPackage, extendedDiagnosticsPackage])
 
   // This processor relies upon the versionInfo. See below...
   .processor(require('./processors/processNavigationMap'))
@@ -25,10 +25,10 @@ module.exports = new Package(
   // We don't include this in the angular-base package because the `versionInfo` stuff
   // accesses the file system and git, which is slow.
   .config(function(renderDocsProcessor, versionInfo) {
-    // Add the version data to the renderer, for use in things like github links
-    renderDocsProcessor.extraData.versionInfo = versionInfo;
+// Add the version data to the renderer, for use in things like github links
+renderDocsProcessor.extraData.versionInfo = versionInfo;
   })
 
   .config(function(renderLinkInfo, postProcessHtml) {
-    renderLinkInfo.docTypes = postProcessHtml.docTypes;
+renderLinkInfo.docTypes = postProcessHtml.docTypes;
   });

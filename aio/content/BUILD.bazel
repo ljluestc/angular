@@ -5,7 +5,7 @@ filegroup(
     srcs = glob(
         ["**"],
         exclude = [
-            "BUILD.bazel",
+   "BUILD.bazel",
         ],
     ),
 )

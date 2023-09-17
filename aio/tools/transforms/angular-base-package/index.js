@@ -57,20 +57,20 @@ module.exports = new Package('angular-base', [
 
   // Configure jsdoc-style tag parsing
   .config(function(inlineTagProcessor) {
-    inlineTagProcessor.inlineTagDefinitions.push(require('./inline-tag-defs/custom-search-defs/'));
+inlineTagProcessor.inlineTagDefinitions.push(require('./inline-tag-defs/custom-search-defs/'));
   })
 
   // Where do we get the source files?
   .config(function(readFilesProcessor, collectExamples, generateKeywordsProcessor, jsonFileReader) {
 
-    readFilesProcessor.fileReaders.push(jsonFileReader);
-    readFilesProcessor.basePath = PROJECT_ROOT;
-    readFilesProcessor.sourceFiles = [];
-    collectExamples.exampleFolders = [];
+readFilesProcessor.fileReaders.push(jsonFileReader);
+readFilesProcessor.basePath = PROJECT_ROOT;
+readFilesProcessor.sourceFiles = [];
+collectExamples.exampleFolders = [];
 
-    generateKeywordsProcessor.ignoreWords = require(path.resolve(__dirname, 'ignore-words'))['en'];
-    generateKeywordsProcessor.docTypesToIgnore = [undefined, 'example-region', 'json-doc', 'api-list-data', 'api-list-data', 'contributors-json', 'navigation-json', 'announcements-json'];
-    generateKeywordsProcessor.propertiesToIgnore = ['basePath', 'renderedContent', 'docType', 'searchTitle'];
+generateKeywordsProcessor.ignoreWords = require(path.resolve(__dirname, 'ignore-words'))['en'];
+generateKeywordsProcessor.docTypesToIgnore = [undefined, 'example-region', 'json-doc', 'api-list-data', 'api-list-data', 'contributors-json', 'navigation-json', 'announcements-json'];
+generateKeywordsProcessor.propertiesToIgnore = ['basePath', 'renderedContent', 'docType', 'searchTitle'];
   })
 
   // Where do we write the output files?
@@ -78,101 +78,98 @@ module.exports = new Package('angular-base', [
 
   // Target environments
   .config(function(targetEnvironments) {
-    const ALLOWED_LANGUAGES = ['ts', 'js'];
-    const TARGET_LANGUAGE = 'ts';
+const ALLOWED_LANGUAGES = ['ts', 'js'];
+const TARGET_LANGUAGE = 'ts';
 
-    ALLOWED_LANGUAGES.forEach(target => targetEnvironments.addAllowed(target));
-    targetEnvironments.activate(TARGET_LANGUAGE);
-  })
-
-
-  // Configure nunjucks rendering of docs via templates
+ALLOWED_LANGUAGES.forEach(target => targetEnvironments.addAllowed(target));
+targetEnvironments.activate(TARGET_LANGUAGE);
+  })  // Configure nunjucks rendering of docs via templates
   .config(function(
-      renderDocsProcessor, templateFinder, templateEngine, getInjectables) {
+  renderDocsProcessor, templateFinder, templateEngine, getInjectables) {
 
-    // Where to find the templates for the doc rendering
-    templateFinder.templateFolders = [TEMPLATES_PATH];
+// Where to find the templates for the doc rendering
+templateFinder.templateFolders = [TEMPLATES_PATH];
 
-    // Standard patterns for matching docs to templates
-    templateFinder.templatePatterns = [
-      '${ doc.template }', '${ doc.id }.${ doc.docType }.template.html',
-      '${ doc.id }.template.html', '${ doc.docType }.template.html',
-      '${ doc.id }.${ doc.docType }.template.js', '${ doc.id }.template.js',
-      '${ doc.docType }.template.js', '${ doc.id }.${ doc.docType }.template.json',
-      '${ doc.id }.template.json', '${ doc.docType }.template.json', 'common.template.html'
-    ];
+// Standard patterns for matching docs to templates
+templateFinder.templatePatterns = [
+  '${ doc.template }', '${ doc.id }.${ doc.docType }.template.html',
+  '${ doc.id }.template.html', '${ doc.docType }.template.html',
+  '${ doc.id }.${ doc.docType }.template.js', '${ doc.id }.template.js',
+  '${ doc.docType }.template.js', '${ doc.id }.${ doc.docType }.template.json',
+  '${ doc.id }.template.json', '${ doc.docType }.template.json', 'common.template.html'
+];
 
-    // Nunjucks and Angular conflict in their template bindings so change Nunjucks
-    templateEngine.config.tags = {variableStart: '{$', variableEnd: '$}'};
+// Nunjucks and Angular conflict in their template bindings so change Nunjucks
+templateEngine.config.tags = {variableStart: '{$', variableEnd: '$}'};
 
-    templateEngine.filters =
-        templateEngine.filters.concat(getInjectables(requireFolder(__dirname, './rendering')));
+templateEngine.filters =
+templateEngine.filters.concat(getInjectables(requireFolder(__dirname, './rendering')));
 
-    // helpers are made available to the nunjucks templates
-    renderDocsProcessor.helpers.relativePath = function(from, to) {
-      return path.relative(from, to);
-    };
+// helpers are made available to the nunjucks templates
+renderDocsProcessor.helpers.relativePath = function(from, to) {
+  return path.relative(from, to);
+};
   })
 
   .config(function(copyContentAssetsProcessor) {
-    copyContentAssetsProcessor.assetMappings.push(
-      { from: path.resolve(CONTENTS_PATH, 'images'), to: path.resolve(OUTPUT_PATH, 'images') }
-    );
+copyContentAssetsProcessor.assetMappings.push(
+  { from: path.resolve(CONTENTS_PATH, 'images'), to: path.resolve(OUTPUT_PATH, 'images') }
+);
   })
 
   // We are not going to be relaxed about ambiguous links
   .config(function(getLinkInfo) {
-    getLinkInfo.useFirstAmbiguousLink = false;
+getLinkInfo.useFirstAmbiguousLink = false;
   })
 
   .config(function(checkAnchorLinksProcessor) {
-    // since we encode the HTML to JSON we need to ensure that this processor runs before that encoding happens.
-    checkAnchorLinksProcessor.$runBefore = ['convertToJsonProcessor'];
-    checkAnchorLinksProcessor.$runAfter = ['fixInternalDocumentLinks'];
-    // We only want to check docs that are going to be output as JSON docs.
-    checkAnchorLinksProcessor.checkDoc = (doc) => doc.path && doc.outputPath && extname(doc.outputPath) === '.json' && doc.docType !== 'json-doc';
-    // Since we have a `base[href="/"]` arrangement all links are relative to that and not relative to the source document's path
-    checkAnchorLinksProcessor.base = '/';
-    // Ignore links to local assets
-    // (This is not optimal in terms of performance without making changes to dgeni-packages there is no other way.
-    //  That being said do this only add 500ms onto the ~30sec doc-gen run - so not a huge issue)
-    checkAnchorLinksProcessor.ignoredLinks.push({
-      test(url) {
-        // Some links point to assets in the source tree while others point to the generated bazel output
-        return existsSync(resolve(SRC_PATH, url)) || existsSync(resolve(BAZEL_OUTPUT_PATH, url));
-      }
-    });
-    checkAnchorLinksProcessor.pathVariants = ['', '/', '.html', '/index.html', '#top-of-page'];
-    checkAnchorLinksProcessor.errorOnUnmatchedLinks = true;
+// since we encode the HTML to JSON we need to ensure that this processor runs before that encoding happens.
+checkAnchorLinksProcessor.$runBefore = ['convertToJsonProcessor'];
+checkAnchorLinksProcessor.$runAfter = ['fixInternalDocumentLinks'];
+// We only want to check docs that are going to be output as JSON docs.
+checkAnchorLinksProcessor.checkDoc = (doc) => doc.path && doc.outputPath && extname(doc.outputPath) === '.json' && doc.docType !== 'json-doc';
+// Since we have a `base[href="/"]` arrangement all links are relative to that and not relative to the source document's path
+checkAnchorLinksProcessor.base = '/';
+// Ignore links to local assets
+// (This is not optimal in terms of performance without making changes to dgeni-packages there is no other way.
+//  That being said do this only add 500ms onto the ~30sec doc-gen run - so not a huge issue)
+checkAnchorLinksProcessor.ignoredLinks.push({
+  test(url) {
+// Some links point to assets in the source tree while others point to the generated bazel output
+return existsSync(resolve(SRC_PATH, url)) || existsSync(resolve(BAZEL_OUTPUT_PATH, url));
+  }
+});
+checkAnchorLinksProcessor.pathVariants = ['', '/', '.html', '/index.html', '#top-of-page'];
+checkAnchorLinksProcessor.errorOnUnmatchedLinks = true;
   })
 
   .config(function(computePathsProcessor, generateKeywordsProcessor) {
 
-    generateKeywordsProcessor.outputFolder = 'app';
+generateKeywordsProcessor.outputFolder = 'app';
 
-    // Replace any path templates inherited from other packages
-    // (we want full and transparent control)
-    computePathsProcessor.pathTemplates = [
-      {docTypes: ['example-region'], getOutputPath: function() {}},
-    ];
+// Replace any path templates inherited from other packages
+// (we want full and transparent control)
+computePathsProcessor.pathTemplates = [
+  {docTypes: ['example-region'], getOutputPath: function() {}},
+];
   })
 
   .config(function(postProcessHtml, addImageDimensions, autoLinkCode, filterPipes, filterAmbiguousDirectiveAliases, ignoreHttpInUrls, ignoreGenericWords) {
-    // Some images exist within the source tree while others are in the generated bazel output
-    addImageDimensions.basePaths = [
-      path.resolve(AIO_PATH, 'src'),
-      BAZEL_OUTPUT_PATH,
-    ];
-    autoLinkCode.customFilters = [ignoreGenericWords, ignoreHttpInUrls, filterPipes, filterAmbiguousDirectiveAliases];
-    autoLinkCode.failOnMissingDocPath = true;
-    postProcessHtml.plugins = [
-      require('./post-processors/autolink-headings'),
-      addImageDimensions,
-      require('./post-processors/h1-checker'),
-      autoLinkCode,
-    ];
+// Some images exist within the source tree while others are in the generated bazel output
+addImageDimensions.basePaths = [
+  path.resolve(AIO_PATH, 'src'),
+  BAZEL_OUTPUT_PATH,
+];
+autoLinkCode.customFilters = [ignoreGenericWords, ignoreHttpInUrls, filterPipes, filterAmbiguousDirectiveAliases];
+autoLinkCode.failOnMissingDocPath = true;
+postProcessHtml.plugins = [
+  require('./post-processors/autolink-headings'),
+  addImageDimensions,
+  require('./post-processors/h1-checker'),
+  autoLinkCode,
+];
   })
 
   .config(function(convertToJsonProcessor) {
-    convertToJsonProcessor.docTypes = [];
+convertToJsonProcessor.docTypes = [];
   });

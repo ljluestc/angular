@@ -1,8 +1,5 @@
 import sh from 'shelljs';
-import u from './utils.mjs';
-
-
-// Exports
+import u from './utils.mjs';// Exports
 const exp = {
   testNoActiveRcDeployment,
   testPwaScore,

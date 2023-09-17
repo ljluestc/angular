@@ -295,10 +295,10 @@ These hooks trigger under the following circumstances:
 
 | Hooks            | Details |
 |:---              |:---     |
-| `onScheduleTask` | Triggers when a new asynchronous task is scheduled, such as when you call `setTimeout()`.                                                                                                                                                         |
-| `onInvokeTask`   | Triggers when an asynchronous task is about to run, such as when the callback of `setTimeout()` is about to run.                                                                                                                          |
+| `onScheduleTask` | Triggers when a new asynchronous task is scheduled, such as when you call `setTimeout()`.   |
+| `onInvokeTask`   | Triggers when an asynchronous task is about to run, such as when the callback of `setTimeout()` is about to run.  |
 | `onHasTask`      | Triggers when the status of one kind of task inside a zone changes from stable to unstable or from unstable to stable. A status of "stable" means there are no tasks inside the zone, while "unstable" means a new task is scheduled in the zone. |
-| `onInvoke`       | Triggers when a synchronous function is going to run in the zone.                                                                                                                                                                             |
+| `onInvoke`       | Triggers when a synchronous function is going to run in the zone.        |
 
 With these hooks, `Zone` can observe the status of all synchronous and asynchronous operations inside a zone.
 

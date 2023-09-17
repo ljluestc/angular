@@ -14,8 +14,8 @@ describe('phoneDetail', () => {
     };
 
     beforeEach(inject(($componentController: any,
-                       _$httpBackend_: angular.IHttpBackendService,
-                       $routeParams: angular.route.IRouteParamsService) => {
+     _$httpBackend_: angular.IHttpBackendService,
+     $routeParams: angular.route.IRouteParamsService) => {
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('phones/xyz.json').respond(xyzPhoneData);
 

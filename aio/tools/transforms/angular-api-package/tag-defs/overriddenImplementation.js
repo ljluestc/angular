@@ -1,5 +1,5 @@
 module.exports = function() {
   return {
-    name: 'overriddenImplementation',
+name: 'overriddenImplementation',
   };
 };

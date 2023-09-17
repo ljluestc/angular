@@ -79,10 +79,7 @@ export class Routable1Component implements OnInit {
   }
 }
 
-// #enddocregion router
-
-
-// #docregion activated_route
+// #enddocregion router// #docregion activated_route
 
 import { ActivatedRoute } from '@angular/router';
 
@@ -100,10 +97,7 @@ export class Routable2Component implements OnInit {
   }
 }
 
-// #enddocregion activated_route
-
-
-// #docregion forms
+// #enddocregion activated_route// #docregion forms
 
 import { FormGroup } from '@angular/forms';
 

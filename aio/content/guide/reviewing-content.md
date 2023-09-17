@@ -36,8 +36,8 @@ Perform these steps in a browser.
 
     1.  If you find an error that needs major changes:
         1.  Address the error:
-            1.  [Make a major change](guide/contributors-guide-overview#make-a-major-change), if you're comfortable, or
-            1.  [Open a docs issue in GitHub](https://github.com/angular/angular/issues/new?assignees=&labels=&template=3-docs-bug.yaml).
+   1.  [Make a major change](guide/contributors-guide-overview#make-a-major-change), if you're comfortable, or
+   1.  [Open a docs issue in GitHub](https://github.com/angular/angular/issues/new?assignees=&labels=&template=3-docs-bug.yaml).
         1.  Whether you fix the error or open a new issue, [update or add the `@reviewed` entry](#update-the-last-reviewed-date) at the end of the topic's source code.
         1.  [Make a minor change to a documentation topic](/guide/contributors-guide-overview#to-make-a-minor-change-to-a-documentation-topic) to save the new reviewed date.
 

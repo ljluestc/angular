@@ -1,8 +1,1 @@
-# BEGIN-DEV-ONLY
-package(default_visibility = ["//packages/bazel:__subpackages__"])
-
-filegroup(
-    name = "package_assets",
-    srcs = glob(["*"]),
-)
-# END-DEV-ONLY
+# BEGIN-DEV-ONLYpackage(default_visibility = ["//packages/bazel:__subpackages__"])filegroup(name = "package_assets",srcs = glob(["*"]),)# END-DEV-ONLY

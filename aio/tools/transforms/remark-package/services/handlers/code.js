@@ -7,7 +7,7 @@ module.exports = function code(h, node) {
   var props = {};
 
   if (lang) {
-    props.language = lang;
+props.language = lang;
   }
 
   return h(node, 'code-example', props, [{ type: 'text', value }]);

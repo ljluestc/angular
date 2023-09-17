@@ -14,15 +14,9 @@ class MockPhone {
   get(id: string): Observable<PhoneData> {
     return of(xyzPhoneData());
   }
-}
-
-
-class ActivatedRouteMock {
+}class ActivatedRouteMock {
   constructor(public snapshot: any) {}
-}
-
-
-describe('PhoneDetailComponent', () => {
+}describe('PhoneDetailComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({

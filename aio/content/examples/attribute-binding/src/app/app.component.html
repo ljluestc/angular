@@ -44,10 +44,7 @@
 
 <!-- The `class.special` template binding overrides any host binding to the `special` class set by `dirWithClassBinding` or `comp-with-host-binding`.-->
 
-<comp-with-host-binding [class.special]="isSpecial" dirWithClassBinding></comp-with-host-binding>
-
-
-<!-- The `style.color` template binding overrides any host binding to the `color` property set by `dirWithStyleBinding` or `comp-with-host-binding`. -->
+<comp-with-host-binding [class.special]="isSpecial" dirWithClassBinding></comp-with-host-binding><!-- The `style.color` template binding overrides any host binding to the `color` property set by `dirWithStyleBinding` or `comp-with-host-binding`. -->
 <div>
   <comp-with-host-binding [style.color]="color" dirWithStyleBinding></comp-with-host-binding>
 </div>

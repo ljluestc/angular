@@ -1,2 +1,1 @@
-var name = 'World';
-var message = $localize`Hello, ${name}!`;
+var name = 'World';var message = $localize`Hello, ${name}!`;

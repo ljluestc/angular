@@ -8,10 +8,7 @@ export function simpleCar() {
   const car = new Car(new Engine(), new Tires());
   car.description = 'Simple';
   return car;
-}
-
-
-///////// example 2 ////////////
+}///////// example 2 ////////////
 class Engine2 {
   constructor(public cylinders: number) { }
 }

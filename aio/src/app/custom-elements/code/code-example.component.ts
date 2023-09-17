@@ -23,13 +23,13 @@ import { CodeComponent } from './code.component';
     <header *ngIf="header">{{header}}</header>
 
     <aio-code [class.headed-code]="!!this.header"
-              [class.simple-code]="!this.header"
-              [language]="language"
-              [linenums]="linenums"
-              [path]="path"
-              [region]="region"
-              [hideCopy]="hidecopy"
-              [header]="header">
+     [class.simple-code]="!this.header"
+     [language]="language"
+     [linenums]="linenums"
+     [path]="path"
+     [region]="region"
+     [hideCopy]="hidecopy"
+     [header]="header">
     </aio-code>
   `,
 })

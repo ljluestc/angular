@@ -62,23 +62,23 @@ export class DocumentService {
     this.logger.log('fetching document from', requestPath);
     this.http.get<UnsafeDocumentContents>(requestPath, {responseType: 'json'})
         .pipe(
-            tap(data => {
-              if (!data || typeof data !== 'object') {
-                this.logger.log('received invalid data:', data);
-                throw Error('Invalid data');
-              }
-            }),
-            map((data: UnsafeDocumentContents) => ({
-              id: data.id,
-              contents: data.contents === null ?
-                  null :
-                  // SECURITY: HTML is authored by the documentation team and is fetched directly
-                  // from the server
-                  htmlSafeByReview(data.contents, '^')
-            })),
-            catchError((error: HttpErrorResponse) =>
-              error.status === 404 ? this.getFileNotFoundDoc(id) : this.getErrorDoc(id, error)
-            ),
+   tap(data => {
+     if (!data || typeof data !== 'object') {
+ this.logger.log('received invalid data:', data);
+ throw Error('Invalid data');
+     }
+   }),
+   map((data: UnsafeDocumentContents) => ({
+     id: data.id,
+     contents: data.contents === null ?
+   null :
+   // SECURITY: HTML is authored by the documentation team and is fetched directly
+   // from the server
+   htmlSafeByReview(data.contents, '^')
+   })),
+   catchError((error: HttpErrorResponse) =>
+     error.status === 404 ? this.getFileNotFoundDoc(id) : this.getErrorDoc(id, error)
+   ),
         )
         .subscribe(subject);
 

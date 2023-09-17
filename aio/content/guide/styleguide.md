@@ -334,16 +334,16 @@ Consistent conventions make it easy to quickly identify and reference assets of 
 
 </div>
 
-| Symbol name                                                                                                                                                                          | File name |
-|:---                                                                                                                                                                                  |:---       |
-| <code-example format="typescript" hideCopy language="typescript"> &commat;Component({ &hellip; }) &NewLine;export class AppComponent { } </code-example>                             | app.component.ts |
-| <code-example format="typescript" hideCopy language="typescript"> &commat;Component({ &hellip; }) &NewLine;export class HeroesComponent { } </code-example>                          | heroes.component.ts |
-| <code-example format="typescript" hideCopy language="typescript"> &commat;Component({ &hellip; }) &NewLine;export class HeroListComponent { } </code-example>                        | hero-list.component.ts |
-| <code-example format="typescript" hideCopy language="typescript"> &commat;Component({ &hellip; }) &NewLine;export class HeroDetailComponent { } </code-example>                      | hero-detail.component.ts |
-| <code-example format="typescript" hideCopy language="typescript"> &commat;Directive({ &hellip; }) &NewLine;export class ValidationDirective { } </code-example>                      | validation.directive.ts |
-| <code-example format="typescript" hideCopy language="typescript"> &commat;NgModule({ &hellip; }) &NewLine;export class AppModule </code-example>                                     | app.module.ts |
+| Symbol name     | File name |
+|:---    |:---       |
+| <code-example format="typescript" hideCopy language="typescript"> &commat;Component({ &hellip; }) &NewLine;export class AppComponent { } </code-example>     | app.component.ts |
+| <code-example format="typescript" hideCopy language="typescript"> &commat;Component({ &hellip; }) &NewLine;export class HeroesComponent { } </code-example>  | heroes.component.ts |
+| <code-example format="typescript" hideCopy language="typescript"> &commat;Component({ &hellip; }) &NewLine;export class HeroListComponent { } </code-example>| hero-list.component.ts |
+| <code-example format="typescript" hideCopy language="typescript"> &commat;Component({ &hellip; }) &NewLine;export class HeroDetailComponent { } </code-example>       | hero-detail.component.ts |
+| <code-example format="typescript" hideCopy language="typescript"> &commat;Directive({ &hellip; }) &NewLine;export class ValidationDirective { } </code-example>       | validation.directive.ts |
+| <code-example format="typescript" hideCopy language="typescript"> &commat;NgModule({ &hellip; }) &NewLine;export class AppModule </code-example>       | app.module.ts |
 | <code-example format="typescript" hideCopy language="typescript"> &commat;Pipe({ name: 'initCaps' }) &NewLine;export class InitCapsPipe implements PipeTransform { } </code-example> | init-caps.pipe.ts |
-| <code-example format="typescript" hideCopy language="typescript"> &commat;Injectable() &NewLine;export class UserProfileService { } </code-example>                                  | user-profile.service.ts |
+| <code-example format="typescript" hideCopy language="typescript"> &commat;Injectable() &NewLine;export class UserProfileService { } </code-example>    | user-profile.service.ts |
 
 [Back to top](#toc)
 
@@ -393,11 +393,11 @@ Service names such as `Credit` are nouns and require a suffix and should be name
 
 </div>
 
-| Symbol name                                                                                                                                      | File name |
-|:---                                                                                                                                              |:---       |
+| Symbol name     | File name |
+|:---       |:---       |
 | <code-example format="typescript" hideCopy language="typescript"> &commat;Injectable() &NewLine;export class HeroDataService { } </code-example> | hero-data.service.ts |
 | <code-example format="typescript" hideCopy language="typescript"> &commat;Injectable() &NewLine;export class CreditService { } </code-example>   | credit.service.ts    |
-| <code-example format="typescript" hideCopy language="typescript"> &commat;Injectable() &NewLine;export class Logger { } </code-example>          | logger.service.ts    |
+| <code-example format="typescript" hideCopy language="typescript"> &commat;Injectable() &NewLine;export class Logger { } </code-example> | logger.service.ts    |
 
 [Back to top](#toc)
 
@@ -621,8 +621,8 @@ Provides a consistent way to quickly identify and reference pipes.
 
 </div>
 
-| Symbol name                                                                                                                                                                          | File name |
-|:---                                                                                                                                                                                  |:---       |
+| Symbol name     | File name |
+|:---    |:---       |
 | <code-example format="typescript" hideCopy language="typescript"> &commat;Pipe({ name: 'ellipsis' }) &NewLine;export class EllipsisPipe implements PipeTransform { } </code-example> | ellipsis.pipe.ts  |
 | <code-example format="typescript" hideCopy language="typescript"> &commat;Pipe({ name: 'initCaps' }) &NewLine;export class InitCapsPipe implements PipeTransform { } </code-example> | init-caps.pipe.ts |
 
@@ -663,8 +663,8 @@ Provides pattern matching for [karma](https://karma-runner.github.io) or other t
 | Test type  | File names |
 |:---        |:---        |
 | Components | heroes.component.spec.ts <br /> hero-list.component.spec.ts <br /> hero-detail.component.spec.ts |
-| Services   | logger.service.spec.ts <br /> hero.service.spec.ts <br /> filter-text.service.spec.ts            |
-| Pipes      | ellipsis.pipe.spec.ts <br /> init-caps.pipe.spec.ts                                              |
+| Services   | logger.service.spec.ts <br /> hero.service.spec.ts <br /> filter-text.service.spec.ts   |
+| Pipes      | ellipsis.pipe.spec.ts <br /> init-caps.pipe.spec.ts |
 
 [Back to top](#toc)
 
@@ -695,7 +695,7 @@ Provides pattern matching for test runners and build automation.
 </div>
 
 | Test type        | File names |
-|:---              |:---        |
+|:---     |:---        |
 | End-to-End Tests | app.e2e-spec.ts <br /> heroes.e2e-spec.ts |
 
 [Back to top](#toc)
@@ -765,10 +765,10 @@ A consistent class and file name convention make these modules easy to spot and 
 
 </div>
 
-| Symbol name                                                                                                                                                    | File name |
-|:---                                                                                                                                                            |:---       |
-| <code-example format="typescript" hideCopy language="typescript"> &commat;NgModule({ &hellip; }) &NewLine;export class AppModule { } </code-example>           | app.module.ts            |
-| <code-example format="typescript" hideCopy language="typescript"> &commat;NgModule({ &hellip; }) &NewLine;export class HeroesModule { } </code-example>        | heroes.module.ts         |
+| Symbol name    | File name |
+|:---      |:---       |
+| <code-example format="typescript" hideCopy language="typescript"> &commat;NgModule({ &hellip; }) &NewLine;export class AppModule { } </code-example>  | app.module.ts   |
+| <code-example format="typescript" hideCopy language="typescript"> &commat;NgModule({ &hellip; }) &NewLine;export class HeroesModule { } </code-example>        | heroes.module.ts|
 | <code-example format="typescript" hideCopy language="typescript"> &commat;NgModule({ &hellip; }) &NewLine;export class VillainsModule { } </code-example>      | villains.module.ts       |
 | <code-example format="typescript" hideCopy language="typescript"> &commat;NgModule({ &hellip; }) &NewLine;export class AppRoutingModule { } </code-example>    | app-routing.module.ts    |
 | <code-example format="typescript" hideCopy language="typescript"> &commat;NgModule({ &hellip; }) &NewLine;export class HeroesRoutingModule { } </code-example> | heroes-routing.module.ts |
@@ -1016,123 +1016,123 @@ Here is a compliant folder and file structure:
       </div>
       <div class="children">
         <div class="file">
-          core
+ core
         </div>
         <div class="children">
-          <div class="file">
-            exception.service.ts&verbar;spec.ts
-          </div>
-          <div class="file">
-            user-profile.service.ts&verbar;spec.ts
-          </div>
+ <div class="file">
+   exception.service.ts&verbar;spec.ts
+ </div>
+ <div class="file">
+   user-profile.service.ts&verbar;spec.ts
+ </div>
         </div>
         <div class="file">
-          heroes
+ heroes
         </div>
         <div class="children">
-          <div class="file">
-            hero
-          </div>
-          <div class="children">
-            <div class="file">
-              hero.component.ts&verbar;html&verbar;css&verbar;spec.ts
-            </div>
-          </div>
-          <div class="file">
-            hero-list
-          </div>
-          <div class="children">
-            <div class="file">
-              hero-list.component.ts&verbar;html&verbar;css&verbar;spec.ts
-            </div>
-          </div>
-          <div class="file">
-            shared
-          </div>
-          <div class="children">
-            <div class="file">
-              hero-button.component.ts&verbar;html&verbar;css&verbar;spec.ts
-            </div>
-            <div class="file">
-              hero.model.ts
-            </div>
-            <div class="file">
-              hero.service.ts&verbar;spec.ts
-            </div>
-          </div>
-          <div class="file">
-            heroes.component.ts&verbar;html&verbar;css&verbar;spec.ts
-          </div>
-          <div class="file">
-            heroes.module.ts
-          </div>
-          <div class="file">
-            heroes-routing.module.ts
-          </div>
+ <div class="file">
+   hero
+ </div>
+ <div class="children">
+   <div class="file">
+     hero.component.ts&verbar;html&verbar;css&verbar;spec.ts
+   </div>
+ </div>
+ <div class="file">
+   hero-list
+ </div>
+ <div class="children">
+   <div class="file">
+     hero-list.component.ts&verbar;html&verbar;css&verbar;spec.ts
+   </div>
+ </div>
+ <div class="file">
+   shared
+ </div>
+ <div class="children">
+   <div class="file">
+     hero-button.component.ts&verbar;html&verbar;css&verbar;spec.ts
+   </div>
+   <div class="file">
+     hero.model.ts
+   </div>
+   <div class="file">
+     hero.service.ts&verbar;spec.ts
+   </div>
+ </div>
+ <div class="file">
+   heroes.component.ts&verbar;html&verbar;css&verbar;spec.ts
+ </div>
+ <div class="file">
+   heroes.module.ts
+ </div>
+ <div class="file">
+   heroes-routing.module.ts
+ </div>
         </div>
         <div class="file">
-          shared
+ shared
         </div>
         <div class="children">
-          <div class="file">
-            shared.module.ts
-          </div>
-          <div class="file">
-            init-caps.pipe.ts&verbar;spec.ts
-          </div>
-          <div class="file">
-            filter-text.component.ts&verbar;spec.ts
-          </div>
-          <div class="file">
-            filter-text.service.ts&verbar;spec.ts
-          </div>
+ <div class="file">
+   shared.module.ts
+ </div>
+ <div class="file">
+   init-caps.pipe.ts&verbar;spec.ts
+ </div>
+ <div class="file">
+   filter-text.component.ts&verbar;spec.ts
+ </div>
+ <div class="file">
+   filter-text.service.ts&verbar;spec.ts
+ </div>
         </div>
         <div class="file">
-          villains
+ villains
         </div>
         <div class="children">
-          <div class="file">
-            villain
-          </div>
-          <div class="children">
-            <div class="file">
-              &hellip;
-            </div>
-          </div>
-          <div class="file">
-            villain-list
-          </div>
-          <div class="children">
-            <div class="file">
-              &hellip;
-            </div>
-          </div>
-          <div class="file">
-            shared
-          </div>
-          <div class="children">
-            <div class="file">
-              &hellip;
-            </div>
-          </div>
-          <div class="file">
-            villains.component.ts&verbar;html&verbar;css&verbar;spec.ts
-          </div>
-          <div class="file">
-            villains.module.ts
-          </div>
-          <div class="file">
-            villains-routing.module.ts
-          </div>
+ <div class="file">
+   villain
+ </div>
+ <div class="children">
+   <div class="file">
+     &hellip;
+   </div>
+ </div>
+ <div class="file">
+   villain-list
+ </div>
+ <div class="children">
+   <div class="file">
+     &hellip;
+   </div>
+ </div>
+ <div class="file">
+   shared
+ </div>
+ <div class="children">
+   <div class="file">
+     &hellip;
+   </div>
+ </div>
+ <div class="file">
+   villains.component.ts&verbar;html&verbar;css&verbar;spec.ts
+ </div>
+ <div class="file">
+   villains.module.ts
+ </div>
+ <div class="file">
+   villains-routing.module.ts
+ </div>
         </div>
         <div class="file">
-          app.component.ts&verbar;html&verbar;css&verbar;spec.ts
+ app.component.ts&verbar;html&verbar;css&verbar;spec.ts
         </div>
         <div class="file">
-          app.module.ts
+ app.module.ts
         </div>
         <div class="file">
-          app-routing.module.ts
+ app-routing.module.ts
         </div>
       </div>
       <div class="file">
@@ -1447,16 +1447,16 @@ Yet there is a real danger of that happening if the `SharedModule` provides a se
       </div>
       <div class="children">
         <div class="file">
-          shared.module.ts
+ shared.module.ts
         </div>
         <div class="file">
-          init-caps.pipe.ts&verbar;spec.ts
+ init-caps.pipe.ts&verbar;spec.ts
         </div>
         <div class="file">
-          filter-text.component.ts&verbar;spec.ts
+ filter-text.component.ts&verbar;spec.ts
         </div>
         <div class="file">
-          filter-text.service.ts&verbar;spec.ts
+ filter-text.service.ts&verbar;spec.ts
         </div>
       </div>
       <div class="file">

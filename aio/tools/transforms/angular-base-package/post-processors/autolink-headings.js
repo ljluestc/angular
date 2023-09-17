@@ -19,31 +19,31 @@ const hasClass = (node, cls) => {
 
 const link = options =>
   tree => visit(tree, node => {
-    if (is(node, HEADINGS) && has(node, 'id') && !hasClass(node, NO_ANCHOR_CLASS)) {
-      node.children.push({
-        type: 'element',
-        tagName: 'a',
-        properties: Object.assign(clone(options.properties), {href: `#${node.properties.id}`}),
-        children: clone(options.content)
-      });
-    }
+if (is(node, HEADINGS) && has(node, 'id') && !hasClass(node, NO_ANCHOR_CLASS)) {
+  node.children.push({
+type: 'element',
+tagName: 'a',
+properties: Object.assign(clone(options.properties), {href: `#${node.properties.id}`}),
+children: clone(options.content)
+  });
+}
   });
 
 module.exports = [
   slug,
   [link, {
-    properties: {
-      title: 'Link to this heading',
-      className: ['header-link'],
-      'aria-hidden': 'true'
-    },
-    content: [
-      {
-        type: 'element',
-        tagName: 'i',
-        properties: {className: ['material-icons']},
-        children: [{ type: 'text', value: 'link' }]
-      }
-    ]
+properties: {
+  title: 'Link to this heading',
+  className: ['header-link'],
+  'aria-hidden': 'true'
+},
+content: [
+  {
+type: 'element',
+tagName: 'i',
+properties: {className: ['material-icons']},
+children: [{ type: 'text', value: 'link' }]
+  }
+]
   }]
 ];

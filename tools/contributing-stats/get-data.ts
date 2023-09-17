@@ -35,9 +35,9 @@ const REPOS = ['angular', 'components', 'angular-cli'];
  * Handle flags for the script.
  */
 const args = yargs.option('use-created', {type: 'boolean'})
-                 .option('since', {type: 'string', demandOption: true})
-                 .strictOptions()
-                 .argv;
+        .option('since', {type: 'string', demandOption: true})
+        .strictOptions()
+        .argv;
 
 /**
  * Authenticated instance of Github GraphQl API service, relies on a
@@ -64,18 +64,18 @@ async function getAllOrgMembers() {
       },
       {
         organization: params({login: '$owner'}, {
-          membersWithRole: params(
-              {
-                first: '$first',
-                after: '$after',
-              },
-              {
-                nodes: [{login: types.string}],
-                pageInfo: {
-                  hasNextPage: types.boolean,
-                  endCursor: types.string,
-                },
-              }),
+ membersWithRole: params(
+     {
+       first: '$first',
+       after: '$after',
+     },
+     {
+       nodes: [{login: types.string}],
+       pageInfo: {
+hasNextPage: types.boolean,
+endCursor: types.string,
+       },
+     }),
         })
       });
   const query = graphqlQuery('members', MEMBERS_QUERY);
@@ -132,7 +132,7 @@ function buildQueryAndParams(username: string, date: string) {
       },
       [`${repo.replace(/[\/\-]/g, '_')}_issues_involved`]: {
         query: `repo:${ORG}/${repo} is:issue -author:${username} involves:${username} ${
-            updatedOrCreated}:>${date}`,
+   updatedOrCreated}:>${date}`,
         label: `${ORG}/${repo} Issue Involved`,
       },
       [`${repo.replace(/[\/\-]/g, '_')}_pr_author`]: {
@@ -145,12 +145,12 @@ function buildQueryAndParams(username: string, date: string) {
       },
       [`${repo.replace(/[\/\-]/g, '_')}_pr_reviewed`]: {
         query: `repo:${ORG}/${repo} is:pr -author:${username} reviewed-by:${username} ${
-            updatedOrCreated}:>${date}`,
+   updatedOrCreated}:>${date}`,
         label: `${ORG}/${repo} PR Reviewed`,
       },
       [`${repo.replace(/[\/\-]/g, '_')}_pr_commented`]: {
         query: `repo:${ORG}/${repo} is:pr -author:${username} commenter:${username} ${
-            updatedOrCreated}:>${date}`,
+   updatedOrCreated}:>${date}`,
         label: `${ORG}/${repo} PR Commented`,
       },
     };
@@ -164,7 +164,7 @@ function buildQueryAndParams(username: string, date: string) {
     },
     [`${ORG}_org_issues_involved`]: {
       query: `org:${ORG} is:issue -author:${username} involves:${username} ${updatedOrCreated}:>${
-          date}`,
+ date}`,
       label: `${ORG} org Issue Involved`,
     },
     [`${ORG}_org_pr_author`]: {
@@ -177,12 +177,12 @@ function buildQueryAndParams(username: string, date: string) {
     },
     [`${ORG}_org_pr_reviewed`]: {
       query: `org:${ORG} is:pr -author:${username} reviewed-by:${username} ${updatedOrCreated}:>${
-          date}`,
+ date}`,
       label: `${ORG} org PR Reviewed`,
     },
     [`${ORG}_org_pr_commented`]: {
       query:
-          `org:${ORG} is:pr -author:${username} commenter:${username} ${updatedOrCreated}:>${date}`,
+ `org:${ORG} is:pr -author:${username} commenter:${username} ${updatedOrCreated}:>${date}`,
       label: `${ORG} org PR Commented`,
     },
   };
@@ -201,13 +201,13 @@ function buildQueryAndParams(username: string, date: string) {
     const output: {[key: string]: {}} = {};
     Object.entries(pairs).map(([key, val]) => {
       output[alias(key, 'search')] = params(
-          {
-            query: `"${val.query}"`,
-            type: 'ISSUE',
-          },
-          {
-            issueCount: types.number,
-          });
+ {
+   query: `"${val.query}"`,
+   type: 'ISSUE',
+ },
+ {
+   issueCount: types.number,
+ });
     });
     return output;
   }

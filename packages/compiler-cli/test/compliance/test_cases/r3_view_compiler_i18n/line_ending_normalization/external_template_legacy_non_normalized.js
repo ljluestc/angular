@@ -3,6 +3,6 @@ $I18N_1$ = $localize `:␟4f9ce2c66b187afd9898b25f6336d1eb2be8b5dc␟73269588521
 def`;
 …
 $I18N_2$ = $localize `:␟ed275132ef4cf80cbcf817e66b74c384e68340b1␟2056861121373082280:{VAR_SELECT, select, =0 {zero
-    }}`
+}}`
 …
 $I18N_3$ = $localize `:␟55d63b098ee4cce61944f086cdd9b60c6bcef20b␟6752545234037626269: Some Message ${$I18N_2$}:ICU:`;

@@ -6,21 +6,21 @@
  */
 module.exports = function updateGlobalApiPathProcessor() {
   return {
-    $runAfter: ['paths-computed'],
-    $runBefore: ['disambiguateDocPathsProcessor', 'processNgModuleDocs'],
-    $process: function(docs) {
-      docs.forEach(doc => {
-        if (doc.global && doc.globalNamespace) {
-          // We need to change the path to camel case, because having a dot
-          // in the URL will make it look like a file path.
-          const name = doc.unprefixedName;
-          const fileName = doc.globalNamespace + name[0].toUpperCase() + name.slice(1);
+$runAfter: ['paths-computed'],
+$runBefore: ['disambiguateDocPathsProcessor', 'processNgModuleDocs'],
+$process: function(docs) {
+  docs.forEach(doc => {
+if (doc.global && doc.globalNamespace) {
+  // We need to change the path to camel case, because having a dot
+  // in the URL will make it look like a file path.
+  const name = doc.unprefixedName;
+  const fileName = doc.globalNamespace + name[0].toUpperCase() + name.slice(1);
 
-          doc.path = `${doc.moduleDoc.moduleFolder}/${fileName}`;
-          doc.outputPath =
-              `${doc.moduleDoc.moduleFolder}/${fileName}.json`;
-        }
-      });
-    }
+  doc.path = `${doc.moduleDoc.moduleFolder}/${fileName}`;
+  doc.outputPath =
+  `${doc.moduleDoc.moduleFolder}/${fileName}.json`;
+}
+  });
+}
   };
 };

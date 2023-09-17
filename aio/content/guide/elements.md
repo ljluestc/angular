@@ -30,10 +30,10 @@ For more about the direction of development, check out this [video presentation]
 Custom elements bootstrap themselves - they start automatically when they are added to the DOM, and are automatically destroyed when removed from the DOM.
 Once a custom element is added to the DOM for any page, it looks and behaves like any other HTML element, and does not require any special knowledge of Angular terms or usage conventions.
 
-|                                                | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|   | Details   |
 | :--------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Easy dynamic content in an Angular application | Transforming a component to a custom element provides a straightforward path to creating dynamic HTML content in your Angular application. HTML content that you add directly to the DOM in an Angular application is normally displayed without Angular processing, unless you define a _dynamic component_, adding your own code to connect the HTML tag to your application data, and participate in change detection. With a custom element, all of that wiring is taken care of automatically.                                                                                                                                        |
-| Content-rich applications                      | If you have a content-rich application, such as the Angular app that presents this documentation, custom elements let you give your content providers sophisticated Angular functionality without requiring knowledge of Angular. For example, an Angular guide like this one is added directly to the DOM by the Angular navigation tools, but can include special elements like `<code-snippet>` that perform complex operations. All you need to tell your content provider is the syntax of your custom element. They don't need to know anything about Angular, or anything about your component's data structures or implementation. |
+| Easy dynamic content in an Angular application | Transforming a component to a custom element provides a straightforward path to creating dynamic HTML content in your Angular application. HTML content that you add directly to the DOM in an Angular application is normally displayed without Angular processing, unless you define a _dynamic component_, adding your own code to connect the HTML tag to your application data, and participate in change detection. With a custom element, all of that wiring is taken care of automatically. |
+| Content-rich applications       | If you have a content-rich application, such as the Angular app that presents this documentation, custom elements let you give your content providers sophisticated Angular functionality without requiring knowledge of Angular. For example, an Angular guide like this one is added directly to the DOM by the Angular navigation tools, but can include special elements like `<code-snippet>` that perform complex operations. All you need to tell your content provider is the syntax of your custom element. They don't need to know anything about Angular, or anything about your component's data structures or implementation. |
 
 ### How it works
 
@@ -103,13 +103,13 @@ For more information, see Web Component documentation for [Creating custom event
 
 The recently-developed [custom elements](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements) Web Platform feature is currently supported natively in a number of browsers.
 
-| Browser                 | Custom Element Support |
+| Browser  | Custom Element Support |
 | :---------------------- | :--------------------- |
-| Chrome                  | Supported natively.    |
+| Chrome   | Supported natively.    |
 | Edge \(Chromium-based\) | Supported natively.    |
-| Firefox                 | Supported natively.    |
-| Opera                   | Supported natively.    |
-| Safari                  | Supported natively.    |
+| Firefox  | Supported natively.    |
+| Opera    | Supported natively.    |
+| Safari   | Supported natively.    |
 
 To add the `@angular/elements` package to your workspace, run the following command:
 
@@ -131,10 +131,10 @@ Using an Angular custom element makes the process much simpler and more transpar
 
 The following Popup Service example application defines a component that you can either load dynamically or convert to a custom element.
 
-| Files                | Details                                                                                                                                                                                                                      |
+| Files | Details    |
 | :------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `popup.component.ts` | Defines a simple pop-up element that displays an input message, with some animation and styling.                                                                                                                             |
-| `popup.service.ts`   | Creates an injectable service that provides two different ways to invoke the `PopupComponent`; as a dynamic component, or as a custom element Notice how much more setup is required for the dynamic-loading method.         |
+| `popup.component.ts` | Defines a simple pop-up element that displays an input message, with some animation and styling.     |
+| `popup.service.ts`   | Creates an injectable service that provides two different ways to invoke the `PopupComponent`; as a dynamic component, or as a custom element Notice how much more setup is required for the dynamic-loading method.|
 | `app.component.ts`   | Defines the application's root component, which uses the `PopupService` to add the pop-up to the DOM at run time. When the application runs, the root component's constructor converts `PopupComponent` to a custom element. |
 
 For comparison, the demo shows both methods.

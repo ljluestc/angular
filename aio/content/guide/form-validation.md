@@ -72,8 +72,8 @@ Angular then calls these functions whenever the value of the control changes.
 Validator functions can be either synchronous or asynchronous.
 
 | Validator type   | Details |
-|:---              |:---     |
-| Sync validators  | Synchronous functions that take a control instance and immediately return either a set of validation errors or `null`. Pass these in as the second argument when you instantiate a `FormControl`.                       |
+|:---     |:---     |
+| Sync validators  | Synchronous functions that take a control instance and immediately return either a set of validation errors or `null`. Pass these in as the second argument when you instantiate a `FormControl`.     |
 | Async validators | Asynchronous functions that take a control instance and return a Promise or Observable that later emits a set of validation errors or `null`. Pass these in as the third argument when you instantiate a `FormControl`. |
 
 For performance reasons, Angular only runs async validators if all sync validators pass.

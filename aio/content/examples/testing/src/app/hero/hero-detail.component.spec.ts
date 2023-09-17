@@ -53,14 +53,14 @@ function overrideSetup() {
       Object.assign({}, appConfig, {
         imports: [HeroDetailComponent, HeroListComponent],
         providers: [
-          provideRouter([
-            { path: 'heroes', component: HeroListComponent },
-            { path: 'heroes/:id', component: HeroDetailComponent },
-          ]),
-          HttpClient,
-          HttpHandler,
-          // HeroDetailService at this level is IRRELEVANT!
-          { provide: HeroDetailService, useValue: {} },
+ provideRouter([
+   { path: 'heroes', component: HeroListComponent },
+   { path: 'heroes/:id', component: HeroDetailComponent },
+ ]),
+ HttpClient,
+ HttpHandler,
+ // HeroDetailService at this level is IRRELEVANT!
+ { provide: HeroDetailService, useValue: {} },
         ],
       }),
     )
@@ -128,12 +128,12 @@ function heroModuleSetup() {
       Object.assign({}, appConfig, {
         imports: [HeroDetailComponent, HeroListComponent],
         providers: [
-          provideRouter([
-            { path: 'heroes/:id', component: HeroDetailComponent },
-            { path: 'heroes', component: HeroListComponent },
-          ]),
-          provideHttpClient(),
-          provideHttpClientTesting(),
+ provideRouter([
+   { path: 'heroes/:id', component: HeroDetailComponent },
+   { path: 'heroes', component: HeroListComponent },
+ ]),
+ provideHttpClient(),
+ provideHttpClientTesting(),
         ],
       }),
     ).compileComponents();
@@ -219,9 +219,9 @@ function formsModuleSetup() {
       Object.assign({}, appConfig, {
         imports: [FormsModule, HeroDetailComponent, TitleCasePipe],
         providers: [
-          provideHttpClient(),
-          provideHttpClientTesting(),
-          provideRouter([{ path: 'heroes/:id', component: HeroDetailComponent }]),
+ provideHttpClient(),
+ provideHttpClientTesting(),
+ provideRouter([{ path: 'heroes/:id', component: HeroDetailComponent }]),
         ],
       }),
     ).compileComponents();
@@ -245,9 +245,9 @@ function sharedModuleSetup() {
       Object.assign({}, appConfig, {
         imports: [HeroDetailComponent, sharedImports],
         providers: [
-          provideRouter([{ path: 'heroes/:id', component: HeroDetailComponent }]),
-          provideHttpClient(),
-          provideHttpClientTesting(),
+ provideRouter([{ path: 'heroes/:id', component: HeroDetailComponent }]),
+ provideHttpClient(),
+ provideHttpClientTesting(),
         ],
       }),
     ).compileComponents();

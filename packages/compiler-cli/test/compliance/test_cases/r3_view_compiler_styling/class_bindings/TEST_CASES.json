@@ -8,10 +8,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "class_binding.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "class_binding.js"
+ ]
         }
       ]
     },
@@ -22,10 +22,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "class_ordering.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "class_ordering.js"
+ ]
         }
       ]
     },
@@ -36,10 +36,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "static_bindings.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "static_bindings.js"
+ ]
         }
       ]
     },
@@ -50,10 +50,10 @@
       ],
       "expectations": [
         {
-          "failureMessage": "Incorrect template",
-          "files": [
-            "empty_class_bindings.js"
-          ]
+ "failureMessage": "Incorrect template",
+ "files": [
+   "empty_class_bindings.js"
+ ]
         }
       ]
     }

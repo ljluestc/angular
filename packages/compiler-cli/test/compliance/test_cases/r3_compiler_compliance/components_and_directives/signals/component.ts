@@ -1,19 +1,4 @@
-import {Component} from '@angular/core';
-
-@Component({
-  signals: true,
-  standalone: true,
-  selector: 'other-cmp',
-  template: '',
+import {Component} from '@angular/core';  signals: true,
+   imports: [OtherCmp],
 })
-export class OtherCmp {
-}
-
-@Component({
-  signals: true,
-  standalone: true,
-  template: '<other-cmp></other-cmp>',
-  imports: [OtherCmp],
-})
-export class SignalCmp {
-}
+e

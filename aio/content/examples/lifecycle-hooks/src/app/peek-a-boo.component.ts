@@ -24,10 +24,10 @@ import { PeekABooDirective } from './peek-a-boo.directive';
 // Don't HAVE to mention the Lifecycle Hook interfaces
 // unless we want typing and tool support.
 export class PeekABooComponent extends PeekABooDirective implements
-             OnChanges, OnInit, DoCheck,
-             AfterContentInit, AfterContentChecked,
-             AfterViewInit, AfterViewChecked,
-             OnDestroy {
+    OnChanges, OnInit, DoCheck,
+    AfterContentInit, AfterContentChecked,
+    AfterViewInit, AfterViewChecked,
+    OnDestroy {
   @Input() name = '';
 
   private verb = 'initialized';

@@ -20,12 +20,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "simple_element.js",
-              "expected": "simple_element_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "simple_element.js",
+     "expected": "simple_element_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -54,12 +54,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "void_element.js",
-              "expected": "void_element_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "void_element.js",
+     "expected": "void_element_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -88,12 +88,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "interpolation_basic.js",
-              "expected": "interpolation_basic_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "interpolation_basic.js",
+     "expected": "interpolation_basic_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -122,12 +122,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "interpolation_complex.js",
-              "expected": "interpolation_complex_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "interpolation_complex.js",
+     "expected": "interpolation_complex_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -156,12 +156,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "interpolation_properties.js",
-              "expected": "interpolation_properties_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "interpolation_properties.js",
+     "expected": "interpolation_properties_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -190,12 +190,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "interpolation_with_pipe.js",
-              "expected": "interpolation_with_pipe_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "interpolation_with_pipe.js",
+     "expected": "interpolation_with_pipe_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -224,12 +224,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "input_binding_simple.js",
-              "expected": "input_binding_simple_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "input_binding_simple.js",
+     "expected": "input_binding_simple_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -258,12 +258,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "input_binding_complex.js",
-              "expected": "input_binding_complex_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "input_binding_complex.js",
+     "expected": "input_binding_complex_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -292,12 +292,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "input_binding_longhand.js",
-              "expected": "input_binding_longhand_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "input_binding_longhand.js",
+     "expected": "input_binding_longhand_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -327,12 +327,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "output_binding_simple.js",
-              "expected": "output_binding_simple_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "output_binding_simple.js",
+     "expected": "output_binding_simple_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -362,12 +362,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "output_binding_complex.js",
-              "expected": "output_binding_complex_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "output_binding_complex.js",
+     "expected": "output_binding_complex_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -397,12 +397,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "output_binding_longhand.js",
-              "expected": "output_binding_longhand_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "output_binding_longhand.js",
+     "expected": "output_binding_longhand_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -432,12 +432,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "two_way_binding_simple.js",
-              "expected": "two_way_binding_simple_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "two_way_binding_simple.js",
+     "expected": "two_way_binding_simple_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -467,12 +467,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "two_way_binding_longhand.js",
-              "expected": "two_way_binding_longhand_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "two_way_binding_longhand.js",
+     "expected": "two_way_binding_longhand_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -502,12 +502,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "input_binding_class.js",
-              "expected": "input_binding_class_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "input_binding_class.js",
+     "expected": "input_binding_class_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -536,12 +536,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "ng_if_simple.js",
-              "expected": "ng_if_simple_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "ng_if_simple.js",
+     "expected": "ng_if_simple_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -570,12 +570,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "ng_if_templated.js",
-              "expected": "ng_if_templated_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "ng_if_templated.js",
+     "expected": "ng_if_templated_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -605,12 +605,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "ng_for_simple.js",
-              "expected": "ng_for_simple_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "ng_for_simple.js",
+     "expected": "ng_for_simple_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -640,12 +640,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "ng_for_templated.js",
-              "expected": "ng_for_templated_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "ng_for_templated.js",
+     "expected": "ng_for_templated_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -675,12 +675,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "projection.js",
-              "expected": "projection_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "projection.js",
+     "expected": "projection_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -710,12 +710,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "i18n_message_simple.js",
-              "expected": "i18n_message_simple_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "i18n_message_simple.js",
+     "expected": "i18n_message_simple_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -745,12 +745,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "i18n_message_placeholder.js",
-              "expected": "i18n_message_placeholder_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "i18n_message_placeholder.js",
+     "expected": "i18n_message_placeholder_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -780,12 +780,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "i18n_message_placeholder_entities.js",
-              "expected": "i18n_message_placeholder_entities_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "i18n_message_placeholder_entities.js",
+     "expected": "i18n_message_placeholder_entities_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -815,12 +815,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "i18n_message_interpolation_whitespace.js",
-              "expected": "i18n_message_interpolation_whitespace_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "i18n_message_interpolation_whitespace.js",
+     "expected": "i18n_message_interpolation_whitespace_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -850,12 +850,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "i18n_message_element_whitespace.js",
-              "expected": "i18n_message_element_whitespace_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "i18n_message_element_whitespace.js",
+     "expected": "i18n_message_element_whitespace_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -885,12 +885,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "i18n_message_container_tag.js",
-              "expected": "i18n_message_container_tag_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "i18n_message_container_tag.js",
+     "expected": "i18n_message_container_tag_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -919,12 +919,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "update_mode.js",
-              "expected": "update_mode_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "update_mode.js",
+     "expected": "update_mode_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
@@ -954,12 +954,12 @@
       ],
       "expectations": [
         {
-          "files": [
-            {
-              "generated": "escape_sequences.js",
-              "expected": "escape_sequences_partial.js"
-            }
-          ]
+ "files": [
+   {
+     "generated": "escape_sequences.js",
+     "expected": "escape_sequences_partial.js"
+   }
+ ]
         }
       ],
       "compilationModeFilter": [
